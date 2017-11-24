@@ -1,0 +1,32 @@
+<!--pages/detail/detail.wxml-->
+<view class="page" catchtouchmove="stop">
+  <view class="head">
+    <image class="head-pic" src="{{pic}}"></image>
+    <view class="title">《{{bookName[1]}} {{bookName[2]}}》</view>
+    <view class="book-info">
+      <view class="book-type">{{bookName[0]}}</view>
+      <view class="listen-num">
+        <image src="/images/book/earphone.png" class="earphone"></image>
+        <view>{{listen_count}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="source-contianer">
+    <view class="source-item" catchtap="toDictation">
+      <image src="http://f3.5rs.me/upload/20170922/2017_09_22_160013103.png"></image>
+      <view class="source-info">
+        <view class="source-title">同步课程听写练习（{{grade}}）</view>
+        <view class="source-content">教材配套，标准发音，听写轻松有趣，随时随地想听就听！</view>
+      </view>
+      <view class="enter">进入</view>
+    </view>
+    <view class="source-item" catchtap="toWrite">
+      <image src="http://f3.5rs.me/upload/20170922/2017_09_22_160423613.png"></image>
+      <view class="source-info">
+        <view class="source-title">同步课程笔顺练习（{{grade}}）</view>
+        <view class="source-content">教材配套生字的正确笔顺，帮助孩子认字，写字，记字！</view>
+      </view>
+      <view class="enter">进入</view>
+    </view>
+  </view>
+</view>

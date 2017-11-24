@@ -1,0 +1,44 @@
+<!--pages/item/item.wxml-->
+<import src="../template/temp_common/temp_common.wxml" />
+<block wx:if="{{unAuthorization}}">
+	<template is="unauthorized"></template>
+</block>
+<block wx:else>
+	<view class='container'>
+	  <view class='top'>
+	    <view class='book_name'>{{bookDetail.app_name}}</view>
+	    <image class='book_img' src='{{bookDetail.app_pic}}'></image>
+	    <view class='book_txt'>
+	      <view class='ellipsis-left'>
+	        <image src='../images/ellipsis-left.png' style='width:44rpx;height:40rpx;margin: 0'></image>
+	      </view>
+	      <view class='book_content'>{{bookDetail.app_desc}}</view>
+	      <image src='../images/ellipsis-right.png' style='width:44rpx;height:40rpx;margin:0'></image>
+	    </view>
+	  </view>
+	
+	  <template is="testList" data="{{test_list:paperList}}" />
+		
+	  <view class='end'>
+	  	<import src="../template/temp_common/temp_common.wxml"/>
+	    <template is="richText_info" data="{{app_info:bookDetail.app_info}}" /> 
+	    <!--<view>为嘛湖北人听彼此讲话竟然那么难懂？家乡话就只有家乡人能懂,不说别的,先来看张图</view>
+	    <image src='../images/asd.png'></image>
+	    <view>看到上面那五颜六色相信小伙伴们都明白了了吧，虽然我们有同一个妈，但，老ba不同，互相听不懂。</view>-->
+	  </view>
+	
+	  <!--<view class='bottom' bindtap='payLesson'>
+	    <view class='bottom_bg'>
+	      <view class='buy'>购买课程</view>
+	    </view>
+	  </view>-->
+	  <view class='bottom' bindtap='addCourse' wx:if="{{!isAdd}}">
+	    <view class='bottom_bg'>
+	      <view class='buy'>加入课程</view>
+	    </view>
+	  </view>
+	
+	  <template is="payBox" wx:if="{{payBox}}" data="{{bookDetail}}" />
+	
+	</view>
+</block>

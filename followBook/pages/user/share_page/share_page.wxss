@@ -1,0 +1,55 @@
+/* pages/user/share_page/share_page.wxss */
+/*打开分享时页面*/
+.share-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 100;
+}
+
+.share-head {
+  width: 100%;
+  background:url(http://image.chubanyun.net/images/Dictation/template/share_bg.png) no-repeat top;
+  background-size: 100% auto;
+  height: 500rpx;
+  overflow: hidden
+}
+
+.share-head image {
+  width: 100%;
+}
+
+.share-user {
+  margin-top: -55rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 250rpx;
+  font-size: 30rpx;
+}
+
+.share-user image {
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  border: 4rpx solid #eee;
+}
+.user-now {
+  position: fixed;
+  bottom: 176rpx;
+  left: 0;
+  right: 0;
+  width: 500rpx;
+  height: 84rpx;
+  border-radius: 8rpx;
+  background-color: #06c1ae;
+  font-size: 30rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 84rpx;
+  margin: 0 auto;
+}

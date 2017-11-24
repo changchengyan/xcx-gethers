@@ -1,0 +1,23 @@
+<!-- yuyin.wxml -->
+<view class="wrap" wx:if="{{!loading}}">
+    <view class="listen {{isSpeaking?'show':'hide'}}">我正在听，请说话……</view>
+    <view class="wave-wrap {{isSpeaking?'show':'hide'}}">
+        <image class="wave-style wave-1" src="../images/wave-1.png" mode="aspectFill"></image>
+        <image class="wave-style wave-2" src="../images/wave-2.png" mode="aspectFill"></image>
+        <image class="wave-style wave-3" src="../images/wave-3.png" mode="aspectFill"></image>
+    </view>
+    <view class="but-wrap">
+        <view class="remind-style">{{touching}}</view>
+        <view class="sound-wrap" catchtouchstart="touchdown" catchtouchend="touchup">
+            <image class="sound-style" src="../images/but0.png"></image>
+            <image wx:if="{{j==1}}" class="sound-style" src="../images/but1.png"></image>
+            <image wx:if="{{j==2}}" class="sound-style" src="../images/but2.png"></image>
+            <image wx:if="{{j==3}}" class="sound-style" src="../images/but3.png"></image>
+            <image wx:if="{{j==4}}" class="sound-style" src="../images/but4.png"></image>
+        </view>
+    </view>
+</view>
+<view class='loading' wx:else>
+  <image class='loading_gif' src='../images/loading.gif'></image>
+  <text>正在识别...</text>
+</view>

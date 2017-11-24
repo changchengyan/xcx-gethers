@@ -1,0 +1,28 @@
+<!--pages/review/reviewword/reviewword.wxml-->
+<view class='bg'>
+  <view class='word_num'>错词
+    <text style='color:#319bd7'>{{totalCount}}</text>个 </view>
+  <view class='word_out'>
+    <view class='shadow'>
+      <view class='word' wx:for="{{word_list}}" data-index='{{index}}' bindtap='toWorddetail'>
+        <view class='word_in'>
+          <view class='english'>
+            {{item.word_name}}
+            <text class='yin'> [{{item.ipa==null?"":item.ipa}}]</text>
+          </view>
+          <view class='translate'>{{item.translation}}</view>
+        </view>
+      </view>
+    </view>
+    <view class='yes' wx:if="{{!isLoad&&load}}">加载完成</view>
+    <view class='load' wx:if="{{isLoad&&load}}">
+      <view></view>
+      <view></view>
+      <view></view>
+      <view></view>
+      <view></view>
+    </view>
+  </view>
+</view>
+<!-- <view class='begin' bindtap='toCheckpoint'>开始闯关</view> -->
+<!--加载动画 -->

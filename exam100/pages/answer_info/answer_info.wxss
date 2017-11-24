@@ -1,0 +1,93 @@
+@import "/pages/template/temp_common/temp_common.wxss";
+@import "/pages/template/temp_list/temp_list.wxss";
+
+.answerBox{
+  padding: 0 24px;
+  padding-bottom: 140rpx;
+  border-top: 1px solid #ccc;
+}
+.answerInfo{
+  justify-content: flex-end;
+  color: #666;
+  font-size: 13px;
+  padding-top: 20rpx;
+
+}
+.answerInfo .time image{
+  width: 30rpx;
+  height: 27rpx;
+  margin-right: 7rpx;
+  display: block;
+}
+.answerInfo .count{
+  margin-left:29rpx;
+}
+.answerInfo .count image{
+  width: 22rpx;
+  height: 25rpx;
+  margin-right: 7rpx;
+  display: block;
+}
+.answerInfo .count text{
+  font-size: 15px;
+}
+.answerContain{
+  margin-top: 64rpx;
+}
+.answerFooter{
+  position: fixed;
+  bottom: 40rpx;
+  left:0;
+  width: 100%;
+  height: 80rpx;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+  font-size: 26rpx;
+}
+.answerFooter image{
+  width: 38rpx;
+  height: 30rpx;
+  display: block;
+  
+}
+.answerFooter .pre,.answerFooter .next{
+  position: absolute;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%; 
+}
+.answerFooter .pre{
+  left:24rpx;
+  top:0;
+  background: rgba(0,0,0,0.6);
+}
+.answerFooter .next{
+  right: 24rpx;
+  top:0;
+  background: rgba(0,0,0,0.6);
+}
+.answerFooter .pre.noData,.answerFooter .next.noData{
+  background: rgba(0,0,0,0.15);
+}
+.answerFooter .pre.active,.answerFooter .next.active{
+  background: #858585
+}
+.answerFooter .item{
+  width: 80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 50%; 
+  border:1px solid #91519d;
+  font-weight: 700;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.answerFooter .item1{
+  font-size:12px;
+  line-height:1.1;
+  margin-right: 20rpx;
+}
+.answerFooter .item3{
+  margin-left: 20rpx;
+}

@@ -1,0 +1,284 @@
+<!--pages/sound/sound.wxml-->
+<import src="../template/richText/richText.wxml" />
+<import src="../template/template.wxml" />
+<view class="page-list">
+	<!--书籍信息begin -->
+  <view class="top-up">
+    <view class="bookCard">
+      <view class="bookView-left">
+        <image src="{{bookInfo.book_pic}}"></image>
+      </view>
+      <view class="titleAndAction">
+        <view class="book-title">{{bookInfo.book_name}}</view>
+        <view class="navLink">
+          <view class="bookWidthLesson flexC" catchtap="lore">
+            <image src="../images/sound/gotoKnowledge.png" style='width:36rpx;height:35rpx;' ></image>
+            <text>知识</text>
+          </view>
+          <!-- <view class="konwledge flexC" catchtap="circle">
+            <image src="../images/sound/gotoCircle.png" style='width:34rpx;height:34rpx;' ></image>
+            <text>圈子</text>
+          </view> -->
+          <view class="share flexC" catchtap="share">
+            <button open-type="share"></button>
+            <image src="../images/sound/shareThis.png" style='width:36rpx;height:34rpx;' ></image>
+            <text>分享</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--书籍信息end -->
+  <!-- 书籍详细内容begin -->
+  <view class="sound-list-canvas ">
+    <block wx:if="{{sound.total_count > 0}}">
+    	<!--导航条begin-->
+	    <view class='{{direction=="down"?"wrap-border pos":"wrap-nav borderBtm333"}}'>
+	      <view class="list-title f4 navBar">
+	        <block wx:for="{{showSelf}}" wx:key="{{index}}">
+	          <view class="padding20 show{{index}}-{{item.ifshow}}" data-index="{{index+1}}" catchtap="toShowThis" style="{{showSelf[1].ifshow!='yes'?'':index=='0'?'border-right:2rpx solid transparent':'border-left:2rpx solid transparent'}}">{{item.name}}</view>
+	        </block>
+	      </view>
+	    </view>
+	    <view wx:if="{{direction=='down'}}" style="height:62px;"></view>
+      <!--导航条end -->
+      <swiper class="item-swiper"  autoplay="{{false}}" current="{{(clickThisNav-1)}}" circular="{{true}}" bindchange="exchangeNext">
+        <!--目录列表begin-->
+        <swiper-item class="item-canvas  list-{{direction}}">
+        	<view wx:if="{{direction=='up'}}" class="item-canvas list-up">
+        		<template is="list" data="{{sound,playMusicFlag,randomMusicTangle,playPauseStyle,lessonIndex}}"/>
+        	</view>
+          <scroll-view wx:elif="{{direction=='down'}}" scroll-y  bindscrolltolower="loadMoreList"  class="item-scroll">
+						<template is="list" data="{{sound,playMusicFlag,randomMusicTangle,playPauseStyle,lessonIndex}}"/>
+          </scroll-view>
+        </swiper-item>
+        <!--目录列表end-->
+        <!--详情begin-->
+        <swiper-item class="item-canvas list-{{direction}}">
+          <view  class="artical">
+            <view class="wrap-bookDetail">
+              <view class="bookname">
+                <view class="bookName-str color333">书名:</view>
+                <view class="bookName-content">{{bookInfo.book_name}}</view>
+              </view>
+              <view class="lessonsNum">
+                <view class="lessonsNum-str color333">单元:</view>
+                <view class="lessonsNum-num color333">共{{sound.list.length}}单元</view>
+              </view>
+              <block wx:if="{{sound.list[lessonIndex].followbook_lesson.lesson_desc}}">
+                <view class="adaptivePopulation color333">{{sound.list[lessonIndex].followbook_lesson.lesson_desc}}</view>
+              </block>
+              <block wx:else>
+                <view class="adaptivePopulation color333">暂时没有简介</view>
+              </block>
+            </view>
+          </view>
+        </swiper-item>
+        <!--详情end-->
+        <!--字幕begin-->
+        <swiper-item class="list-{{direction}}">
+        	<view wx:if="{{direction=='up'}}" class="lyric_bg item-scroll" style="position:absolute;left:0;top:-{{lrc_distance}}px;">
+            <view class="title lyric_bg">
+              <view class="lrc-line {{cur_lrc[index]}}" wx:for="{{lrc}}" wx:key="index">{{item[1]}}</view>
+            </view>
+          </view>
+          <scroll-view wx:elif="{{direction=='down'}}" scroll-top="{{lrc_distance}}" class="lyric_bg item-scroll" scroll-y  bindscroll="stop_goUp">
+            <view class="title lyric_bg">
+              <view class="lrc-line {{cur_lrc[index]}}" wx:for="{{lrc}}" wx:key="index">{{item[1]}}</view>
+            </view>
+          </scroll-view>
+        </swiper-item>
+        <!--字幕end-->
+      </swiper>
+    </block>
+    <!-- 无数据信息 -->
+    <block wx:elif="{{!loadding}}">
+      <view class="nodata-canvas">
+        <image src="{{NODATA_ICON}}" mode="widthFix"></image>
+        <view class="text f2">
+          <text>{{NODATA_TEXT}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+  <!-- 书籍详细内容end -->
+  <!-- 加载中begin-->
+  <block wx:if="{{loadding}}">
+    <view class="list-loadding">
+      <view class="icon" style=" width:100%;margin-top:100rpx; display:flex;justify-content:center;text-align:center">
+        <image src="{{LOADDING_ICON}}" mode="widthFix"></image>
+      </view>
+      <view class="text f1" style="text-align:center">
+        <text>{{LOADDING_TEXT}}</text>
+      </view>
+    </view>
+  </block>
+	<!-- 加载中end-->
+  <!-- 播放控制台begin -->
+  <block wx:if="{{sound.total_count > 0}}">
+    <view class="sound-controls-canvas">
+      <view class="progress-view">
+        <view class="time-left">{{timeBeginText}}</view>
+        <view class="pro-background" id="pro-background">
+          <slider bindtouchstart="dragStart" bindchange="sliderChange" backgroundColor="#eee" selected-color="#cfebeb" left-icon="cancel" class="silder-show" disabled="{{disabled}}" value="{{singInfo.currentPosition}}" max="{{singInfo.duration}}" />
+        </view>
+        <view class="time-right">{{timeEndText}}</view>
+      </view>
+      <view class="operation-view">
+        <view class="disOrder" bindtap="disOrder">
+          <block wx:if="{{playOrder==1}}">
+            <image src="../images/sound/beSort.png" style='width:37rpx;height:29rpx;' ></image>
+            <text>顺序播放</text>
+          </block>
+          <block wx:if="{{playOrder==2}}">
+            <image src="../images/sound/disOrder.png" style='width:41rpx;height:33rpx;'></image>
+            <text>随机播放</text>
+          </block>
+          <block wx:if="{{playOrder==3}}">
+            <image src="../images/sound/circleOne.png" style='width:41rpx;height:32rpx;'></image>
+            <text>单曲循环</text>
+          </block>
+          <block wx:if="{{playOrder==4}}">
+            <image src="../images/sound/circleAll.png" style='width:41rpx;height:33rpx;'></image>
+            <text>列表循环</text>
+          </block>
+        </view>
+        
+      <block wx:if="{{noPre}}">
+      	<view class="prev">
+        	<image src="../images/sound/sound-icon-prev.png"></image>
+        </view>
+      </block>
+      <block wx:else>
+      	<view class="prev"  bindtap="audioPrev">
+        	<image class="prev-option0" src="../images/sound/sound-icon-next.png"></image>
+      	</view>
+      </block>
+        
+        <view class="{{playPauseStyle}}">
+          <view class="play" bindtap="audioToPlay">
+            <image src="../images/sound/sound-icon-play.png"></image>
+          </view>
+          <view class="pause" bindtap="audioPause">
+            <image src="../images/sound/sound-icon-pause.png"></image>
+          </view>
+        </view>
+
+        
+          <block wx:if="{{noNext}}">
+          	<view class="next">
+            	<image class="next-option0" src="../images/sound/sound-icon-prev.png"></image>
+            </view>
+          </block>
+          <block wx:else>
+          	<view class="next">
+            	<image src="../images/sound/sound-icon-next.png" bindtap="audioNext"></image>
+            </view>
+          </block>
+        
+        <view class="goNext" bindtap="goNext">
+          <image src="../images/sound/switch.png"  style='width:36rpx;height:36rpx;' ></image>
+          <text>切换</text>
+        </view>
+      </view>
+      <view class="bottomShowBtn-{{direction}}">
+        <view class="navLink bd-top">
+          <view class="bookWidthLesson flexR" catchtap="lore">
+            <image src="../images/sound/gotoKnowledge.png" style='width:36rpx;height:35rpx;' ></image>
+            <text>知识</text>
+          </view>
+          <!-- <view class="konwledge flexR" catchtap="circle">
+            <image src="../images/sound/gotoCircle.png" style='width:34rpx;height:34rpx;' ></image>
+            <text>圈子</text>
+          </view> -->
+          <view class="share flexR" catchtap="share">
+            <button open-type="share"></button>
+            <image src="../images/sound/shareThis.png" style='width:36rpx;height:34rpx;' ></image>
+            <text>分享</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <!-- 播放控制台end -->
+</view>
+<!--目录swiper-->
+<template name="list">
+	<view class="caption">
+		<view class="left-title">
+			<view class="tangle-black"></view>
+			<text>播放列表</text>
+		</view>
+		<view class="list-num">共{{sound.list.length}}单元</view>
+	</view>
+	<view class="soundList" wx:for="{{sound.list}}" wx:key="{{i}}" wx:for-index="i" data-index="{{i}}" bindtap="toggleShow">
+		<view class="number showBold-{{i==lessonIndex?'show':'hidden'}}">Unit.{{i+1}}</view>
+		<view class="wrap-bookRight">
+			<view class="show-right">
+				<view class="name showBold-{{i==lessonIndex?'show':'hidden'}}">{{item.followbook_lesson.lesson_name}}</view>
+				<view class="arrow">
+					<block wx:if="{{item.show_flag}}">
+						<image class="show" src="../images/sound/arrow.png" style="width:25rpx;height:15rpx;"></image>
+					</block>
+					<block wx:else>
+						<image class="hidden" src="../images/sound/arrow.png" style="width:25rpx;height:15rpx;"></image>
+					</block>
+				</view>
+			</view>
+			<block wx:if="{{item.show_flag}}">
+				<view class="{{item.class}} book-item" wx:for="{{sound.list[i].lesson_source}}" wx:for-index="j" data-index="{{j}}" catchtap="selectPlay" wx:key="{{j}}" data-index="{{j}}" data-bookIndex='{{i}}'>
+					<view class="lesson_source_item name">{{item.sound_name}}</view>
+					<!--<block wx:if="{{item.class=='sound-item-over'&&playMusicFlag==null}}">
+						<view class="time">{{item.sound_timelen}}</view>
+					</block>-->
+					<block wx:if="{{item.class=='sound-item-over'&&playPauseStyle=='play-in'}}">
+						<view id="waves" class="movement">
+							<view class="li1">
+								<text class="ani-li"></text>
+							</view>
+							<view class="li2">
+								<text class="ani-li"></text>
+							</view>
+							<view class="li3">
+								<text class="ani-li"></text>
+							</view>
+							<view class="li4">
+								<text class="ani-li"></text>
+							</view>
+							<view class="li5">
+								<text class="ani-li"></text>
+							</view>
+						</view>
+					</block>
+					<block wx:if="{{item.class=='sound-item-over'&&playPauseStyle=='play-out'}}">
+						<view id="waves" class="movement">
+							<view class="li1-stop">
+								<text class="ani-li" style="height:{{randomMusicTangle[0]}}"></text>
+							</view>
+							<view class="li2-stop">
+								<text class="ani-li" style="height:{{randomMusicTangle[1]}}"></text>
+							</view>
+							<view class="li3-stop">
+								<text class="ani-li" style="height:{{randomMusicTangle[2]}}"></text>
+							</view>
+							<view class="li4-stop">
+								<text class="ani-li" style="height:{{randomMusicTangle[3]}}"></text>
+							</view>
+							<view class="li5-stop">
+								<text class="ani-li" style="height:{{randomMusicTangle[4]}}"></text>
+							</view>
+						</view>
+					</block>
+					<block wx:if="{{item.class!='sound-item-over'}}">
+						<view class="time">{{item.sound_timelen}}</view>
+					</block>
+				</view>
+			</block>
+		</view>
+	</view>
+</template>
+
+<!-- 支付弹窗 -->
+<block wx:if="{{showPayModel}}">
+   <template is="Buy" data="{{book_name:bookInfo.book_name,money:money,book_img:bookInfo.book_pic}}"></template> 
+</block>

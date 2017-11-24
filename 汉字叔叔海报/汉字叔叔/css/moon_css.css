@@ -1,0 +1,92 @@
+html,body{
+    margin:0;
+    padding: 0;
+}
+
+.container{
+    width: 750px;
+    height: 1000px;
+    background: url(http://image.chubanyun.net/images/WordUncle/moon1_bg.png);
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    -ms-background-size: cover;
+    overflow: hidden;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://image.chubanyun.net/images/WordUncle/moon1_bg.png',sizingMethod='scale');  
+}
+
+.top{
+    margin-top: 260px;
+}
+
+.top p{
+    line-height: 40px;
+    min-width: 330px;
+    max-width: 330px;
+    height: 159px;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    margin-left: 91px;
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+
+.end{
+    width: 482px;
+    min-height:96px;
+    margin: 0 auto;
+    margin-top: 371px;
+    padding: 25px 44px;
+    overflow: hidden;
+    zoom: 1;
+    border:1px solid #caa671;
+    border-radius: 10px;
+}
+
+.end .user{
+    float: left;
+    width: 320px;
+}
+
+.user_in{
+    font-size: 18px ;
+    color: #666666;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.end .user_in span{
+
+}
+
+.end .user .txt{
+    font-size: 22px;
+    margin-top: 10px;
+    color:#333;
+}
+
+.end .user .touxiang{
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    border-radius: 50%;
+    font-size: 0;
+    vertical-align: middle;
+    margin-right:5px;
+}
+
+.wx{
+    width: 130px;
+    height: 130px;
+    float: left;
+    margin-right: 30px;
+}
+
+

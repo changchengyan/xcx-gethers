@@ -1,0 +1,47 @@
+<!-- <import src="../../template/template.wxml" /> -->
+
+<!--details.wxml-->
+<import src="../../template/template.wxml" />
+
+<!--details.wxml-->
+<!-- <import src="../../template/template.wxml" /> -->
+
+<import src="../../../components/modal/modal.wxml" />
+<view class="container">
+  <!-- <view class="top">
+    <view class="title">{{name}}</view>
+    <view class="star" style="margin-top:-9rpx"><template is="star" data="{{star}}"></template></view>
+  </view> -->
+
+  <view class="juxing">
+    <view class="middle">
+      <view class="find"><text class="txt">找出错词</text> </view>
+      <view class="words">
+        <view class="words_in {{item.error ? 'error' : ''}}" wx:for="{{listWords}}" wx:key="id" bindtap="toggleErrWord" data-index="{{index}}">
+          <view class="wo active">{{item.display_word}}</view>
+        </view>
+      </view>
+      <view class="cihui">共 <text class="num">{{listWords.length}}</text>个词汇</view>
+      <!-- <view class="foot">共{{listWords.length}}个词汇，错误词汇{{errCount}}个</view> -->
+    </view>
+  </view>
+
+  <view class="err">
+    <view class="errimg">
+      <image src="../../../images/word/cuoci.png" style="width:100rpx;height:37rpx"></image>
+      <!-- <view class="errtext">错词</view> -->
+    </view>
+    <view class="errwords">
+      <view class="errwords_in " wx:for="{{errList}}" wx:wx:key="uid" wx:for-item="iii" data-errindex="{{index}}" bindtap="delerr">
+        <view class="errwo ">{{iii}}</view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="end " bindtap="submitTest">
+    <!-- <view class="btn">提交</view> -->
+  </view>
+</view>
+<!--modal-->
+<template is="modal" data="{{..._modal}}"></template>

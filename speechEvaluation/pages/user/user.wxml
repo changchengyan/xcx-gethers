@@ -1,0 +1,136 @@
+<view class="con">
+  <view class='top'>
+    <view class='user'>
+      <image src='{{userInfo.avatarUrl}}'></image>
+    </view>
+    <view class='button'>
+      <view class='num'>{{studyDays}}</view>
+      <view class='canClick'>      
+        <text>学习天数</text>
+      </view>
+    </view>
+    <view bindtap='gotoItem' class='button'>
+      <view class='num'>{{evaluationCount}}</view>
+      <view class='canClick'>
+        <image src='/pages/images/history.png'></image>
+        <text>口语练习</text>
+      </view>
+    </view>
+    <view class='button' bindtap="goDeatil">
+      <view class='num'>{{pk_count}}</view>
+      <view class='canClick'>
+        <image src='/pages/images/pk.png'></image>
+        <text>参与挑战</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="middle"></view>
+
+  <!--日历  -->
+  <view class="calendar">
+    <view class="year" catchtap="bindImg">{{cur_year}}年{{now_month}}月
+      <image src="../images/gantanhao.png" style="width:33rpx;height:30rpx"></image>
+    </view>
+    <view class="week">
+      <view class="week_in" wx:for="{{weeks_ch}}">{{item}}</view>
+    </view>
+    <view class="day">
+      <swiper class="lunbo" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" current="{{ current }}" indicator-dots="true" indicator-color="rgba(0, 0, 0, 0)" indicator-active-color="rgba(0, 0, 0, 0)"
+        bindchange="changePic" style="height:560rpx">
+        <swiper-item class="swipe_in {{n_empty[11].length+n_days[11].length<=35?'wid':''}}" >
+          <view class="empty   dragon" wx:for="{{n_empty[11]}}">{{item}}</view>
+          <view class="no_empty  dragon" wx:for="{{n_days[11]}}">
+            <view class="day_item {{item.active}}">{{item.day}}</view>
+          </view>
+        </swiper-item>
+        <swiper-item class="swipe_in {{n_empty[10].length+n_days[10].length<=35?'wid':''}}" >
+          <view class="empty   dragon" wx:for="{{n_empty[10]}}">{{item}}</view>
+          <view class="no_empty  dragon" wx:for="{{n_days[10]}}">
+            <view class="day_item {{item.active}}">{{item.day}}</view>
+          </view>
+        </swiper-item>
+        <swiper-item class="swipe_in {{n_empty[9].length+n_days[9].length<=35?'wid':''}}">
+          <view class="empty   dragon" wx:for="{{n_empty[9]}}">{{item}}</view>
+          <view class="no_empty  dragon" wx:for="{{n_days[9]}}">
+            <view class="day_item {{item.active}}">{{item.day}}</view>
+          </view>
+        </swiper-item>
+        <swiper-item class="swipe_in {{n_empty[8].length+n_days[8].length<=35?'wid':''}}">
+          <view class="empty   dragon" wx:for="{{n_empty[8]}}">{{item}}</view>
+          <view class="no_empty  dragon" wx:for="{{n_days[8]}}">
+            <view class="day_item {{item.active}}">{{item.day}}</view>
+          </view>
+        </swiper-item>
+        <swiper-item class="swipe_in {{n_empty[7].length+n_days[7].length<=35?'wid':''}}" >
+          <view class="empty   dragon" wx:for="{{n_empty[7]}}">{{item}}</view>
+          <view class="no_empty  dragon" wx:for="{{n_days[7]}}">
+            <view class="day_item {{item.active}}">{{item.day}}</view>
+          </view>
+        </swiper-item>
+        <swiper-item class="swipe_in {{n_empty[6].length+n_days[6].length<=35?'wid':''}}">
+          <view class="empty   dragon" wx:for="{{n_empty[6]}}">{{item}}</view>
+          <view class="no_empty  dragon" wx:for="{{n_days[6]}}">
+            <view class="day_item {{item.active}}">{{item.day}}</view>
+          </view>
+        </swiper-item>
+        <swiper-item class="swipe_in {{n_empty[5].length+n_days[5].length<=35?'wid':''}}">
+          <view class="empty   dragon" wx:for="{{n_empty[5]}}">{{item}}</view>
+          <view class="no_empty  dragon" wx:for="{{n_days[5]}}">
+            <view class="day_item {{item.active}}">{{item.day}}</view>
+          </view>
+        </swiper-item>
+        <swiper-item class="swipe_in {{n_empty[4].length+n_days[4].length<=35?'wid':''}}">
+          <view class="empty   dragon" wx:for="{{n_empty[4]}}">{{item}}</view>
+          <view class="no_empty  dragon" wx:for="{{n_days[4]}}">
+            <view class="day_item {{item.active}}">{{item.day}}</view>
+          </view>
+        </swiper-item>
+        <swiper-item class="swipe_in {{n_empty[3].length+n_days[3].length<=35?'wid':''}}">
+          <view class="empty   dragon" wx:for="{{n_empty[3]}}">{{item}}</view>
+          <view class="no_empty  dragon" wx:for="{{n_days[3]}}">
+            <view class="day_item {{item.active}}">{{item.day}}</view>
+          </view>
+        </swiper-item>
+        <swiper-item class="swipe_in {{n_empty[2].length+n_days[2].length<=35?'wid':''}}" >
+          <view class="empty   dragon" wx:for="{{n_empty[2]}}">{{item}}</view>
+          <view class="no_empty  dragon" wx:for="{{n_days[2]}}">
+            <view class="day_item {{item.active}}">{{item.day}}</view>
+          </view>
+        </swiper-item>
+        <swiper-item class="swipe_in {{n_empty[1].length+n_days[1].length<=35?'wid':''}}" >
+          <view class="empty   dragon" wx:for="{{n_empty[1]}}">{{item}}</view>
+          <view class="no_empty  dragon" wx:for="{{n_days[1]}}">
+            <view class="day_item {{item.active}}">{{item.day}}</view>
+          </view>
+        </swiper-item>
+        <swiper-item class="swipe_in {{n_empty[0].length+n_days[0].length<=35?'wid':''}}">
+          <view class="empty   dragon" wx:for="{{n_empty[0]}}">{{item}}</view>
+          <view class="no_empty  dragon" wx:for="{{n_days[0]}}">
+            <view class="day_item {{item.active}} {{item.day ==cur_day&&now_month==cur_month&&now_year==cur_year?'active':''}}">{{item.day}}</view>
+          </view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+</view>
+
+<!--弹窗-->
+<view class="yessss" wx:if="{{isDisplay}}">
+  <view class="box"></view>
+  <view class="modal">
+    <view class="title">学习日历</view>
+    <view class="tishi">
+      <text>1.当日完成评测的篇数越多，标记的颜色越深，参考如下： </text>
+      <view class="yuan">
+        <view class="one"></view>
+        <text>→</text>
+        <view class="two"></view>
+        <text>→</text>
+        <view class="three"></view>
+      </view>
+      <text>2.左右滑动日历，查看历史月份信息 </text>
+    </view>
+    <view class="sure" catchtap="bindSrue">确定</view>
+  </view>
+</view>

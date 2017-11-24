@@ -1,0 +1,67 @@
+/* pages/discover/manage/application/application.wxss */
+
+
+.top-menu{ display: flex; justify-content: center; position: fixed; width: 100%; left: 0px; top: 0px; z-index: 1; background-color: #f8f8f8;}
+.top-menu .item{ padding: 15px 20px 10px 20px; font-size: 14px; border-bottom: 1px solid #fff;}
+.top-menu .over{ border-bottom: 1px solid #fe942d; color:#fe942d;}
+
+.app-body{ height: 100%; width: 100%; position: absolute; padding: 48px 0px 0px 0px;}
+.app-body .swiper-canvas{  height: 100%;}
+.app-body .app-swiper{ background-color: #fff; height: 100%;}
+.app-body .list-scroll{ height: 100%;}
+
+
+
+/**模版**/
+
+.demo-list{ padding: 20px 15px 20px 15px; display: flex;flex-wrap:wrap;}
+.demo-list .demo-group-name{ max-width: 100%; min-width: 100%; text-align: center; padding: 10px 0px 10px 0px; font-size: 14px; color: #fe942d;}
+.demo-list .demo-item{max-width: 33.33%;min-width: 33.33%;  padding: 10px 8px 10px 8px; text-align: center;}
+.demo-list .demo-item .icon{ text-align: center; padding: 0px 15px 0px 15px;}
+.demo-list .demo-item .icon image{ width: 100%;}
+.demo-list .demo-item .info{}
+.demo-list .demo-item .info .title{ font-size: 16px; line-height: 24px; padding: 0px 0px 5px 0px;}
+.demo-list .demo-item .info .desc{ display: none; font-size: 13px; font-weight: 300; line-height: 21px;}
+
+
+
+
+/**应用**/
+.search-control{ border-bottom: 1px solid #eee; padding: 7px 10px 10px 10px;}
+.search-control .text{ width: 100%; margin: auto; background-color: #f8f8f8; border-radius: 30px; color: #999; font-size: 14px;
+  padding: 7px 20px 7px 20px; line-height: 18px;
+ }
+.app-control{ border-bottom: 1px solid #eee; display: flex; padding: 10px 10px 10px 10px;}
+.app-control .list-view{flex-grow: 1;max-width: 40px;min-width: 40px; text-align: center; font-size:14px; padding: 8px 0px 6px 0px; line-height: 18px; border: 1px solid #eee; border-radius: 5px; margin-right: 5px;color:#fe942d;}
+.app-control .list-view-mini{flex-grow: 1;max-width: 40px;min-width: 40px; text-align: center; font-size:14px; padding: 8px 0px 6px 0px; line-height: 18px; border: 1px solid #eee; border-radius: 5px; margin-right: 5px; }
+.app-control .null{ flex-grow: 5;}
+.app-control .add-button{  flex-grow: 1;max-width: 80px;min-width: 80px; text-align: center; font-size:14px; padding: 8px 0px 6px 0px; line-height: 18px; border: 1px solid #eee; border-radius: 5px;}
+.app-control .app-type-select{flex-grow: 5; max-width: 120px;min-width: 120px; border: 1px solid #eee;   border-radius: 5px; text-align: center; font-size: 14px;
+ line-height: 18px; padding: 8px 0px 8px 0px; 
+ color: #777; display: flex;
+}
+.app-control .app-type-select .text{flex-grow: 8; padding: 0px 0px 0px 10px;}
+.app-control .app-type-select .arrow{flex-grow: 2; max-width: 25px; min-width: 25px; text-align: left;}
+.app-control .app-type-select image{ width: 15px; height: 8px;}
+
+
+.app-list-mini{padding: 20px 15px 20px 15px; }
+.app-list-mini .app-item{padding: 20px 10px 10px 10px; border-bottom: 1px solid #eee; display: flex; flex-wrap: wrap;}
+.app-list-mini .app-item .pic{ flex-grow: 2; max-width:60px; min-width: 60px; height:60px; background-size: cover; background-position: center;}
+.app-list-mini .app-item .pic image{ width: 100%;}
+.app-list-mini .app-item .info{ flex: 6; padding: 0px 15px 0px 0px;}
+.app-list-mini .app-item .title{ font-size: 16px; line-height: 22px; padding: 0px 0px 0px 0px;}
+.app-list-mini .app-item .desc{ display: none; font-size: 12px; color: #777; line-height: 18px;}
+.app-list-mini .app-item .state{ display: none; min-width: 100%; max-width: 100%; font-size: 10px; line-height: 18px; color:#999; padding: 5px 0px 0px 0px;}
+.app-list-mini .app-item .state text{ padding: 0px 15px 0px 0px;}
+
+
+.app-list{padding: 20px 10px 20px 10px; }
+.app-list .app-item{padding: 20px 15px 20px 15px; border-bottom: 1px solid #eee;}
+.app-list .app-item .pic{ height:160px;background-size: cover; background-position: center;}
+.app-list .app-item .info{ padding: 10px 0px 10px 0px;}
+.app-list .app-item .title{ font-size: 18px; line-height: 22px; padding: 0px 0px 5px 0px;}
+.app-list .app-item .desc{ font-size: 12px; color: #666; line-height: 18px; font-weight: 300;}
+.app-list .app-item .state{ font-size: 10px; line-height: 18px;font-weight: 300; color:#727777; padding: 5px 5px 5px 5px; background-color: #f6f8f8;}
+.app-list .app-item .state text{ padding: 0px 15px 0px 0px;}
+

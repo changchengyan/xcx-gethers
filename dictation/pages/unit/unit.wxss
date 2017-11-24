@@ -1,0 +1,210 @@
+  /* pages/word/word.wxss */
+@import "../template/template.wxss";
+page{height:100%;}
+view,input{
+  box-sizing: border-box;
+}
+.viewBox{
+min-height: 100%;
+background-color: #f6e5ac;
+}
+.unit-title{
+  margin: 0 40rpx 0 40rpx;
+  padding-top: 60rpx;
+  color: #fff;
+  text-align: center;
+}
+.word-container{
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0 40rpx 0 10rpx;
+}
+.word-container .word-1{
+  display: inline;
+  max-width: 670rpx;
+  padding: 14rpx 35rpx;
+  margin: 30rpx 0 0 30rpx;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  background: #8bd538;
+  word-break: break-all;
+  position: relative;
+}
+.word-container .word-0{
+  display: inline;
+  max-width: 670rpx;
+  padding: 14rpx 35rpx;
+  margin: 30rpx 0 0 30rpx;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  background: #febb2d;
+  word-break: break-all;
+  position: relative;
+}
+.word-container .delete{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%,-50%);
+}
+.word-container .delete .delete-line{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  background-color: #eee;
+  position: relative;
+}
+.word-container .delete .delete-line::before{
+  content: "";
+  width: 2px;
+  height: 20rpx;
+  background-color: #666;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%) rotate(45deg);
+}
+.word-container .delete .delete-line::after{
+  content: "";
+  width: 2px;
+  height: 20rpx;
+  background-color: #666;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%) rotate(-45deg);
+}
+.words-count{
+  height: 150rpx;
+  padding-left: 40rpx;
+  padding-top: 60rpx;
+  font-size: 15px;
+  color: #fff;
+  background: url(http://imglf0.nosdn.127.net/img/TkRpUWhnbGQwcUszZjh0NzRFeVNQdnJrelpQWjNsS1FTMy9WTmVKMDc3T1kzdFZqcFdTVWFnPT0.png?imageView&thumbnail=1680x0&quality=96&stripmeta=0&type=jpg);
+  background-size: 100%;
+}
+.edit-icon{
+  width: 45rpx;
+  height: 45rpx;
+}
+.input-area-show{
+	position:fixed;
+	left:0;
+	bottom:0;
+	width:100%;
+	
+  display: flex;
+  align-items: center;
+  height: 96rpx;
+  margin-top: 7rpx;
+  padding: 10rpx 28rpx;
+  border-top: 1px solid #d6d6d7;
+  background-color: #f5f5f6;
+}
+.input-area-hide{
+  display: none;
+}
+.input-area-show .cancel-icon{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 30rpx;
+}
+.input-area-show .input-text{
+  float: left;
+  width: 485rpx;
+  height: 72rpx;
+  padding: 0 10rpx;
+  margin-right: 30rpx;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  background-color: #fcfcfc;
+  font-weight: 800;
+}
+.input-area-show .send-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 102rpx;
+  height: 72rpx;
+  padding: 0;
+  border-radius: 5px;
+  background: url(http://rayscloud.chubanyun.net/Content/images/Dictation/book/button_bg.png)no-repeat;
+  background-size: contain; 
+  font-size: 15px;
+  color: #fff;
+}
+.input-area-show .form{
+  width: 100%;
+}
+.more-show{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 118rpx;
+  height: 118rpx;
+  border-radius: 50%;
+  box-shadow: 0 2px 32rpx 3px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  position: fixed;
+  right: 50rpx;
+  bottom: 365rpx;
+}
+.more-hide{
+  display: none;
+}
+.block{
+  height: 667rpx;
+}
+.words-del-title{
+  padding: 30rpx;
+  font-size: 15px;
+}
+.words-del-container{
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0 40rpx 0 10rpx;
+}
+.del-word{
+  display: inline;
+  max-width: 670rpx;
+  padding: 14rpx 35rpx;
+  margin: 30rpx 0 0 30rpx;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  word-break: break-all;
+  position: relative;
+  }
+.startButton-show{
+  position: fixed;
+  bottom: 0;
+  left:0;
+  width: 100vw;
+  height:168rpx;
+  box-shadow: 0px -8px 20px rgba(0,0,0,0.08);
+ -webkit-box-shadow: 0px -8px 20px rgba(0,0,0,0.08);
+ z-index: 1;
+ border-top-left-radius: 25px;
+ border-top-right-radius: 25px;
+}
+.startButton-hide{
+  display: none;
+}
+.startButton-show image{
+  width: 100vw;
+}
+.word-block{
+  background: #50e4a9;
+}

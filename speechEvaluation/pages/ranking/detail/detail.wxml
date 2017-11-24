@@ -1,0 +1,81 @@
+<!--pages/ranking/detail/detail.wxml-->
+<view class="bg">
+  <!-- <view style="font-size:0">
+    <image mode="aspectFill" class="image" src="{{info.sentence_pic}}"></image>
+  </view>
+  <view class="image-mask"></view>
+  <view class='flex'>
+    <view class='flex-null'></view>
+    <view class="option">
+      <view class="audio">
+        <image bindtap="playAudio" class="audio-icon" src="{{audioIcon}}"></image>
+        <view class="audio-time">{{audioTime}}</view>
+      </view>
+      <view class="en-text">{{info.sentence}}</view>
+      <view class="clear"></view>
+    </view>
+  </view> -->
+
+  <view class="users">
+    <view class='box'></view>
+    <block wx:for="{{rankings}}">
+      <block wx:if='{{index<3}}'>
+        <view class='{{"box"+index}}'>
+          <view class='ranking'>
+            <image src='{{"/pages/images/ranking"+index+".png"}}'></image>
+          </view>
+          <image class='headimgurl' src="{{item.headimgurl}}"></image>
+          <view class="name">{{item.nickname}}</view>
+          <block wx:if="{{item.score!=null}}">
+            <view bindtap='playRecord' class="audio" data-audio='{{item.record_audio_url}}' data-index='{{index}}'>
+              <view class="score">
+                <image src="{{audioIconList[index]}}"></image>
+                <text>{{item.score}}分</text>
+              </view>
+            </view>
+          </block>
+          <block wx:if="{{item.score==null}}">
+            <view class="score">
+              未评测
+            </view>
+          </block>
+        </view>
+      </block>
+    </block>
+
+    <view class='user-list'>
+      <block wx:for='{{rankings}}'>
+        <block wx:if='{{index>=3}}'>
+          <view class='item'>
+            <view class='index'>{{index+1}}</view>
+            <image class='headimgurl' src="{{item.headimgurl}}"></image>
+            <view class="name">{{item.nickname}}</view>
+            <block wx:if="{{item.score!=null}}">
+              <view bindtap='playRecord' class="next-audio" data-audio='{{item.record_audio_url}}' data-index='{{index}}'>
+                <view class="next-score">
+                  <image src="{{audioIconList[index]}}"></image>
+                  <text>{{item.score}}分</text>
+                </view>
+              </view>
+            </block>
+            <block wx:if="{{item.score==null}}">
+              <view class="next-score">
+                未评测
+              </view>
+            </block>
+          </view>
+        </block>
+      </block>
+    </view>
+
+    <view class='clear'></view>
+  </view>
+  <view class='bottom'>
+    <view class="button" bindtap='gotoDetail'>{{info.is_evaluation?"重新评测":"还没评测？快去PK >>"}}</view>
+    <view class='button'>邀请好友</view>
+    <button open-type="share"></button>
+    <view class='line'></view>
+  </view>
+
+  <audio src="{{info.sentence_mp3_url}}" bindended="audioPlayEnd" id="myAudio"></audio>
+</view>

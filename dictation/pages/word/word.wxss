@@ -1,0 +1,66 @@
+/* word.wxss */
+@import "../template/template.wxss";
+@import "../../components/modal/modal.wxss";
+page {
+  background-color: #f0f0f0;
+}
+
+.list-wrapper {
+  padding-bottom: 30rpx;
+  height: 1200rpx;
+}
+
+.list {
+  width: 670rpx;
+  margin: 0 auto;
+  background-color: #fff;
+  margin-top: 30rpx;
+  border-radius: 10rpx;
+  padding: 30rpx 0 35rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+  vertical-align: middle;
+}
+
+.time {
+  display: flex;
+  justify-content: center;
+}
+
+.num {
+  color: #3896ea;
+  font-size: 35px;
+  font-weight: lighter;
+  font-family: Microsoft YaHei;
+}
+
+.text .text1 {
+  margin-right: 14rpx;
+}
+
+.time_img {
+  margin-right: 8rpx;
+}
+
+.time_img image {
+  width: 28rpx;
+  height: 28rpx;
+}
+
+.right {
+  display: flex;
+  vertical-align: middle;
+  font-size: 18px;
+  padding-top: 6.5%;
+  padding-right: 29rpx;
+  font-family: Microsoft YaHei;
+}
+
+.login {
+  width: 20rpx;
+  height: 30rpx;
+  margin-left: 70rpx;
+  padding-top: 16rpx;
+}
+
+

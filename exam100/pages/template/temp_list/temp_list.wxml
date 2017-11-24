@@ -1,0 +1,202 @@
+<!-- 试题模板：单选 多选 图片 视频 音频 。。。。 -->
+
+<!-- 页面题目模板 -->
+<template name="movie-list">
+		<!--题目文字 -->
+    <!--<view class="header">
+      <text class="xuanz mainColor">[{{itemList.question_type}}]</text>
+      <text>{{itemList.question_title}}</text>
+    </view>-->
+    <!--题目里的图片或视频 -->
+    <!--<view class="poster" wx:if="{{!!itemList.media_type && !!itemList.media_url}}">
+      <image mode="aspectFill" wx:if="{{itemList.media_type == 2}}" src="{{itemList.media_url}}"></image>
+      <video wx:if="{{itemList.media_type == 3}}" src="{{itemList.media_url}}"></video>
+      <view class='audioBox flexR' wx:if="{{itemList.media_type == 4}}" >
+        <view class='audio'>
+          <audio src="{{itemList.media_url}}"></audio>
+          <image src='/pages/images/audioIcon.png'/>
+        </view>
+        <text class='mainColor'>10"</text>        
+      </view>      
+    </view>-->
+    <import src="../temp_common/temp_common.wxml"/>
+    <template is="richText" data="{{videoShow,audioImg,question_type:itemList.question_type,title:itemList.question_title}}" />        
+    <!--选项 -->
+    <template is="optionsHtml" data="{{videoShow,audioImg,itemList}}"/>
+    <!--解析 -->
+    <template wx:if="{{showTip}}"  is="analysis" data="{{videoShow,audioImg,itemList}}"/>		
+</template>
+
+
+<!-- 选项模板 -->
+<template name="optionsHtml">
+  <view class="container">
+  <block wx:for="{{itemList.list_item}}" wx:for-item="options">
+    <!--有视频类型 -->      
+      <view class="optContent optVideo" wx:if="{{options.type==3}}">
+        <block wx:if="{{options.content}}">
+          <view class="optRow flexR">
+            <view class="number {{options.status}}" data-index="{{index}}" bindtap="selectOpt"> {{options.tip}}</view>
+            <text class='text'>{{options.content}}</text>
+          </view>
+          <view class='optRow marginT flexR'>
+            <view class="blank"></view>
+            <video style="{{videoShow?'display:block':'display:none'}}" src='{{options.video_path}}'></video>
+            <view wx:if="{{!videoShow}}" class="videoSeat"></view>
+          </view>
+          
+        </block>
+        <block wx:else>
+          <view class='optRow flexR'>
+            <view class="number {{options.status}}" data-index="{{index}}" bindtap="selectOpt"> {{options.tip}}</view>
+            <video style="{{videoShow?'display:block':'display:none'}}" src='{{options.video_path}}'></video>
+            <view wx:if="{{!videoShow}}" class="videoSeat"></view>
+          </view>  
+        </block>      
+      </view>
+      <!--有图片类型 -->
+      <view class="optContent optImg" wx:if="{{options.type==2}}">
+          <view class="optRow flexR">
+            <view class="number {{options.status}}" data-index="{{index}}" bindtap="selectOpt"> {{options.tip}}</view>
+            <text class='text' wx:if="{{options.content}}">{{options.content}}</text>
+            <image mode="aspectFill" bindtap="preview" data-src="{{options.image_path}}"  src='{{options.image_path}}'></image>
+          </view>       
+      </view>
+      <!--纯文字类型 -->
+      <view class="optContent optText" wx:if="{{options.type==1}}">
+        <view class="optRow flexR">
+          <view class="number {{options.status}}" data-index="{{index}}" bindtap="selectOpt"> {{options.tip}}</view>
+          <text class="text">{{options.content}}</text> 
+        </view>       
+      </view>
+      <!--有音频类型 -->
+      <view class="optContent optAudio" wx:if="{{options.type==4}}">
+        <block wx:if="{{options.content}}">
+          <view class="optRow flexR">
+            <view class="number  {{options.status}}" data-index="{{index}}" bindtap="selectOpt"> {{options.tip}}</view>
+            <text class="text">{{options.content}}</text>
+          </view>
+          <view class='optRow marginT flexR'>
+            <view class="blank"></view>
+            <view class='audioBox flexR'>
+              <view class='audio' bindtap="audioClick" data-type="options-{{index}}">
+                <audio id="audio_{{index}}" bindplay="audioPlay" bindpause="audioPause"  bindtimeupdate="audioTime" src="{{options.sound_path}}"></audio>
+                <image src='{{audioImg[index+1]}}'/>
+              </view>
+              <text class='mainColor'>{{options.sound_timelen}}</text> 
+            </view>
+          </view>
+        </block>
+        <block wx:else>
+        <view class='optRow flexR'>
+            <view class="number {{options.status}}" data-index="{{index}}" bindtap="selectOpt"> {{options.tip}}</view>
+             <view class='audioBox' bindtap="audioClick" data-type="options-{{index}}">
+              <audio src='{{options.sound_path}}'></audio>
+              <image src='{{audioImg[index+1]}}'></image>
+            </view>
+        </view>           
+        </block>  
+      </view>
+  </block>
+  </view>
+</template>
+
+<!-- 解析模板 -->
+<template name="analysis">
+  <view class="analysis">
+    <view class="analysis-header color1">答案解析</view>
+    <view class="analysis-content">
+    	<import src="../temp_common/temp_common.wxml"/>
+        <template is="richText" data="{{audioImg,title:itemList.resolution}}" /> 
+    </view>
+  </view>
+</template>
+<!-- 题目答题卡模板 -->
+<template name="answerCard">
+	<view class="answerCardMask" bindtap="closeCard" style="{{showCard=='up'?'display:block;':'display:none'}}"></view>
+  <view class="cardBox {{showCard}}">
+    <view class='cardTop'></view>
+    <view class="cardTitle flexR">
+      <view class='titleText'>题卡</view>
+      <view class='cardType flexR'>
+        <view class="item item1 flexR">
+          <view class='icon'></view>
+          <view>为已做题目</view>
+        </view>
+        <view class="item item2 flexR">
+          <view class='icon'></view>
+          <view>为未做题目</view>
+        </view>
+        <view class="item item3 flexR">
+          <view class='icon'></view>
+          <view>为您当前所做题目</view>
+        </view>
+      </view>
+      <view class='closeCard' bindtap="closeCard">
+        <image src='/pages/images/closeIcon2.png'></image>
+      </view>
+    </view>
+    <view class="cardNumber flexR">
+        <view wx:for="{{answerCard}}" bindtap="toQuestion" data-index="{{index}}" data-id="{{item.answer_detail.questions_id}}" class="{{index==currentIndex?'doing':item.answerStatus}}">{{item.answer_detail.number}}</view>
+    </view>
+  </view>
+</template>
+<!-- 错题解析答题卡模板 只有错题-->
+<template name="answerCardError">
+	<view class="answerCardMask" bindtap="closeCard"  style="{{showCard=='up'?'display:block;':'display:none'}}"></view>
+  <view class="cardBox {{showCard}}">
+    <view class='cardTop'></view>
+    <view class="cardTitle flexR">
+      <view class='titleText'>题卡</view>
+      <view class='cardType flexR'>
+        <view class="item item4 flexR">
+          <view class='icon'></view>
+          <view>为错误题目</view>
+        </view>
+        <view class="item item2 flexR">
+          <view class='icon'></view>
+          <view>为未做题目</view>
+        </view>
+      </view>
+      <view class='closeCard' bindtap="closeCard">
+        <image src='/pages/images/closeIcon2.png'></image>
+      </view>
+    </view>
+    <view class="cardNumber flexR">
+      <block wx:for="{{answerCard}}">
+        <view  bindtap="toQuestion" data-index="{{index}}"  data-id="{{item.answer_detail.questions_id}}"  wx:if="{{item.answerStatus=='error'||item.answerStatus=='none'}}" class="{{item.answerStatus}}">{{item.answer_detail.number}}</view>
+      </block>        
+    </view>
+  </view>
+</template>
+<!-- 全题解析答题卡模板 -->
+<template name="answerCardAll">
+	<view class="answerCardMask" bindtap="closeCard"  style="{{showCard=='up'?'display:block;':'display:none'}}"></view>
+  <view class="cardBox {{showCard}}">
+    <view class='cardTop'></view>
+    <view class="cardTitle flexR">
+      <view class='titleText'>题卡</view>
+      <view class='cardType flexR'>
+        <view class="item item5 flexR">
+          <view class='icon'></view>
+          <view>为正确题目</view>
+        </view>
+        <view class="item item4 flexR">
+          <view class='icon'></view>
+          <view>为错误题目</view>
+        </view>
+        <view class="item item3 flexR">
+          <view class='icon'></view>
+          <view>为未做题目</view>
+        </view>
+      </view>
+      <view class='closeCard' bindtap="closeCard">
+        <image src='/pages/images/closeIcon2.png'></image>
+      </view>
+    </view>
+    <view class="cardNumber flexR">
+        <view  bindtap="toQuestion" data-index="{{index}}"  data-id="{{item.answer_detail.questions_id}}"  wx:for="{{answerCard}}" class="{{item.answerStatus}}">{{item.answer_detail.number}}</view>
+    </view>
+  </view>
+</template>
+

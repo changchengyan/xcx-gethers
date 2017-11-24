@@ -1,0 +1,101 @@
+<view class="play-container flex-column">
+  <!--播放进度-->
+  <view class="showInfo">
+  <!--最好成绩-->
+    <view class="history-start">
+        <import src="../template/template.wxml" />      
+        <template is="starInline" data="{{star,starArr_empty,starArr_oneStar,starArr_twoStar,starArr_threeStar}}"></template>    
+    </view>
+    <view class="progress flex-column">
+      <view class="line">
+        <view class="done" style="width:{{progress}}%;" ></view> 
+        <!-- <view class="dot" style="left:{{progress}}%;"></view> -->
+      </view>
+    </view>
+    <view class="showWordCount">{{currentIndex}}/{{wordCount}}</view>
+  </view>
+
+  <!--最好成绩!-->
+  <view class="info flex-column clearfix">
+    <!--播放信息-->
+    <scroll-view scroll-y="true" class="container">
+      <view class="current-wrap ">
+      <block wx:if="{{showWord&&currentWord.display_word.length<=88}}">
+        <view class="current-word-onlyLine" >{{currentWord.display_word}}
+         <view>{{currentWord.dictation_word}}</view>
+        </view>
+        
+      </block>
+      <block wx:if="{{showWord&&currentWord.display_word.length>88}}">
+        <view class="current-word-moreLine" >{{currentWord.display_word}}</view>
+      </block>
+      <block wx:if="{{!showWord}}">
+        <view class="current-time">
+          <text class="time-label">已用时间：</text>
+          <text>{{playTimeDes}}</text>
+        </view>
+      </block>
+      </view>      
+    </scroll-view>
+  
+  </view>
+    <!--播放设置-->
+    <view class="setting-bar">
+      <view class="repeat-time" bindtap="changeRepeatTime">
+        <block wx:if="{{repeatOnce}}">
+          <image class="icon" src="../../images/play/one_repeat.png" style="height:65rpx;width:180rpx;"></image>
+          <!-- <text>读一次</text> -->
+        </block>
+        <block wx:else>
+          <image class="icon" src="../../images/play/two_repeat.png" style="height:65rpx;width:180rpx;"></image>
+          <!-- <text>读二次</text> -->
+        </block>
+      </view>
+      <view class="gap" bindtap="changePlayStep">
+      <block wx:if="{{playSep==3}}">
+          <image class="icon" src="/images/play/3_time.png" style="height:65rpx;width:180rpx;"></image>
+      </block>
+      <block wx:elif="{{playSep==5}}">
+          <image class="icon" src="/images/play/5_time.png" style="height:65rpx;width:180rpx;"></image>
+      </block>
+      <block wx:else>
+          <image class="icon" src="/images/play/7_time.png" style="height:65rpx;width:180rpx;"></image>
+      </block>
+        <!-- <view class="icon">{{playSep}}s</view> -->
+        <!-- <text>间隔</text> -->
+      </view>
+      <view class="word-visible" bindtap="changeShowWord">
+        <block wx:if="{{showWord}}">
+          <image class="icon" src="/images/play/show_word.png" style="height:65rpx;width:180rpx;"></image>
+          <!-- <text>显示</text> -->
+        </block>
+        <block wx:else>
+          <image class="icon" src="/images/play/hide_word.png" style="height:65rpx;width:180rpx;"></image>
+          <!-- <text>隐藏</text> -->
+        </block>
+      </view>
+    </view>
+  <!--播放控制-->
+  <view class="controller">
+    <view class="side left">
+      <!--<view class="sort" bindtap="changePlayType">
+        <image src="/images/play/sort.png" style="width:51rpx;height:46rpx" wx:if="{{playSequence}}"></image>
+        <image src="/images/play/suiji.png" style="width:51rpx;height:43rpx" wx:if="{{!playSequence}}"></image>
+      </view>-->
+      <image class="prev" src="/images/play/Prev_icon.png" style="height:106rpx;width:103rpx;" bindtap="seekPlayProgress" data-action="prev"></image>
+    </view>
+    <view class="play" bindtap="togglePlay">
+      <image style="height:100%;width:100%" src="/images/play/{{playing?'pause_two':'play_two'}}.png"></image>
+    </view>
+    <view class="side right">
+      <image class="next" src="/images/play/next_icon.png" style="height:106rpx;width:103rpx;" bindtap="seekPlayProgress" data-action="next"></image>
+    </view>
+  </view>
+</view>
+<!--toast-->
+<view class="toast" wx:if="{{showToast}}">
+  <text>{{toastContent}}</text>
+</view>
+<!--loading  -->
+<import src="../template/template.wxml" />
+<template is="pageLoading" data="{{isLoading}}"></template>

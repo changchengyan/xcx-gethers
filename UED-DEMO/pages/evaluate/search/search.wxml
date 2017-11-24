@@ -1,0 +1,60 @@
+<!--pages/evaluate/search/search.wxml-->
+<view>
+  <view class='grade-list'>
+    <view class='grade-item'><view>一年级</view></view>
+    <view class='grade-item'><view class='over'>二年级</view></view>
+    <view class='grade-item'><view>三年级</view></view>
+    <view class='grade-item'><view>四年级</view></view>
+    <view class='grade-item'><view>五年级</view></view>
+    <view class='grade-item'><view>六年级</view></view>
+  </view>
+
+</view>
+<view class='book-list'>
+    <view class='list-title'>二年级</view>
+    <view class='list-canvas'>
+      <view class='item' bindtap='toBook'>
+        <view class='pic'>
+          <image src='http://f3.5rs.me/upload/20170804/2017_08_04_153528492_c.jpg' mode='widthFix'></image>
+        </view>
+        <view class='text'>
+          标准实验教科书 英语（新起点）学生用书 二年级上册
+        </view>
+      </view>
+      <view class='item' bindtap='toBook'>
+        <view class='pic'>
+          <image src='http://f3.5rs.me/upload/20170804/2017_08_04_153119512_c.jpg' mode='widthFix'></image>
+        </view>
+        <view class='text'>
+          标准实验教科书 英语 （新起点）学生用书 二年级下册
+        </view>
+      </view>
+    </view>
+     <view class='list-title'>三年级</view>
+    <view class='list-canvas'>
+      <view class='item' bindtap='toBook'>
+        <view class='pic'>
+          <image src='http://f3.5rs.me/upload/20170804/2017_08_04_153528492_c.jpg' mode='widthFix'></image>
+        </view>
+        <view class='text'>
+          标准实验教科书 英语（新起点）学生用书 二年级上册
+        </view>
+      </view>
+      <view class='item' bindtap='toBook'>
+        <view class='pic'>
+          <image src='http://f3.5rs.me/upload/20170804/2017_08_04_153119512_c.jpg' mode='widthFix'></image>
+        </view>
+        <view class='text'>
+          标准实验教科书 英语 （新起点）学生用书 二年级下册
+        </view>
+      </view>
+      <view class='item' bindtap='toBook'>
+        <view class='pic'>
+          <image src='http://f3.5rs.me/upload/20170804/2017_08_04_153119512_c.jpg' mode='widthFix'></image>
+        </view>
+        <view class='text'>
+          标准实验教科书 英语 （新起点）学生用书 二年级下册
+        </view>
+      </view>
+    </view>
+</view>

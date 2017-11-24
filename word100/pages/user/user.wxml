@@ -1,0 +1,50 @@
+<view class="user-wrap">
+
+  <view class="user-photo">
+    <view class="user-info">
+      <image class="circlePhoto" src="{{count.headimgurl}}" mode="widthFix"></image>
+      <text class="user-name">{{count.userName}}</text>
+    </view>
+  </view>
+  <view class="data-list">
+    <view class="item">
+      <view class="num"> <text class="">{{count.study_word_count}}</text> 词 </view>
+      <text>已学习</text>
+    </view>
+    <view class="item">
+      <view class="num">  <text>{{count.study_days}}</text> 天 </view>
+      <text>坚持背词</text>
+    </view>
+    <view class="item">
+      <view class="num">  <text>{{count.pk_count}} </text> 次</view>
+      <text>PK次数</text>
+    </view>
+  </view>
+  <view class="NavTo-learnTools" bindtap="toPage" data-page="studyTools">
+    <view class="str">学习工具</view>
+    <view class="symbol">
+      <image src="/pages/images/icon_tools_arrow.png" mode="widthFix"></image>
+    </view>
+  </view>
+  <view class="NavTo-learnTools" >
+  <button open-type="share" ></button>
+    <view class="str">邀请好友</view>
+    <view class="symbol">
+      <image src="/pages/images/icon_tools_arrow.png" mode="widthFix"></image>
+    </view>
+  </view>
+  <view class="NavTo-learnTools" >
+    <button open-type="contact" class="contact"></button>
+    <view class="str">意见反馈</view>
+    <view class="symbol">
+      <image src="/pages/images/icon_tools_arrow.png" mode="widthFix"></image>
+    </view>
+  </view>
+  <view class="NavTo-learnTools" bindtap="toPage" data-page="us">
+    <view class="str">关于我们</view>
+    <view class="symbol">
+      <image src="/pages/images/icon_tools_arrow.png" mode="widthFix"></image>
+    </view>
+  </view>
+</view>
+

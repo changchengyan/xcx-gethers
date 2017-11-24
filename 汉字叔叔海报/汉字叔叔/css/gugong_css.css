@@ -1,0 +1,210 @@
+html, body, p {
+    margin: 0;
+    padding: 0
+}
+
+.container {
+    width: 750px;
+    height: 1000px;
+    background: url(http://image.chubanyun.net/images/WordUncle/poster/img/gugong.png) no-repeat center 400px;
+}
+
+.top {
+    width: 488px;
+    margin: 0 auto;
+    padding-top: 10px;
+    height: 47px;
+
+}
+
+.top .xin {
+    text-align: center;
+    height: 47px;
+    line-height: 47px;
+
+}
+
+.top .xin img {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.top .xin .txt {
+    font-size: 24px;
+    color: #333;
+    font-family: "Microsoft YaHei UI";
+    position: relative;
+}
+
+.top .xin i {
+    width: 32px;
+    height: 33px;
+    position: absolute;
+    left: -40px;
+    top: 0;
+    background: url(http://image.chubanyun.net/images/WordUncle/poster/img/xin.png) no-repeat 0 0;
+}
+
+.top .hanzi {
+    width: 160px;
+    height: 47px;
+    font-size: 0;
+    float: right;
+}
+
+.cen {
+    overflow: hidden;
+    zoom: 1;
+    width: 580px;
+    margin: 0 auto;
+    height: 625px;
+    padding-top: 62px;
+}
+
+.cen .des {
+    writing-mode: tb-rl;
+    line-height: 45px;
+    min-width: 218px;
+    max-width: 218px;
+    height: 389px;
+    position: relative;
+
+}
+
+.cen .des .detail {
+    font-size: 30px;
+    color: #333;
+    overflow: hidden;
+}
+
+.cen .des .last {
+    text-align: right;
+}
+
+.cen .pic {
+    text-align: center;
+    color: #333;
+    font-size: 30px;
+    position: relative;
+}
+
+.cen .pic .text {
+    margin-top: -50px;
+}
+
+.cen .pic i {
+    position: absolute;
+    right: 20px;
+    top: 135px;
+    width: 21px;
+    height: 58px;
+    background: url(http://image.chubanyun.net/images/WordUncle/poster/img/jiu.png) no-repeat 0 0;
+}
+
+.cen img {
+    width: 300px;
+    height: 300px;
+    margin-top: -30px;
+}
+
+.end p {
+    font-size: 24px;
+    font-weight: lighter;
+    padding: 0 65px 0 65px;
+    font-family: "Microsoft YaHei UI";
+}
+
+.end .pig {
+    width: 623px;
+    margin: 0 auto;
+    height: 224px;
+    border: 1px solid #898989;
+    position: relative;
+    border-radius: 20px;
+}
+
+.end .pig .user {
+    position: absolute;
+    left: 128px;
+    top: -32px;
+    width: 383px;
+    height: 63px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    font-family: "Microsoft YaHei UI";
+    overflow: hidden;
+    white-space: nowrap;
+
+}
+
+.end .pig .user .title {
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: middle;
+    max-width: 82%;
+}
+
+.end .pig i {
+    position: absolute;
+    left: 114px;
+    top: -2px;
+    width: 404px;
+    height: 3px;
+    background: #f2f2f2;
+
+}
+
+.end .pig .word {
+    overflow: hidden;
+    padding: 20px 25px 27px 25px;
+
+}
+
+.end .pig .word p {
+    width: 400px;
+    margin: 0;
+    padding: 0;
+    font-size: 26px;
+    color: #444;
+    line-height: 40px;
+    margin-top: 18px;
+
+}
+
+.end .pig .word p span {
+    font-weight: bold;
+    font-size: 30px;
+    color: #a01818;
+    line-height: 50px;
+}
+
+.end .pig .word .logo {
+    float: right;
+    width: 160px;
+    border: 1px solid #4f3630;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+/*div{*/
+/*clear: both;*/
+/*}*/
+.touxiang {
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    border-radius: 50%;
+    font-size: 0;
+    vertical-align: middle;
+}
+

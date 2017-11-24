@@ -1,0 +1,188 @@
+/* details.wxss */
+
+/* @import "../../template/template.wxss"; */
+
+/* @import "../../../components/modal/modal.wxss"; */
+
+/* .top {
+  display: flex;
+  justify-content: space-between;
+  background-color: #eee;
+  padding: 20rpx 28rpx;
+  margin-bottom: 60rpx;
+  height: 38rpx;
+  line-height: 38rpx
+} */
+
+page {
+  background-color: #e3fddb;
+}
+
+/* .byebye {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 4%
+} */
+
+.middle {
+  width: 670rpx;
+  /* margin-left: 20rpx; */
+  padding-bottom: 20rpx;
+  margin: 0 auto;
+  /* padding-top: 60rpx; */
+}
+
+.find {
+  width: 60%;
+  color: #676767;
+  font-size: 32rpx;
+  font-weight: 500;
+  font-family: Microsoft YaHei;
+  text-align: center;
+}
+
+.words {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 175rpx;
+}
+
+.wo {
+  max-width: 690rpx;
+  padding: 20rpx 40rpx;
+  margin: 30rpx 0 0 30rpx;
+  border-radius: 45rpx;
+  color: #fff;
+  font-weight: bold;
+  background: #06c1ae;
+  word-break: break-all;
+}
+
+.realwords {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 150rpx;
+}
+
+.cihui {
+  box-sizing: border-box;
+  width: 220rpx;
+  height: 87rpx;
+  padding-top: 44rpx;
+  background: url(http://image.chubanyun.net/images/Dictation/book/cloud.png)no-repeat;
+  background-size: 100%;
+  text-align: center;
+  font-size: 15px;
+  color: #74b7d7;
+}
+
+.err {
+  position: fixed;
+  width: calc(100% - 80rpx);
+  bottom: 178rpx;
+  padding: 30rpx 20rpx;
+  background-color: #fff;
+  border-radius: 30rpx;
+  z-index: 999;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+
+.errBox {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.pao {
+  width: 0;
+  height: 0;
+  border-top: 25rpx solid #fff;
+  border-left: 15rpx solid transparent;
+  border-right: 15rpx solid transparent;
+  position: absolute;
+  left: 69rpx;
+  bottom: -19rpx;
+  z-index: 999;
+}
+
+.errwords {
+  width: 100%;
+  height: 340rpx;
+  overflow: scroll;
+}
+
+.errwords_in {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.errwo {
+  max-width: 670rpx;
+  padding: 20rpx 40rpx;
+  margin: 30rpx 0 0 30rpx;
+  border-radius: 45rpx;
+  color: #fff;
+  font-weight: bold;
+  background: #ff6a5e;
+}
+
+.em {
+  text-align: center;
+  font-size: 32rpx;
+  color: #676767;
+  width: 100%;
+  font-weight: bold;
+}
+
+.startButton-show {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 168rpx;
+  /* box-shadow: 0px -8px 20px rgba(0, 0, 0, 0.08);
+  -webkit-box-shadow: 0px -8px 20px rgba(0, 0, 0, 0.08); */
+  z-index: 1;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e3fddb;
+}
+
+.startButton-show image {
+  width: 100%;
+  height: 100rpx
+}
+
+.startButton-hide {
+  display: none;
+}
+
+.startButton-show .logo {
+  width: 100rpx;
+  position: absolute;
+  top: 20%;
+  left: 7%;
+}
+
+.startButton-show .star-dictation {
+  width: 380rpx;
+}
+
+.startButton-show .star-dictation:active {
+  box-shadow: 0px 8px 20px rgba(6, 193, 174, 0.5);
+  border-radius: 50rpx;
+}

@@ -1,0 +1,17 @@
+/* pages/user/setting/about/about.wxss */
+.text-body
+{
+    padding: 0 20px 20rpx; font-size:14px; line-height: 24px; color: #333; 
+}
+.text-body view {
+  width: 100%;
+  text-align: left;
+  text-indent: 20rpx;
+}
+.text-body .p {
+  margin-top: 20rpx;
+}
+
+.text-body .word {
+  font-weight: bold;
+}

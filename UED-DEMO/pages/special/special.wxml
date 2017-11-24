@@ -1,0 +1,305 @@
+<!--pages/special/special.wxml-->
+
+<view class="pub-navigation">
+    <view class="home">H</view>
+    <view class="user">U</view>
+    <view class="top">↥</view>
+</view>
+
+<view class="pub-app-head">
+
+<view class="pub-app-icon"><image src="https://file.5rs.me/group1/M00/0D/8F/ChvrLlkSxquAQcxBAAJwWxtm-O4856_0.jpg" mode="aspectFill" ></image></view>
+<view class="pub-app-name">
+      <view class="text">☆ 专题 / ☼ 3091次 </view>
+</view>
+<view class="pub-app-title">武汉尖锋教育"名师一对一"_习惯+成绩双提升（纯净版）</view>
+
+<view class="pub-app-desc">
+  <view> <text>15年专业办学,拥有丰富的教学经验！\n针对不同的学生提供不同辅导方案,直击考试重难点,免费学科分析,制定科学提分计划,提分更有保障</text>
+  </view>
+</view>
+</view>
+
+
+<!-- 
+<view class="tab-menu-area">
+<scroll-view scroll-x class="scroll-view">
+  <view class="tab-menu-canvas" >
+    <view class="item-over">奥赛指导</view>
+    <view class="item">英语专题</view>
+    <view class="item">国学教育</view>
+    <view class="item">考前培训</view>
+    <view class="item">艺术考试</view>
+    <view class="item">幼小衔接</view>
+    <view class="item">小学培优</view>
+    </view>
+    </scroll-view>
+</view>
+-->
+
+
+
+<view class="app-list-title"><view class="text">现代纸书</view></view>
+<view class="app-list-area">
+    <view class="app-list-canvas">
+        <view class="app-item">
+             
+              <view class="info">
+                  <view class="title">出版社、渠道、编辑、作者携手合作共建rays蓝海生态</view>
+                  <view class="more">☼ 1912  ⊚  <text>2017-08-01</text></view>
+              </view>
+        </view>
+        <view class="app-item">
+              <view class="info">
+                  <view class="title">打造具有交互功能的现代纸书，了解读者，实现图书的持续盈利</view>
+                  <view class="more">☼ 1263  ⊚  <text>2017-08-01</text></view>
+              </view>
+              <view class="pic"><image src="http://www.dcrays.cn/baiduEditor/net/upload/2017-06-16-417d68a435-89ac-4b11-9aba-e59f7c830ab2.jpg" mode="widthFix"></image></view>
+              
+        </view>
+        <view class="app-item">
+              <view class="info">
+                  <view class="title">以读者为中心，以图书为媒介，连接读者和编辑，形成适合不同场景下用户级服务产品</view>
+                  <view class="more">☼ 1263  ⊚  <text>2017-08-01</text></view>
+              </view>
+              <view class="pic"><image src="http://www.dcrays.cn/baiduEditor/net/upload/2017-06-16-50bdf01720-3d31-4010-aa2d-99b6dd73b4bf.jpg" mode="widthFix"></image></view>
+              
+        </view>
+        <view class="app-item">
+              <view class="info">
+                  <view class="title">出版行业的运营专家，帮助您设计运营方案、指导运营流程，快速进入出版业互联网+</view>
+                  <view class="more">☼ 1263  ⊚  <text>2017-08-01</text></view>
+              </view>
+        </view>
+        <view class="app-item">
+              <view class="info">
+                  <view class="title">自主技术研发，让传统出版与数字化出版无缝融合，在行业解决方案的基础上为企业量身定制互联网+</view>
+                  <view class="more">☼ 1263  ⊚  <text>2017-08-01</text></view>
+              </view>
+              <view class="pic"><image src="http://www.dcrays.cn/baiduEditor/net/upload/2017-07-20-59b2afd539-b6e4-4db9-8e1f-fbb3dfa3e0e2.jpg" mode="widthFix"></image></view>
+              
+        </view>
+        <view class="app-item">
+              <view class="info">
+                  <view class="title">“出版融合编辑创新研修班”登录长春 “现代纸书”再成焦点</view>
+                  <view class="more">☼ 1263  ⊚  <text>2017-08-01</text></view>
+              </view>
+              <view class="pic"><image src="http://www.dcrays.cn/baiduEditor/net/upload/2017-06-16-57bcdf2238-9ce7-4e35-a645-b6c55b65082e.jpg" mode="widthFix"></image></view>
+              
+        </view>
+        <view class="app-item">
+              <view class="info">
+                  <view class="title">数传集团走入东北 与吉林省新闻出版广电局探索深度合作进行时</view>
+                  <view class="more">☼ 1263  ⊚  <text>2017-08-01</text></view>
+              </view>
+        </view>
+        <view class="app-item">
+              <view class="info">
+                  <view class="title">数传集团走入东北 与吉林省新闻出版广电局探索深度合作进行时</view>
+                  <view class="more">☼ 1263  ⊚  <text>2017-08-01</text></view>
+              </view>
+        </view>
+        <view class="app-item">
+               <view class="info">
+                  <view class="title">中诚信董事长毛振华访数传集团 为进一步合作打下基础</view>
+                  <view class="more">☼ 1263  ⊚  <text>2017-08-01</text></view>
+              </view>
+              <view class="pic"><image src="http://www.dcrays.cn/baiduEditor/net/upload/2017-06-16-42d954c516-c0b1-42e7-8b01-b01feb6c4d04.jpg" mode="widthFix"></image></view>
+             
+        </view>
+        
+    </view>
+</view>
+
+
+
+<view class="app-list-title"><view class="text">出版云</view></view>
+<view class="app-list-area">
+    <view class="app-list-canvas">
+        <view class="app-item">
+             
+              <view class="info">
+                  <view class="title">【大赛】首届出版融合技术·编辑创新大赛</view>
+                  <view class="more">☼☼ 1912  ⊚  <text>2017-08-01</text></view>
+              </view>
+        </view>
+        <view class="app-item">
+              <view class="info">
+                  <view class="title">RAYS做一本具有交互功能的现代纸书</view>
+                  <view class="more">☼ 1263  ⊚  <text>2017-08-01</text></view>
+              </view>
+              <view class="pic"><image src="http://www.dcrays.cn/baiduEditor/net/upload/2017-06-16-2394db2b79-ad67-488e-942d-de8a4b023f57.jpg" mode="widthFix"></image></view>
+              
+        </view>
+        <view class="app-item">
+              <view class="info">
+                  <view class="title">DCG 专注新闻出版行业大数据服务</view>
+                  <view class="more">☼ 1263  ⊚  <text>2017-08-01</text></view>
+              </view>
+              <view class="pic"><image src="http://www.dcrays.cn/images/dcRays/newsImg/img4.jpg" mode="widthFix"></image></view>
+              
+        </view>
+        <view class="app-item">
+              <view class="info">
+                  <view class="title">《出版商务周报》：1.4亿线上增收：传统出版领域的知识付费掘金如何做？</view>
+                  <view class="more">☼ 1263  ⊚  <text>2017-08-01</text></view>
+              </view>
+        </view>
+        <view class="app-item">
+              <view class="info">
+                  <view class="title">《中国新闻出版广电报》：“现代纸书”盈利模式啥样？</view>
+                  <view class="more">☼ 1263  ⊚  <text>2017-08-01</text></view>
+              </view>
+              <view class="pic"><image src="http://www.dcrays.cn/images/dcRays/newsImg/img8.jpg" mode="widthFix"></image></view>
+              
+        </view>
+        <view class="app-item">
+              <view class="info">
+                  <view class="title">“出版融合编辑创新研修班”登录长春 “现代纸书”再成焦点</view>
+                  <view class="more">☼ 1263  ⊚  <text>2017-08-01</text></view>
+              </view>
+              <view class="pic"><image src="http://www.dcrays.cn/images/dcRays/newsImg/img1.jpg" mode="widthFix"></image></view>
+              
+        </view>
+        <view class="app-item">
+              <view class="info">
+                  <view class="title">数传集团走入东北 与吉林省新闻出版广电局探索深度合作进行时</view>
+                  <view class="more">☼ 1263  ⊚  <text>2017-08-01</text></view>
+              </view>
+        </view>
+        <view class="app-item">
+              <view class="info">
+                  <view class="title">数传集团走入东北 与吉林省新闻出版广电局探索深度合作进行时</view>
+                  <view class="more">☼ 1263  ⊚  <text>2017-08-01</text></view>
+              </view>
+        </view>
+        <view class="app-item">
+               <view class="info">
+                  <view class="title">中诚信董事长毛振华访数传集团 为进一步合作打下基础</view>
+                  <view class="more">☼ 1263  ⊚  <text>2017-08-01</text></view>
+              </view>
+              <view class="pic"><image src="http://www.dcrays.cn/baiduEditor/net/upload/2017-06-17-15bb465c83-25d1-4ebb-8550-6c7eb596ff08.jpg" mode="widthFix"></image></view>
+             
+        </view>
+        
+    </view>
+</view>
+
+
+<view class="app-list-title"> <view class="text">出版融合</view></view>
+<view class="app-list-area">
+    <view class="app-list-canvas">
+        <view class="app-item">
+             
+              <view class="info">
+                  <view class="title">【大赛】首届出版融合技术·编辑创新大赛</view>
+                  <view class="more">☼ 1912  ⊚  <text>2017-08-01</text></view>
+              </view>
+        </view>
+        <view class="app-item">
+              <view class="info">
+                  <view class="title">RAYS做一本具有交互功能的现代纸书</view>
+                  <view class="more">☼ 1263  ⊚  <text>2017-08-01</text></view>
+              </view>
+              <view class="pic"><image src="http://www.dcrays.cn/baiduEditor/net/upload/2017-06-16-515d0e01ca-1c1a-48bc-91f2-8dc53db12ebe.jpg" mode="widthFix"></image></view>
+              
+        </view>
+
+        <view class="app-item">
+              <view class="info">
+                  <view class="title">《出版商务周报》：1.4亿线上增收：传统出版领域的知识付费掘金如何做？</view>
+                  <view class="more">☼ 1263  ⊚  <text>2017-08-01</text></view>
+              </view>
+        </view>
+        <view class="app-item">
+              <view class="info">
+                  <view class="title">《中国新闻出版广电报》：“现代纸书”盈利模式啥样？</view>
+                  <view class="more">☼ 1263  ⊚  <text>2017-08-01</text></view>
+              </view>
+              <view class="pic"><image src="http://www.dcrays.cn/images/dcRays/newsImg/img1.jpg" mode="widthFix"></image></view>
+              
+        </view>
+        <view class="app-item">
+              <view class="info">
+                  <view class="title">“出版融合编辑创新研修班”登录长春 “现代纸书”再成焦点</view>
+                  <view class="more">☼ 1263  ⊚  <text>2017-08-01</text></view>
+              </view>
+              <view class="pic"><image src="http://www.dcrays.cn/images/dcRays/newsImg/img2.jpg" mode="widthFix"></image></view>
+              
+        </view>
+    </view>
+</view>
+
+
+
+<view class="seed-list-title">
+<view class="text">推荐作品</view>
+</view>
+
+<view class="seed-list-area">
+    <view class="seed-item">
+        <view class="item">
+            <view class="bg">
+            <view class="seed">· 图书 ·</view>
+            <view class="img"><image src="http://f3.5rs.me/upload/20161011/2016_10_11_114315649_b.jpg" mode="widthFix"></image></view>
+            <view class="text">幕味：重访影史与策展实践</view>
+            <view class="desc">在这个逐渐被手机统治的今天，什么都可以忍，唯独手机没电那可真忍不了。随着手机在硬件配置上越来越出色，其中最重要的还是续航时间长和充电速度的特点最受用。因此在价格不超过2千的手机市场下，充电速度快的加长续航特点让这些手机成为大家喜欢的原因。</view>
+            <view class="operation">
+                    <view class="tosales">查看详情</view>
+            </view>
+            </view>
+        </view>
+    </view>
+    <view class="seed-item">
+        <view class="item">
+            <view class="bg">
+            <view class="seed">· 视频 ·</view>
+            <view class="img"><image src="http://f3.5rs.me/upload/20160923/2016_09_23_153734364_b.png" mode="widthFix"></image></view>
+            <view class="text">视频-不要相信陌生人 </view>
+            <view class="desc">纯美动人的模样，令人久久难忘</view>
+            <view class="operation">
+                    <view class="tosales">开始播放</view>
+            </view>
+            </view>
+        </view>
+    </view>
+    <view class="seed-item">
+        <view class="item">
+            <view class="bg">
+            <view class="seed">· 报名 ·</view>
+            <view class="img"><image src="http://f3.5rs.me/upload/20160924/2016_09_24_210150914_b.jpg" mode="widthFix"></image></view>
+            <view class="text">六一儿童节报名</view>
+            <view class="desc">白色象征着纯洁与高贵，当白色被运用到连衣裙上，显得简洁干练，纯粹又敏感</view>
+            <view class="operation">
+                    <view class="tosales">进入报名</view>
+            </view>
+            </view>
+        </view>
+    </view>
+    <view class="seed-item">
+        <view class="item">
+            <view class="bg">
+            <view class="seed">· 音频 ·</view>
+            <view class="img"><image src="http://f3.5rs.me/upload/20161014/2016_10_14_171306920_b.jpg" mode="widthFix"></image></view>
+            <view class="text">CET-4听力</view>
+            <view class="desc">因此在价格不超过2千的手机市场下，充电速度快的加长续航特点让这些手机成为大家喜欢的原因</view>
+            <view class="operation">
+                    <view class="tosales">开始播放</view>
+            </view>
+            </view>
+        </view>
+    </view>
+    <view class="seed-item">
+        <view class="item">
+            <view class="bg">
+            <view class="seed">· 问答 ·</view>
+            <view class="img"><image src="http://f3.5rs.me/upload/20161111/2016_11_11_102646347_b.jpg" mode="widthFix"></image></view>
+            <view class="text">首师大附小王老师少儿英语在线问答</view>
+            <view class="desc">潮流街拍，黑色T恤带你变酷变帅，不可错过哦！</view>
+            <view class="operation">
+                    <view class="tosales">进入提问</view>
+            </view>
+            </view>
+        </view>
+    </view>
+</view>

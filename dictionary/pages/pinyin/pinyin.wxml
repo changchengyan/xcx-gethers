@@ -1,0 +1,12 @@
+<view class="wrap">
+  <scroll-view scroll-y class='l-wrap'>
+    <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+      <view id="{{item.id}}" class="character {{item.open?'character-bg':''}}" bindtap='tapToExp'>{{item.id}}</view>
+    </block>
+  </scroll-view>
+  <view class='r-wrap'>
+    <block wx:for-items='{{examples}}' wx:for-item="example" wx:key="*item">
+      <navigator class="example" hover-class="example-bg" url='../pinyin/tune/tune?pinyin={{example}}'>{{example}}</navigator>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,172 @@
+/* pages/user/user */
+@import "/pages/template/temp_common/temp_common.wxss";
+page {
+  box-sizing: border-box;
+}
+
+.user-wrap {
+  font-size: 32rpx;
+  color: #333;
+}
+
+.user-photo {
+  height: 480rpx;
+  width: 100%;
+  background: url(http://image.chubanyun.net/images/Exam100/user_bg.png) no-repeat bottom;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 220rpx;
+  height: 250rpx;
+  position: absolute;
+  right: 25rpx;
+  bottom: -65rpx
+}
+
+.my-img {
+  width: 172rpx;
+  height: 172rpx;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-photo .circlePhoto {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  border: 8rpx solid #fff;
+}
+
+.user-name {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  font-size: 26rpx;
+  color: #999;
+}
+.toolBox{
+	margin-top:50rpx;
+}
+.data-list {
+  padding: 20rpx 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #f3f3f3;
+}
+
+.data-list .item {
+  flex: 33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid #eee;
+  font-size: 26rpx;
+  color: #666;
+  height: 130rpx;
+  overflow: hidden;
+}
+
+.data-list .num {
+  font-size: 24rpx;
+  color: #319bd7;
+  margin-bottom: 15rpx;
+}
+
+.data-list .num text {
+  font-size: 38rpx;
+}
+
+.bookNum-total {
+  text-align: center;
+  line-height: 100rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.NavTo-learnTools {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  position: relative;
+  overflow: hidden;
+  padding: 0 42rpx;
+}
+
+.NavTo-learnTools button {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  opacity: 0;
+}
+
+.NavTo-learnTools view {
+  line-height: 100rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.symbol  image {
+  width: 18rpx;
+  height: 12px;
+  display: block;
+}
+
+.contact {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.str {
+  display: flex;
+  align-items: center;
+}
+.str .icon{
+  width:60rpx;
+}
+
+.str image {
+  width: 42rpx;
+  height: 48rpx;
+  margin-right: 20rpx;
+  display: block;
+}
+
+.grade{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  height:144rpx;
+}
+
+.real, .topic{
+  text-align: center
+}
+
+.line{
+  width: 1px;
+  height: 118rpx;
+  margin: 0 40rpx
+}

@@ -1,0 +1,47 @@
+<!--pages/word/write/write.wxml-->
+<block wx:if="{{writeAsk}}">  
+    <view class="teacher-area">
+          <view class="teacher-item">
+              <image src="http://wx.qlogo.cn/mmopen/CYtZibv53y4xD07XEPicr9GwppT69B1DUE6IibO90lfOVTo9iaT8qb8ZJDzmd88JWebnJxdyrJkF3fwkNTBANLwtCqKg4gA9RUhR/132"></image>
+              <view class="name">张老师</view>
+          </view>
+
+          <view class="teacher-item">
+              <image src="http://wx.qlogo.cn/mmopen/0g8XrBTmkzyjfwhg5pqIhlGmqvSibtTPJgNDT67KibKA0xI6EFCvQfRVe9vOL0jS0YC5GibCMdS1xD6PuibAE5uvuGta4H1WEcoo/132"></image>
+              <view class="name">王老师</view>
+          </view>
+    
+    </view>
+  </block>
+<view class="write-area">
+    <textarea class="write-textarea"  auto-focus="true" auto-height="true"  placeholder="说点什么吧..." />
+    <view class="media-area" bindtap="onAddMedia">
+      <image class="icon" src="../../images/media_add.png"></image>
+      <text  class="text"> 图片/视频/语音</text>
+    </view>
+</view>
+
+
+<view class="menul-list">
+  
+  <block wx:if="{{writeAsk==false}}">   
+  <view class="menu">
+        <view class="title f2">设为公告</view>
+        <switch type="switch" />
+    </view>
+   <view class="menu" bindtap="writeToSales" data-page="topic">
+        <view class="title f2">选择话题</view>
+        <view class="more f2">#视觉传达#</view>
+        <view class="arrow"><image src="../../images/icon_tools_arrow.png"></image></view>
+    </view>
+    </block>
+    <view class="menu" bindtap="writeToSales" data-page="map">
+        <view class="title f2">设置地点</view>
+        <view class="more f2">武汉市洪山区武珞路...</view>
+        <view class="arrow"><image src="../../images/icon_tools_arrow.png"></image></view>
+    </view>
+</view>
+
+<view class="button-canvas">
+  <button type="primary" class="pub-submit"> 确定 </button>
+</view>

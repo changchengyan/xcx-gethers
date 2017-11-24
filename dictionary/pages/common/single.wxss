@@ -1,0 +1,44 @@
+.add-mi {
+  /* background-image: url(../images/mi.jpg) */
+  display: inline-block;
+  width: 25%;
+  height: 180rpx;
+  background-color: #fff;
+  font-size: 30px;
+  padding: 20rpx 10rpx 0;
+  box-sizing: border-box;
+}
+
+.bg-mi {
+  position: absolute;
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.txt-wrap {
+  position: absolute;
+  width: 120rpx;
+  height: 180rpx;
+  text-align: center; 
+}
+
+.bg-txt {
+  display: block;
+  width: 120rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  margin-bottom: 10rpx;
+  font-family: Heiti SC;
+}
+
+.pinyin-txt {
+  display: block;
+  font-size: 12px;
+  /* width: 120rpx; */
+  width: 140rpx;
+  margin-left: -10rpx;
+  line-height: 1;
+  word-wrap: break-word;
+  word-break:break-all;
+}
+

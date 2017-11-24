@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/answer_info/answer_info",
+    "pages/book/book",
+    "pages/user/user",
+    "pages/user/learn_tools/learn_tools",
+    "pages/user/about/about",
+    "pages/allclass/allclass",
+    "pages/book/bookshelf/bookshelf",
+    "pages/item/item",
+    "pages/dayhot/dayhot",
+    "pages/analysis/analysis",
+    "pages/test/test",
+    "pages/answer_result/answer_result"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "wxCharts Demo",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#9C9C9C",
+    "selectedColor": "#91509d",
+    "backgroundColor": "#fff",
+    "borderStyle": "#cccccc",
+
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "发现",
+        "iconPath": "pages/images/discover.png",
+        "selectedIconPath": "pages/images/discover-hover.png"
+      },
+      {
+        "pagePath": "pages/book/book",
+        "text": "课程",
+        "iconPath": "pages/images/book.png",
+        "selectedIconPath": "pages/images/book-hover.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "pages/images/my-icon.png",
+        "selectedIconPath": "pages/images/my-icon-hover.png"
+      }
+    ]
+  }
+}

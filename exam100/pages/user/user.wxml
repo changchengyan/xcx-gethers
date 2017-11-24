@@ -1,0 +1,91 @@
+<import src="/pages/template/temp_common/temp_common.wxml" />
+<block wx:if="{{unAuthorization}}">
+	<template is="unauthorized"></template>
+</block>
+<block wx:else>
+	<view class="user-wrap">
+	  <view class="user-photo">
+	    <view class='grade'>
+	      <view class='topic'>
+	        <view style='font-size:80rpx;font-weight:bold'>{{testInfo.total_question_num}}</view>
+	        <view style='font-size:30rpx'>题量</view>
+	      </view>
+	      <image class='line' src='../images/line.png'></image>
+	      <view class='real'>
+	        <view style='font-size:80rpx;font-weight:bold'>{{testInfo.percent_correct}}</view>
+	        <view style='font-size:30rpx'>正确率</view>
+	      </view>
+	    </view>
+	    <view class="user-info">
+	      <view class='my-img'>
+	        <image class="circlePhoto" src="{{user_img}}"></image>
+	      </view>
+	
+	      <text class="user-name">{{user_name}}</text>
+	    </view>
+	  </view>
+	
+	  <!--<view class="NavTo-learnTools" bindtap="toPage" data-page="studyTools" style='  margin-top: 40rpx'>
+	    <view class="str flexR">
+	      <view  class="icon">
+	      <image src='../images/studyTools.png'></image>
+	      </view>
+	      <view> 学习工具 </view>
+	    </view>
+	    <view class="symbol">
+	      <image src="/pages/images/icon_tools_arrow.png" mode="widthFix"></image>
+	    </view>
+	  </view>-->
+	  <view class="toolBox">
+	  	<view class="NavTo-learnTools" bindtap="toPage" data-page="myPaper">
+	    <view class="str flexR">
+	      <view class="icon">
+	        <image src='../images/analysis.png' style='width:33rpx'></image>
+	      </view>      
+	      <view>我的试卷</view>
+	    </view>
+	    <view class="symbol">
+	      <image src="/pages/images/icon_tools_arrow.png" mode="widthFix"></image>
+	    </view>
+	  </view>
+	  <view class="NavTo-learnTools">
+	    <button open-type="share"></button>
+	    <view class="str flexR">
+	      <view  class="icon">
+	        <image src='../images/studyTools.png'></image>
+	      </view>
+	      <view>邀请好友</view>
+	
+	    </view>
+	    <view class="symbol">
+	      <image src="/pages/images/icon_tools_arrow.png" mode="widthFix"></image>
+	    </view>
+	  </view>
+	  <view class="NavTo-learnTools">
+	    <button open-type="contact" class="contact" session-from="1-1"></button>
+	    <view class="str flexR">
+	      <view  class="icon">
+	        <image src='../images/Opinion.png' style='width:42rpx;height:42rpx'></image>
+	      </view>
+	      <view>意见反馈</view>
+	
+	    </view>
+	    <view class="symbol">
+	      <image src="/pages/images/icon_tools_arrow.png" mode="widthFix"></image>
+	    </view>
+	  </view>
+	  <!--<view class="NavTo-learnTools" bindtap="toPage" data-page="us">
+	    <view class="str flexR">
+	      <view  class="icon">
+	        <image src='../images/aboutus.png' style='width:42rpx;height:42rpx'></image>
+	      </view>
+	      <view>关于我们</view>
+	    </view>
+	    <view class="symbol">
+	      <image src="/pages/images/icon_tools_arrow.png" mode="widthFix"></image>
+	    </view>
+	  </view>-->
+	  </view>
+	  
+	</view>
+</block>

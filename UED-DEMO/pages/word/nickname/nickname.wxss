@@ -1,0 +1,3 @@
+/* pages/word/nickname/nickname.wxss */
+.input-area{ padding: 20px;}
+.button-canvas{ padding: 20px;}

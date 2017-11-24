@@ -1,0 +1,121 @@
+<!--pages/desktop/desktop.wxml-->
+
+<!-- index -->
+<!-- <view class="{{font}} {{index_if_show}}">
+  <view class="userinfo">
+    <text class="userinfo-nickname f4">欢迎!{{userInfo.weixinUser.nickname}}</text>
+    <image class="userinfo-avatar" src="{{userInfo.weixinUser.headimgurl}}" background-size="cover"></image>
+    <text class="intro f2 color6">我是RAYS听写,我可以:</text>
+    <text class="f2 color6">用最标准的发音给您的孩子报听写</text>
+  </view>
+  <view class="margintop_284">
+    <import src="/pages/template/template.wxml" />
+    <template is="bt_start_tingxie"></template>
+  </view>
+
+  <text class="f1 color6 now_personNum">正在听写 : {{now_personNum}}人</text>
+</view>  -->
+
+
+<view class="{{font}} {{desk_if_show}}">
+  <!-- 有书籍时，主界面显示书架和扫码 -->
+  <block>
+    <scroll-view class="page-list" scroll-y="true" catchtap="hiddenDeleteBtn" enable-back-to-top="true">
+      <!--扫码添加书籍-->
+      <view class="book-add-area">
+        <view class="book-count f-book-count" catchtap="toMyWord">
+          <image src="/images/desktop/mybook.png"></image>
+          <text class="f1 colorf">我的</text>
+          <!-- <text class="count">{{count}}</text> -->
+          <!--text class="text f2">{{book.total_count}}本</text-->
+        </view>
+        <!-- bindtap="showTheWay"  -->
+        <view class="book-scan" catchtap="toSearchlist">
+          <image src="/images/desktop/add.png" mode="widthFix"></image>
+          <text class="f1 colorf">添加</text>
+          <!-- <view class="text f1">扫一扫</view> -->
+          <!--
+          <view class="{{add_book_way}}">
+            <view class="scan_book" catchtap="bindStartScan">扫教材条码</view>
+            <view class="search_book" catchtap="toSearchlist">搜索教材</view>
+            <view class="self_book" catchtap="selfBook">自定义听写</view>
+            <view class="self_book" catchtap="toMyWord">我的听写本</view>
+          </view>
+          -->
+        </view>
+      </view>
+      <view class="book-add-area-visibility">正在刷新</view>
+
+      <!--没有书籍时提示添加书籍  -->
+      <view class="{{font}} nobook_container" wx:if="{{book.total_count === 0}}">
+        <text class="app_desc f3">标准发音,自主学习\n全国1-6年级教材配套资源</text>
+        <view class="add_book" catchtap="toSearchlist">添加书籍</view>
+        <view class="user-count-info">全国已有{{now_personNum}}人添加</view>
+      </view>
+
+      <!--列表页-->
+      <view class="bookWrap" wx:if="{{book.total_count > 0}}">
+        <view class="book-list">
+          <view class="item" wx:for="{{book.list}}" wx:key="id" bindlongtap="longTapBook" bindtap="toBookPage"  data-bookImg="{{item.book_pic}}" data-book-id="{{item.id}}" data-book-index="{{index}}">
+            <block wx:if="{{showDeleteBtn}}">
+              <view class="item-delete" catchtap="deleteBook" data-book-id="{{item.id}}" data-book-index="{{index}}">
+                <image src="/images/desktop/delete_btn.png" mode="widthFix"></image>
+              </view>
+            </block>
+
+            <view class="item-content">
+              <view class="icon-view">
+                <!--<view style="background:url({{item.book_pic}}) no-repeat center;" class="book-img"></view>-->
+                <view class="" wx:if="{{item.isPay==1}}">
+                  <image class="ispay" src="../../images/searchlist/ispay_img.png"></image>
+                  <text class="pay_txt">已购</text>
+                </view>
+                <image class="icon" src="{{item.book_pic}}" mode="widthFix" style="padding:{{fixPadding}}px 0"></image>
+              </view>
+            </view>
+            <view class="text-view f2">
+              <text class="text">{{item.book_name}}</text>
+            </view>
+          </view>
+
+        </view>
+        <!--背景涟漪-->
+        <!--<view class="wave wave1"></view>
+        <view class="wave wave2"></view>
+        <view class="wave wave3"></view>-->
+        <!--版权声明  -->
+        <text wx:if="{{book.total_count>0}}" class="copyright">语音技术由科大讯飞和百度云语音联合提供</text>
+      </view>
+
+      <!-- <view class="bottom_block"></view> -->
+      <!--用户第一次登录时的引导页  -->
+      <!-- <view class="{{first_login}}" catchtouchmove="stopTouch">
+        <image src="/images/desktop/firstlogin.png" class="img_director"></image>
+        <text class="f5 colore">扫描课本条形码，</text>
+        <text class="f5 colore">加入书架后即可开始听写</text>
+        <view class="iknow" bindtap="changeDirector">
+          <text class=" f3 colore">我知道了</text>
+        </view>
+      </view> -->
+      <!-- 自定义听写本 -->
+      <!-- <view class="{{selfBookData}}">
+        <view class="slideDownUp_btn" bindtap="slideDownUp">
+          <image src="{{slideImg}}"></image>
+        </view>
+        <view class="selfbook_btn" bindtap="selfBook">
+          <image src="/images/desktop/selfbook.png"></image>
+          <text class="f2">自定义</text>
+        </view>
+        <text class="f1 color6 now_personNum">正在听写 : {{now_personNum}}人</text>
+        <view class="{{mybook}}" bindtap="toMyWord">
+          <image src="/images/desktop/mybook.png"></image>
+          <text class="f2 color3">我的自定义</text>
+        </view>
+      </view> -->
+    </scroll-view>
+
+    <!--loading  -->
+    <import src="../template/template.wxml" />
+    <template is="pageLoading" data="{{isLoading}}"></template>
+  </block>
+</view>

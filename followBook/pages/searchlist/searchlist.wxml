@@ -1,0 +1,53 @@
+<!-- pages/searchlist/searchlist-->
+<view class="{{font}} searchBox-{{ifDefaultTouch}} default">
+  <!--书籍列表  -->
+  <!-- <block wx:if="{{!isbnList.isShow}}"> -->
+  <!--年级列表  -->
+	<view class="list-top" catchtap="chooseGrade">
+    <view data-grade="grade1" class="{{grade_active[0]}}">一年级</view>
+  	<view data-grade="grade2" class="{{grade_active[1]}}">二年级</view>
+  	<view data-grade="grade3" class="{{grade_active[2]}}">三年级</view>
+  	<view data-grade="grade4" class="{{grade_active[3]}}">四年级</view>
+  	<view data-grade="grade5" class="{{grade_active[4]}}">五年级</view>
+  	<view data-grade="grade6" class="{{grade_active[5]}}">六年级</view>
+  </view>
+  <view class="list-top-area"></view>
+  <view class="page-list">
+    <!-- <!--列表页 -->
+    <view wx:for='{{gradeArr}}' wx:for-index="idx"  wx:key="{{index}}">
+      <view wx:if='{{bookJson[item]}}'>
+        <view class="grade_name">
+          <view class="grade{{idx}}"></view>
+          <text class="f2">{{item}}</text>
+        </view>
+        <view class="book-list" wx:if="{{book.count > 0}}">
+          <view id="add{{item.isadd}}" class="item" wx:for="{{bookJson[item]}}" wx:key="id"   catchtap="toBookPage" data-isAdd="{{item.isadd}}" data-grade="{{item.book_grade}}" data-book-id="{{item.id}}" data-bookId="{{item.id}}" data-book-index="{{index}}">
+            <view class="item-content">
+              <view class="icon-view" style="height:{{imgHeight}}px">
+                <view style="background:url({{item.book_pic}}) no-repeat center;" class="book-img"></view>
+                <image class="icon" src="{{item.book_pic}}" mode="widthFix" style="padding:{{fixPadding}}px 0"></image>
+                <block wx:if="{{item.isadd==1}}">
+	                <view class="added" >已添加</view>
+                </block>
+                <!--<block wx:elif="{{item.isadd==1&&item.clicked}}">
+	                <view class="added" >
+	                	<view class="iconAdd opacity0 {{opacity1}}">
+	                		<image mode="widthFix" src="../images/modelClass/add.png"></image>
+	                	</view>
+	                	<view class="text f1">已添加</view>
+	                </view>
+                </block>-->
+              </view>
+              <view class="book_publish_brief f1 colorf">{{item.book_publish_brief}}</view>
+            </view>
+            <view class="text-view f2">
+              <view class="text color9">{{item.book_name}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+	<view class="no_more" wx:if="{{!loadMore && !loadding}}"> 已经全部加载完成</view>
+  </view>
+</view>
+<loading hidden="{{isLoading}}">加载中...</loading>

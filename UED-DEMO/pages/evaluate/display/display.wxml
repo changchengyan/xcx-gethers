@@ -1,0 +1,45 @@
+<!--pages/evaluate/display/display.wxml-->
+<view class='main'>
+  <view class='top'>
+          <view class='back'>返回书籍</view><view class='create'>生成海报</view>
+  </view>
+  <view class='body' style='background-image: url(http://f3.5rs.me/upload/20170918/2017_09_18_140825536.jpg);'>
+    <view class='content'>      
+        <view class='text'> <text>Chen Jie:Ms Wang will be our new Chinese teacher. 
+        John:What's she like? 
+        Chen Jie:She's very kind.</text> </view>
+    </view>
+  </view>
+  <view class='console'>
+      <view class='prev'><image src='../../images/sound-icon-prev.png'></image> </view>
+      <view class='play'><image src='../../images/sound-icon-play.png'></image> </view>
+      <view class='next'><image src='../../images/sound-icon-next.png'></image> </view>
+  </view>
+  <view class='report-area' style='display:none'>
+    <view class='report'>
+      <view class='score'>
+        <view class='number'>92</view>
+        <view class='text'>评测得分</view>
+      </view>
+      <view class='order'>
+        <view class='number'>99%</view>
+        <view class='text'>超越用户</view>
+      </view>
+      <view class='to-text'>详细报告</view>
+      <view class='to-icon'><image src='../../images/to-right.png'></image> </view>
+    </view>
+  </view>
+  <view class='info'>
+    <view class='translation-title'>译文</view>
+    <view class='translation'> <text>陈洁：王是我们的新语文老师。
+约翰：她长得怎么样？
+陈洁：她很和蔼。</text></view>
+    <view class='source'>引用：英语一年级（上）- P25 人民教育出版社</view>
+  </view>
+</view>
+
+<view class='bottom'>
+  <view class='record'>
+    <image src='../../images/record-hover.png'></image>
+  </view>
+</view>

@@ -1,0 +1,230 @@
+/* pages/desk/desk.wxss */
+page{
+  height:100%;
+}
+.default{
+  height:100%;
+}
+.page-list
+{
+    min-height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+	align-items: center;
+  padding-top: 40px;
+}
+.add-custom {
+  position: fixed;
+  font-size: 28rpx;
+  color: #06c1ae;
+  top:0;
+  margin: auto;
+  padding:0 40rpx; 
+  width: 100%;
+  height:40px;
+  line-height: 40px;
+  background:#fff;
+  z-index: 1;
+  display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+.add-custom .count{
+  flex-grow: 1;
+}
+.add-custom .count text{
+  font-size:18px;
+  font-weight: bold;
+}
+/*书架为空的样式begin  */
+
+.nobook_container {
+  height: 100%;
+}
+
+.nobook_container .themeBox {
+  height: calc(100vh - 120px);
+}
+
+.poster-img {
+}
+
+.poster-item {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  /* background-size: cover; */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.nobook_container .grade {
+  padding: 0 35rpx;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nobook_container .grade view {
+  width: 200rpx;
+  height: 74rpx;
+  line-height: 74rpx;
+  border: 1px solid #06c1ae;
+  border-radius: 40rpx;
+  color: #06c1ae;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 40rpx;
+}
+
+.nobook_container .wx-swiper-dot-active {
+  background: #06c1ae;
+}
+/*书架为空的样式end  */
+.showTips{
+  line-height: 60rpx;
+  color: #999;
+  font-size: 26rpx;
+}
+
+/**书籍列表**/
+.book-list
+{
+ 
+  padding:12px 10px 0 10px;
+  background-color: #fff;
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content:flex-start;
+  align-items:stretch;
+  width: 100%;
+  border-top:1px solid #ddd;
+  /* min-height: calc( 100% - 30px) */
+}
+.book-list .item .item-delete{ position: absolute; z-index: 1; width: 35px; height: 35px; margin-left: -10px; margin-top: -10px;}
+.book-list .item .item-delete image{ width: 30px;height:30px;}
+
+.book-list .item{width: 33.33%; text-align: center; padding:10px; }
+.book-list .item-content{box-shadow:0 0 5px 2px #eee; background-color: #fff;}
+.book-list .item .item-content .icon-view{padding:5px;display:flex;flex-direction:column;justify-content:center;overflow:hidden;}
+.book-list .item .item-content .icon{width: 100%;height:120px;}
+.book-list .item .text-view{ font-size: 12px; line-height: 15px; padding: 10px 0px 0px 0px; color: #777;}
+.book-list .item-more {
+  height:auto;
+}
+ .item-more .add-item {
+   /* border:3px dotted #ccc;
+   line-height: 125px;
+   color: #ccc;
+   font-size: 50px;
+   vertical-align: middle; */
+   width: 196rpx;
+}
+.book-img {
+  background-size: 100% auto
+}
+
+.desk-nodata
+{
+  margin-top: 50pt;
+  padding:30px 10px 30px 10px;
+  text-align: center;
+  font-size: 14px;  
+}
+/**是否确认删除**/
+.maskBox{
+	position:fixed;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+  z-index:2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.maskBox .mask{
+	width:100%;
+	height:100%;
+	background: #000;
+  opacity: 0.5;
+  position: absolute;
+  left:0;
+  top:0;
+}
+.to-sure-del {
+    width: 240px;
+    z-index: 11000
+    
+}
+.to-sure-word {
+    height:70px;
+    border: 1px solid #ddd;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom: 0;
+    font-size: 16px;
+    color: #333;
+    line-height: 70px;
+    text-align:center;
+    background:#fff;
+}
+.to-choose-sure {
+    width: 100%;
+    display: flex-box;
+    flex-direction: row;
+    border: 1px solid #ddd;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background:#fff;
+}
+.to-choose-sure .choose-button {
+    display: inline-flex;
+    width: 50%;
+    padding: 10px 0;
+    flex-direction: row;
+    justify-content: center;
+}
+.to-choose-sure .choose-button:nth-of-type(1) {
+    border-right: 1px solid #ddd;
+}
+/*
+.wx-swiper-dots{
+  top:90rpx;
+}
+.wx-swiper-dots-horizontal{
+  width: 100rpx !important;
+}
+.wx-swiper-dot{
+  background-color:rgba(255,255,255,0.6) !important;
+  width:14rpx !important;
+  height:14rpx !important;
+  border-radius: 14rpx !important;
+}
+.wx-swiper-dot-active{
+    width:43rpx !important;
+    height:14rpx !important;
+    border-radius: 14rpx !important;
+    background-color:#fff !important;
+}*/
+.loadTip{
+	text-align:center;
+	padding-bottom:8px;
+	color:#999;
+}
+.loadTip .icon wx-image {
+	width:50px;
+	height:10px;
+	filter:grayscale(100%);
+}

@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/desktop/desktop",
+    "pages/nobook/nobook",
+    "pages/book/book",
+    "pages/logs/logs",
+    "pages/play/play",
+    "pages/template/template",
+    "pages/word/word",
+    "pages/unit/unit",
+    "pages/word/details/details",
+    "pages/finally/finally"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "RAYS听写",
+    "navigationBarTextStyle": "light"
+  }
+}

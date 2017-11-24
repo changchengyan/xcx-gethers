@@ -1,0 +1,4 @@
+/* pages/bihua/bihua.wxss */
+@import "../../common/single.wxss";
+
+@import "../../common/common.wxss";

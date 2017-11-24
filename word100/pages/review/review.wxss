@@ -1,0 +1,88 @@
+/* pages/review/review.wxss */
+
+page {
+  background: url(http://image.chubanyun.net/images/Word100/review_bg.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+.bg_in {
+  width: 704rpx;
+  height: 642rpx;
+  background-color: #fff;
+  border-radius: 15rpx;
+  padding: 36rpx 48rpx;
+  box-sizing: border-box;
+  margin-top: 42%;
+  position: fixed;
+  left: 50%;
+  margin-left: -352rpx
+}
+
+.bg_in .title {
+  width: 100%;
+  text-align: center;
+  font-size: 36rpx;
+}
+
+.middle .review_num {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 146rpx;
+  line-height: 146rpx;
+  align-items: center;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.review_num .num_title {
+  display: flex;
+  align-items: center;
+}
+
+.num {
+  color: #666;
+}
+
+.num_img {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx;
+}
+
+.toreview {
+  width: 404rpx;
+  height: 100rpx;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 100rpx;
+  border-radius: 50px;
+  background: linear-gradient(to right, #26bffe, #319dd8);
+  color: #fff;
+  font-size: 38rpx;
+  box-shadow: 0 4px 5px #aaf1fe;
+  margin-top: 50rpx;
+}
+
+.toreview:active {
+  transform: scale(0.8);
+}
+
+.review_num:nth-child(1) {
+  border-bottom: 1px solid #eee;
+  margin-top: 38rpx;
+}
+
+.daxiang{
+  position: fixed;
+  left: 64rpx;
+  top: 120rpx
+}
+
+.daxiang .daxiang_img{
+  width: 612rpx;
+  height: 234rpx
+}

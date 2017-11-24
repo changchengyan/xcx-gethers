@@ -1,0 +1,14 @@
+/**index.wxss**/
+.search-canvas{background-color: #06c1ae;}
+.search-canvas .logo{ font-size: 26px; color: #fff; text-align: center; padding: 10px 0px 10px 0px;}
+.search-canvas .text{ font-size: 14px; color: #fff; text-align: center;letter-spacing:10px;}
+.search-canvas .search{ padding: 20px;}
+.search-canvas .search input{ width: 100%; background-color: #fff; color: #777; height: 30px; border-radius: 30px; padding: 8px 15px 8px 15px; font-size: 14px;}
+.group {
+  padding: 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.group .pic{}
+.group .pic image{ width: 100%;}
+.group .title{font-size: 18px; padding: 5px 0px 5px 0px;}
+.group .desc{font-size: 12px; color: #777; line-height: 18px;}

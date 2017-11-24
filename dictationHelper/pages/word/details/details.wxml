@@ -1,0 +1,40 @@
+<!--details.wxml-->
+<!-- <import src="../../template/template.wxml" /> -->
+<!-- <import src="../../../components/modal/modal.wxml" /> -->
+<view class="container {{byebye}}">
+  <!--正确单词-->
+  <view class="juxing">
+    <view class="middle">
+      <view class="realwords">
+        <view class="find"><text class="txt">点击找出错词</text> </view>
+        <view class="cihui">正确词汇{{listWords.length}}</view>
+      </view>
+      <view class="words">
+        <view class="words_in" wx:for="{{listWords}}" bindtap="toggleErrWord" data-index="{{index}}">
+          <view class="wo">{{item.display_word}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--错误的单词-->
+  <view class="error" wx:if="{{real}}">
+    <!-- <view class="errBox" bindtap="baby" catchTouchstart="catchTouchstart"></view> -->
+    <view class="err">
+      <view class="pao"></view>
+      <view class="em">错词</view>
+      <view class="errwords">
+        <view class="errwords_in ">
+          <view class="errwo" wx:for="{{errList}}" wx:for-item="iii" data-errindex="{{index}}" bindtap="delerr">{{iii.display_word}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!--显示错误单词-->
+  <view class="startButton-show">
+    <image class="logo" wx:if="{{errList.length!=0}}" src="/images/unit/logo.png" style="height: 100rpx;" bindtap="displayErrWords"></image>
+    <image class="star-dictation " src="/images/word/subResult.png " mode="widthFix" bindtap="submitTest">提交</image>
+  </view>
+</view>
+<!--modal-->
+<!-- <template is="modal " data="{{..._modal}} "></template> -->

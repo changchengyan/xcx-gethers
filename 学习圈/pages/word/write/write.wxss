@@ -1,0 +1,65 @@
+/* pages/word/write/write.wxss */
+
+.teacher-area{ 
+  padding: 18px; border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+ background-color: #f8f8f8;  
+}
+
+.teacher-area .teacher-item{ flex-flow: 1; padding: 15px;}
+.teacher-area .teacher-item image{ width: 60px; height: 60px; border-radius: 60px;}
+.teacher-area .teacher-item .name{font-size: 12px; color: #777; padding: 5px 0px 0px 0px; text-align: center;}
+
+
+.write-area{ padding: 18px; border-bottom: 1px solid #f0f0f0;}
+.write-textarea{width: 100%; }
+
+.media-area{ align-items: center; display: flex; flex-direction: row; justify-content:flex-start; padding: 15px 0px 5px 3px;}
+.media-area .icon{ width: 30px; height: 30px;}
+.media-area .text{font-size: 12px; color: #777; padding: 0px 0px 0px 5px;}
+/*菜单列表*/
+.menul-list
+{
+   padding: 10px 20px 10px 20px;
+   
+
+}
+.menul-list .menu
+{
+   border-bottom: 1px solid #eee;
+   padding: 10px 0px 10px 0px;
+   font-size: 14px;
+   display: flex;  
+   flex-direction:row;
+   justify-content:center;
+    align-items:center;
+}
+.menul-list .menu .title
+{
+   flex-grow:8;
+}
+.menul-list .menu .more
+{
+   color: #777; font-size: 12px;
+}
+.menul-list .menu .arrow
+{
+   padding: 2px 5px 0px 5px; 
+   max-width: 20px;   
+   flex-grow:1;
+   text-align: right;
+}
+.menul-list .menu .arrow image
+{
+    width: 9px; height: 15px;
+}
+
+
+.button-canvas{  padding: 15px; text-align: center;}
+.button-canvas button
+{
+  
+}

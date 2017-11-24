@@ -1,0 +1,110 @@
+<!--pages/item/item.wxml-->
+<view class='bg'>
+  <form report-submit='true' catchsubmit='getFormID'>
+    <!-- <scroll-view class='page-scroll-view' scroll-y="true" style='height:100%'> -->
+    <view class='top'>
+      <view class='book_info_{{dir}}'>
+        <view class='book_in'>
+          <image class='book_img' src='{{payInfo.pic}}'></image>
+          <view class='book_title'>
+            <view class='title'>{{title}}</view>
+            <view class='book_num'>
+              <view class='book_txt'>综合成绩：
+                <text>{{avg_score}} </text> 分</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <scroll-view scroll-x="true" scroll-left="{{scroll_left}}" class='scroll_o_{{change}}' scroll-with-animation="true">
+        <!-- <view class='unit-box' data-unit='' bindtap='tab'>
+            <view class='unit_name {{unit==""?"unit_line":""}}'>全部</view>
+          </view> -->
+        <view class='unit-box' data-unit='{{item.id}}' bindtap='tab' wx:for='{{bookLessons}}' data-index='{{index}}'>
+          <view class='unit_name {{index==currentindex?"unit_line":""}}'>{{item.lesson_name}}</view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class='all_{{an}} ' style='top:77rpx'>
+      <view class='all_num'>共{{bookStatistics.book_sentence_count}}张测评卡</view>
+      <view wx:if='{{!(bookStatistics.min_page==null||bookStatistics.max_page==null)}}' class='yinyong'>引用范围：P{{bookStatistics.min_page}}-P{{bookStatistics.max_page}}</view>
+    </view>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" current="{{current}}" indicator-color="rgba(0, 0, 0, 0)" indicator-active-color="rgba(0, 0, 0, 0)" style="height:100%" bindchange='change'>
+      <swiper-item data-unit="{{item.id}}" wx:for="{{bookLessons}}">
+        <scroll-view class='page-scroll-view' scroll-y="true" style='height:100%' bindscroll="bindscroll" bindscrolltolower="loadItemInfo">
+
+          <view style='margin-top:{{margin_top}}rpx'>
+            <view wx:for="{{sentences}}" data-index="{{index}}" class='out'>
+              <view class='item'>
+                <button class='from-bottom btn_t' form-type='submit' bindtap='gotoDetail' data-id='{{item.id}}' data-index='{{index}}' data-title='{{item.sentence}}'> </button>
+                <view class="item-box">
+                  <view class='content'>
+                    <view class='text'>{{item.sentence}}</view>
+                    <view wx:if="{{type=='book'}}" class='evalution'>
+                      <text class="info">评分：<text class="{{item.score==null?'':'sentence-score'}}">{{item.score==null?'未评测':item.score}}</text> | 评测 {{item.evaluation_count}}{{(item.sentence_page==null||item.sentence_page==0)?"":" | 引用：P"+item.sentence_page}}　</text>
+                      <!-- <block wx:if="{{item.is_evaluation>0}}">
+                  <image src='/pages/images/right.png'></image>
+                  <text>{{item.score}}分</text>
+                </block>  -->
+                    </view>
+                    <view wx:if="{{type=='evaluation'}}" class='evalution'>
+                      评测 {{item.evaluation_count}}　得分 {{item.score}}
+                    </view>
+                  </view>
+                  <image class='img' src='{{item.sentence_pic}}'></image>
+                </view>
+                <view class='clear'></view>
+              </view>
+            </view>
+          </view>
+          <view wx:if="{{!loadMore}}" class='line'>我是有底线的</view>
+          <view wx:if="{{loadingState&&sentences.length>pageSize}}">
+            <!--<view>-->
+            <div class="bottom-loader">
+              <div class="ball-pulse">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+          </view>
+          <view class='null' wx:if="{{sentences.length==0}}">
+            <image class='img' src='/pages/images/null.png'></image>
+            <view class='text'>暂无数据，等待添加中...</view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+
+    <view class="bottom-fix">
+      <view class="item" bindtap="gotoPay" wx:if="{{!payInfo.isBuy&&!payInfo.isGive}}">
+        <image src="/pages/images/shopping-cart.png"></image>
+        <text>￥{{payInfo.price}}</text>
+      </view>
+      <view class="item" wx:else>
+        <image src="{{shoppingIcon}}"></image>
+        <text>已购买</text>
+        <block wx:if="{{payInfo.give_remaining_count>0}}">
+          <button open-type="share" data-type="send"></button>
+          <text>，赠送朋友</text>
+          <view class="flag">{{payInfo.give_remaining_count}}</view>
+        </block>
+      </view>
+      <view class="item">
+        <button open-type="share"></button>
+        <image src="/pages/images/share.png"></image>
+        <text>分享</text>
+      </view>
+    </view>
+    <!-- <view class="bottom-fix-box"></view> -->
+    <!-- </scroll-view> -->
+  </form>
+
+  <!-- 支付模板 -->
+  <import src="/pages/component/pay/pay.wxml" />
+  <block wx:if="{{payShow}}">
+    <!--<block wx:if="{{true}}">-->
+    <!-- <block wx:if="{{true}}"> -->
+    <template is='template-pay' data='{{payInfo:payInfo}}' />
+  </block>
+  <!-- 支付模板END -->
+</view>

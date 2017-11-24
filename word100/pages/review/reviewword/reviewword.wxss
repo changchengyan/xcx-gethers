@@ -1,0 +1,137 @@
+/* pages/review/reviewword/reviewword.wxss */
+
+.bg {
+  width: 100%;
+  height: 100%;
+}
+
+.bg .word_num {
+  width: 100%;
+  font-size: 30rpx;
+  color: #333;
+  padding-left: 40rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+}
+
+.bg .word {
+  width: 100%;
+  font-size: 38rpx;
+  color: #333;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 19rpx 40rpx;
+}
+
+.word:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+.word:last-child {
+  /* box-shadow: 0px 2rpx 15px #ccc inset; */
+  border-bottom: 1px solid #eee;
+}
+
+.english {
+  color: #333;
+  font-size: 40rpx;
+}
+
+.yin {
+  color: #999;
+  font-size: 40rpx;
+  margin-left: 10rpx;
+}
+
+.translate {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.begin {
+  width: 314rpx;
+  height: 102rpx;
+  background-color: #309cd7;
+  color: #fff;
+  font-size: 36rpx;
+  border: 8rpx solid #fff;
+  border-radius: 50px;
+  text-align: center;
+  line-height: 102rpx;
+  position: fixed;
+  left: 50%;
+  margin-left: -157rpx;
+  bottom: 25rpx;
+  box-shadow: 0 3px 0 #ababab;
+}
+
+.yes{
+  width: 100%;
+  text-align: center;
+  color: #666;
+  font-size: 26rpx;
+  padding: 20rpx 0;
+  box-sizing: border-box 
+}
+
+.load {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  height: 80rpx;
+  padding: 20rpx 0;
+  box-sizing: border-box
+}
+
+.load view {
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 50%;
+  background-color: #999;
+  margin-right: 10rpx;
+}
+
+@keyframes box {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(0.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.load view:nth-child(1) {
+  animation: box 0.5s ease 0.1s infinite alternate;
+}
+
+.load view:nth-child(2) {
+  animation: box 0.5s ease 0.2s infinite alternate;
+}
+
+.load view:nth-child(3) {
+  animation: box 0.5s ease 0.3s infinite alternate;
+}
+
+.load view:nth-child(4) {
+  animation: box 0.5s ease 0.5s infinite alternate;
+}
+
+.load view:nth-child(5) {
+  animation: box 0.5s ease 0.6s infinite alternate;
+}
+
+.word_out{
+  height: 94vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column
+}

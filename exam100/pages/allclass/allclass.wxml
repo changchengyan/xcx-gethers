@@ -1,0 +1,55 @@
+<!--pages/allclass/allclass.wxml-->
+<import src="/pages/template/temp_common/temp_common.wxml" />
+<block wx:if="{{unAuthorization}}">
+	<template is="unauthorized"></template>
+</block>
+<block wx:else>
+	<view class='container {{isOpen?"fix":""}}'>
+	  <view class='allclass' wx:for="{{allClass}}">
+	    <view class='title' data-index='{{index}}'>{{allClass[index].classify.classify_name}}</view>
+	    <view class='all_in'>
+	      <view class='warp' data-title="{{item.classify_name}}" data-id='{{item.id}}' bindtap='todetail' wx:for="{{allClass[index].second_classify_list}}">{{item.classify_name}}</view>
+	    </view>
+	  </view>
+	
+	  <view class='mask {{move}}'>
+	    <view class='top'>
+	      <view class='mask_title' bindtap='moveBack'>{{mask_title}}></view>
+	      <view class='hot flexR'>
+	      	<block wx:for="{{hotClass}}">
+	      		<text wx:if="{{index<3}}"  class='txt' bindtap='todetail' data-title="{{item.classify_name}}" data-id='{{item.id}}' >{{item.classify_name}}</text> 
+	      	</block>
+	        
+	      </view>
+	    </view>
+	
+	    <scroll-view scroll-y bindscrolltolower="scrolltolower">
+	      <view class='scroll'>
+	        <view class='list'>
+	          <view class='list_in' bindtap='toItem' wx:for="{{allLesson.lessonList}}" data-index='{{index}}' data-id='{{item.examine.id}}'>
+	            <view class='bor'>
+	              <image src='{{item.examine.app_pic}}'></image>
+	              <view class='list_txt'>
+	                <view class='main'>{{item.examine.app_name}}</view>
+	                <view class='content'>{{item.examine.app_desc}}</view>
+	              </view>
+	            </view>
+	          </view>
+	        </view>
+	
+	        <!--加载   wx:if="{{isLoad&&load}}" -->
+	        <view class='yes' wx:if="{{!loadMore&&!isLoadding}}">加载完成</view>
+	        <view class='load' wx:if="{{!firstLoadding&&isLoadding}}">
+	          <view></view>
+	          <view></view>
+	          <view></view>
+	          <view></view>
+	          <view></view>
+	        </view>
+	      </view>
+	    </scroll-view>
+	  </view>
+	</view>
+</block>
+<loading hidden="{{!firstLoadding}}">加载中...</loading>
+<loading hidden="{{!isLoaddingAllClassify}}">加载中...</loading>

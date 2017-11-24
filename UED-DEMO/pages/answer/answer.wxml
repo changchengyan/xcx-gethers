@@ -1,0 +1,69 @@
+<!--pages/special/special.wxml-->
+
+<view class="pub-navigation">
+    <view class="home">H</view>
+    <view class="user">U</view>
+</view>
+
+<view class="pub-app-head">
+<view class="pub-app-icon">
+      <view class="ic">
+      <view class="im"><image src="https://file.5rs.me/group1/M00/0D/8F/ChvrLlkSxquAQcxBAAJwWxtm-O4856_0.jpg" mode="aspectFill" ></image></view>
+      </view>
+      
+</view>
+<view class="pub-app-name">
+      <view class="text">☼ 答案 / ☼ 3091次 </view>
+</view>
+<view class="pub-app-title">长江作业本语文人教版五年级下</view>
+<view class="pub-app-desc">
+  <view> <text>15年专业办学,拥有丰富的教学经验！\n针对不同的学生提供不同辅导方案,直击考试重难点,免费学科分析,制定科学提分计划,提分更有保障</text>
+  </view>
+</view>
+</view>
+
+
+<view class="app-list-title"> <view class="text">答案资源</view></view>
+
+<view class="app-list-area">
+      <view class="app-list-canvas">
+
+            <view class="app-item">
+                  <view class="pic">PDF</view>
+                  <view class="info">
+                      <view class="title">长江全能学案·语文·鄂教版·四上·参考答案.pdf</view>
+                      <view class="more">☼ 1263  ⊚   <text>2017-08-01 </text>   □ 0.46MB</view>
+                  </view>
+                  <view class="operation">
+                      <view class="text">浏览</view>
+                  </view>
+            </view>
+
+            <view class="app-item">
+                  <view class="pic">PDF</view>
+                  <view class="info">
+                      <view class="title">创业机会识别的“Dubin模型”构建研究</view>
+                      <view class="more">☼ 1263  ⊚   <text>2017-08-01 </text>   □ 0.46MB</view>
+                  </view>
+                  <view class="operation">
+                      <view class="text">浏览</view>
+                  </view>
+            </view>
+            
+                  
+      </view>
+</view>
+
+
+
+<view class="pub-bottom-btn-seat"></view>
+<view class="pub-bottom-btn-area">
+      <view class="text">浏览答案</view>
+</view>
+
+
+
+
+
+
+

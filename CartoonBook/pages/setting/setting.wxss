@@ -1,0 +1,42 @@
+/* pages/setting/setting.wxss */
+page{
+  min-height:calc(100vh - 40rpx);
+  background-color: #f8f8f8;
+}
+.item{
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 140rpx;
+  padding: 0 24rpx;
+  margin-top: 40rpx;
+  line-height: 140rpx;
+  font-weight: bold;
+  background-color: #fff;
+  overflow: hidden;
+  clear: both;
+}
+.item text{
+  float: left;
+  font-size: 16px;
+  color: #333;
+}
+.size{
+  float: right;
+  font-size: 14px;
+  font-weight: 300;
+  color: #999;
+}
+.contact{
+  float: right;
+  width: 70rpx;
+  height: 70rpx;
+  margin-top: 35rpx;
+}
+.contact-button{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}

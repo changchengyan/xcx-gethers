@@ -1,0 +1,32 @@
+<!--pages/video/video.wxml-->
+<video class="video" custom-cache="{{false}}" autoplay='{{isAutoplay}}' bindtimeupdate="timeUpdate" bindfullscreenchange="fullscreenchange" id="myVideo" src="{{videoUrl}}" bindplay="toPlay" bindended="bindEnded" danmu-list="{{danmuList}}" controls>
+  <!-- <cover-view class="{{cover_view}}" bindtap="change">》</cover-view> -->
+  <cover-image bindtap="last" src="../../images/video/last.png" class="{{cover_view}} cover-left"></cover-image>
+  <cover-image bindtap="next" src="../../images/video/next.png" class="{{cover_view}} cover-right"></cover-image>
+  <cover-view wx:if="{{firstLogin}}" catchtap='notDisplay' class='cover-image'>
+    <!-- wx:if="{{Boolean(firstLogin)}}" -->
+    <cover-image src="../../images/video/last.png" class="prev"></cover-image>
+    <cover-image src="../../images/video/next.png" class="next"></cover-image>
+    <cover-image class='image-left' src='../../images/video/lefthand.png'></cover-image>
+    <cover-image class='image-right' src='../../images/video/righthand.png'></cover-image>
+  </cover-view>
+</video>
+<scroll-view class="scroll-view" scroll-y>
+  <view class="title">
+    {{secondClassify[classIndex].instances[videoIndex].instance_name}}
+    <image class="add" wx:if="{{!isadd}}" src="../../images/video/add.png" bindtap="addToList"></image>
+    <image class="add" wx:if="{{isadd}}" src="../../images/video/added.png" bindtap="addToList"></image>
+  </view>
+  <view class="info-container">
+    <view class="info-title{{infoStyle}}" bindtap="hideInfo">简介：</view>
+    <view class="info{{infoStyle}}">{{secondClassify[classIndex].series.series_desc}}</view>
+  </view>
+  <view class="list-title">剧集</view>
+  <view class="list-container">
+    <view class="list {{cur[index]}}" wx:for="{{secondClassify[classIndex].instances}}" wx:key="index" bindtap="changeVideo" data-index="{{index}}">
+      <image src="../../images/video/play.png"></image>
+      <view class="list-name">{{item.instance_name}}</view>
+      <view class="list-time">{{item.timelength}}</view>
+    </view>
+  </view>
+</scroll-view>

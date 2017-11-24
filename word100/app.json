@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/user/user",
+    "pages/component/loading/loading",
+    "pages/book/book",
+    "pages/book/bookshelf/bookshelf",
+    "pages/component/pay/pay",
+    "pages/item/item",
+    "pages/pass/pass",
+    "pages/review/review",
+    "pages/word/word",
+    "pages/word/worddetail/worddetail",
+    "pages/review/myreview/myreview",
+    "pages/review/reviewword/reviewword",
+    "pages/user/about/about",
+    "pages/PK/PK",
+    "pages/PK/PK_detail/PK_detail",
+    "pages/PK/PK_answer/PK_answer",
+    "pages/user/learn_tools/learn_tools",
+    "pages/review/reviewword/detailreview/detailreview"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "单词闯关",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#9C9C9C",
+    "selectedColor": "#319bd7",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "发现",
+        "iconPath": "pages/images/discover.png",
+        "selectedIconPath": "pages/images/discover-hover.png"
+      },
+      {
+        "pagePath": "pages/book/book",
+        "text": "单词闯关",
+        "iconPath": "pages/images/book.png",
+        "selectedIconPath": "pages/images/book-hover.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "pages/images/my-icon.png",
+        "selectedIconPath": "pages/images/my-icon-hover.png"
+      }
+    ]
+  }
+}

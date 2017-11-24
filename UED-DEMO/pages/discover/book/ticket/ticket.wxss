@@ -1,0 +1,55 @@
+/* pages/discover/book/ticket/ticket.wxss */
+
+.codeimg{ text-align: center; padding: 20px 0px 20px 0px;}
+.codeimg image{ width: 60%;}
+.codeimg .name{ font-size: 18px; line-height: 22px;}
+.codeimg .desc{ font-size: 14px; color: #333; font-weight: 300; line-height: 18px; }
+.codeimg .tag{font-size: 12px; color: #777; font-weight: 300; line-height: 16px; padding: 5px 0px 10px 0px;}
+.codeimg .button{ display: flex; justify-content: center; font-size: 14px; padding: 10px 0px 10px 0px; line-height: 18px;}
+.codeimg .button .item-left{ border: 1px solid #ddd; background-color: #f8f8f8; padding: 7px 10px 7px 10px; width: 110px;
+border-radius: 5px 0px 0px 5px;border-right: 0; 
+}
+.codeimg .button .item-right{ border: 1px solid #ddd; background-color: #f8f8f8; padding: 7px 10px 7px 10px; width: 110px;
+border-radius: 0px 5px 5px 0px;
+}
+
+.theme{ font-size: 16px; color: #fe942d; padding: 20px 20px 10px 20px; text-align: center;}
+.theme-desc{ font-size: 12px; color: #777; line-height: 18px; padding: 0px 20px 0px 20px; text-align: center; font-weight: 300;}
+
+.browser-report{ padding: 0px 10px 10px 10px;}
+.browser-report image{ width: 100%;}
+
+
+
+
+.ticket-report{ display: flex; text-align: center; justify-content: center; align-items: center; padding: 20px;border-top:1px solid #eee;border-bottom:1px solid #eee;}
+.ticket-report .item{ max-width: 33.33%; min-width: 33.33%;}
+.ticket-report .line{ border-right: 1px solid #eee;}
+.ticket-report .item .number{ font-size: 18px;color:#fe942d;}
+.ticket-report .item .number text{ font-size: 12px;}
+.ticket-report .item .text{ font-size: 14px; color: #555; font-weight: 300; padding: 3px 0px 0px 0px;}
+
+
+
+
+
+.message-canvas{ padding: 10px 20px 25px 20px;}
+.message-canvas .message{ border: 1px solid #ccc; background-color: #fff; border-radius: 5px; padding: 15px;}
+
+.message-canvas .item-first{ border-bottom: 1px solid #eff2f4; padding: 0px 0px 8px 0px;}
+.message-canvas .item-first .image{  display: flex; height: 175px; width: 100%; background-size: cover; flex-direction: column; }
+.message-canvas .item-first .null{ flex-grow: 8;}
+.message-canvas .item-first .title{ flex-grow: 1; background-color: rgba(0, 0, 0, 0.7); color: #fff; padding: 10px 10px 0px 10px; line-height: 20px; font-size: 16px; }
+
+.message-canvas .item{ border-bottom: 1px solid #eff2f4;padding: 8px 0px 8px 0px; display: flex; flex-direction: row; align-items: center;}
+.message-canvas .item .text{ flex-grow: 8; font-size: 16px; padding: 0px 10px 0px 0px;}
+.message-canvas .item .img{flex-grow: 2; max-width: 50px; min-width: 50px;  height: 50px; }
+.message-canvas .item .img image{ width: 48px; height: 48px;border: 1px solid #eee;}
+
+.message-canvas .item-last{padding: 8px 0px 8px 0px;display: flex; flex-direction: row; align-items: center;}
+.message-canvas .item-last .text{ flex-grow: 8; font-size: 16px; padding: 0px 10px 0px 0px;}
+.message-canvas .item-last .img{flex-grow: 2; max-width: 50px; min-width: 50px;height: 50px; }
+.message-canvas .item-last .img image{ width: 50px; height: 50px;border: 1px solid #eee;}
+
+.message-canvas .item-new{ border-top: 1px solid #eff2f4; padding: 20px 0px 10px 0px; text-align: center;}
+.message-canvas .item-new .text{ font-size: 14px; border: 1px dashed #ddd; padding: 10px; border-radius: 5px; background-color: #f8f8f8;}

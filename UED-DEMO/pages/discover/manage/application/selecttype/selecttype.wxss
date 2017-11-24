@@ -1,0 +1,9 @@
+/* pages/discover/manage/application/selecttype/selecttype.wxss */
+
+.control-view .marsk{ background-color: #fff; display: flex; padding: 10px 15px 20px 15px; font-size: 14px;flex-wrap:wrap;}
+.control-view .marsk .item-group-name{width: 100%; padding: 15px 0px 3px 7px;}
+.control-view .marsk .item{ max-width: 33.33%; min-width: 33.33%; text-align: center; padding: 7px;}
+.control-view .marsk .item .text{ border: 1px solid #eee; padding: 8px 0px 8px 0px; line-height: 18px; background-color: #f5f8f8; border-radius: 5px;}
+
+.control-view .marsk .item-max{ width: 100%; text-align: center; padding: 7px;}
+.control-view .marsk .item-max .text{ border: 1px solid #eee; padding: 8px 0px 8px 0px; line-height: 18px; background-color: #f5f8f8; border-radius: 5px;}

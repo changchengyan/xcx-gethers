@@ -1,0 +1,265 @@
+.bt {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 320rpx;
+    height: 80rpx;
+    border-radius: 40rpx;
+    box-shadow: 0 0 24rpx 6rpx rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to right, #484848, #010101);
+}
+
+.bt_text {
+    position: relative;
+    width: 240rpx;
+    text-align: center;
+    color: #fff;
+}
+
+.bt_text > image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 21rpx;
+    height: 31rpx;
+}
+
+/*支付弹窗  */
+
+.maskBox {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 99;
+}
+
+.maskOfKey {
+    position: fixed;
+    top: 11%;
+    left: 50%;
+    width: 600rpx;
+    height: 735rpx;
+    margin-left: -300rpx;
+    /* border: 1px solid #ccc; */
+    background: #fff;
+    border-radius: 5px;
+    /* padding: 16rpx; */
+    z-index: 1001;
+}
+
+.maskOfKey .titleOfUnit {
+    font: 16px/1.2 "微软雅黑";
+    font-weight: 400;
+}
+
+.maskOfKey .key {
+    text-align: center;
+    margin-top: 20rpx;
+}
+
+.openThisUnitWithKey, .openAllBook {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.openAllBook {
+    margin-top: 56rpx;
+}
+
+.openAllBook .NeedMoney {
+    width: 100%;
+    height: 100%;
+    font-size: 56rpx;
+    font-weight: 600;
+    color: #fff;
+    /* text-shadow: 0px 0px 20rpx #2f8b10; */
+    font-family: "微软雅黑";
+    display: flex;
+    justify-content: center;
+    padding-top: 8rpx;
+    padding-right: 20rpx;
+}
+
+.openAllBook .NeedMoney .symbol {
+    font-weight: 600;
+    /* text-shadow: 0px 0px 10rpx #2f8b10; */
+    line-height: 88rpx;
+    display: inline-block;
+    padding: 0 10rpx;
+}
+
+.LeftY {
+    /* left: 0rpx; */
+    font-size: 28rpx !important;
+}
+
+.LeftC {
+    /* left: 200rpx; */
+    font-size: 24rpx !important;
+}
+
+.showNumOfMoney {
+    /* position: absolute;
+  top: 8rpx;
+  left: 40rpx; */
+    font-family: "微软雅黑";
+    font-weight: 900 !important;
+    /* text-shadow: 0px 0px 10rpx #2f8b10; */
+    line-height: 80rpx;
+}
+
+.openAllBook image {
+    width: 422rpx;
+    height: 104rpx;
+    margin-bottom: 30rpx;
+}
+
+.titleOfTips {
+    width: 600rpx;
+    height: 250rpx;
+    position: relative;
+    border-top-right-radius: 5rpx;
+    border-top-left-radius: 5rpx;
+}
+
+.titleOfTips text:first-of-type {
+    position: absolute;
+    top: 25rpx;
+    left: 30rpx;
+    font-size: 12px;
+    color: #fff;
+}
+
+.titleOfTips view.title-bg {
+    width: 600rpx;
+    height: 283rpx;
+    background-color: #7fe3f5;
+}
+
+.titleOfTips view.del {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 90rpx;
+    height: 90rpx;
+}
+
+.del image {
+    margin: 16rpx 0 0 45rpx;
+    width: 29rpx;
+}
+
+.tips {
+    width: 100%;
+    font-size: 28rpx;
+    color: #f4c520;
+    margin-top: 108rpx;
+    margin-bottom: 88rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+}
+
+.tips .color333 {
+    color: #333;
+}
+
+.tips image {
+    margin: 0 20rpx;
+    width: 61rpx;
+}
+
+.tips text:last-of-type {
+    font-size: 29px;
+}
+
+.WX-onSecurity {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.WX-onSecurity image {
+    display: inline-block;
+    width: 192rpx;
+}
+
+.WX-share {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.WX-share button {
+    width: 100%;
+    height: 25px;
+    opacity: 0;
+    position: absolute;
+    z-index: 5;
+}
+
+.unlockBtn {
+    width: 422rpx;
+    height: 104rpx;
+}
+
+.showBook {
+    width: 200rpx;
+    height: 258rpx;
+    box-shadow: 0 0rpx 10rpx rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 128rpx;
+    left: 50%;
+    margin-left: -100rpx;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.showBook image {
+    display: block;
+    width: 180rpx;
+    height: 238rpx;
+}
+
+.showMoney {
+    font-size: 24rpx;
+    line-height: 24rpx;
+    color: #666;
+    height: 60rpx;
+    font-family: "微软雅黑";
+    margin-top: 160rpx;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.showMoney .showNumOfMoney {
+    font-size: 60rpx;
+    line-height: 1;
+    font-family: "微软雅黑";
+    color: #7fe3f5;
+    padding: 0 10rpx;
+}
+
+.bookName {
+    width: 100%;
+    position: absolute;
+    top: 70rpx;
+    text-align: center;
+    font-size: 24rpx;
+    font-family: "微软雅黑";
+    color: #fff;
+    line-height: 24rpx;
+}

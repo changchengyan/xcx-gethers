@@ -1,0 +1,2 @@
+<!--pages/codebook/voice/search/search.wxml-->
+<view class='search-area'> <input placeholder="请输入书籍名称" ></input> </view>

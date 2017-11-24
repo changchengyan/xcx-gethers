@@ -1,0 +1,30 @@
+<!--pages/review/review.wxml-->
+<view class='bg'>
+ <view class='daxiang'>
+ <image class='daxiang_img' src='../images/daxiang.png'></image>
+ </view>
+  <view class='bg_in'>
+    <view class='title'>复习</view>
+    <view class='middle'>
+      <view class='review_num'>
+        <view class='num_title'>
+          <image class='num_img' src='../images/num_img.png'></image>
+          <view class='num_txt'>待复习单词数</view>
+        </view>
+        <view class='num'>{{words_num}}个</view>
+      </view>
+
+      <view class='review_num' bindtap='toReviewWord'>
+        <view class='num_title'>
+          <image class='num_img' src='../images/word_review.png'></image>
+          <view class='num_txt'>错题集</view>
+        </view>
+        <view class='num'>></view>
+      </view>
+
+    </view>
+
+    <view class='toreview' bindtap='toMyReview'>开始复习</view>
+  </view>
+
+</view>

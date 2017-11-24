@@ -1,0 +1,146 @@
+<!--pages/pass/pass.wxml-->
+<view class='bg'>
+  <view class='bg_box'></view>
+
+  <view class='bg_in'>
+    <view class='top'>
+      <view class='top_in'></view>
+      <view class='progress'>
+        <view class='pro_txt'> {{currentindex+1}}/{{question.length}}</view>
+        <view class='progress_in'>
+          <view class='pro' style='width:{{(currentindex+1)/question.length*100}}%'></view>
+        </view>
+      </view>
+      <view class='hp'>
+        <image class='hp_in' src='../images/hp_xin.png'></image>
+        <view hp_txt>{{hp}}</view>
+      </view>
+    </view>
+
+    <!--英译汉  -->
+    <block wx:if="{{ _type==1 }}">
+      <view class='solution'>
+        <view class='question'>
+          <view class='ques_txt'>{{question[currentindex].question.word_name}}</view>
+          <view class='audio' bindtap='audio'>
+            <view class='audio_txt'>朗读</view>
+            <audio src="{{question[currentindex].question.word_mp3_url}}" id="myAudio"></audio>
+            <image class='speak' src='../images/speaker.png'></image>
+          </view>
+        </view>
+        <view class='answer'>
+          <view wx:for="{{4}}" class='answer_in  ans_0_{{question[currentindex].answers[index].checked?aright:""}} {{aright == 0&&question[currentindex].answers[index].is_right == 1?"yes":""}}' data-right='{{question[currentindex].answers[index].is_right}}' bindtap='answer'
+            data-index='{{index}}'>{{question[currentindex].answers[index].answer}}</view>
+        </view>
+      </view>
+    </block>
+
+    <!--汉译英  -->
+    <block wx:if="{{_type==2}}">
+      <view class='solution'>
+        <view class='question'>
+          <view class='ques_txt'>{{question[currentindex].question.translation}}</view>
+        </view>
+        <view class='answer' style='margin-top:175rpx'>
+          <view wx:for="{{4}}" class='answer_in  ans_0_{{question[currentindex].answers[index].checked?aright:""}} {{aright == 0&&question[currentindex].answers[index].is_right == 1?"yes":""}}' data-right='{{question[currentindex].answers[index].is_right}}' bindtap='answer'
+            data-index='{{index}}'>{{question[currentindex].answers[index].answer}}</view>
+        </view>
+      </view>
+    </block>
+
+    <!--听写  -->
+    <block wx:if="{{_type==3}}">
+      <view class='solution'>
+        <view class='question'>
+          <view class='audio_t' bindtap='audio'>
+            <image src='../images/question_speak.png' class='question_speak'></image>
+            <audio src="{{question[currentindex].question.word_mp3_url}}" id="myAudio"></audio>
+          </view>
+        </view>
+        <view class='answer'>
+          <view wx:for="{{4}}" class='answer_in  ans_0_{{question[currentindex].answers[index].checked?aright:""}} {{aright == 0&&question[currentindex].answers[index].is_right == 1?"yes":""}}' data-right='{{question[currentindex].answers[index].is_right}}' bindtap='answer'
+            data-index='{{index}}'>{{question[currentindex].answers[index].answer}}</view>
+        </view>
+      </view>
+    </block>
+
+    <!--拼写  -->
+    <block wx:if="{{_type==4}}">
+      <view class='solution'>
+        <view class='question'>
+          <view class='ques_txt'>{{question[currentindex].question.translation}}</view>
+        </view>
+        <view class='answer_four'>
+          <view class='printf'>
+            <view class='dad'></view>
+            <view class='printf_in {{displayWord[index].cuo?"red_font":""}}'  data-index="{{index}}" wx:for="{{displayWord}}">{{item.one_word}}</view>
+            <view class='line' wx:for="{{line_num}}"></view>
+            <view class='shan' wx:if="{{!dis_false}}">
+              <view class='sanjiao'></view>
+              <view class='del' bindtap='del'>X</view>
+            </view>
+            <image class='del_t' src='../images/icon-cuo.png' wx:if="{{dis_false}}"></image>
+          </view>
+
+          <view class='trueword' wx:if="{{isKeyWord}}">{{question[currentindex].question.word_name}}</view>
+          <view class='audio' bindtap='audio' wx:if="{{!isKeyWord}}">
+            <view class='audio_txt'>朗读</view>
+            <audio src="{{question[currentindex].question.word_mp3_url}}" id="myAudio"></audio>
+            <image class='speak' src='../images/speaker.png'></image>
+          </view>
+          <view class='key'>
+            <view class='key_in  {{all_word[index].checked?"key_active":""}} {{all_word[index].opacity?"opa":""}}' wx:for="{{all_word}}" data-wordidx='{{item.word}}' bindtap='wordClick' data-index='{{index}}'>{{item.word}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <!--解析按钮-->
+    <view class='submit' wx:if="{{isDis}}">
+      <view class='jiexi' bindtap='detail'>
+        <image class='jie_bg' src='../images/jiexi.png'></image>
+        <view>解析</view>
+      </view>
+      <view class='next' bindtap='nextWord'>下一题</view>
+    </view>
+
+    <!--闯关完成-->
+    <view class='end' wx:if="{{isSubmit}}">
+      <view class='enf_bg'></view>
+      <view class='end_in'>
+        <image class='red' src='{{star == 0?"../images/blue.png":"../images/red.png"}}'></image>
+        <view class='end_star  starnum_{{star}}'>
+          <view></view>
+          <view style='margin-top:-40rpx'></view>
+          <view></view>
+        </view>
+        <view class='end_txt'>
+          <image class='txt_o' src='{{star==0?"../images/shibai.png":"../images/chenggong.png"}}'></image>
+          <view class='txt_t'>{{star==0?"辣眼睛，容我再战一回":"势如破竹"}}</view>
+        </view>
+        <view class='menu'>
+          <image class='menu_img_o' src='../images/Menu-btn-word.png' bindtap='toitem'></image>
+          <image class='menu_img' src='../images/Reload-btn.png' wx:if="{{star==0}}" bindtap='again'></image>
+          <image wx:if="{{star>0}}" class='menu_img' src='../images/Forward-btn.png' bindtap='next'></image>
+        </view>
+      </view>
+    </view>
+
+    <!--解析页面-->
+    <view class='detail' wx:if="{{displayX}}">
+      <view class='detail_box'></view>
+      <view class='detail_in'>
+        <!-- <view class='x' bindtap='close'>X</view> -->
+        <view class='detailquestion'>{{question[currentindex].question.word_name}}</view>
+        <view class='detail_audio' bindtap='audio'>
+          <view class='ipa'>[{{question[currentindex].question.ipa==null?"":question[currentindex].question.ipa}}]</view>
+          <audio src="{{question[currentindex].question.word_mp3_url}}" id="myAudio"></audio>
+          <image class='speak' src='../images/speaker.png'></image>
+        </view>
+        <view class='trans'>{{question[currentindex].question.translation}}</view>
+      </view>
+      <view class='de_bottom' bindtap='nextWord'>继续练习</view>
+    </view>
+
+  </view>
+</view>

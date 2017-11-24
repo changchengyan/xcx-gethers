@@ -1,0 +1,50 @@
+/* pages/evaluate/display/display.wxss */
+.main{position: fixed; z-index: 1; width: 100%; left: 0px; top: 0px;}
+.top{ position: fixed; z-index: 1; top: 0px; left: 0px; font-size: 12px; color: #eee; width: 100%; padding: 15px;}
+.top .back{float: left;padding: 5px 10px 5px 10px; line-height: 12px;}
+.top .create{ float: right; border-radius: 15px; border:1px solid #aaa; padding: 5px 10px 5px 10px; line-height: 12px;}
+
+.body-view{ height: 220px;}
+.body{ height: 220px; background-size: cover;}
+.content{ height: 100%;background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.8)); color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+
+ }
+ .content .text{ padding: 20px; font-size: 16px; line-height: 22px;}
+
+
+.console{ display: flex; flex-direction: row; justify-content: center; align-items: center; text-align: center; padding: 10px; background-color: #f8f8f8; border-bottom: 1px solid #eee;}
+.console .prev{width: 40px; height: 40px;}
+.console .prev image{ width: 40px; height: 40px;}
+.console .play{width: 50px; height: 50px;margin:0px 40px 0px 40px;}
+.console .play image{ width: 50px; height: 50px;}
+.console .next{width: 40px; height: 40px; }
+.console .next image{width: 40px; height: 40px;}
+
+.main .info .translation-title{ font-size: 14px; font-weight: 500; padding: 20px 20px 0px 20px;}
+.main .info .translation{padding: 5px 20px 20px 20px; font-size: 14px;}
+.main .info .source{font-size: 12px; color: #777; padding: 0px 20px 0px 20px;}
+
+
+.report-area{padding: 20px 20px 0px 20px;}
+.report{ display: flex; align-items: center; flex-direction: row;  border-bottom: 1px solid #eee; padding: 0px 0px 20px 0px;}
+.report .score{ flex-grow: 7; text-align: center;}
+.report .score .number{ font-size: 22px;}
+.report .score .number text{font-size: 12px; color: #777;}
+.report .score .text{font-size: 14px; color: #777;}
+
+.report .order{ flex-grow: 7; text-align: center;}
+.report .order .number{ font-size: 22px;}
+.report .order .number text{font-size: 12px; color: #777;}
+.report .order .text{font-size: 14px; color: #777;}
+
+.report .to-text{flex-grow: 2; font-size: 14px;  max-width: 60px;}
+.report .to-icon{flex-grow: 1; padding: 5px 0px 0px 0px; max-width: 35px;}
+.report .to-icon image{ width: 35px; height: 35px;}
+
+.bottom{  padding: 10px 0px 10px 0px; width: 100%; position: fixed; z-index: 2; left: 0px; bottom: 0px;}
+.record{ width: 60px; height: 60px; border:1px solid #eee; border-radius: 50px; margin: auto; padding: 12px;}
+.record image{ width: 35px; height: 35px;}

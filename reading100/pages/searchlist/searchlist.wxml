@@ -1,0 +1,105 @@
+<!--searchlist.wxml-->
+<view class="{{font}} font searchBox-{{ifDefaultTouch}} default">
+    <!--年级列表  -->
+
+    <!-- <view class="list-top">
+        <view class="classification" catchtap="showGradeList">
+            <image src="/images/searchlist/class.png"></image>
+            <text class="f1 colorf">筛选年级</text>
+        </view> -->
+        <!-- <view class="scan" catchtap="GetBookByScanISBN">
+      <image src="/images/searchlist/scan.png"></image>
+      <text class="f1 colorf">新增书籍</text>
+    </view> -->
+    <!-- </view>
+    <view class="list-top-area"></view> -->
+    <!--预加载图片 -->
+    <view class="proLoad">
+        <image src="http://image.chubanyun.net/images/Dictation/searchlist/title_bg.png"></image>
+        <image src="http://image.chubanyun.net/images/Dictation/searchlist/grade.png"></image>
+        <image src="http://image.chubanyun.net/images/Dictation/searchlist/grade_checked.png"></image>
+    </view>
+    <!-- <view class="{{grade_listBox}}" catchtouchmove="stopMove">
+        <view class="mask" bindtap="hideGradeList">
+            <view class="grade_list">
+                <view class="title_bg">
+                    <text>请选择你的年级</text>
+                </view>
+                <view class="list" catchtap="chooseGrade">
+                    <view class="grade {{grade_bg[0]}}01" id="grade1"></view>
+                    <view class="grade {{grade_bg[1]}}02" id="grade2"></view>
+                    <view class="grade {{grade_bg[2]}}03" id="grade3"></view>
+                    <text>一年级</text>
+                    <text>二年级</text>
+                    <text>三年级</text>
+                    <view class="grade {{grade_bg[3]}}04" id="grade4"></view>
+                    <view class="grade {{grade_bg[4]}}05" id="grade5"></view>
+                    <view class="grade {{grade_bg[5]}}06" id="grade6"></view>
+                    <text>四年级</text>
+                    <text>五年级</text>
+                    <text>六年级</text>
+                    <view class="grade {{grade_bg[6]}}07" id="grade7"></view>
+                </view>
+            </view>
+        </view>
+    </view> -->
+
+    <!--书籍列表  -->
+    <block wx:if="{{!isbnList.isShow}}">
+        <scroll-view class="page-list" scroll-y="true" enable-back-to-top="true" catchtap="hideGradeList" bindscrolltolower="loadBookList">
+            <!--列表页-->
+            <view wx:for='{{gradeArr}}' wx:key="index" wx:for-index="idx">
+                <view wx:if='{{bookJson[item]}}'>
+                    <view class="grade_name">
+                        <view class="grade{{idx}}"></view>
+                        <text class="f2">{{item}}</text>
+                    </view>
+                    <view class="book-list" wx:if="{{book.count > 0}}">
+                        <view id="add{{item.isadd}}" class="item" wx:for="{{bookJson[item]}}" wx:key="id" catchtap="toBookPage" data-book-name="{{item.book_name}}" data-book-pic="{{item.book_pic}}" data-book-id="{{item.id}}" data-book-grade="{{item.book_grade}}">
+                            <view class="item-content">
+                                <view class="icon-view" style="height:{{imgHeight}}px">
+                                    <view style="background:url({{item.book_pic}}) no-repeat center;" class="book-img"></view>
+                                    <image class="icon" src="{{item.book_pic}}" mode="widthFix" style="padding:{{fixPadding}}px 0"></image>
+                                </view>
+                                <view class="book_publish_brief f1 colorf">{{item.book_publish_brief}}</view>
+                                <view class="exiting f1" wx:if="{{item.isadd}}">已添加</view>
+                            </view>
+                            <view class="text-view f2">
+                                <view class="text color9">{{item.book_name}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="no_more" wx:if="{{!loadMore && !loadding}}">已经全部加载完成</view>
+        </scroll-view>
+    </block>
+
+    <!--isbn多书籍  -->
+    <block wx:else>
+        <scroll-view class="page-list isbn-list" scroll-y="true">
+            <!--列表页-->
+            <view class="grade_name">
+                <view class="grade{{isbnList.idx}}"></view>
+                <text class="f2">{{isbnList.book_grade}}</text>
+            </view>
+            <view class="book-list" wx:if="{{isbnList.list.length > 1}}">
+                <view id="add{{item.isadd}}" class="item" wx:for="{{isbnList.list}}" wx:key="id" catchtap="toBookPage" data-book-name="{{item.book_name}}" data-book-pic="{{item.book_pic}}" data-book-id="{{item.id}}" data-book-index="{{index}}">
+                    <view class="item-content">
+                        <view class="icon-view" style="height:{{imgHeight}}px">
+                            <view style="background:url({{item.book_pic}}) no-repeat center;" class="book-img"></view>
+                            <image class="icon" src="{{item.book_pic}}" mode="widthFix" style="padding:{{fixPadding}}px 0"></image>
+                        </view>
+                        <view class="book_publish_brief f1 colorf">{{item.book_publish_brief}}</view>
+                        <view class="exiting f1" wx:if="{{item.isadd}}">已添加</view>
+                    </view>
+                    <view class="text-view f2">
+                        <view class="text color9">{{item.book_name}}</view>
+                    </view>
+                </view>
+
+            </view>
+        </scroll-view>
+    </block>
+
+</view>

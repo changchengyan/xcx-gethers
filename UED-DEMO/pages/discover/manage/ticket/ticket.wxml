@@ -1,0 +1,32 @@
+<!--pages/discover/manage/ticket/ticket.wxml-->
+<view class='book-console'>
+  <view class='left'>筛选</view>
+  <view class='left'>排序</view>
+  <view class='null'></view>
+  <view class='right'>创建二维码</view>
+</view>
+<view class='ticket-canvas'>
+  <view class='ticket' bindtap='toTicket'>
+    <view class='codeimg'><image src='https://oss.5rs.me/oss/upload/image/png/4e580755e8234644a732798aa1027abb.png?x-oss-process=image/resize,p_100' mode='widthFix'></image></view>
+    <view class='codeinfo'>
+      <view class='title'>长江作业本四年级语文</view>
+      <view class='tag'>语文; 学龄前; 升学考试</view>
+    </view>  
+    <view class='report'>
+      <view class='number'>972</view>
+      <view class='text'>累积扫码</view>
+    </view>               
+  </view>
+
+  <view class='ticket' bindtap='toTicket'>
+    <view class='codeimg'><image src='https://oss.5rs.me/oss/upload/image/png/4e580755e8234644a732798aa1027abb.png?x-oss-process=image/resize,p_100' mode='widthFix'></image></view>
+    <view class='codeinfo'>
+    <view class='title'>烘焙聚集地——爱吃的吃货</view>
+      <view class='tag'>语文; 学龄前; 升学考试</view>
+    </view> 
+    <view class='report'>
+      <view class='number'>1912</view>
+      <view class='text'>累积扫码</view>
+    </view>               
+  </view>
+</view>

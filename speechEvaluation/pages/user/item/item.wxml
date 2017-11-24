@@ -1,0 +1,73 @@
+<!--pages/user/item/item.wxml-->
+<view class='bg'>
+  <form report-submit='true' catchsubmit='getFormID'>
+    <scroll-view class='page-scroll-view' scroll-y="true" bindscrolltolower="loadItemInfo">
+      <swiper class='swiper' indicator-dots="true" indicator-active-color="#4EC98B" indicator-color="#777" autoplay="true" interval="3000">
+        <view wx:for="{{info}}">
+          <swiper-item class='item-index' wx:if="{{index<3}}">
+            <image class='img' src='{{item.sentence_pic}}'></image>
+            <button class='from-bottom btn' form-type='submit' bindtap='gotoDetail' data-id='{{item.id}}' data-index='{{index}}' data-title='{{item.sentence}}'> </button>
+            <view class='content'></view>
+            <view class='english'>
+            <view class='text'>
+              {{item.sentence}}
+            </view>
+            <view wx:if="{{type=='book'}}" class='evalution'>
+              <text>评测 {{item.evaluation_count}}　</text>
+              <block wx:if="{{item.is_evaluation>0}}">
+                <image src='/pages/images/right.png'></image>
+                <text>{{item.score}}分</text>
+              </block>
+            </view>
+            <view wx:if="{{type=='evaluation'}}" class='evalution'>
+              评测 {{item.evaluation_count}} 　得分 {{item.score}}
+            </view>
+            </view>
+          </swiper-item>
+        </view>
+      </swiper>
+
+      <view wx:for="{{info}}">
+        <view class='item' wx:if="{{index>=3}}">
+          <button class='from-bottom btn_t' form-type='submit' bindtap='gotoDetail' data-id='{{item.id}}' data-index='{{index}}' data-title='{{item.sentence}}'> </button>
+          <view class="item-box">
+            <view class='content'>
+              <view class='text'>
+                {{item.sentence}}
+              </view>
+              <view wx:if="{{type=='book'}}" class='evalution'>
+                <text>评测 {{item.evaluation_count}}　</text>
+                <block wx:if="{{item.is_evaluation>0}}">
+                  <image src='/pages/images/right.png'></image>
+                  <text>{{item.score}}分</text>
+                </block>
+              </view>
+              <view wx:if="{{type=='evaluation'}}" class='evalution'>
+                评测 {{item.evaluation_count}}　得分 {{item.score}}
+              </view>
+            </view>
+            <image class='img' src='{{item.sentence_pic}}'></image>
+          </view>
+          <view class='clear'></view>
+        </view>
+
+      </view>
+
+      <view wx:if="{{!loadMore&&info.length>5}}" class='line'>我是有底线的</view>
+      <view wx:if="{{loadMore&&info.length>pageSize}}">
+        <div class="loader">
+          <div class="ball-pulse">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </view>
+      <view class='null' wx:if="{{info.length==0}}">
+        <image class='img' src='/pages/images/null.png'></image>
+        <view class='text'>暂无数据，等待添加中...</view>
+      </view>
+
+    </scroll-view>
+  </form>
+</view>

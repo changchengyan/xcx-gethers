@@ -1,0 +1,200 @@
+<!--pages/book/bookshelf/bookshelf.wxml-->
+
+<form report-submit='true' catchsubmit='getFormID'>
+  <view class='bg'>
+    <view class='grade'>
+      <view class='text {{(grade=="一年级"?"select-text":"")}}' bindtap='gotoBookshelf' data-grade="一年级">一年级</view>
+      <view class='text {{(grade=="二年级"?"select-text":"")}}' bindtap='gotoBookshelf' data-grade="二年级">二年级</view>
+      <view class='text {{(grade=="三年级"?"select-text":"")}}' bindtap='gotoBookshelf' data-grade="三年级">三年级</view>
+      <view class='text {{(grade=="四年级"?"select-text":"")}}' bindtap='gotoBookshelf' data-grade="四年级">四年级</view>
+      <view class='text {{(grade=="五年级"?"select-text":"")}}' bindtap='gotoBookshelf' data-grade="五年级">五年级</view>
+      <view class='text {{(grade=="六年级"?"select-text":"")}}' bindtap='gotoBookshelf' data-grade="六年级">六年级</view>
+      <view class='clear'></view>
+    </view>
+    <scroll-view class='scroll' scroll-y="true" scroll-into-view="{{gradeid}}" scroll-top="200">
+      <view id='grade1' class='grade-book-box' wx:if='{{grade1Books.length>0}}'>
+        <view class='title'>
+          <view class='flag'></view>
+          一年级
+        </view>
+        <block wx:for="{{grade1Books}}">
+          <view class='book'>
+            <button class='from-bottom btn' form-type='submit' bindtap='gotoItem' data-grade='{{1}}' data-index='{{index}}' data-id='{{item.id}}' data-title='{{item.book_name}}'> </button>
+            <image class='img' src='{{item.book_pic}}'>
+              <view class='flag' wx:if='{{item.is_pay==1&&item.is_free==0}}'>
+                <text>已购</text>
+              </view>
+              <view class='flag' wx:if='{{item.is_pay==0&&item.is_free==1}}'>
+                <text>获赠</text>
+              </view>
+            </image>
+            <view class='text'>{{item.book_name}}</view>
+            <view class='user-list' wx:if='{{item.evaluation_users_count>0}}'>
+              <text>附近参与评测的用户</text>
+              <text class='right'>{{item.evaluation_users_count}}人</text>
+              <view class='headimg'>
+                <block wx:for='{{item.evaluation_users}}' wx:for-item='user'>
+                  <image src='{{user.headimgurl}}'></image>
+                </block>
+              </view>
+            </view>
+          </view>
+        </block>
+        <view class='clear'></view>
+      </view>
+
+      <view id='grade2' class='grade-book-box' wx:if='{{grade2Books.length>0}}'>
+        <view class='title'>
+          <view class='flag'></view>
+          二年级</view>
+        <block wx:for="{{grade2Books}}">
+          <view class='book'>
+            <button class='from-bottom btn' form-type='submit' bindtap='gotoItem' data-grade='{{2}}' data-index='{{index}}' data-id='{{item.id}}' data-title='{{item.book_name}}'> </button>
+            <image class='img' src='{{item.book_pic}}'>
+              <view class='flag' wx:if='{{item.is_pay==1&&item.is_free==0}}'>
+                <text>已购</text>
+              </view>
+              <view class='flag' wx:if='{{item.is_pay==0&&item.is_free==1}}'>
+                <text>获赠</text>
+              </view>
+            </image>
+            <view class='text'>{{item.book_name}}</view>
+            <view class='user-list' wx:if='{{item.evaluation_users_count>0}}'>
+              <text>附近参与评测的用户</text>
+              <text class='right'>{{item.evaluation_users_count}}人</text>
+              <view class='headimg'>
+                <block wx:for='{{item.evaluation_users}}' wx:for-item='user'>
+                  <image src='{{user.headimgurl}}'></image>
+                </block>
+              </view>
+            </view>
+          </view>
+        </block>
+        <view class='clear'></view>
+      </view>
+
+      <view id='grade3' class='grade-book-box' wx:if='{{grade3Books.length>0}}'>
+        <view class='title'>
+          <view class='flag'></view>
+          三年级
+        </view>
+        <block wx:for="{{grade3Books}}">
+          <view class='book'>
+            <button class='from-bottom btn' form-type='submit' bindtap='gotoItem' data-grade='{{3}}' data-index='{{index}}' data-id='{{item.id}}' data-title='{{item.book_name}}'> </button>
+            <image class='img' src='{{item.book_pic}}'>
+              <view class='flag' wx:if='{{item.is_pay==1&&item.is_free==0}}'>
+                <text>已购</text>
+              </view>
+              <view class='flag' wx:if='{{item.is_pay==0&&item.is_free==1}}'>
+                <text>获赠</text>
+              </view>
+            </image>
+            <view class='text'>{{item.book_name}}</view>
+            <view class='user-list' wx:if='{{item.evaluation_users_count>0}}'>
+              <text>附近参与评测的用户</text>
+              <text class='right'>{{item.evaluation_users_count}}人</text>
+              <view class='headimg'>
+                <block wx:for='{{item.evaluation_users}}' wx:for-item='user'>
+                  <image src='{{user.headimgurl}}'></image>
+                </block>
+              </view>
+            </view>
+          </view>
+        </block>
+        <view class='clear'></view>
+      </view>
+
+      <view id='grade4' class='grade-book-box' wx:if='{{grade4Books.length>0}}'>
+        <view class='title'>
+          <view class='flag'></view>
+          四年级
+        </view>
+        <block wx:for="{{grade4Books}}">
+          <view class='book'>
+            <button class='from-bottom btn' form-type='submit' bindtap='gotoItem' data-grade='{{4}}' data-index='{{index}}' data-id='{{item.id}}' data-title='{{item.book_name}}'> </button>
+            <image class='img' src='{{item.book_pic}}'>
+              <view class='flag' wx:if='{{item.is_pay==1&&item.is_free==0}}'>
+                <text>已购</text>
+              </view>
+              <view class='flag' wx:if='{{item.is_pay==0&&item.is_free==1}}'>
+                <text>获赠</text>
+              </view>
+            </image>
+            <view class='text'>{{item.book_name}}</view>
+            <view class='user-list' wx:if='{{item.evaluation_users_count>0}}'>
+              <text>附近参与评测的用户</text>
+              <text class='right'>{{item.evaluation_users_count}}人</text>
+              <view class='headimg'>
+                <block wx:for='{{item.evaluation_users}}' wx:for-item='user'>
+                  <image src='{{user.headimgurl}}'></image>
+                </block>
+              </view>
+            </view>
+          </view>
+        </block>
+        <view class='clear'></view>
+      </view>
+
+      <view id="grade5" class='grade-book-box' wx:if='{{grade5Books.length>0}}'>
+        <view class='title'>
+          <view class='flag'></view>
+          五年级</view>
+        <block wx:for="{{grade5Books}}">
+          <view class='book'>
+            <button class='from-bottom btn' form-type='submit' bindtap='gotoItem' data-grade='{{5}}' data-index='{{index}}' data-id='{{item.id}}' data-title='{{item.book_name}}'> </button>
+            <image class='img' src='{{item.book_pic}}'>
+              <view class='flag' wx:if='{{item.is_pay==1&&item.is_free==0}}'>
+                <text>已购</text>
+              </view>
+              <view class='flag' wx:if='{{item.is_pay==0&&item.is_free==1}}'>
+                <text>获赠</text>
+              </view>
+            </image>
+            <view class='text'>{{item.book_name}}</view>
+            <view class='user-list' wx:if='{{item.evaluation_users_count>0}}'>
+              <text>附近参与评测的用户</text>
+              <text class='right'>{{item.evaluation_users_count}}人</text>
+              <view class='headimg'>
+                <block wx:for='{{item.evaluation_users}}' wx:for-item='user'>
+                  <image src='{{user.headimgurl}}'></image>
+                </block>
+              </view>
+            </view>
+          </view>
+        </block>
+        <view class='clear'></view>
+      </view>
+
+      <view id='grade6' class='grade-book-box' wx:if='{{grade6Books.length>0}}'>
+        <view class='title'>
+          <view class='flag'></view>
+          六年级</view>
+        <block wx:for="{{grade6Books}}">
+          <view class='book'>
+            <button class='from-bottom btn' form-type='submit' bindtap='gotoItem' data-grade='{{6}}' data-index='{{index}}' data-id='{{item.id}}' data-title='{{item.book_name}}'> </button>
+            <image class='img' src='{{item.book_pic}}'>
+              <view class='flag' wx:if='{{item.is_pay==1&&item.is_free==0}}'>
+                <text>已购</text>
+              </view>
+              <view class='flag' wx:if='{{item.is_pay==0&&item.is_free==1}}'>
+                <text>获赠</text>
+              </view>
+            </image>
+            <view class='text'>{{item.book_name}}</view>
+            <view class='user-list' wx:if='{{item.evaluation_users_count>0}}'>
+              <text>附近参与评测的用户</text>
+              <text class='right'>{{item.evaluation_users_count}}人</text>
+              <view class='headimg'>
+                <block wx:for='{{item.evaluation_users}}' wx:for-item='user'>
+                  <image src='{{user.headimgurl}}'></image>
+                </block>
+              </view>
+            </view>
+          </view>
+        </block>
+        <view class='clear'></view>
+      </view>
+      <!-- <view class='grade-box' style='height:{{nullHeight}}rpx;'></view> -->
+    </scroll-view>
+  </view>
+</form>

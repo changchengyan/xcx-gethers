@@ -1,0 +1,114 @@
+/* pages/user/user */
+@import "../template/template.wxss";
+page {
+  box-sizing: border-box;
+}
+
+.user-wrap {
+  font-size: 32rpx;
+  color: #333;
+}
+
+.user-photo {
+  height: 300rpx;
+  width: 100%;
+  background: #06c1ae url(http://image.chubanyun.net/images/Dictation/user/head_BG.png) no-repeat bottom;
+  background-size: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 220rpx;
+  height: 250rpx;
+  background: url(http://image.chubanyun.net/images/Dictation/user/headset.png) no-repeat top;
+  background-size: contain;
+}
+
+.user-photo .circlePhoto {
+  width: 140rpx;
+  height:140rpx;
+  border-radius: 100%;
+  margin: 26rpx 0 20rpx;
+}
+
+.user-name {
+  font-size: 30rpx;
+  color: #fff;
+}
+
+.data-list {
+  padding: 20rpx 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #f3f3f3;
+}
+.data-list view {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border-right: 1px solid #eee; */
+  font-size: 26rpx;
+  color: #666;
+  height: 130rpx;
+  overflow: hidden;
+}
+
+.data-list .num {
+  font-size: 38rpx;
+  color: #06c1ae;
+  margin-bottom: 15rpx;
+}
+
+.bookNum-total {
+  text-align: center;
+  line-height: 100rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.NavTo-learnTools {
+  margin: 0 24rpx;
+  padding: 0 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  position: relative;
+  overflow: hidden;
+}
+.NavTo-learnTools button {
+  width: 100%;
+  height:100%;
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: 100;
+  opacity: 0
+}
+.NavTo-learnTools view {
+  line-height: 100rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.symbol  image {
+  width: 18rpx;
+  height: 12px;
+}
+
+.contact {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}

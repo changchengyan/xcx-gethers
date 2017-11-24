@@ -1,0 +1,91 @@
+/* book.wxss */
+view{
+  box-sizing: border-box;
+}
+/*头部*/
+.title{
+  width:100vw;
+  background-color: #eee;
+}
+.publicKeyNum{
+  font-size: 14px !important;
+  line-height: 18px !important;
+  padding: 8px 0;
+  padding-right: 5px;
+}
+.book-title{
+   width:auto; 
+  padding: 8px 0;
+  padding-left: 30rpx;
+}
+/*单元列表*/
+.unit-list{
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0 30rpx 30rpx 10rpx;
+  justify-content: flex-start;
+}
+.unit-item{
+  width: 146rpx;
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+  font-size: 0;
+} 
+.unit-list .unit-item .icon{
+  width: 146rpx;
+  height: 146rpx;
+  border: 1px solid #eee;
+  border-radius: 5px;
+}
+.unit-list .unit-item .unit-name{
+  margin-top: 20rpx;
+  text-align: center;
+  padding: 0 5rpx;
+  max-height: 36px;
+  overflow: hidden;
+
+  /*word-break:break-all;*/
+}
+/*根据星星的数量来显示星星*/
+.unit-star-3,.unit-star-2,.unit-star-1,.unit-star-0{
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx 10rpx 0 10rpx;
+  flex-grow: 0;
+}
+.unit-star-3 view{
+  width: 38rpx;
+  height: 38rpx;
+  background: url(http://rayscloud.chubanyun.net/Content/images/Dictation/book/star_light.png);
+  background-size: cover;
+}
+.unit-star-2 view:nth-child(1),.unit-star-2 view:nth-child(2){
+  width: 38rpx;
+  height: 38rpx;
+  background: url(http://rayscloud.chubanyun.net/Content/images/Dictation/book/star_light.png);
+  background-size: cover;
+}
+.unit-star-2 view:nth-child(3){
+  width: 38rpx;
+  height: 38rpx;
+  background: url(http://rayscloud.chubanyun.net/Content/images/Dictation/book/star.png);
+  background-size: cover;
+}
+.unit-star-1 view:nth-child(1){
+  width: 38rpx;
+  height: 38rpx;
+  background: url(http://rayscloud.chubanyun.net/Content/images/Dictation/book/star_light.png);
+  background-size: cover;
+}
+.unit-star-1 view:nth-child(2),.unit-star-1 view:nth-child(3){
+  width: 38rpx;
+  height: 38rpx;
+  background: url(http://rayscloud.chubanyun.net/Content/images/Dictation/book/star.png);
+  background-size: cover;
+}
+.unit-star-0 view{
+  width: 38rpx;
+  height: 38rpx;
+  background: url(http://rayscloud.chubanyun.net/Content/images/Dictation/book/star.png);
+  background-size: cover;
+}

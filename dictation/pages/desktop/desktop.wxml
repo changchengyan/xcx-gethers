@@ -1,0 +1,99 @@
+<!--pages/desktop/desktop.wxml-->
+
+<!-- index -->
+<view class="{{font}} {{index_if_show}}">
+  <view class="userinfo">
+    <text class="userinfo-nickname f4">欢迎!{{userInfo.weixinUser.nickname}}</text>
+    <image class="userinfo-avatar" src="{{userInfo.weixinUser.headimgurl}}" background-size="cover"></image>
+    <text class="intro f2 color6">我是RAYS听写,我可以:</text>
+    <text class="f2 color6">用最标准的发音给您的孩子报听写</text>
+  </view>
+  <view class="margintop_284">
+    <import src="/pages/template/template.wxml" />
+    <template is="bt_start_tingxie"></template>
+  </view>
+
+  <text class="f1 color6 now_personNum">正在听写 : {{now_personNum}}人</text>
+</view>
+
+
+<view class="{{font}} {{desk_if_show}}">
+  <!-- 有书籍时，主界面显示书架和扫码 -->
+  <block>
+    <scroll-view class="page-list" scroll-y="true" catchtap="hiddenDeleteBtn" enable-back-to-top="true">
+      <!--扫码添加书籍-->
+      <view class="book-add-area">
+        <view class="book-count f-book-count" bindtap="bindViewTap">
+          <text class="count">{{book.total_count}}</text>
+          <text class="text f2">本</text>
+        </view>
+        <view class="book-scan" bindtap="bindStartScan">
+          <view class="icon">
+            <image src="/images/desktop/scan.png" mode="widthFix"></image>
+          </view>
+          <view class="text f1">扫一扫</view>
+        </view>
+      </view>
+      <view class="book-add-area-visibility">正在刷新</view>
+      <!--列表页-->
+      <view class="book-list">
+        <view class="item" wx:for="{{book.list}}" wx:key="id" bindlongtap="longTapBook" bindtap="toBookPage" data-book-id="{{item.id}}" data-book-index="{{index}}" data-book-name="{{item.book_name}}">
+          <block wx:if="{{showDeleteBtn}}">
+            <view class="item-delete" catchtap="deleteBook" data-book-id="{{item.id}}" data-book-index="{{index}}" >
+              <image src="/images/desktop/delete_btn.png" mode="widthFix"></image>
+            </view>
+          </block>
+          
+          <view class="item-content">
+            <view class="icon-view" style="height:{{imgHeight}}px">
+              <!--<view style="background:url({{item.book_pic}}) no-repeat center;" class="book-img"></view>-->
+              <image class="icon" src="{{item.book_pic}}" mode="widthFix" style="padding:{{fixPadding}}px 0"></image>
+            </view>
+          </view>
+          <view class="text-view f2">
+            <text class="text">{{item.book_name}}</text>
+          </view>
+        </view>
+      </view>
+      <block wx:if="{{ifTrueDel}}">
+        <view class="to-sure-del-btn" catchtap="stopTouch" catchtouchmove="stopTouch">
+          <view class="to-sure-del">
+            <view class="to-sure-word">
+              <text>是否确定删除此书籍</text>
+            </view>
+            <view class="to-choose-sure">
+              <view class="choose-button" catchtap="sureDel">确定</view>
+              <view class="choose-button" catchtap="noDel">再想想</view>
+            </view>
+          </view>
+        </view>
+      </block>
+      <view class="bottom_block"></view>
+      <!--用户第一次登录时的引导页  -->
+      <view class="{{first_login}}" catchtouchmove="stopTouch">
+        <image src="/images/desktop/firstlogin.png" class="img_director"></image>
+        <text class="f5 colore">扫描课本条形码，</text>
+        <text class="f5 colore">加入书架后即可开始听写</text>
+        <view class="iknow" bindtap="changeDirector">
+          <text class=" f3 colore">我知道了</text>
+        </view>
+      </view>
+      <!--自定义听写本-->
+      <view class="{{selfBookData}}">
+        <view class="slideDownUp_btn" bindtap="slideDownUp">
+          <image src="{{slideImg}}"></image>
+        </view>
+        <view class="selfbook_btn" bindtap="selfBook">
+          <image src="/images/desktop/selfbook.png"></image>
+          <text class="f2">自定义</text>
+        </view>
+        <text class="f1 color6 now_personNum">正在听写 : {{now_personNum}}人</text>
+        <view class="{{mybook}}" bindtap="toMyWord">
+          <image src="/images/desktop/mybook.png"></image>
+          <text class="f2 color3">我的自定义</text>
+        </view>
+      </view>
+    </scroll-view>
+  </block>
+  
+</view>

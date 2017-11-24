@@ -1,0 +1,9 @@
+<!--pages/setting/setting.wxml-->
+<view class="item" bindtap="clear"><text>清除缓存</text>
+  <view class="size">{{size}}kb</view>
+</view>
+<view class="item">
+  <button class="contact-button" open-type="contact"></button>
+  <text>意见反馈</text>
+  <image class="contact" src="../../images/mine/contact.png"></image>
+</view>

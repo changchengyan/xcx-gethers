@@ -1,0 +1,14 @@
+/* pages/discover/manage/source/source.wxss */
+
+.menu-scroll-canvas{position: fixed; left: 0px; top: 0px; z-index: 1; width: 100%; }
+.menu-scroll{ }
+.source-menu{ display: flex; justify-content: center; background-color: #f8f8f8; width: 130%;}
+.source-menu .item{ white-space:nowrap;padding: 15px 0px 12px 0px; font-size: 14px; border-bottom: 1px solid #eee; text-align: center; flex-grow: 1;}
+.source-menu .over{ border-bottom: 1px solid #fe942d; color:#fe942d;}
+
+
+.source-body{ height: 100%; width: 100%; position: absolute; padding: 48px 0px 55px 0px;}
+.source-body .swiper-canvas{  height: 100%;}
+.source-body .source-swiper{ background-color: #fff; height: 100%;}
+.source-body .list-scroll{height: 100%;}
+

@@ -1,0 +1,157 @@
+<!--pages/PK/PK_answer/PK_answer.wxml-->
+<view class="PK_reay_block" wx:if="{{readyOk}}">
+  <!-- //选择对手 -->
+  <view class="PK_reay_bg">
+    <view class="opponent">
+      <image src="{{opponent.headimgurl}}" mode='widthFix'></image>
+      <text class="" wx:if="{{!opponent.headimgurl}}">正在匹配对手</text>
+      <text class="" wx:else>{{opponent.nickname}}</text>
+    </view>
+    <view class="readying">
+      <image src='/pages/images/readying.png' mode='widthFix'></image>
+
+    </view>
+    <view class="user">
+      <!-- <canvas canvas-id="isCanvas" class="read_loading"></canvas> -->
+      <!-- <view class="read_loading" id="read_loading"></view> -->
+      <image src="{{user.headimgurl}}" mode='widthFix'></image>
+      <text class="">{{user.nickname}}</text>
+    </view>
+    <view class="cancel" bindtap='toitem'>取消</view>
+  </view>
+</view>
+
+
+
+<view class='bg'>
+  <view class='bg_box'></view>
+
+  <view class='bg_in'>
+    <view class='top'>
+
+      <!-- <view class='progress'>
+        <view class='pro_txt'> {{currentindex+1}}/{{question.length}}</view>
+        <view class='progress_in'>
+          <view class='pro' style='width:{{(currentindex+1)/question.length*100}}%'></view>
+        </view>
+      </view>
+      <view class='hp'>
+        <image class='hp_in' src='/pages/images/hp_xin.png'></image>
+        <view hp_txt>{{hp}}</view>
+      </view> -->
+      <view class="show_score flexRow">
+        <view class="user_score ">
+          <image src=' {{user.headimgurl}}'></image>
+          <view class="score_show">
+            {{userInfo.total_score}}
+          </view>
+        </view>
+        <view class="info flexColumn">
+          <view class="right_progress flexRow">
+            <view class="user_progress" style="width:{{userWidth}}%"></view>
+            <view class="lightning" style='left:{{userWidth}}%'>
+              <image src='/pages/images/lightning.png' mode="widthFix"></image>
+            </view>
+            <view class="opponent_progress" style='width:{{challengerWidth}}%'></view>
+          </view>
+          <view class="name flexRow">
+            <view>{{user.nickname}}</view>
+            <view>{{time_down}}s</view>
+            <view>{{opponent.nickname}}</view>
+          </view>
+        </view>
+        <view class="other_score">
+          <image src=' {{opponent.headimgurl}}'></image>
+          <view class="score_show">
+            {{challengerInfo.total_score}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <!--第几题  -->
+    <view class="question_num question_num_{{rest?'run':'norun'}}" wx:if="{{rest}}">
+      第{{currentindex+1}}题
+    </view>
+    <!--答题  -->
+    <block wx:if="{{userInfo.combo>1 && always_right}}">
+      <view class="always_right {{always_right?'always_right_show':''}}">
+        <view class="times">{{userInfo.combo}}</view>
+        <view> 连对</view>
+      </view>
+    </block>
+    <block wx:if="{{!rest}}">
+      <!--英译汉  -->
+      <block wx:if="{{ _type==1 }}">
+        <view class='solution'>
+          <view class='question'>
+            <view class='ques_txt'>{{question[currentindex].question.word_name}}</view>
+            <view class='audio' bindtap='audio'>
+              <view class='audio_txt'>朗读</view>
+              <audio src="{{question[currentindex].question.word_mp3_url}}" id="myAudio"></audio>
+              <image class='speak' src='/pages/images/speaker.png'></image>
+            </view>
+          </view>
+          <view class='answer ' >
+            <view wx:for="{{4}}" class='answer_in  ans_0_{{question[currentindex].answers[index].checked?aright:""}} {{aright == 0&&question[currentindex].answers[index].is_right == 1?"yes":""}} {{time_down==0 && question[currentindex].answers[index].is_right == 1?"time_out":""}}'
+              data-questionitem='{{question[currentindex]}}' data-answer='{{question[currentindex].answers[index]}}' bindtap='answer' data-index='{{index}}'>{{question[currentindex].answers[index].answer}}</view>
+          </view>
+        </view>
+      </block>
+
+      <!--汉译英  -->
+      <block wx:if="{{_type==2}}">
+        <view class='solution'>
+          <view class='question'>
+            <view class='ques_txt'>{{question[currentindex].question.translation}}</view>
+          </view>
+          <view class='answer margin60'>
+            <view wx:for="{{4}}" class='answer_in  ans_0_{{question[currentindex].answers[index].checked?aright:""}} {{aright == 0&&question[currentindex].answers[index].is_right == 1?"yes":""}} {{time_down==1 && question[currentindex].answers[index].is_right == 1?"time_out":""}}'
+              bindtap='answer' data-questionitem='{{question[currentindex]}}' data-answer='{{question[currentindex].answers[index]}}' data-index='{{index}}'>{{question[currentindex].answers[index].answer}}</view>
+          </view>
+        </view>
+      </block>
+
+      <!--听写  -->
+      <block wx:if="{{_type==3}}">
+        <view class='solution'>
+          <view class='question'>
+            <view class='audio_t' bindtap='audio'>
+              <image src='/pages/images/question_speak.png' class='question_speak'></image>
+              <audio src="{{question[currentindex].question.word_mp3_url}}" id="myAudio"></audio>
+            </view>
+          </view>
+          <view class='answer'>
+            <view wx:for="{{4}}" class='answer_in  ans_0_{{question[currentindex].answers[index].checked?aright:""}} {{aright == 0&&question[currentindex].answers[index].is_right == 1?"yes":""}} {{time_down==1 && question[currentindex].answers[index].is_right == 1?"time_out":""}}'
+              data-questionitem='{{question[currentindex]}}' data-answer='{{question[currentindex].answers[index]}}' data-index='{{index}}' bindtap='answer'>{{question[currentindex].answers[index].answer}}</view>
+          </view>
+        </view>
+      </block>
+
+    </block>
+  </view>
+</view>
+<loading hidden="{{!PK_saving}}">保存结果</loading>
+<!--图片预加载  -->
+<view style="display:none">
+
+    <image src="http://image.chubanyun.net/images/Word100/headlines_win.png"></image>
+ 
+    <image src="http://image.chubanyun.net/images/Word100/headlines_lose.png"></image>
+ 
+    <image src="http://image.chubanyun.net/images/Word100/win_er.png"></image>
+
+    <image src="http://image.chubanyun.net/images/Word100/button_bg.png"></image>
+
+    <image src="http://image.chubanyun.net/images/Word100/timu.png"></image>
+
+    <image src="http://image.chubanyun.net/images/Word100/PK_top_show.png"></image>
+
+    <image src="http://image.chubanyun.net/images/Word100/PK_wrong.png"></image>
+
+    <image src="http://image.chubanyun.net/images/Word100/PK_right.png"></image>
+
+    <image src="http://image.chubanyun.net/images/Word100/always_right.png"></image>
+
+    <image src="http://image.chubanyun.net/images/Word100/PK_right.png"></image>
+
+</view>

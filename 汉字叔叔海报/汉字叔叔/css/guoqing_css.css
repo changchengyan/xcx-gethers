@@ -1,0 +1,83 @@
+html,body{
+    margin:0;
+    padding: 0;
+}
+
+.container{
+    width: 750px;
+    height: 1000px;
+    background: url(http://image.chubanyun.net/images/WordUncle/national_bg.png);
+    background-repeat: no-repeat;
+    background-size: 750px 1000px;
+    -webkit-background-size: 100% 100%;
+    overflow: hidden;
+}
+
+.top{
+    margin-top: 130px;
+}
+
+.top p{
+    writing-mode: tb-rl;
+    line-height: 36px;
+    min-width: 183px;
+    max-width: 183px;
+    height: 388px;
+    overflow: hidden;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    margin-left:52px;
+}
+
+
+.end{
+    width: 516px;
+    margin: 0 auto;
+    margin-top: 213px;
+    padding: 20px 47px 20px 47px;
+    border:1px solid #caa671;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.end .user{
+    float: left;
+    width: 340px;
+}
+
+.user_in{
+    font-size: 18px ;
+    color: #666666;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 330px;
+    overflow: hidden;
+}
+
+.end .user_in span{
+
+}
+
+.end .user .txt{
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+.end .user .touxiang{
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    border-radius: 50%;
+    font-size: 0;
+    vertical-align: middle;
+    margin-right:5px;
+}
+
+.wx{
+    width: 130px;
+    height: 130px;
+    float: right;
+}
+
+

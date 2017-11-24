@@ -1,0 +1,144 @@
+/* pages/classify/classify.wxss */
+
+/* 头部  */
+
+.classify-container {
+  display: flex;
+  height: 90rpx;
+  margin-bottom: 10rpx;
+}
+
+.classify {
+  box-sizing: border-box;
+  height: 90rpx;
+  line-height: 90rpx;
+  padding: 0 24rpx;
+  font-size: 15px;
+  color: #333;
+}
+
+.cur {
+  position: relative;
+  color: #6aadf0;
+}
+
+.cur::after {
+  content: "";
+  position: absolute;
+  bottom: 15rpx;
+  left: 50%;
+  width: 30rpx;
+  height: 4rpx;
+  background-color: #6aadf0;
+  border-radius: 2rpx;
+  transform: translate(-50%, 0);
+}
+
+.tag-container {
+  box-sizing: border-box;
+  width: 100%;
+  height: 80rpx;
+  padding: 0 24rpx;
+  display: flex;
+}
+
+.tag {
+  box-sizing: border-box;
+  height: 50rpx;
+  line-height: 50rpx;
+  padding: 0 16rpx;
+  margin-right: 24rpx;
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+  border-radius: 6rpx;
+  background-color: #f2faff;
+}
+
+/* item 部分 */
+
+.classify-item {
+  width: 100%;
+  height: 486rpx;
+  border-top: 1px solid #f1f1f1;
+}
+
+.item-title {
+  box-sizing: border-box;
+  width: 100%;
+  height: 127rpx;
+  line-height: 127rpx;
+  padding: 0 24rpx;
+  font-size: 14px;
+  color: #333;
+}
+
+.title-text {
+  position: relative;
+}
+
+.title-text::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 7rpx);
+  right: -30rpx;
+  width: 18rpx;
+  height: 5rpx;
+  background-color: #000;
+  border-top-left-radius: 3rpx;
+  border-bottom-left-radius: 3rpx;
+  transform: rotate(45deg);
+}
+
+.title-text::before {
+  content: "";
+  position: absolute;
+  top: calc(50% + 5rpx);
+  right: -30rpx;
+  width: 18rpx;
+  height: 5rpx;
+  background-color: #000;
+  border-top-left-radius: 3rpx;
+  border-bottom-left-radius: 3rpx;
+  transform: rotate(-45deg);
+}
+
+.item-container {
+  box-sizing: border-box;
+  width: 100%;
+  /* height: 280rpx; */
+  padding: 0 24rpx;
+  display: flex;
+  overflow: hidden;
+}
+
+.book-item {
+  width: 200rpx;
+  margin-right: 50rpx;
+}
+
+.book-item image {
+  width: 100%;
+  height: 200rpx;
+}
+
+.book-title {
+  box-sizing: border-box;
+  width: 200rpx;
+  padding: 0 0 0 10rpx;
+  margin-top: 10rpx;
+  font-size: 13px;
+  color: #333;
+}
+
+.book-info {
+  box-sizing: border-box;
+  width: 200rpx;
+  /* height: 30rpx; */
+  padding: 0 0 0 10rpx;
+  font-size: 12px;
+  color: #666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

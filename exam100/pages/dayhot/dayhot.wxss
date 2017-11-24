@@ -1,0 +1,15 @@
+/* pages/dayhot/dayhot.wxss */
+@import "/pages/template/temp_common/temp_common.wxss";
+.container {
+  padding-top: 48rpx;
+  box-sizing: border-box;
+}
+
+.container .title {
+  font-size: 34rpx;
+  padding: 0 136rpx;
+  box-sizing: border-box;
+  text-align: center;
+  color: #333;
+  margin-bottom: 30rpx;
+}

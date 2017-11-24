@@ -1,0 +1,3 @@
+@import "../../common/single.wxss";
+
+@import "../../common/common.wxss";

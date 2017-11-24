@@ -1,0 +1,73 @@
+<!--pages/item/item.wxml-->
+<!-- <view class='bg'> -->
+<scroll-view class='scroll' scroll-y scroll-into-view="list-{{idx}}">
+
+  <view class='lesson'>
+    <view id="list-{{lesson.length - index}}" wx:for="{{lesson}}" class='circle' data-index='{{lesson.length - index}}' catchtap='bindWord'>
+      <!-- <view class='circle_lesson'> {{lesson.length - index}}</view> -->
+      {{lesson.length - index}}
+      <image wx:if="{{lesson[lesson.length - index-1].is_unlock == 0}}" src='../images/is_lock.png' class='lock' data-lock='{{lesson.length - index}}'></image>
+      <view class='lesson_star  star_{{lesson[lesson.length - index-1].star}}' wx:if="{{lesson[lesson.length - index-1].is_unlock == 1||lesson[lesson.length - index-1].is_unlock > 0}}">
+        <view></view>
+        <view></view>
+        <view></view>
+      </view>
+      <view class='user' wx:if="{{lesson[lesson.length - index-1].is_unlock > 0&&(lesson[lesson.length - index-1].star == 0||lesson[lesson.length - index-1].star == null)}}">
+        <image class='touxiang' src='{{userInfo.weixinUser.headimgurl}}'></image>
+        <view class='san'></view>
+      </view>
+    </view>
+  </view>
+
+  <view class='middle'>
+    <view class='pk' bindtap='toPK'>
+      <view class='middle_circle'>
+        <view class='middle_circle_in'>
+          <view class='middle_circle_in_in'>
+            <image class='middle_img' src='../images/pk_img.png'></image>
+          </view>
+        </view>
+      </view>
+      <view class='middle_txt'>PK</view>
+    </view>
+    <view class='review' bindtap='toReview'>
+      <view class='middle_circle'>
+        <view class='middle_circle_in' style='background-color:#f5f773'>
+          <view class='middle_circle_in_in' style='background-color:#fedd17'>
+            <image class='middle_img' src='../images/fuxi.png'></image>
+          </view>
+        </view>
+      </view>
+      <view class='middle_txt'>复习</view>
+    </view>
+  </view>
+
+
+  <view class='box' wx:if="{{display}}">
+    <view class='box_bg'></view>
+    <view class='out'>
+      <image class='box_img' src='../images/box_bg.png'></image>
+      <image class='box_lock' src='../images/box_lock.png'></image>
+      <view class='title'>关卡未解锁</view>
+      <view class='txt'>只有完成前面的</view>
+      <view class='txt'>关卡才能解锁本关哟！</view>
+      <view class='btn' bindtap='displayBox'>知道了</view>
+    </view>
+  </view>
+
+</scroll-view>
+
+<view class='bottom'>
+  <image class='lessom_img' src='../images/item_book.png'></image>
+  <view class='lesson_num'>
+    <text style='color:#f4a60c'>{{word_count}} </text>
+    <text>/{{all_word_count}}</text>
+  </view>
+  <view class='star'>
+    <image class='star_img' src='../images/item_star.png'></image>
+    <text style='color:#646464'>{{all_star}}</text>
+  </view>
+</view>
+<view class='kong'></view>
+
+<!-- </view> -->

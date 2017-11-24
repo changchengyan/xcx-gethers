@@ -1,0 +1,23 @@
+<import src="../template/template.wxml" />
+
+<view class="top">
+  <view class="title">{{name}}</view>
+  <view class="star">
+    <view class="  unit-star-2">
+      <view></view>
+      <view style="margin-top:-40rpx"></view>
+      <view></view>
+    </view>
+  </view>
+</view>
+
+<view class="end">
+  <view class="me">
+    <image src="../../images/finally/list.png" bindtap="returnList"></image>
+    <image src="../../images/finally/next.png" bindtap="nextPlay"></image>
+  </view>
+  <view class="end_in">
+  <image src="../../images/finally/Share-to-Facebook.png" style="width:84rpx;height:84rpx" bindtap="playAgain"></image>
+<image src="../../images/finally/next.png"></image>
+  </view>
+</view>

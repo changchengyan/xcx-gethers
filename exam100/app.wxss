@@ -1,0 +1,36 @@
+/**app.wxss**/
+page{
+	box-sizing:border-box;
+  height:100%;
+}
+.flexR{
+	display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items:center;
+}
+.flexC{
+	display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+}
+.mainColor{
+	color:#c56dd5;
+}
+.color1{
+  color:#91519d;
+}
+.mainBg{
+  background-color: #91519d;
+}
+.loadding{
+	position:absolute;
+	left:0;
+	right:0;
+	margin:0 auto;
+	bottom:8rpx;
+	font-size:28rpx;
+	color:#333;
+	text-align:center;
+}

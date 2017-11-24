@@ -1,0 +1,17 @@
+<!--pages/chinese/uncle/create/create.wxml-->
+<view class="body">
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
+  indicator-dots="true"  indicator-color="rgba(0, 0, 0, .3)" indicator-active-color="#00B6FA"
+  >
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="355" height="150"/>
+    </swiper-item>
+  </block>
+</swiper>
+</view>
+
+<view class="bottom">
+    <view class="text" bindtap="toSave">保存海报</view>
+</view>

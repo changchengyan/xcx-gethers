@@ -1,0 +1,7 @@
+<!--pages/word/nickname/nickname.wxml-->
+<view class="input-area">
+  <input placeholder="请输入您的昵称"  value="雷江波" auto-focus/>
+</view>
+<view class="button-canvas">
+  <button type="primary" class="pub-submit" bindtap="onSubmit"> 确定 </button>
+</view>

@@ -1,0 +1,23 @@
+/* pages/component/word/word.wxss */
+.body{ background-color: #ebebeb; padding: 15px;}
+.body .datetime-canvas{ text-align: center;}
+.body .datetime{ width: auto; margin: auto; display: inline-block; background-color: #cecece; color: #fff; font-size: 12px;border-radius: 5px; padding: 5px 10px 5px 10px; line-height: 14px;}
+
+
+.body .message-canvas{ padding: 20px 0px 25px 0px;}
+.body .message{ border: 1px solid #ccc; background-color: #fff; border-radius: 5px; padding: 15px;}
+
+.body .item-first{ border-bottom: 1px solid #eff2f4; padding: 0px 0px 8px 0px;}
+.body .item-first .image{  display: flex; height: 175px; width: 100%; background-size: cover; flex-direction: column; }
+.body .item-first .null{ flex-grow: 8;}
+.body .item-first .title{ flex-grow: 1; background-color: rgba(0, 0, 0, 0.7); color: #fff; padding: 10px 10px 0px 10px; line-height: 20px; font-size: 16px; }
+
+.body .item{ border-bottom: 1px solid #eff2f4;padding: 8px 0px 8px 0px; display: flex; flex-direction: row; align-items: center;}
+.body .item .text{ flex-grow: 8; font-size: 16px; padding: 0px 10px 0px 0px;}
+.body .item .img{flex-grow: 2; max-width: 50px; min-width: 50px;  height: 50px; }
+.body .item .img image{ width: 48px; height: 48px;border: 1px solid #eee;}
+
+.body .item-last{padding: 8px 0px 8px 0px;display: flex; flex-direction: row; align-items: center;}
+.body .item-last .text{ flex-grow: 8; font-size: 16px; padding: 0px 10px 0px 0px;}
+.body .item-last .img{flex-grow: 2; max-width: 50px; min-width: 50px;height: 50px; }
+.body .item-last .img image{ width: 50px; height: 50px;border: 1px solid #eee;}

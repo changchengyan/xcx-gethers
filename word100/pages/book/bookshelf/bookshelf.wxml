@@ -1,0 +1,55 @@
+<!--pages/book/bookshelf/bookshelf.wxml-->
+<view class='bg'>
+  <form report-submit='true' catchsubmit='getFormID'>
+    <view class='grade'>
+      <view  wx:for-index="gidx" wx:for-item="gradeItem" class='text {{grade == gradeArr[gidx]?"select-text":""}}' bindtap='gotoBookshelf'  wx:for="{{gradeArr}}" data-grade="{{gradeItem}}" >{{gradeItem}}</view>
+    </view>
+    <scroll-view style='height:{{height}}px' scroll-y="true" scroll-into-view="grade{{gradeid}}" scroll-top="200">
+      <view wx:for="{{gradeArr}}" wx:for-index="idx" wx:for-item="gradeItem">
+        <view id='grade{{idx}}' class='grade-book-box' wx:if='{{bookJson[gradeArr[idx]].length>0}}'>
+          <view class='title'>
+            <view class='flag'></view>
+            {{gradeArr[idx]}}
+          </view>
+          <block wx:for="{{bookJson[gradeArr[idx]]}}" wx:for-index="index" wx:for-item="item">
+            <view class='book'>
+              <button class='from-bottom btn' form-type='submit' bindtap='gotoItem' data-grade='{{idx+1}}' data-index='{{index}}' data-id='{{item.id}}' data-title='{{item.book_name}}'> </button>
+              <view class="book_img">
+                <image class='img' src='{{item.book_pic}}'>
+                <view class='flag' wx:if='{{item.is_pay==1&&item.is_free==0}}'>
+                  <text>已购</text>
+                </view>
+                <view class='flag' wx:if='{{item.is_pay==0&&item.is_free==1}}'>
+                  <text>获赠</text>
+                </view>
+              </image>
+              </view>
+              
+              <view class="book_info">
+                <view class='text'>{{item.book_name}}</view>
+                <view class='person_num'>
+                  <view class="user_icons">
+                    <image src="{{imgItem.headimgurl || '/pages/images/unRegister.png'}}" mode='widthFix' wx:for="{{item.evaluation_users}}" wx:for-item="imgItem" wx:for-index="imgIdx" ></image>
+                  </view>
+                   {{item.book_follow_count}}人正在学习
+                </view>
+              </view>
+              <!--    <view class='user-list' wx:if='{{item.evaluation_users_count>0}}'>
+              <text>附近参与评测的用户</text>
+              <text class='right'>{{item.evaluation_users_count}}人</text>
+              <view class='headimg'>
+                <block wx:for='{{item.evaluation_users}}' wx:for-item='user'>
+                  <image src='{{user.headimgurl}}'></image>
+                </block> 
+              </view> 
+            </view> -->
+            </view>
+          </block>
+        </view>
+
+      </view>
+
+      <!-- <view class='grade-box' style='height:{{nullHeight}}rpx;'></view> -->
+    </scroll-view>
+  </form>
+</view>

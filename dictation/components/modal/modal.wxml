@@ -1,0 +1,11 @@
+<template name="modal">
+  <view class="modal" wx:if="{{show}}">
+    <view class="wrapper">
+      <view class="title">{{title}}</view>
+      <view class="choose-bar">
+        <view class="cancel" catchtap="_cancel">{{cancel}}</view>
+        <view class="submit" catchtap="_submit">{{submit}}</view>
+      </view>
+    </view>
+  </view>
+</template>

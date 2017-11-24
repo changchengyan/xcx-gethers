@@ -1,0 +1,174 @@
+/* pages/PK/PK.wxss */
+
+page {
+  box-sizing: border-box;
+  background: #f8f8f8;
+}
+
+page view {
+  box-sizing: border-box;
+}
+
+.PK_index {
+  padding: 20rpx;
+}
+
+.random_match {
+  width: 100%;
+  height: 180rpx;
+  border-radius: 10rpx;
+  justify-content: space-between;
+  align-items: center;
+  color: #666;
+  background: #fff;
+  padding: 0 32rpx;
+}
+
+.random_match .show {
+  justify-content: flex-start;
+}
+
+.random_match text {
+  width: 60%;
+  font-size: 24rpx;
+  padding-left: 24rpx;
+}
+
+.random_match image {
+  width: 130rpx;
+  height: 120rpx;
+}
+
+.to_match {
+  background: #399fd9;
+  font-size: 26rpx;
+  color: #fff;
+  border-radius: 27rpx;
+  width: 158rpx;
+  height: 55rpx;
+  line-height: 55rpx;
+  text-align: center;
+}
+
+.pK_record_title {
+  font-size: 24rpx;
+  color: #666;
+  padding: 17rpx 0;
+}
+
+.PK_record {
+  width: 100%;
+  height: 180rpx;
+  border-radius: 10rpx;
+  justify-content: space-between;
+  align-items: center;
+  color: #666;
+  background: #fff;
+  padding: 0 32rpx;
+  margin-bottom: 20rpx;
+}
+
+.PK_record_list {
+  width: 100%;
+  min-height: calc(100vh - 380rpx);
+}
+
+.win_block {
+  border-left: 11rpx solid #d1f4e9;
+}
+.lose_block {
+  border-left: 11rpx solid #ffdfd6;
+}
+.participant_info  image {
+  width: 200rpx;
+  height: 50px;
+  border-radius: 100%;
+}
+
+.word_info {
+  align-items: flex-start;
+  font-size: 28rpx;
+  padding: 0 30rpx;
+  font-weight: 500;
+}
+
+.word_info .lesson_name {
+  font-size: 24rpx;
+  color: #999;
+  font-weight: normal;
+}
+
+.result image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.yes {
+  width: 100%;
+  text-align: center;
+  color: #666;
+  font-size: 26rpx;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+}
+.no_recore_list {
+  margin-top: 180rpx;
+   width: 100%;
+  text-align: center;
+  color: #666;
+  font-size: 26rpx;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+}
+
+.load {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  height: 80rpx;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+}
+
+.load view {
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 50%;
+  background-color: #999;
+  margin-right: 10rpx;
+}
+
+@keyframes box {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(0.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.load view:nth-child(1) {
+  animation: box 0.5s ease 0.1s infinite alternate;
+}
+
+.load view:nth-child(2) {
+  animation: box 0.5s ease 0.2s infinite alternate;
+}
+
+.load view:nth-child(3) {
+  animation: box 0.5s ease 0.3s infinite alternate;
+}
+
+.load view:nth-child(4) {
+  animation: box 0.5s ease 0.5s infinite alternate;
+}
+
+.load view:nth-child(5) {
+  animation: box 0.5s ease 0.6s infinite alternate;
+}

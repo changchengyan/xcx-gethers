@@ -1,0 +1,73 @@
+<!--pages/learn_tools/learn_tools.wxml-->
+
+<view wx:for="{{dataList}}" wx:key="idx" wx:for-index="idx" wx:for-item="item">
+  <!--banner start -->
+  <swiper class="banner" wx:if="{{item.applet_studytool_type_id==5}}" data-item="{{item}}" indicator-dots="{{true}}" indicator-active-color="#06c1ae">
+    <swiper-item wx:for="{{item.piclist}}" wx:for-item="bannerItem" data-item="{{bannerItem}}" catchtap='goOther'>
+      <image src="{{bannerItem.sub_pic}}" mode="widthFix"></image>
+    </swiper-item>
+  </swiper>
+  <!--banner end -->
+  <!--小图  start-->
+  <view  wx:if="{{item.applet_studytool_type_id==3}}" class="data_item icon_list_{{item.piclist.length>3 ? 'more':'less'}} ">
+      <view wx:for="{{item.piclist}}" class="icon_item" wx:for-item="iconItem" data-item="{{iconItem}}" catchtap='goOther'>
+        <image src="{{iconItem.sub_pic}}" mode="widthFix"></image>
+        <view class="icon_name">{{iconItem.sub_title}}</view>
+      </view>
+  </view>
+  <!--小图 end  -->
+
+  <!--文章 start  -->
+  <view wx:if="{{item.applet_studytool_type_id==1}}" class="data_item article" catchtap='goOther' data-item="{{item}}">
+    <view class="title">{{item.title}}</view>
+    <view class="text">{{item.description}}</view>
+  </view>
+  <!--文章 end  -->
+  <!--图片 start  -->
+  <view wx:if="{{item.applet_studytool_type_id==2}}" class="data_item pic" data-item="{{item}}" catchtap='goOther'>
+    <view class="img">
+      <image src="{{item.pic}}" mode="widthFix"></image>
+    </view>
+    <view class="text">{{item.description}}</view>
+  </view>
+  <!--图片 end  -->
+  <!--图文列表 start  -->
+  <view class="data_item word_img" wx:if="{{item.applet_studytool_type_id==4}}" data-item="{{item}}" catchtap='goOther'>
+    <view class="img">
+      <image src="{{item.pic}}" mode="widthFix"></image>
+    </view>
+    <view class="word">
+      <text class="title">{{item.title}}</text>
+      <text class="desc">{{item.description}}</text>
+    </view>
+    <view class="tip-show">
+      <view class="tip_img" wx:if="{{!item.button_logo}}">
+         <image src="http://image.chubanyun.net/images/common/open.png" mode="widthFix"></image>
+      </view>
+      <view class="tip_img" wx:else>
+        <image src="{{item.button_logo}}" mode="widthFix"></image>
+      </view>
+    </view>
+
+  </view>
+  <!--图文列表 end  -->
+</view>
+<!--分享  -->
+
+<!--lodding  -->
+<view class="loadTip" wx:if="{{loadding}}">
+  <view class="icon">
+    <image src="{{LOADDING_ICON}}"></image>
+  </view>
+</view>
+<!--nomore  -->
+<!-- <view class="no_more" wx:if="{{!loadMore}}">
+  数据全部加载完成
+</view> -->
+<view class="share_button" wx:if="{{!loadding}}">
+  <button open-type="share"></button>
+ <image src="/pages/images/share_icon.png" mode="widthFix"></image> 分享
+</view>
+<view class="height40"></view>
+<!--Loadding  -->
+<loading hidden="{{!isLoading}}">跳转中...</loading>

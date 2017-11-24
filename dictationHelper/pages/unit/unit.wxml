@@ -1,0 +1,101 @@
+<!--pages/unit/unit.wxml-->
+<import src="../template/template.wxml" />
+<view class="{{font}} viewBox-{{ifDefaultTouch}}" catchtap="deleteCancel">
+  <view class="word-block">
+    <block wx:if='{{uid}}'>
+      <!-- <view class="unit-title f2">{{lesson_name}}</view> -->
+      <view class="top-style">
+        <view class="top-word">点击试听,长按移除</view>
+        <view class="input-count">
+          词汇 {{words_number}}
+        </view>
+      </view>
+
+      <view class="word-container">
+        <view class="word-{{item.is_standard}} f5" wx:for="{{words_show}}" data-index="{{index}}" wx:key="id" catchtap="play" catchlongtap="longTapDelete">
+          <!-- <view class="word-1-after"></view> -->
+          {{item.dictation_word}}
+          <view wx:if="{{isEdit}}" class="delete" data-index="{{index}}" catchtap="deleteWord">
+            <view class="delete-line"></view>
+          </view>
+        </view>        
+        <view class="word-add" bindtap="editShow">+</view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="noData">正在加载中......</view>
+    </block>
+  </view>
+<!--删除的单词和赠送单词的弹框  -->
+  <view class="case-show" wx:if="{{caseShow}}">
+    <view class="case-triangle"></view>
+    <scroll-view class="case-content" scroll-y="true">
+      <!--删除的单词  -->
+      <view class="words-del" wx:if="{{del_words_show.length !== 0}}">
+        <view class="words-del-title color6">已删除单词（点击恢复）</view>
+        <view class="words-del-container">
+          <view class="del-word" wx:for="{{del_words_show}}" data-index="{{index}}" wx:key="id" catchtap="recover">
+            {{item.dictation_word}}
+          </view>
+        </view>
+      </view>
+      <!--赠送的词  -->
+      <view class="words-share" wx:if="{{share_words_show.length !== 0}}">
+        <view class="words-del-title color6">你的朋友赠送给你了{{share_words_show.length}}个新词汇，点击添加吧！</view>
+        <view class="words-del-container">
+          <view class="del-word" wx:for="{{share_words_show}}" data-index="{{index}}" wx:key="id" catchtap="addShare">
+            {{item.dictation_word}}
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+
+  <view class="bottom-block"></view>
+  <block wx:if="{{showKey&&!goPayDetail}}">
+    <template is="Buy" data="{{money:money,book_name:book_name,key_rest_count:key_rest_count,book_img:book_img}}"></template>
+  </block>
+  <view class="startButton-{{button_display}}">
+    <image wx:if="{{share_words != 0 || del_words !=0}}" src="/images/unit/logo.png" class="logo" bindtap="openCase" ></image>
+    <image src="/images/word/beginLesson.png"  bindtap="toKeyOrLesson" class="star-dictation" mode="widthFix"></image>
+  </view>
+</view>
+<!--编辑弹框-->
+<view wx:if="{{input_area_display}}" class="input-area-show">
+  <view class="input-area-scroll">
+    <!-- <image src="../../images/book/cancel.png" class="cancel-icon" bindtap="editHide"></image> -->
+    <view class="input-head">
+      <input class="input-title f3" placeholder="请输入听写标题" value="{{title_input}}" disabled="{{input_disabled}}" bindinput="titleInput" />
+      <view class="input-count">词汇 {{input_count}}</view>
+    </view>
+    <form class="form" bindreset="sendWords">
+      <textarea fixed="true" placeholder-class="phcolor" name="words" type="text" class="input-text f3" value="{{user_input}}" bindconfirm="sendWords" bindinput="inputWord"   cursor-spacing="10" focus="{{focus}}" placeholder="{{placeholder}}"
+        maxlength="100"/>
+      <view class="button-block">
+        <button class="back-button" bindtap="editHide"></button>
+        <button class="send-button" form-type="reset"></button>
+      </view>
+    </form>
+  </view>
+</view>
+<!--编辑弹框end  -->
+
+<!-- <view class="more-{{button_display}}" bindtap="editShow">
+    <image src="../../images/book/edit.png" class="edit-icon"></image>
+  </view> -->
+
+<!-- <block wx:if="{{goPayDetail}}">
+    <template is="OrderDetail" data="{{money:money,bookOrUnitName:bookOrUnitName,book_name:book_name,Name:Name,resourceNum:resourceNum,goTap:goTap}}"></template>
+  </block> -->
+<!-- <view class="start-button-{{button_display}}" bindtap="gotoNext">
+  </view> -->
+
+<!--loading  -->
+<import src="../template/template.wxml" />
+<template is="pageLoading" data="{{isLoading}}"></template>
+  <!--预加载图片begain -->
+  <view style="width:0;height:0;overflow:hidden;">
+    <image src="http://image.chubanyun.net/images/Dictation/unit/BuyThisBook.png"></image>
+  </view>
+  <!--预加载图片 end-->

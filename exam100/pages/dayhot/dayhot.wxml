@@ -1,0 +1,12 @@
+<!--pages/dayhot/dayhot.wxml-->
+<import src="../template/temp_common/temp_common.wxml" />
+<block wx:if="{{unAuthorization}}">
+	<template is="unauthorized"></template>
+</block>
+<block wx:else>
+	<view class='container'>	
+	  <view class='title'>{{bookname}}</view>	
+	  <template is="testList" data="{{test_list:paperList}}" />	
+	</view>
+</block>
+<loading hidden="{{!firstLoadding}}">加载中...</loading>

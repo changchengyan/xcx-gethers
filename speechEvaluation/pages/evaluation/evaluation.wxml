@@ -1,0 +1,126 @@
+<!--evaluation.wxml-->
+<view class='bg'>
+    <view class="user">
+        <view class="top">
+            <view class="yuan_o"></view>
+            <view class="yuan_t"></view>
+            <view class="touxiang">
+                <image src='{{userInfo.avatarUrl}}'></image>
+            </view>
+            <view class="pk" bindtap='launchPK'>发起PK</view>
+        </view>
+        <view class="txt" catchtap="yesOrNo">
+            <!-- <view class="txt_icon"><text wx:if="{{ok}}">✓</text> </view> -->
+            <view class="txt_in" bindtap='gotoRankingDetail'>
+                {{evaluation_count>0?"有"+evaluation_count+"人参与了PK >>":"您还没有发起PK"}}
+            </view>
+        </view>
+    </view>
+
+    <view class='socre'>
+        <view class='socre-box40'>
+            <view class='socre-total'>
+                <text class="socre-txt"> {{evaluationInfo.totalSocre}}</text>
+                <view class='socre-total-text'>SCORE</view>
+            </view>
+            <view class="pro_40">
+                <view class="pro_top">
+                    <text style="margin-right:16rpx">0</text>
+                    <view class="jindu">
+                        <view class="jindu_lan" style="width: {{evaluationInfo.totalSocre}}%">
+                            <view class="jiantou_in" wx:if="{{evaluationInfo.totalSocre>10}}">
+                                <image class="img_o" src="../images/jiantou_in.png"></image>
+                                <image class="img_t" src="../images/jiantou_top.png"></image>
+                            </view>
+                        </view>
+                    </view>
+                    <text style="margin-left:16rpx"> 100</text>
+                </view>
+                <view class="pro_num">
+                    <view class="classname">20</view>
+                    <view class="classname">40</view>
+                    <view class="classname">60</view>
+                    <view class="classname">80</view>
+                </view>
+            </view>
+        </view>
+        <view class="middle">
+            <view class='socre-box20'>
+                <view class='progress-box'>
+                    <view class='socre-text'>准确度</view>
+                    <view class="all_progress">
+                        <view class='progress' style='{{"width: "+(evaluationInfo.accuracySocre)+"%;"}}'></view>
+                        <view class='socre-num'>{{evaluationInfo.accuracySocre}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class='socre-box20'>
+                <view class='progress-box'>
+                    <view class='socre-text'>流利度</view>
+                    <view class="all_progress">
+                        <view class='progress' style='{{"width: "+(evaluationInfo.fluencySocre)+"%;"}}'></view>
+                        <view class='socre-num'>{{evaluationInfo.fluencySocre}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class='socre-box20'>
+                <view class='progress-box'>
+                    <view class='socre-text'>完整度</view>
+                    <view class="all_progress">
+                        <view class='progress' style='{{"width: "+(evaluationInfo.integritySocre)+"%;"}}'></view>
+                        <view class='socre-num'>{{evaluationInfo.integritySocre}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class='clear'></view>
+    </view>
+
+    <view class='content'>
+        <view class="audio">
+            <view class="line_o"></view>
+            <view class='audio-icon-box'>
+                <image bindtap="playAudio" class="audio-icon" src="{{audioIcon}}"></image>
+            </view>
+            <view class="line_t"></view>
+            <!-- <view class="audio-time">{{audioTime}}</view> -->
+        </view>
+        <view class='content-enText' wx:if="{{payInfo.isBuy||evaluationInfo.isFree}}">
+            <view class="word" wx:for="{{evaluationInfo.sentence}}" data-node="{{item}}">
+                <view class='{{item.isError?"error":""}}'> {{item.word}}</view>
+            </view>
+        </view>
+        <view class='content-enText' wx:else>
+            <view class="word-pay" bindtap="gotoPay">
+                <text>点击查看完整评测报告</text>
+            </view>
+        </view>
+        <view class='clear'></view>
+    </view>
+    <audio src="{{evaluationInfo.speechFilePath}}" bindended="audioPlayEnd" id="myAudio"></audio>
+    <!--bottom  -->
+    <view class="bottom">
+        <view class="again" bindtap='gotoDetail'>重新挑战</view>
+        <view class="fenxiang">分享
+            <button open-type="share" data-id='1'></button>
+        </view>
+    </view>
+</view>
+
+<view class='showPK {{isPK?"":"hidden"}}'>
+    <view class='option'>
+        <image class='close' src='/pages/images/close.png' bindtap='closePK'></image>
+        <image class='poster' src='http://f3.5rs.me/upload/20170915/2017_09_15_203540735.png'></image>
+        <button class='pk-button' open-type="share">发起PK</button>
+        <view class='mask'></view>
+    </view>
+</view>
+
+<!-- 支付模板 -->
+<import src="/pages/component/pay/pay.wxml" />
+<block wx:if="{{payShow}}">
+<!--<block wx:if="{{true}}">-->
+    <!-- <block wx:if="{{true}}"> -->
+    <template is='template-pay' data='{{payInfo:payInfo}}' />
+</block>
+<!-- 支付模板END -->

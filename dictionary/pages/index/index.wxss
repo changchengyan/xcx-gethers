@@ -1,0 +1,133 @@
+/**index.wxss**/
+.banner{
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+}
+.search-container{
+    position: relative;
+    margin: 60rpx auto 0;
+    width: 90%;
+    height: 88rpx;
+    background-color: #fff;
+    box-sizing: border-box;
+    z-index: 999;
+}
+
+.search-pannel{
+    float: left;
+    width: 16.9%;
+    height: 88rpx;
+    padding: 29rpx 0;
+    box-sizing: border-box;
+    
+}
+.search-pannel image{
+    display: block;
+    padding: 0 36rpx;
+    float: left;
+    width: 36rpx;
+    height: 34rpx;
+    /* border-right:1px solid #2b9cfb; */
+}
+
+.search-input{
+    float: left;
+    width: 58.7%;
+    height: 88rpx;
+    padding: 19rpx 0;
+    line-height: 50rpx;
+    box-sizing: border-box;
+}
+.search-input input{
+    padding: 4rpx 0 0 10rpx;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+.search-button{
+    float: left;
+    width: 24.4%;
+    height: 88rpx;
+    line-height: 88rpx;
+    border-left:1px solid #2b9cfb;
+    color: #2b9cfb;
+    text-align: center;
+    font-size: 16px;
+    box-sizing: border-box;
+    
+}
+
+
+.search-list{
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 130rpx 0 60rpx;
+  margin: 0 auto;
+ 
+}
+
+.search-pinyin,.search-bushou,.search-yuyin{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #fff;
+}
+
+.search-pinyin image,.search-bushou image,.search-yuyin image{
+  width: 122rpx;
+  height: 122rpx;
+  margin-bottom: 40rpx;
+}
+
+.chahua{
+    margin: 40rpx 0;
+}
+.chahua-img{
+    width: 100%;
+    height: 350rpx;
+}
+
+/* .news{
+    
+} */
+.news-wrap{
+    
+    height: 160rpx;
+    box-shadow:0 0 40px #9ac8ef;
+    margin: 0 0 20rpx 0;
+    padding: 20rpx 65rpx 0 40rpx;
+    
+}
+.news-title{
+    color: #323232;
+    font-size: 14px;
+    margin-bottom: 20rpx;
+    height: 40rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.news-body{
+    color: #999;
+    font-size: 13px;
+    height: 110rpx;
+    line-height: 40rpx;
+    overflow: hidden;
+}
+.news-time{
+    color: #999;
+    font-size: 11px;
+}

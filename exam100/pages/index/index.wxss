@@ -1,0 +1,111 @@
+/* pages/index/index.wxss */
+@import "/pages/template/temp_common/temp_common.wxss";
+.container .banner image {
+  width: 100%;
+  height: 300rpx;
+}
+
+.hotclass {
+  padding: 50rpx 0;
+}
+
+.hotclass .hotclass_title {
+  display: flex;
+  flex-direction: row;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.hotclass_title .top {
+  color: #333;
+  font-size: 30rpx;
+  margin-right: 190rpx;
+}
+
+.hotclass_title .disall {
+  font-size: 20rpx;
+  color: #666;
+}
+
+.hotclass .all_class {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 80rpx;
+}
+
+.hotclass .all_class view {
+  margin-right: 40rpx;
+  width: 170rpx;
+  height: 65rpx;
+  line-height: 65rpx;
+  text-align: center;
+  background-color: #e4dfff;
+  color: #91509d;
+  border-radius: 50px;
+  margin-top: 35rpx;
+  font-size: 24rpx;
+}
+
+.middle {
+  width: 100%;
+  height: 10rpx;
+  background-color: #eee;
+}
+.newDay{
+	position:relative;
+}
+.newDay .list_title {
+  width: 100%;
+  text-align: center;
+  font-size: 30rpx;
+  padding-top: 50rpx;
+  box-sizing: border-box;
+}
+
+.newDay .list_in {
+  width: 700rpx;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.newDay .bor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 30rpx 0;
+  box-sizing: border-box;
+}
+
+.newDay .bor  image {
+  width: 162rpx;
+  height: 162rpx;
+  border-radius: 10rpx;
+}
+
+.newDay .bor .list_txt {
+  width: calc(100% - 162rpx);
+  font-size: 28rpx;
+  color: #333;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+}
+
+.list_txt .main {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.newDay .bor .list_txt .content {
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 20rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}

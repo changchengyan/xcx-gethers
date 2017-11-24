@@ -1,0 +1,2 @@
+<!--pages/word/write/map/map.wxml-->
+<map id="map" longitude="114.348" latitude="30.522" scale="13" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location ></map>

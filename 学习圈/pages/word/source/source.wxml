@@ -1,0 +1,36 @@
+<!--pages/word/source/source.wxml-->
+<view class="source-head">
+    <view class="title">圈子知识库</view>
+    <view class="button">增加应用</view>
+</view>
+<view class="source-area">
+    <view class="source-item" bindtap="sourceToMiniProgram" data-source="sound">
+        <view class="pic"><image src="http://f3.5rs.me/upload/20170222/2017_02_22_151148442_b.jpg"  mode="widthFix"></image></view>
+        <view class="info">
+            <view class="title">2017酷狗风向标 + 个人经典收藏歌曲（29首）</view>
+            <view class="desc">码书音乐，是中国音乐门户之一，拥有海量正版高品质音乐，最权威的音乐榜单，最快的新歌速递，最契合用户需求的主题电台，最人性化的歌曲搜索。</view>
+        </view>
+    </view>
+    <view class="source-item" bindtap="sourceToMiniProgram" data-source="video">
+        <view class="pic"><image src="http://f3.5rs.me/upload/20170303/2017_03_03_105309233_b.jpg"  mode="widthFix"></image></view>
+        <view class="info">
+            <view class="title">张维为：中国信心</view>
+            <view class="desc">张维为，中国政治学者、作家。复旦大学特聘教授、复旦大学中国研究院院长 、国家高端智库理事会理事  、上海春秋研究院高级研究员 。中国发展模式研究中心主任，瑞士日内瓦外交与国际关系学院访问教授，春秋研究院高级研究员，上海社科院世界中国学研究所所长，日内瓦外交与国际关系学院 亚洲研究中心高级研究员，邓小平高级翻译。</view>
+        </view>
+    </view>
+    <view class="source-item" bindtap="sourceToMiniProgram" data-source="seed_question">
+        <view class="pic"><image src="http://f3.5rs.me/upload/20161111/2016_11_11_102646347_b.jpg"  mode="widthFix"></image></view>
+        <view class="info">
+            <view class="title">王老师数学在线问答</view>
+            <view class="desc">十年小学数学从业经验，三次全国优秀教师荣誉称号，北大附小数学教师组组长</view>
+        </view>
+    </view>
+    <view class="source-item" bindtap="sourceToMiniProgram" data-source="seed_pretest">
+        <view class="pic"><image src="http://f3.5rs.me/upload/20170624/2017_06_24_135045398_b.png"  mode="widthFix"></image></view>
+        <view class="info">
+            <view class="title">小学五年级英语练习题</view>
+            <view class="desc">英语四级，外教一对一，个性化定制英语口语学习课程，免费试听。「51Talk」英语四级，纯正英语口语，随时随地轻松学英语</view>
+        </view>
+    </view>
+
+</view>

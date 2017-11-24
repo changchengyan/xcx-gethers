@@ -1,0 +1,215 @@
+/* pages/ranking/detail/detail.wxss */
+.bg{
+  background-color: #B0B0B0;
+  color: #fff;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  padding: 0px 0px 0px 0px;
+}
+.users{
+  background-color: #B0B0B0;
+  padding-bottom: 100rpx;
+}
+.box{
+  width: 100%;
+  height: 350rpx;
+}
+.box0{
+  position: absolute;
+  width: 300rpx;
+  height: 350rpx;
+  top:0;
+  left: 225rpx;
+  text-align: center;
+}
+.box1{
+  position: absolute;
+  width: 225rpx;
+  height: 350rpx;
+  top:0;
+  left: 0;
+  text-align: center;
+}
+.box2{
+  position: absolute;
+  width: 225rpx;
+  height: 350rpx;
+  top:0;
+  right: 0;
+  text-align: center;
+}
+.box0 .headimgurl{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 100%;
+  border: 6rpx solid #FEE157;
+}
+.box1 .headimgurl{
+  width: 125rpx;
+  height: 125rpx;
+  border-radius: 100%;
+  border: 6rpx solid #D5E3EB;
+}
+.box2 .headimgurl{
+  width: 125rpx;
+  height: 125rpx;
+  border-radius: 100%;
+  border: 6rpx solid #F0C789;
+}
+.box0 .ranking{
+  width: 100%;
+  height: 64rpx;
+}
+.box1 .ranking{
+  width: 100%;
+  height: 64rpx;
+  margin-top: 50rpx;
+}
+.box2 .ranking{
+  width: 100%;
+  height: 64rpx;
+  margin-top: 50rpx;
+}
+.box0 .ranking image{
+  width:  90rpx;
+  height: 90rpx;
+}
+.box1 .ranking image{
+  width: 90rpx;
+  height: 90rpx;
+}
+.box2 .ranking image{
+  width: 90rpx;
+  height: 90rpx;
+}
+.name{
+  font-size: 28rpx;
+}
+.audio{
+  width: 100%;
+  height: 50rpx;
+  padding-top: 20rpx;
+  position: relative;  
+}
+.audio image{
+  width: 24rpx;
+  height: 24rpx;
+  position: absolute;
+  top:5rpx;  
+  left: 50%;
+  margin-left: -42rpx;
+}
+ .score{
+  width: 100%;
+  height: 100%;
+  font-size: 24rpx;
+  text-align: center; 
+  position: relative;
+}
+ .score text{
+  padding: 0 12rpx 0 42rpx;  
+  border: 1px solid #fff;
+  border-radius: 24rpx;
+  color: #fff;
+  
+}
+.user-list{
+  width: 700rpx;
+  margin: 50rpx 25rpx 0 25rpx;
+  background-color: #fff;
+  color: #262626;
+  border-radius: 25rpx;
+}
+
+.user-list .item{
+  width: 650rpx;
+  height: 120rpx;
+  margin: 0 25rpx;  
+  text-align: center;
+}
+.user-list .item .index{
+  line-height: 120rpx;
+  float: left;
+  margin-right: 50rpx;
+}
+.user-list .item .headimgurl{
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 100%;
+  float: left;
+  margin-top: 28rpx;
+}
+.user-list .item .name{
+  line-height: 120rpx;
+  float: left;
+  margin-left: 30rpx;
+}
+.user-list .item .next-audio image{
+  width: 24rpx;
+  height: 24rpx;
+  position: absolute;
+  top:50%;  
+  left: 50%;
+  margin-top: -12rpx;
+  margin-left: -42rpx;
+}
+.user-list .item .next-score{
+  width: 150rpx;
+  height: 120rpx;
+  padding: 0;    
+  line-height: 120rpx;
+  float: right;
+  font-size: 24rpx;
+  text-align: center; 
+  position: relative;
+}
+ .score{
+  width: 100%;
+  height: 100%;
+  font-size: 24rpx;
+  text-align: center; 
+  position: relative;
+}
+.user-list .item .next-score text{
+  padding: 0 12rpx 0 42rpx;  
+  border: 1px solid #4EC98B;
+  border-radius: 24rpx;
+  color: #fff;
+  background-color: #4EC98B;
+}
+.bottom{
+  width: 100%;
+  height: 100rpx;
+  background-color: #fff;
+  color: #777;
+  position: fixed;
+  left: 0;
+  bottom: 0;  
+  border-top: 1px solid #B0B0B0;
+}
+.bottom .button{
+  width: 50%;
+  height: 100%;
+  float: left;  
+  text-align: center;
+  line-height: 100rpx;  
+  font-size: 28rpx;
+}
+.bottom .line{
+  position: absolute;
+  top: 20rpx;
+  left: 50%;
+  width: 0;
+  height: 60rpx;
+  border-left: 1px solid #B0B0B0;
+}
+.bottom button{
+  width: 50%;
+  height: 100rpx;
+  opacity: 0;
+  z-index: 9;
+  position: absolute;
+  margin-left: 50%;
+}

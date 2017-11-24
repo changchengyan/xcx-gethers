@@ -1,0 +1,64 @@
+<import src="../template/temp_common/temp_common.wxml" />
+<view class="wrap">
+	<view class="headerWrap">
+		<view class="header">
+			<view class="contain">
+				<view class="count">
+					<view class="bg1"></view>
+					<view class="bg2"></view>
+					<view class="bg3"></view>
+					<view class="bg4"></view>
+					<view class="count_num">{{resultInfo.user_score}}</view>
+				</view>
+				<view class="examName">{{resultInfo.paper_name}}</view>
+				<view class="detail flexR" wx:if="{{type==1}}">
+					<view class='item item1'>
+	          <view>{{resultInfo.timelong}}分钟</view>
+	          <view class="use">限时</view>
+	        </view>
+					<view  class='item item2'>总分{{resultInfo.total_sorce}}分</view>
+					<view  class='item item3'>
+	          <view>{{resultInfo.costTime}}</view>
+	          <view class="use">用时</view>
+	        </view>
+				</view>
+        <view class="detail" wx:elif="{{type==0}}">总分{{resultInfo.total_sorce}}分</view>
+	      <view class='headerImg flexR'>
+	        <image src='{{headimgurl}}'></image>
+	      </view>
+			</view>
+		</view>
+	</view>
+	<view class="cardBox">
+		<view class='cardTitle flexR'>
+      <view class="icon"></view><view>题卡<text class="des">（共{{resultInfo.answer_sheet.length}}题。正确 <text class="rightNum">{{successCount}}</text> 题，错误 <text class="errorNum">{{errorCount}}</text> 题）</text></view>
+    </view>
+    <view class="cardNumber flexR">
+        <block wx:if="{{resultInfo.answer_sheet.length<=12}}">
+          <view wx:for="{{resultInfo.answer_sheet}}" class="{{item.type}}">{{item.quesiont_number}}</view>
+        </block>
+        <block wx:else>
+          <block wx:for="{{resultInfo.answer_sheet}}" wx:for-index="index">
+            <view wx:if="{{index<11}}" class="{{item.type}}">{{item.quesiont_number}}</view>
+            <view wx:if="{{index>=11&&more}}" class="{{item.type}}">{{item.quesiont_number}}</view>  
+          </block>
+          <view wx:if="{{!more}}" class="more color1" bindtap='cardMore'>展开
+            <image src="/pages/images/arrowDown.png"></image>
+          </view>
+          <view wx:else class="moreUp color1" bindtap='cardMore'>收起
+            <image src="/pages/images/arrowDown.png"></image>
+          </view>
+          
+        </block>
+    </view>
+	</view>
+	<view class="exam" wx:if="{{paperList.length>0}}">
+		<view class='examTitle flexR'><view class="icon"></view><view>去挑战其他试卷吧！</view></view>
+    <template is="testList" data="{{test_list:paperList}}"/>
+	</view>
+	<view class="analysis flexR">
+		<view class="item color1" id="allAnalysis" bindtap="toAnalysis">全部解析</view>
+    <view class="item color1 item2" wx:if="{{errorCount>0}}" id="errorAnalysis" bindtap="toAnalysis">错题解析</view>   
+	</view>
+	
+</view>

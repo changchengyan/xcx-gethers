@@ -1,0 +1,19 @@
+·<!--richText.wxml-->
+<template name="richText">
+<view class="info-item" style="display:inline;" wx:for="{{infolist}}" data-node="{{item}}">
+  <block wx:if="{{item.tag=='image'}}">
+    <view class="image">
+      <image src="{{item.value}}" data-src="{{item}}" mode="widthFix" bindtap="selectPic"></image>
+    </view>
+  </block>
+  <block wx:if="{{item.tag=='text'}}">
+    <block wx:if="{{item.isInLine}}">
+      <view class="text info-text" style="display:block;{{item.style}}">{{item.value}}</view>
+      <view class="text info-text" style="display:inline;{{item.style}}"></view>
+    </block>
+    <block wx:else>
+      <view class="text info-text" style="display:inline;{{item.style}}">{{item.value}}</view>
+    </block>
+  </block>
+</view>
+</template>>

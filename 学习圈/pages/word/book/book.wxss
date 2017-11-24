@@ -1,0 +1,31 @@
+/* pages/word/book/book.wxss */
+.book-item{
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items:flex-start;
+  border-bottom: 1px solid #f0f0f0;
+  background-color: #f8f8f8;
+}
+.book-item .pic{
+  flex-grow: 2;
+  max-width: 80px;
+  min-width:80px;
+}
+.book-item .pic image{
+  width: 80px;
+}
+.book-item .info{
+  flex-grow: 5;
+  padding: 0px 0px 0px 10px;
+}
+.book-item .info .name{
+  font-size: 16px;
+  padding: 0px 0px 10px 0px;
+}
+.book-item .info .desc{
+  font-size: 12px;
+  color: #777;
+  line-height: 16px;
+}

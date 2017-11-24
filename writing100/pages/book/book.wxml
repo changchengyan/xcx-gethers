@@ -1,0 +1,90 @@
+<!--book.wxml-->
+<import src="../template/template.wxml" />
+<view class="wrap">
+  <view class="lei flexRow" wx:if="{{categoryList[0]}}">
+    <!-- <view class="rest_pen">
+      <image src="/images/book/pen.png"></image>
+      <text>×{{key_rest_count}}</text>
+    </view> -->
+    <view wx:for="{{categoryList}}" wx:key="index" class="leiName flexColumn {{index==currentIndex?'active':''}}" data-index="{{index}}" bindtap="changeIndex">
+      <view class="text">{{item}}</view>
+      <view class="bg"></view>
+    </view>
+  </view>
+  <form catchsubmit="formSubmit" bindreset="formReset" report-submit="true">
+    <swiper class="contain" bindchange="changeCurrent" current="{{current}}">
+      <block>
+        <swiper-item wx:for="{{categoryList}}" wx:key="id" wx:for-item="itemName" wx:for-index="curidx">
+          <scroll-view scroll-y bindscrolltolower="addMore" class="list-box">
+            <view class="item" wx:for="{{book.lessonList[itemName]}}" wx:key="{{index}}" wx:for-index="idx">
+              <button class="newsBtn" formType="submit" plain="true" bindtap="toUnitPage" data-name="{{item.lesson_name}}" data-lesson_id="{{item.id}}" data-is-wrote="{{item.isWrote}}"></button>
+              <view class="head" wx:if="{{item.lesson_sub_category && item.lesson_sub_category != book.lessonList[itemName][idx-1].lesson_sub_category }}">{{item.lesson_sub_category}}</view>
+              <image src="/images/book/penicon.png"></image>
+              <view class="lft lesson-title" wx:if="{{item.lesson_title.length>2}}">{{item.lesson_title}}</view>
+              <view>
+                <view class="lft " wx:if="{{item.lesson_title.length<=2}}">{{item.lesson_title}}</view>
+                <view class="lft" wx:else></view>
+                <text class="character_num">共{{item.wordlist.length}}个</text>
+                <text wx:if="{{item.isWrote == 1}}" class="isWrote">已学</text>
+              </view>
+              <view class="character_container">
+                <view class="character-item" wx:for="{{item.wordlist}}" wx:key="id">
+                  <view class="pinyin" wx:if="{{item.word_pinyin}}">{{item.word_pinyin}}</view>
+                  <view class="character" wx:key="{{index}}">{{item.sub_word}}</view>
+                </view>
+              </view>
+            </view>
+            <view class="item-add-more" wx:if="{{ifLoad[curidx].loadMore && loadding}}">
+              <image class="gif" style="width:110rpx;height:25rpx" src="../../images/book/loading.gif"></image>
+            </view>
+            <view class="item-no-more" wx:if="{{!ifLoad[curidx].loadMore && !loadding}}">已加载全部</view>
+            <view class="bottom118"></view>
+          </scroll-view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </form>
+</view>
+<view class="top-up">
+
+  <view class="top-botton-list">
+    <view class="top-button" catchtap="lastLesson">
+      <image src="/images/book/last.png" mode="widthFix"></image>
+      <view class="">继续上次听写</view>
+    </view>
+    <view class="top-button" wx:if="{{isPay}}">
+      <image src="/images/book/smile.png" mode="widthFix"></image>
+      <view class="">已购买</view>
+    </view>
+    <view class="top-button" wx:else catchtap="openAllBook">
+      <image src="/images/book/buy.png" mode="widthFix"></image>
+      <view class="">立即购买</view>
+    </view>
+    <view class="top-button" catchtap="share">
+      <button open-type="share"></button>
+      <image src="/images/book/share.png" mode="widthFix"></image>
+      <view class="">分享得钢笔</view>
+    </view>
+  </view>
+</view>
+
+<!--submit  -->
+<view class="proloadBg"></view>
+
+
+<!--支付弹窗  -->
+<block wx:if="{{topay}}">
+  <template is="Buy" data="{{money:money,book_name:book.bookName,key_rest_count:0,book_img:book_img}}"></template>
+</block>
+<!--支付弹窗 end  -->
+<!--loading  -->
+<import src="../template/template.wxml" />
+<template is="pageLoading" data="{{isLoading}}"></template>
+<!--预加载图片begin-->
+<view style="height:0;overflow:hidden;">
+  <image src="../../images/unit/BuyThisBook.png"></image>
+  <image src="../../images/unit/modeOfFooter.png"></image>
+  <image src="../../images/unit/modeOfTitle.png"></image>
+  <image src="http://image.chubanyun.net/images/Dictation/finally/Star-t.png"></image>
+</view>
+<!--预加载图片begin-->

@@ -1,0 +1,133 @@
+html, body, p {
+    margin: 0;
+    padding: 0
+}
+
+.container {
+    width: 750px;
+    height: 1000px;
+    background: url(http://image.chubanyun.net/images/WordUncle/poster/img/teacher_BG.jpg);
+    background-repeat: no-repeat;
+    background-size: 750px 1000px;
+    -webkit-background-size: 100% 100%;
+    overflow: hidden;
+}
+
+.top{
+    padding: 545px 0 50px 0;
+    width: 230px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.top img{
+    width: 190px;
+    height: 190px;
+}
+
+
+.pig {
+    width: 623px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    margin: 0 auto;
+    height: 205px;
+    padding-top: 10px;
+    border-radius: 40px;
+    position: relative;
+}
+
+.pig .user {
+    position: absolute;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    font-family: "Microsoft YaHei UI";
+    margin: -34px auto 0;
+    width: 414px;
+    /* background: #fff; */
+    z-index: 2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    left: 100px;
+    top: -1.5%;
+}
+
+.pig .title {
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: middle;
+    max-width: 82%;
+}
+
+.pig .line {
+
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    font-family: "Microsoft YaHei UI";
+    margin: -34px auto 0;
+    width: 444px;
+    background: #F4F0ED;
+    height: 3px;
+    position: absolute;
+    top: 31px;
+    left: 84px;
+    z-index: 1;
+
+}
+
+.pig .word {
+
+    padding: 6px 25px 27px 25px;
+
+}
+
+.pig .word p {
+    width: 385px;
+    margin: 0;
+    padding: 0;
+    font-size: 26px;
+    text-align: left;
+    line-height: 44px;
+    height: auto;
+    margin-top: 15px;
+    padding-left: 20px;
+
+}
+
+.pig .word p span {
+    font-weight: bold;
+    color: #a01818;
+    letter-spacing: 6px;
+}
+
+.pig .word .logo {
+    float: right;
+    width: 162px;
+    height: 184px;
+}
+
+.left {
+    float: left;
+}
+
+/*div{*/
+/*clear: both;*/
+/*}*/
+.user {
+    position: relative;
+}
+
+.user .touxiang {
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    border-radius: 50%;
+    font-size: 0;
+    vertical-align: middle;
+}

@@ -1,0 +1,133 @@
+<!--pages/evaluate/book/book.wxml-->
+<view class='report' style='display:none'>
+  <view class='item line'>
+    <view class='number'>72<text>分</text></view>
+    <view class='text'>综合评测</view>
+  </view>
+  <view class='item line'>
+    <view class='number'>3/25</view>
+    <view class='text'>目标达成</view>
+  </view>
+  <view class='item line'>
+    <view class='number'>92<text>%</text></view>
+    <view class='text'>超越全国</view>
+  </view>
+  <view class='item'>
+    <view class='number'>…</view>
+    <view class='text'>详细报告</view>
+  </view>
+</view>
+<view class='more-icon'>
+  <view>
+    <image src='../../images/evaluate/like.png' mode='widthFix'></image>
+    <view>已购买</view>
+  </view>
+  <view>
+    <view class='score'>72<text>分</text></view>
+    <view>综合评测</view>
+  </view>
+  <view>
+    <image src='../../images/evaluate/share.png' mode='widthFix'></image>
+    <view>分享给</view>
+  </view>
+</view>
+
+<scroll-view  scroll-x="true" class='unit-scroll'>
+  <view class='unit-list'>
+    <view class='over'>unit-1</view>
+    <view>unit-2</view>
+    <view>unit-3</view>
+    <view>unit-4</view>
+    <view>unit-5</view>
+    <view>unit-6</view>
+  </view>
+</scroll-view>
+
+<view>
+  <view class='unit-info'>
+    <view>共22张评测卡</view>
+    <view class='page'>引用范围：P1-P2</view>
+  </view>
+  <view>
+    <view class='evaluate-item-canvas'>
+      <view class='evaluate-item' bindtap='toDisplay'>
+        <view class='content'>
+          <view class='text'>This is Amy .She's quiet. She's very hard-working.</view>
+          <view class='text-report'>
+           <text>评分：未评测 | 评测：2  |  引用：P1</text>
+          </view>
+        </view>
+        <view class='pic' style='background-image: url(http://f3.5rs.me/upload/20170918/2017_09_18_140622915.jpg);'>
+          
+        </view>
+      </view>  
+    </view>
+    <view class='evaluate-item-canvas'>
+      <view class='evaluate-item' bindtap='toDisplay'>
+        <view class='content'>
+          <view class='text'>Chen Jie:Ms Wang will be our new Chinese teacher. John:What's she like? Chen Jie:She's very kingd.</view>
+          <view class='text-report'>
+          评分：65 | 2评测  |   引用：P1
+          </view>
+        </view>
+        <view class='pic' style='background-image: url(http://f3.5rs.me/upload/20170918/2017_09_18_140825536.jpg);'>
+           
+        </view>
+      </view>  
+    </view>
+    <view class='evaluate-item-canvas'>
+      <view class='evaluate-item' bindtap='toDisplay'>
+        <view class='content'>
+          <view class='text'>John:Is she strict? Chen Jie:Yes,sometimes.</view>
+          <view class='text-report'>
+          评分：65 | 2评测  |   引用：P2
+          </view>
+        </view>
+        <view class='pic' style='background-image: url(http://f3.5rs.me/upload/20170918/2017_09_18_141030724.jpg);'>
+          
+        </view>
+      </view>  
+    </view>
+    <view class='evaluate-item-canvas'>
+      <view class='evaluate-item' bindtap='toDisplay'>
+        <view class='content'>
+          <view class='text'>This is Amy .She's quiet. She's very hard-working.</view>
+          <view class='text-report'>
+           <text>评分：65 | 评测：2  |   引用：P2</text>
+          </view>
+        </view>
+        <view class='pic' style='background-image: url(http://f3.5rs.me/upload/20170918/2017_09_18_140622915.jpg);'>
+          
+        </view>
+      </view>  
+    </view>
+    <view class='evaluate-item-canvas'>
+      <view class='evaluate-item' bindtap='toDisplay'>
+        <view class='content'>
+          <view class='text'>Chen Jie:Ms Wang will be our new Chinese teacher. John:What's she like? Chen Jie:She's very kingd.</view>
+          <view class='text-report'>
+          评分：65 | 2评测  |   引用：P2
+          </view>
+        </view>
+        <view class='pic' style='background-image: url(http://f3.5rs.me/upload/20170918/2017_09_18_140825536.jpg);'>
+          
+        </view>
+      </view>  
+    </view>
+    <view class='evaluate-item-canvas'>
+      <view class='evaluate-item' bindtap='toDisplay'>
+        <view class='content'>
+          <view class='text'>John:Is she strict? Chen Jie:Yes,sometimes.</view>
+          <view class='text-report'>
+          评分：65 | 2评测  |   引用：P2
+          </view>
+        </view>
+        <view class='pic' style='background-image: url(http://f3.5rs.me/upload/20170918/2017_09_18_141030724.jpg);'>
+          
+        </view>
+      </view>  
+    </view>
+    
+  </view>
+
+</view>

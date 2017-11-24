@@ -1,0 +1,31 @@
+<!--pages/test/test.wxml-->
+<view class='container'>
+  <image class='top_img' src='{{paperInfo.paper.paper_icon}}'></image>
+  <view class='title'>{{paperInfo.paper.paper_name}}</view>
+  <view class='middle'>
+    <view class='middle_top'>
+      <view>题量： <text>{{paperInfo.paper.paper_question_count}}</text></view>
+      <view>类型：{{paperInfo.paper.answer_mode?'计时（'+paperInfo.paper.timelong+'min）':'普通答题'}}</view>
+    </view>
+    <view class='middle_end'>
+      <view>评分：
+        <text>{{paperInfo.score}}</text>
+      </view>
+      <view class='number'>
+      	<block  wx:for="{{paperInfo.user_headimgurl}}">
+      		<image wx:if="{{index==0}}" class='user_img' src='{{item}}'></image>
+      		<image wx:if="{{index>0&&index<3}}" class='user_img'  style='margin-left:-10rpx;' src='{{item}}'></image>      		
+      	</block>
+        <text wx:if="{{paperInfo.user_headimgurl.length>3}}" style="margin-left:10rpx;">...</text>
+        <view style="margin-left: 20rpx;"> {{paperInfo.user_count}}人参与</view>
+      </view>
+    </view>
+
+  </view>
+
+  <view class='btn' wx:if="{{answerInfo.answer_status==0}}" bindtap='goAnswer_info' data-id="beginPaper">开始答题</view>
+  <view wx:elif="{{answerInfo.answer_status==1}}" class="flexR btnBox">
+    <view class="item1"  bindtap='goAnswer_info' data-id="prePaper">继续上次</view>
+    <view  bindtap='goAnswer_info' data-id="newPaper">重新答题</view>
+  </view>
+</view>

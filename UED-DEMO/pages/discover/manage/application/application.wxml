@@ -1,0 +1,288 @@
+<!--pages/discover/manage/application/application.wxml-->
+<view>
+    <view class='top-menu'>
+      <view class='item {{appDemo}}' data-sales='0' bindtap='appMenuClick'>应用模版</view>
+      <view class='item {{appList}}' data-sales='1' bindtap='appMenuClick'>我的应用</view>
+    </view>  
+  </view>
+<view class='app-body'>
+      <view class='swiper-canvas'>
+        <swiper class='app-swiper' bindchange='appSwiperChange' current='{{appCurrent}}' >
+          <swiper-item>
+              <scroll-view class='list-scroll' scroll-y='true'>
+                <view class='demo-list'>
+                    <view class='demo-group-name'>
+                      基础通用
+                    </view>
+                    <view class='demo-item'>
+                      <view class='icon'><image src='http://f3.5rs.me/upload/20171016/2017_10_16_163303980.png' mode='widthFix'></image> </view>
+                      <view class='info'>
+                        <view class='title'>视频</view>
+                        <view class='desc'>流畅观看MP4格式的教学、辅导、宣传视频</view>                        
+                      </view>
+                    </view>
+                    <view class='demo-item'>
+                      <view class='icon'><image src='http://f3.5rs.me/upload/20171016/2017_10_16_163748062.png' mode='widthFix'></image> </view>
+                      <view class='info'>
+                        <view class='title'>音频</view>
+                        <view class='desc'>流畅收听MP3格式的听力、歌曲、寄语、语音答复。</view>
+                      </view>
+                    </view>
+                    <view class='demo-item'>
+                      <view class='icon'><image src='http://f3.5rs.me/upload/20171016/2017_10_16_163758994.png' mode='widthFix'></image> </view>
+                      <view class='info'>
+                        <view class='title'>PDF</view>
+                        <view class='desc'>PDF格式的课件、论文、答案解析、文章资源。</view>
+                      </view>
+                    </view>
+
+                    <view class='demo-item'>
+                      <view class='icon'><image src='http://f3.5rs.me/upload/20171016/2017_10_16_164334066.png' mode='widthFix'></image> </view>
+                      <view class='info'>
+                        <view class='title'>相册</view>
+                        <view class='desc'>应用用途：JPG、GIF、PNG格式的照片</view>
+                      </view>
+                    </view>
+                    <view class='demo-item'>
+                      <view class='icon'><image src='http://f3.5rs.me/upload/20171016/2017_10_16_164343583.png' mode='widthFix'></image> </view>
+                      <view class='info'>
+                        <view class='title'>图书</view>
+                        <view class='desc'>应用用途：社内自营、代理的图书、期刊、报纸资源。</view>
+                      </view>
+                    </view>
+                    <view class='demo-item'>
+                      <view class='icon'><image src='http://f3.5rs.me/upload/20171016/2017_10_16_164351740.png' mode='widthFix'></image> </view>
+                      <view class='info'>
+                        <view class='title'>文章</view>
+                        <view class='desc'>应用用途：可推送软文、公告、通知；也可作为历史经典文章追溯。</view>
+                      </view>
+                    </view>
+
+                    <view class='demo-group-name'>
+                      互动反馈
+                    </view>
+
+                    <view class='demo-item'>
+                      <view class='icon'><image src='http://f3.5rs.me/upload/20171016/2017_10_16_171505841.png' mode='widthFix'></image> </view>
+                      <view class='info'>
+                        <view class='title'>读者圈</view>
+                        <view class='desc'>大咖、名人建立读者粉丝圈，读者付费加入，了解圈内动态，随时与大咖互动</view>
+                      </view>
+                    </view>
+                    <view class='demo-item'>
+                      <view class='icon'><image src='http://f3.5rs.me/upload/20171016/2017_10_16_171515366.png' mode='widthFix'></image> </view>
+                      <view class='info'>
+                        <view class='title'>问答</view>
+                        <view class='desc'>由作者、专家、名人、编辑作为回答者，读者作为提问者的可免费/收费的在线互动。</view>
+                      </view>
+                    </view>
+                    <view class='demo-item'>
+                      <view class='icon'><image src='http://f3.5rs.me/upload/20171016/2017_10_16_190746664.png' mode='widthFix'></image> </view>
+                      <view class='info'>
+                        <view class='title'>1对1辅导</view>
+                        <view class='desc'>基于纸书的名师专家为高净值读者提供授课辅导</view>
+                      </view>
+                    </view>
+                    <view class='demo-item'>
+                      <view class='icon'><image src='http://f3.5rs.me/upload/20171016/2017_10_16_190920048.png' mode='widthFix'></image> </view>
+                      <view class='info'>
+                        <view class='title'>问卷调查</view>
+                        <view class='desc'>人文社科类的问卷调查，针对行业、生活态度、价值观等</view>
+                      </view>
+                    </view>
+                    <view class='demo-item'>
+                      <view class='icon'><image src='http://f3.5rs.me/upload/20171016/2017_10_16_190738553.png' mode='widthFix'></image> </view>
+                      <view class='info'>
+                        <view class='title'>直播</view>
+                        <view class='desc'>直播课堂、视频、会议、企业培训、论坛、活动；在直播与读者互动，经营您的粉丝、会员和社群，与其进行实时</view>
+                      </view>
+                    </view>
+                    <view class='demo-item'>
+                      <view class='icon'><image src='http://f3.5rs.me/upload/20171016/2017_10_16_191153761.png' mode='widthFix'></image> </view>
+                      <view class='info'>
+                        <view class='title'>分享互动</view>
+                        <view class='desc'>引导用户在微信群或朋友圈转发，并吸引更多人关注。</view>
+                      </view>
+                    </view>
+
+                    <view class='demo-group-name'>
+                      个性呈现
+                    </view>
+                    
+                    <view class='demo-item'>
+                      <view class='icon'><image src='http://f3.5rs.me/upload/20171016/2017_10_16_171523413.png' mode='widthFix'></image> </view>
+                      <view class='info'>
+                        <view class='title'>扫扫看</view>
+                        <view class='desc'>快速引起读者兴趣，产生读者与内容、读者与读者交互</view>
+                      </view>
+                    </view>
+
+                    <view class='demo-item'>
+                      <view class='icon'><image src='http://f3.5rs.me/upload/20171016/2017_10_16_190534613.png' mode='widthFix'></image> </view>
+                      <view class='info'>
+                        <view class='title'>教育表格</view>
+                        <view class='desc'>给读者提供专业领域解决方案集合</view>
+                      </view>
+                    </view>
+                    <view class='demo-item'>
+                      <view class='icon'><image src='http://f3.5rs.me/upload/20171016/2017_10_16_190554119.png' mode='widthFix'></image> </view>
+                      <view class='info'>
+                        <view class='title'>专题</view>
+                        <view class='desc'>让读者在浏览某一信息时得到全方位的认知</view>
+                      </view>
+                    </view>     
+                    
+                    <view class='demo-item'>
+                      <view class='icon'><image src='http://f3.5rs.me/upload/20171016/2017_10_16_190928203.png' mode='widthFix'></image> </view>
+                      <view class='info'>
+                        <view class='title'>作者留言</view>
+                        <view class='desc'>主要用于插入作者的语音介绍</view>
+                      </view>
+                    </view>
+
+                    <view class='demo-item'>
+                      <view class='icon'><image src='http://f3.5rs.me/upload/20171016/2017_10_16_191106876.png' mode='widthFix'></image> </view>
+                      <view class='info'>
+                        <view class='title'>听力</view>
+                        <view class='desc'>在同一场景内的MP3音频搭配听力原文展现。</view>
+                      </view>
+                    </view>
+                    
+                    
+                    <view class='demo-item'>
+                      <view class='icon'><image src='http://f3.5rs.me/upload/20171016/2017_10_16_191145620.png' mode='widthFix'></image> </view>
+                      <view class='info'>
+                        <view class='title'>答案</view>
+                        <view class='desc'>在同一场景内的书中原题配套答案展现。</view>
+                      </view>
+                    </view>
+
+
+
+
+                    <view class='demo-group-name'>
+                      读者参与
+                    </view>
+
+                    <view class='demo-item'>
+                      <view class='icon'><image src='http://f3.5rs.me/upload/20171016/2017_10_16_190726782.png' mode='widthFix'></image> </view>
+                      <view class='info'>
+                        <view class='title'>读书卡片</view>
+                        <view class='desc'>拍下你想要记录的精华书摘，随时随地回顾</view>
+                      </view>
+                    </view>
+                    <view class='demo-item'>
+                      <view class='icon'><image src='http://f3.5rs.me/upload/20171016/2017_10_16_191124054.png' mode='widthFix'></image> </view>
+                      <view class='info'>
+                        <view class='title'>题库</view>
+                        <view class='desc'>以选择题为主的知识集合，适用于不同学科、不同年级</view>
+                      </view>
+                    </view>
+                    <view class='demo-item'>
+                      <view class='icon'><image src='http://f3.5rs.me/upload/20171016/2017_10_16_190601676.png' mode='widthFix'></image> </view>
+                      <view class='info'>
+                        <view class='title'>标准分</view>
+                        <view class='desc'>同一场景里查看你的个人排名情况</view>
+                      </view>
+                    </view>
+                    <view class='demo-item'>
+                      <view class='icon'><image src='http://f3.5rs.me/upload/20171016/2017_10_16_191137342.png' mode='widthFix'></image> </view>
+                      <view class='info'>
+                        <view class='title'>投票</view>
+                        <view class='desc'>给定范围，征求意见的读者互动。</view>
+                      </view>
+                    </view>
+                    <view class='demo-item'>
+                      <view class='icon'><image src='http://f3.5rs.me/upload/20171016/2017_10_16_191115650.png' mode='widthFix'></image> </view>
+                      <view class='info'>
+                        <view class='title'>背单词</view>
+                        <view class='desc'>单词背诵，错词记录。</view>
+                      </view>
+                    </view>
+                    <view class='demo-item'>
+                      <view class='icon'><image src='http://f3.5rs.me/upload/20171016/2017_10_16_190910629.png' mode='widthFix'></image> </view>
+                      <view class='info'>
+                        <view class='title'>报名</view>
+                        <view class='desc'>各类活动报名参与的入口。</view>
+                      </view>
+                    </view>
+                    
+
+
+
+                
+                </view>
+              </scroll-view>
+          </swiper-item>
+          <swiper-item>
+              <scroll-view class='list-scroll' scroll-y='true'>
+                <view class='search-control' bindtap='toSearch'>
+                  <view class='text'>输入应用名称查询</view>
+                </view>
+                <view class='app-control'>
+                  <view class='list-view{{listStyle}}' bindtap='changeLListStyle'>
+                    㗊
+                  </view>
+                  <view class='app-type-select' bindtap='toSelectType'>
+                    <view class='text'>{{selectTypeName}}</view>
+                    <view class='arrow'><image src='../../../images/select-arrow.png'></image></view>
+                  </view>
+                  <view class='null'></view>
+                  <view class='add-button'>创建应用</view>
+                </view>
+                
+
+                <view class='app-list{{listStyle}}'>
+                  <view class='app-item' bindtap='toAppInfo' data-sales='sound'>
+                    <view class='pic' style="order:{{orderPic}};background-image: url(http://f3.5rs.me/upload/20170228/2017_02_28_163444236_a.jpg);'
+                    ></view>
+                    <view class='info' style="order:{{orderInfo}}">
+                      <view class='title'>张国荣经典歌曲欣赏</view>
+                      <view class='desc'>为你提供海量正版高品质音乐，最权威的音乐榜单，最快的新歌速递，最契合你的主题电台，最人性化的歌曲搜索，让你更快地找到</view>
+                    </view>  
+                    <view class='state' style="order:{{orderState}}"> 
+                        <text>状态：已审核</text>
+                        <text>类型：音频</text>
+                        <text>资源：5 </text>
+                        <text>浏览：129</text>
+                    </view>                   
+                  </view>
+
+                  <view class='app-item' bindtap='toAppInfo' data-sales='pdf'>
+                    <view class='pic' style="order:{{orderPic}};background-image: url(http://f3.5rs.me/upload/20170515/2017_05_15_092512427_a.jpg);'
+                    ></view>
+                    <view class='info' style="order:{{orderInfo}}">
+                      <view class='title'>关于互联网思维和互联网产品的PDF文档</view>
+                      <view class='desc'>互联网思维，就是在（移动）互联网+、大数据、云计算等科技不断发展的背景下，对市场、用户、产品、企业价值链乃至对整个商业生态进行重新审视的思考方式。</view>
+                      
+                    </view>
+                    <view class='state' style="order:{{orderState}}"> 
+                        <text>状态：已审核</text>
+                        <text>类型：PDF</text>
+                        <text>资源：5 </text>
+                        <text>浏览：129</text>
+                    </view>                    
+                  </view>
+
+                  <view class='app-item' bindtap='toAppInfo' data-sales='video'>
+                    <view class='pic' style="order:{{orderPic}};background-image: url(http://f3.5rs.me/upload/20171018/2017_10_18_114602224.jpg);'
+                    ></view>
+                    <view class='info' style="order:{{orderInfo}}">
+                      <view class='title'>张维为：中国信心</view>
+                      <view class='desc'>张维为，中国政治学者、作家。复旦大学特聘教授、复旦大学中国研究院院长 、国家高端智库理事会理事 、上海春秋研究院高级研究员 。 </view>
+                    </view>
+                    <view class='state' style="order:{{orderState}}"> 
+                        <text>状态：已审核</text>
+                        <text>类型：视频</text>
+                        <text>资源：5 </text>
+                        <text>浏览：129</text>
+                    </view>                    
+                  </view>
+                
+                </view>
+                
+              </scroll-view>
+          </swiper-item>
+        </swiper>
+      </view>
+</view>

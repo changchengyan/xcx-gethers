@@ -1,0 +1,481 @@
+/* template.wxss */
+
+.bt {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 320rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  box-shadow: 0 0 24rpx 6rpx rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to right, #484848, #010101);
+}
+
+.bt_text {
+  position: relative;
+  width: 240rpx;
+  text-align: center;
+  color: #fff;
+}
+
+.bt_text > image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 21rpx;
+  height: 31rpx;
+}
+
+/*根据星星的数量来显示星星*/
+
+.unit-star-3, .unit-star-2, .unit-star-1, .unit-star-0 {
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx 10rpx 0 10rpx;
+  flex-grow: 0;
+}
+
+.unit-star-3 view {
+  width: 38rpx;
+  height: 38rpx;
+  background: url(http://image.chubanyun.net/images/Dictation/unit/start.png);
+  background-size: cover;
+}
+
+.unit-star-2 view:nth-child(1), .unit-star-2 view:nth-child(2) {
+  width: 38rpx;
+  height: 38rpx;
+  background: url(http://image.chubanyun.net/images/Dictation/unit/start.png);
+  background-size: cover;
+}
+
+.unit-star-2 view:nth-child(3) {
+  width: 38rpx;
+  height: 38rpx;
+  background: url(http://image.chubanyun.net/images/Dictation/book/unstar.png);
+  background-size: cover;
+}
+
+.unit-star-1 view:nth-child(1) {
+  width: 38rpx;
+  height: 38rpx;
+  background: url(http://image.chubanyun.net/images/Dictation/unit/start.png);
+  background-size: cover;
+}
+
+.unit-star-1 view:nth-child(2), .unit-star-1 view:nth-child(3) {
+  width: 38rpx;
+  height: 38rpx;
+  background: url(http://image.chubanyun.net/images/Dictation/book/unstar.png);
+  background-size: cover;
+}
+
+.unit-star-0 view {
+  width: 38rpx;
+  height: 38rpx;
+  background: url(http://image.chubanyun.net/images/Dictation/book/unstar.png);
+  background-size: cover;
+}
+
+.maskBox {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 99;
+}
+
+.maskOfKey {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  width: 600rpx;
+  height: 750rpx;
+  margin-left: -300rpx;
+  /* border: 1px solid #ccc; */
+  background: #fff;
+  border-radius: 5px;
+  /* padding: 16rpx; */
+  z-index: 100;
+}
+
+.maskOfKey .titleOfUnit {
+  font: 16px/1.2 "微软雅黑";
+  font-weight: 400;
+}
+
+.maskOfKey .key {
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+.maskOfKey .key image {
+  height: 152rpx;
+  width: 144rpx;
+}
+
+.openThisUnitWithKey, .openAllBook {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.openAllBook {
+  /* width: 521rpx;
+  height:88rpx; *//* background:url(http://image.chubanyun.net/images/Dictation/unit/BuyThisBook.png) 0 0 no-repeat;
+  background-size:cover; */
+  margin-top: 20rpx;
+  /* margin: 0 auto;   *//* display: flex;
+  justify-content: flex-start; 
+  margin-bottom: 30rpx; */
+}
+
+.openAllBook .NeedMoney {
+  width: 100%;
+  height: 100%;
+  font-size: 56rpx;
+  font-weight: 600;
+  color: #fff;
+  /* text-shadow: 0px 0px 20rpx #2f8b10; */
+  font-family: "微软雅黑";
+  display: flex;
+  justify-content: center;
+  padding-top: 8rpx;
+  padding-right: 20rpx;
+}
+
+.openAllBook .NeedMoney .symbol {
+  font-weight: 600;
+  /* text-shadow: 0px 0px 10rpx #2f8b10; */
+  line-height: 88rpx;
+  display: inline-block;
+  padding: 0 10rpx;
+}
+
+.LeftY {
+  /* left: 0rpx; */
+  font-size: 28rpx !important;
+}
+
+.LeftC {
+  /* left: 200rpx; */
+  font-size: 24rpx !important;
+}
+
+.showNumOfMoney {
+  /* position: absolute;
+  top: 8rpx;
+  left: 40rpx; */
+  font-family: "微软雅黑";
+  font-weight: 900 !important;
+  /* text-shadow: 0px 0px 10rpx #2f8b10; */
+  line-height: 80rpx;
+  margin-top: 20rpx;
+}
+
+.openThisUnitWithKey image, .openAllBook image {
+  width: 503rpx;
+  margin-bottom: 30rpx;
+}
+
+.openAllBook image {
+  width: 523rpx;
+  margin-bottom: 30rpx;
+}
+
+.titleOfTips {
+  width: 600rpx;
+  height: 250rpx;
+  position: relative;
+  border-top-right-radius: 5rpx;
+  border-top-left-radius: 5rpx;
+}
+
+.titleOfTips image.title-bg {
+  width: 600rpx;
+}
+
+.titleOfTips .del {
+  position: absolute;
+  top: 16rpx;
+  right: 16rpx;
+  width: 100rpx;
+  height: 60rpx;
+  text-align: center;
+}
+
+.titleOfTips .del image {
+  width: 29rpx;
+}
+
+.tips {
+  width: 100%;
+  color: #f4c520;
+  margin-top: 73rpx;
+  margin-bottom: 82rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+
+.tips .color333 {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.tips .timesSign {
+  font-size: 44rpx;
+  line-height: 44rpx;
+}
+
+.tips .key-num {
+  font-size: 58rpx;
+  line-height: 58rpx;
+  display: inline-block;
+  margin-left: 10rpx;
+}
+
+.tips image {
+  margin: 0 20rpx;
+  width: 61rpx;
+}
+
+.WX-onSecurity {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.WX-onSecurity image {
+  display: inline-block;
+  width: 192rpx;
+}
+
+.WX-share {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.showBook {
+  width: 200rpx;
+  height: 258rpx;
+  box-shadow: 0 0rpx 10rpx rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 128rpx;
+  left: 50%;
+  margin-left: -100rpx;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.showBook image {
+  display: block;
+  width: 180rpx;
+  height: 238rpx;
+}
+
+.showMoney {
+  font-size: 24rpx;
+  line-height: 24rpx;
+  color: #666;
+  font-family: "微软雅黑";
+  margin-top: 160rpx;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.showMoney .showNumOfMoney {
+  font-size: 60rpx;
+  line-height: 50rpx;
+  font-family: "微软雅黑";
+  color: #06c1ae;
+  padding: 0 10rpx;
+}
+
+.buy-give-tip {
+  font-size: 22rpx;
+  color: #666;
+  text-align: center;
+  margin-top: 30rpx;
+}
+
+.bookName {
+  width: 100%;
+  position: absolute;
+  top: 70rpx;
+  text-align: center;
+  font-size: 24rpx;
+  font-family: "微软雅黑";
+  color: #fff;
+  line-height: 24rpx;
+}
+
+.WX-share wx-button {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+}
+
+/* .maskOfDetail{
+  width: 100vw;
+  height:100vh;
+  background-color: rgba(0,0,0,0.88);
+  z-index: 1001; 
+  position: absolute;
+  top:0;
+  left:0; 
+}
+.maskOfDetail .modalOfDetail{
+  width:500rpx;
+  height:500rpx;
+  position: absolute;
+  left:50%;
+  top:25%;
+  margin-left: -250rpx;
+}
+
+.modalOfDetail .titleOfDetail{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+  position: absolute;
+  top:0%;
+  left:50%;
+  margin-left: -50rpx;
+  background-color: #fff;
+  text-align: center; 
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items:flex-start;
+  padding-top: 15rpx;
+}
+.modalOfDetail .titleOfDetail image{
+   width: 40rpx; 
+}
+.modalOfDetail .bodyOfDetail{
+  width: 100%;
+  height:450rpx;
+  margin-top: 50rpx;
+  border-radius: 10px;
+  background-color: #fff;  
+  text-align: center;
+  padding: 20rpx;
+  position: relative;
+}
+.modalOfDetail .bodyOfDetail .bodyOfHeader image{
+  width:30rpx;
+}
+.modalOfDetail .bodyOfDetail .bodyOfHeader text{
+  margin-left: 20rpx;
+  font-size: 16px;
+  color: #ccc;
+} */
+
+/* .immediatePay{
+  position: absolute;
+  bottom: 0;
+  left:0;
+  width:100%;
+  height:100rpx;
+  font-size: 16px;
+  line-height: 100rpx;
+  color:#fff;
+  background-color: rgb(6,193,174);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.money{
+  font-size: 18px;
+  line-height: 80rpx;
+  color: rgb(6,193,174);
+}
+.bookName{
+  font-size: 20px;
+  line-height: 24px;
+  color:#999;
+}
+.lessonName{
+  font-size: 16px;
+  line-height: 60rpx;
+  color:#666;
+  font-weight: 500;
+  margin-top: 20px;
+}
+.loadings{
+  margin-top: 10px;
+}
+.resourceNum{
+  font-size: 12px;
+  color:#666;
+  transform: scale(0.6);
+} */
+
+/*打开分享时页面*/
+
+.share-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+
+.share-head {
+  width: 100%;
+  background:url(http://image.chubanyun.net/images/Dictation/template/share_bg.png) no-repeat top;
+  background-size: 100% auto;
+  height: 500rpx;
+  overflow: hidden
+}
+
+.share-head image {
+  width: 100%;
+}
+
+.share-user {
+  margin-top: -55rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 250rpx;
+  font-size: 30rpx;
+}
+
+.share-user image {
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  border: 4rpx solid #eee;
+}
+.user-now {
+  position: fixed;
+  bottom: 176rpx;
+  left: 0;
+  right: 0;
+  width: 500rpx;
+  height: 84rpx;
+  border-radius: 8rpx;
+  background-color: #06c1ae;
+  font-size: 30rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 84rpx;
+  margin: 0 auto;
+}

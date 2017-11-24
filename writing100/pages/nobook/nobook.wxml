@@ -1,0 +1,7 @@
+<!--nobook.wxml-->
+<view class="{{font}} container">
+   <image class="tadpole" src="/images/nobook/nobook.png"></image>
+  <text class="f3 color6">这本书找不到了……</text>
+  <text class="f3 color6">请试试自定义听写</text>
+  <view class="add_book" catchtap="selfBook">自定义</view>
+</view>

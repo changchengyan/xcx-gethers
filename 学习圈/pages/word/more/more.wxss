@@ -1,0 +1,98 @@
+/* pages/word/more/more.wxss */
+.group-canvas
+{
+      padding: 20px;
+      background-color: #06c1ae;
+      color: #fff;
+     
+}
+.group-canvas .group
+{
+      text-align: center;
+  
+}
+.group-canvas .group .pic
+{
+      width: 100px;margin: auto;
+  
+}
+.group-canvas .group .pic image
+{
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;    
+  
+}
+.group-canvas  .ticket{ text-align: center; padding: 20px 0px 20px 0px; }
+.group-canvas  .ticket image{width: 30px; height: 30px;}
+.group-canvas  .ticket .text{font-size: 12px; color: #fff;}
+
+.group-canvas .group .title
+{
+     font-size: 18px;
+     padding: 10px 0px 10px 0px;
+}
+.group-canvas .group .desc
+{
+     font-size: 12px; color: #fff;
+  
+}
+
+.source-type-canvas{ display: none; padding: 10px 20px 10px 20px; border-top: 1px solid #f0f5f5;border-bottom: 1px solid #f0f5f5;background-color: #f8f8f8;}
+.source-type{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items:center;
+  padding: 10px 0px 10px 0px;
+}
+.source-type .icon{
+  flex-grow: 1;
+  text-align: center;
+  font-size: 12px;
+  max-width: 25%;
+  min-width: 25%;
+}
+.source-type .icon .number{
+
+  font-size: 18px;
+}
+
+
+
+/*菜单列表*/
+.menul-list
+{
+   padding: 10px 20px 10px 20px;
+   border-top: 5px solid #f0f0f0;
+}
+.menul-list .menu
+{
+   border-bottom: 1px solid #eee;
+   padding: 10px 0px 10px 0px;
+   font-size: 14px;
+   display: flex;  
+   flex-direction:row;
+   justify-content:center;
+    align-items:center;
+}
+.menul-list .menu .title
+{
+   flex-grow:8;
+}
+.menul-list .menu .text
+{
+   color: #777; font-size: 12px;
+}
+.menul-list .menu .arrow
+{
+   padding: 2px 5px 0px 5px; 
+   max-width: 20px;   
+   flex-grow:1;
+   text-align: right;
+}
+.menul-list .menu .arrow image
+{
+    width: 9px; height: 15px;
+}
+

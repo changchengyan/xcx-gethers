@@ -1,0 +1,56 @@
+<!--pages/book/book.wxml-->
+<import src="/pages/template/temp_common/temp_common.wxml" />
+<block wx:if="{{unAuthorization}}">
+	<template is="unauthorized"></template>
+</block>
+<block wx:else>
+	<form report-submit='true' >
+	  <view class='out' bindtap='outbind'>
+	    <view class="blue-bg">
+	      <!-- <view bindtap='gotoBookshelf' class="no-book" wx:if="{{books.length==0}}">没有书籍哦~快去添加吧</view> -->
+	    </view>
+	    <view class='bg'>
+	      <view class='left' wx:if="{{current>books.length-1&&books.length>0}}"></view>
+	      <swiper wx:if="{{books.length>0}}" class='swiper  active_{{current}}' bindchange='bindchange' indicator-dots="true" indicator-active-color="#4EC98B" indicator-dots="false" indicator-color="rgba(0,0,0,0)" indicator-active-color="rgba(0,0,0,0)" current="{{current}}" bindchange='bindchange'>
+	        <block wx:for="{{books}}">
+	          <swiper-item wx:if="{{index<5}}">
+	            <view class='all {{current == index?"swiper-active":""}}' data-index='{{index}}'>
+	              <view class='book'>
+	                <view class="book_img">
+	                  <image class='img' src='{{item.examine.app_pic}}'></image>
+	                  <image class='delete' wx:if='{{isShowDelete}}' catchtap='deleteBook' data-id='{{item.examine.id}}' src='/pages/images/delete.png' data-index="{{index}}"></image>
+	                </view>
+	                <button class='from-bottom book_btn' form-type='submit' bindtap='gotoItem' data-id='{{item.examine.id}}' bindlongpress='showDeletBook' data-title='{{item.examine.app_name}}' style='width:240rpx'> </button>
+	              </view>
+	              <view class='book-name'>{{item.examine.app_name}}</view>
+	              <view class='book-info'>{{item.user_count}}人添加 | {{item.examine_count}}次测评</view>
+	            </view>
+	          </swiper-item>
+	
+	          <swiper-item wx:if="{{index==5}}">
+	            <view class='all_t  {{current == index?"swiper-active":""}}' data-index='{{index}}'>
+	              <view class='my_book'>我的书架</view>
+	              <view class='bookshelf-add'>
+	                <view class='little-book' wx:for="{{books}}" wx:for-index="idx">
+	                  <image class='img' src='{{item.examine.app_pic}}' mode='aspectFill'></image>
+	                  <button class='from-bottom book_btn' form-type='submit' bindtap='gotoItem' bindlongpress='showDeletBook' data-id='{{item.examine.id}}' data-title='{{item.examine.app_name}}'> </button>
+	                  <view class='little-book-name'>{{item.examine.app_name }}</view>
+	                  <image class='delete' wx:if='{{isShowDelete}}' catchtap='deleteBook' data-id='{{item.examine.id}}' src='/pages/images/delete.png' data-index="{{idx}}"></image>
+	                </view>
+	
+	              </view>
+	              <view class='bookshelf-text'>长按书籍可删除</view>
+	            </view>
+	          </swiper-item>
+	        </block>
+	
+	      </swiper>
+	      <block wx:else>
+	      <view class="noData"><text>您还没有添加课程，快去添加吧！</text></view>
+	      <view class='add-book' bindtap='toAllclass'>添加更多</view>
+	      </block>
+	      <!-- <view class='add_book_two' bindtap='gotoBookshelf' wx:if="{{books.length == 0}}">别点我！！！</view> -->
+	    </view>
+	  </view>
+	</form>
+</block>

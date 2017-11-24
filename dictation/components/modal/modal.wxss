@@ -1,0 +1,62 @@
+/*modal*/
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+
+.modal .wrapper {
+  background-color: #fff;
+  border-radius: 34rpx;
+  width: 450rpx;
+  min-height: 300rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0 10rpx;
+  text-align: center;
+  color: rgb(51, 51, 51);
+}
+
+.modal .wrapper .title {
+  height: 220rpx;
+  line-height: 220rpx;
+  font-size: 30rpx;
+}
+
+.modal .wrapper .choose-bar {
+  height: 80rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1rpx solid rgb(238, 238, 238);
+}
+
+.modal .wrapper .choose-bar view {
+  width: 50%;
+  position: relative;
+  font-size: 28rpx;
+}
+
+.modal .wrapper .choose-bar view.submit {
+  color: rgb(56, 150, 234);
+}
+
+.modal .wrapper .choose-bar view:first-child::after {
+  display: block;
+  content: '';
+  height: 70rpx;
+  width: 2rpx;
+  background-color: rgb(238, 238, 238);
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}

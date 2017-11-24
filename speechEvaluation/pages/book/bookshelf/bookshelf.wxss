@@ -1,0 +1,173 @@
+/* pages/book/bookshelf/bookshelf.wxss */
+
+.bg {
+  background-color: #eee;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%
+}
+
+.grade-book-box {
+  width: 100%;
+  overflow: hidden;
+  padding-top: 25rpx;
+}
+
+.book-box {
+  width: 705rpx;
+  height: 100%;
+  padding: 30rpx 22.5rpx 0px 22.5rpx;
+  background-color: #fff;
+}
+
+scroll-view {
+  width: 700rpx;
+  padding: 0px 25rpx 0px 25rpx;
+  background-color: #fff;
+  z-index: 19;
+  position: absolute;
+  top: 245rpx;
+  left: 0;
+  height: calc(100% - 246rpx)
+}
+
+.book {
+  width: 700rpx;
+  height: 200rpx;
+  padding: 25rpx 25rpx;
+  position: relative;
+  border-bottom: 1px solid #ddd;
+}
+
+.book .img {
+  width: 140rpx;
+  height: 200rpx;
+  float: left;
+  position: relative;
+}
+
+.book .img .flag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-top: 70rpx solid #4ec98b;
+  border-right: 70rpx solid transparent;
+}
+
+.book .img .flag text {
+  position: absolute;
+  top: -70rpx;
+  left: 0;
+  font-size: 20rpx;
+  color: #fff;
+  width: 50rpx;
+  height: 40rpx;
+  padding-top: 10rpx;
+  text-align: left;
+   transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg); 
+  -webkit-transform: rotate(-45deg);  
+}
+
+.book .text {
+  width: 510rpx;
+  height: 150rpx;
+  font-size: 28rpx;
+  color: #333;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  text-align: left;
+  padding-left: 25rpx;
+}
+
+.book .user-list {
+  width: 510rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 24rpx;
+  color: #666;
+  text-align: left;
+  padding-left: 25rpx;
+  float: left;
+}
+
+.book .user-list text {
+  float: left;
+}
+
+.book .user-list .right {
+  float: right;
+}
+
+.book .user-list .headimg {
+  float: right;
+  margin-right: 40rpx;
+}
+
+.book .user-list .headimg image {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 100%;
+  margin-right: -15rpx;
+}
+
+.btn {
+  width: 700rpx;
+  height: 250rpx;
+  top: 0;
+  position: absolute;
+}
+
+.grade {
+  width: 720rpx;
+  padding: 30rpx 20rpx 0 20rpx;
+  margin-bottom: 15rpx;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+
+.grade .text {
+  width: 195rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin: 20rpx;
+  float: left;
+  background-color: #fff;
+  color: #4ec98b;
+  text-align: center;
+  font-size: 30rpx;
+  border-radius: 8rpx;
+  border: 1px solid #4ec98b;
+}
+
+.grade .select-text {
+  background-color: #4ec98b;
+  color: #fff;
+}
+
+.title {
+  width: 100%;
+  height: 32rpx;
+  line-height: 32rpx;
+  font-size: 32rpx;
+  color: #333;
+  text-align: left;
+  margin-bottom: 20rpx;
+}
+
+.title .flag {
+  width: 10rpx;
+  height: 32rpx;
+  border-radius: 5rpx;
+  background-color: #4ec98b;
+  float: left;
+  margin-right: 10rpx;
+}

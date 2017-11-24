@@ -1,0 +1,80 @@
+<view class="play-container flex-column">
+  
+  <!--播放进度-->
+  <view class="progress flex-column">
+    <text>{{currentIndex}}/{{wordCount}}</text>
+    <view class="line">
+       <view class="done" style="width:{{progress}}%;" ></view> 
+      <!-- <view class="dot" style="left:{{progress}}%;"></view> -->
+    </view>
+  </view>
+  <!--最好成绩-->
+  <view class="history-start">
+     <import src="../template/template.wxml" />
+     <template is="star" data="{{...item}}"></template>
+  </view>
+
+  <!--最好成绩!-->
+  <view class="info flex-column">
+    <!--播放信息-->
+    <view class="container">
+      <block wx:if="{{showWord}}">
+        <view class="current-word">{{currentWord.display_word}}</view>
+      </block>
+      <block wx:else>
+        <view class="current-time">
+          <text class="time-label">已用时间：</text>
+          <text>{{playTimeDes}}</text>
+        </view>
+      </block>
+    </view>
+  
+  </view>
+    <!--播放设置-->
+    <view class="setting-bar">
+      <view class="repeat-time" bindtap="changeRepeatTime">
+        <block wx:if="{{repeatOnce}}">
+          <image class="icon" src="/images/play/one.png" style="height:52rpx;width:54rpx;"></image>
+          <text>读一次</text>
+        </block>
+        <block wx:else>
+          <image class="icon" src="/images/play/two.png" style="height:59rpx;width:59rpx;"></image>
+          <text>读二次</text>
+        </block>
+      </view>
+      <view class="gap" bindtap="changePlayStep">
+        <view class="icon">{{playSep}}s</view>
+        <text>间隔</text>
+      </view>
+      <view class="word-visible" bindtap="changeShowWord">
+        <block wx:if="{{showWord}}">
+          <image class="icon" src="/images/play/show.png" style="height:37rpx;width:60rpx;"></image>
+          <text>显示</text>
+        </block>
+        <block wx:else>
+          <image class="icon" src="/images/play/hide.png" style="height:28rpx;width:60rpx;"></image>
+          <text>隐藏</text>
+        </block>
+      </view>
+    </view>
+  <!--播放控制-->
+  <view class="controller">
+    <view class="side left">
+      <!--<view class="sort" bindtap="changePlayType">
+        <image src="/images/play/sort.png" style="width:51rpx;height:46rpx" wx:if="{{playSequence}}"></image>
+        <image src="/images/play/suiji.png" style="width:51rpx;height:43rpx" wx:if="{{!playSequence}}"></image>
+      </view>-->
+      <image class="prev" src="/images/play/prev_icon.png" bindtap="seekPlayProgress" data-action="prev"></image>
+    </view>
+    <view class="play" bindtap="togglePlay">
+      <image style="height:100%;width:100%" src="/images/play/{{playing?'pause_two':'play'}}.png"></image>
+    </view>
+    <view class="side right">
+      <image class="next" src="/images/play/next_icon.png" bindtap="seekPlayProgress" data-action="next"></image>
+    </view>
+  </view>
+</view>
+<!--toast-->
+<view class="toast" wx:if="{{showToast}}">
+  <text>{{toastContent}}</text>
+</view>

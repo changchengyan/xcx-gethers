@@ -1,0 +1,45 @@
+/* pages/book/book.wxss */
+.book-head{ text-align: center; padding: 20px;}
+.book-head .pic{ width: 30%;}
+
+
+
+.app-canvas{display: flex; flex-direction: row; font-size: 12px;}
+
+.source-area{ padding: 0px 15px 15px 15px;}
+
+.source-item{
+  padding: 15px 0px 15px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+  align-items:flex-start;
+  border-bottom: 1px solid #f0f5f5;
+}
+.source-item .pic{
+  flex-grow: 2;
+  max-width: 70px;
+  min-width:70px;
+}
+.source-item .pic image{
+  width: 70px;
+}
+.source-item .info{
+  flex-grow: 5;
+  padding: 0px 0px 0px 10px;
+}
+.source-item .info .title{
+  font-size: 16px;line-height: 22px;
+  padding: 0px 0px 5px 0px;
+}
+.source-item .info .desc{
+  font-size: 14px;
+  color: #777;
+  line-height: 18px;
+  overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-weight: 300;
+}

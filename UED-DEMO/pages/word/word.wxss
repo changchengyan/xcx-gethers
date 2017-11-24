@@ -1,0 +1,299 @@
+/* pages/word/word.wxss */
+.word-canvas{ 
+  background-color:#f0f8f8; 
+  height: 150px;
+  background-size: cover;
+}
+.word-canvas-mask{
+ position: absolute; width: 100%;
+ height: 150px;
+margin-top: -150px;
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.5));
+}
+.word-body{ 
+  background-color: #fff; 
+  
+ }
+.word-body .founder-canvas
+{
+  margin-top: -80px;
+  position: absolute;
+  width: 100%; padding: 10px 10px 20px 20px;
+  display: flex;
+  flex-direction:row;
+  justify-content:flex-start;
+  align-items:center;
+}
+.word-body .book-canvas{
+    position: absolute;
+    top:20px;
+    width:  100%;
+    text-align: center;
+}
+.word-body .book-canvas image{ width: 30%;}
+
+.founder-canvas .headimg
+{ 
+  max-width: 50px; min-width: 50px;
+  flex-grow: 1;
+  }
+
+.founder-canvas .headimg image{ width: 50px; height: 50px; flex-grow: 7;}
+.founder-canvas .info{ padding: 0px 0px 0px 10px; color: #fff;}
+.founder-canvas .info .title{ font-size: 14px;}
+.founder-canvas .info .desc{ font-size: 12px;}
+ .word-body .notice-canvas{ padding: 20px; font-weight: 400px; border-bottom: 10px solid #f0f2f2; font-size: 16px;}
+  .word-body .notice-canvas text{ 
+    background-color: #06c1ae; color: #fff; padding: 0px 3px 0px 3px; border-radius: 3px; font-size: 11px;
+    line-height: 11px;font-weight: 300px; 
+    }
+ .word-body .notice-canvas view{font-size: 14px; opacity: #777; padding: 5px 0px 0px 0px; font-weight: 300;}
+ .word-body .icon-canvas
+ {
+   background-color: #fff;
+   padding: 10px;
+  display: flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+  
+ }
+ .word-body .icon-canvas .item
+ {
+    flex-grow:1;
+    padding: 5px;
+    max-width: 25%;
+    min-width: 25%;
+ }
+
+  .word-body .icon-canvas .icon
+ {
+    color: #03b5a3;
+    background-color: #f5f8f8;
+    border-radius: 6px;
+    text-align: center;
+    padding: 5px 0px 5px 0px;
+    position: relative;
+ }
+.word-body .icon-canvas .icon .img image{ 
+  width: 30px; 
+  height: 30px;
+  position: absolute;
+  left:-29px;
+  overflow:visible;
+  }
+.word-body .icon-canvas .icon .img {
+  overflow:hidden;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+}
+.word-body .icon-canvas .icon .img-2 {
+  position:absolute;
+  top:0px;
+  left:0;
+  right:0;
+  z-index:1;
+  
+
+}
+.word-body .icon-canvas .icon .text{ font-size: 14px;}
+
+
+.message-canvas{ display: flex; justify-content: center; padding: 10px 0px 20px 0px;}
+.message-canvas .message-content{ background-color: #555; color: #fff;display: flex; align-items: center; flex-direction: row; border-radius: 3px;}
+.message-canvas .message-content .icon{ width: 45px; height: 45px; padding: 5px;}
+.message-canvas .message-content .icon image{ width: 35px; height:35px;}
+.message-canvas .message-content .text{ padding: 0px 25px 0px 15px; font-size: 14px;}
+.blog-title{ background-color: #f8f8f8; 
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+}
+.blog-title .text{ background-color: #f8f8f8; padding: 10px 10px 10px 15px; font-size: 14px; flex-grow: 5;}
+.blog-title .more{ display: none; background-color: #f8f8f8; padding: 10px; font-size: 14px;flex-grow: 5; text-align: right;}
+
+.blog-list{ padding: 0px;}
+.blog-list .blog-item{ 
+  padding: 20px 10px 20px 10px; border-bottom:10px solid #f0f2f2;
+  
+}
+.blog-list .blog-item .first-info
+{
+  padding: 0px 10px 0px 10px; 
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items:center;
+}
+.blog-list .blog-item .first-info .head-img
+{
+  flex-grow: 2;
+  max-width: 50px;
+  min-width: 50px;
+  display: none;
+}
+.blog-list .blog-item .first-info .head-img image{ width: 40px; height: 40px; border-radius: 40px;}
+.blog-list .blog-item .first-info .head-content
+{
+    flex-grow: 6;
+}
+.blog-list .blog-item .first-info .head-content .nickname
+{
+   font-size: 14px;  font-weight: 300;
+   padding: 0px 0px 5px 0px;
+   color: #777;
+}
+.blog-list .blog-item .first-info .head-content  text
+{
+   color: #03b5a3;font-weight: 300;
+}
+.blog-list .blog-item .first-info .head-content .datetime
+{
+   font-size: 12px; color: #999;font-weight: 300;
+}
+.blog-list .blog-item .first-info .head-more
+{
+   display: none;
+    flex-grow: 2;
+    max-width: 30px;
+    min-width: 30px;
+    text-align: center;
+}
+.blog-list .blog-item .first-info .head-more image
+{
+    width: 18px; height: 18px;
+}
+.blog-list .blog-item .first-info .head-favorites
+{
+    flex-grow: 2;   
+    text-align:right;
+    font-size: 12px;
+}
+.blog-list .blog-item .first-info .head-favorites image
+{
+    width: 15px;
+    height: 15px;
+}
+
+
+
+
+.blog-list .blog-item .body-info
+{
+   padding: 10px 0px 10px 0px;
+}
+.blog-list .blog-item .body-info .blog-icon-ask
+{
+   width: 18px; height: 18px; vertical-align:middle;
+}
+.blog-list .blog-item .body-info .topic-canvas{padding: 0px 10px 10px 10px; font-size: 18px; font-weight: 500;}
+.blog-list .blog-item .body-info .text-canvas{ padding: 0px 10px 10px 10px; font-size: 16px; line-height: 23px;text-align:justify !important;}
+.blog-list .blog-item .body-info .img-canvas{ padding: 0px 10px 5px 10px;}
+.blog-list .blog-item .body-info .img-canvas image{ width: 100%;}
+
+.blog-list .blog-item .body-info .img-list-canvas{ padding: 0px 5px 10px 5px; display: flex; flex-direction: row;flex-wrap:wrap;}
+.blog-list .blog-item .body-info .img-list-canvas .img-item{ max-width: 33.33%; min-width: 33.33%; padding: 5px 5px 0px 5px;}
+.blog-list .blog-item .body-info .img-list-canvas image{ width: 100%; height: 80px;}
+.blog-list .blog-item .body-info .img-list-canvas .img-item .mask-info{ background-color: rgba(0, 0, 0, 0.5); z-index: 1; position:relative; height: 80px; margin-top: -87px; display: flex; justify-content: center; align-items: center; color:#fff; font-size: 18px;}
+
+.blog-list .blog-item .body-info .video-canvas{ padding: 0px 10px 0px 10px;}
+.blog-list .blog-item .body-info .video-canvas video{ width: 100%;}
+
+.blog-list .blog-item .body-info .voice-area{padding: 0px 10px 0px 10px;}
+.blog-list .blog-item .body-info .voice-canvas{ display: flex; flex-direction: row; align-items: center;
+ border: 1px solid #ddd; background-color: #f5f5f5; color: #06c1ae; font-size: 14px; height: 35px; border-radius: 5px; padding: 5px;}
+ .blog-list .blog-item .body-info .voice-canvas .icon{ max-width: 50px; min-width: 50px;flex-flow: 1;}
+  .blog-list .blog-item .body-info .voice-canvas .text{ text-align: right; flex-grow: 8;}
+.blog-list .blog-item .body-info .sound-canvas{ border: 1px solid #03b5a3; background-color: #06c1ae; color: #fff; border-radius: 5px; padding: 5px;}
+.blog-list .blog-item .body-info .app-area
+{  
+   padding: 5px 10px 0px 10px;
+}
+.blog-list .blog-item .body-info .app-canvas
+{
+   border: 1px solid #ddd;border-radius: 3px;
+   padding: 10px 20px 40px 20px;
+}
+.blog-list .blog-item .body-info .app-arrow{ position: absolute; margin-top: -11px; margin-left: 50px; line-height: 12px;}
+.blog-list .blog-item .body-info .app-arrow image{ width: 18px; height: 12px;}
+/*APP 接入*/
+.blog-list .blog-item .body-info .app-canvas .app-first{ display: flex; flex-direction: row; align-items: center; justify-content: center; padding: 5px 0px 0px 0px;}
+.blog-list .blog-item .body-info .app-canvas .app-first .app-type{ flex-grow: 1; text-align: center; font-size: 12px; color: #777;font-weight: 300;}
+.blog-list .blog-item .body-info .app-canvas .app-first .app-favorites{ flex-grow: 1; text-align: right; display: none;}
+.blog-list .blog-item .body-info .app-canvas .app-first .app-favorites image{ width: 22px; height: 19px;}
+.blog-list .blog-item .body-info .app-canvas .app-title{ text-align: center; padding: 30px 0px 15px 0px; font-size:20px; color: #06c1ae;}
+.blog-list .blog-item .body-info .app-canvas .app-cover{ text-align: center;}
+.blog-list .blog-item .body-info .app-canvas .app-cover image{  width: 120px; height: 120px;}
+.blog-list .blog-item .body-info .app-canvas .app-desc{ font-weight: 300; font-size: 14px; line-height: 23px; color: #777; text-align: center; padding: 15px 0px 0px 0px;}
+.blog-list .blog-item .body-info .app-canvas .app-operation{ padding: 20px 0px 20px 0px; text-align: center;}
+.blog-list .blog-item .body-info .app-canvas .app-operation .button{ width:50%; margin: auto; border: 1px solid #ccc; font-size: 14px; border-radius: 20px; padding: 7px; background-color: #f8f8f8;}
+.blog-list .blog-item .body-info .app-canvas .app-operation .text{ display: none; font-size: 12px; color: #999; padding: 10px 0px 0px 0px;}
+
+
+.blog-list .blog-item .last-info{ padding: 5px 0px 0px 10px;font-weight: 300;}
+.blog-list .blog-item .last-info .operation{ display: flex; flex-direction: row; align-items: center;justify-content:flex-end;}
+.blog-list .blog-item .last-info .operation .desc{ font-size: 12px; color: #999;}
+.blog-list .blog-item .last-info .operation .icon{ text-align: center; font-size: 12px; color: #777; padding: 0px 10px 0px 10px;}
+.blog-list .blog-item .last-info .operation image{ width: 25px; height: 25px;}
+.blog-list .blog-item .last-info .browser{ font-size: 12px; display: none; }
+.blog-list .blog-item .last-info .browser image{ width: 25px; height: 25px; vertical-align: middle;}
+
+.blog-more-operation
+{
+  background-color: rgba(0, 0, 0, 0.5);
+  position:fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+}
+ .operation-canvas
+{
+  z-index: 2;
+  border-top: 1px solid #f0f0f0;
+  background-color: #f8f8f8;
+  padding: 20px;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  font-size: 14px; color: #777;
+}
+ .operation-canvas .user-operation
+{
+  padding: 10px 0px 10px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+ .operation-canvas .user-operation .operation-icon
+{
+  flex-grow: 1;
+  max-width: 33.33%;
+  min-width: 33.33%;
+  text-align: center;
+}
+
+ .operation-canvas .admin-operation
+{
+  padding: 10px 0px 10px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+ .operation-canvas .admin-operation .operation-icon
+{
+  flex-grow: 1;
+  max-width: 33.33%;
+  min-width: 33.33%;
+  text-align: center;
+} 
+
+.operation-canvas .icon image{width: 30px; height: 30px;}
+.operation-canvas .text{ font-size: 14px; padding: 3px 0px 3px 0px;}

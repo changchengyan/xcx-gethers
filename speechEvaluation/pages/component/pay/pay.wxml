@@ -1,0 +1,27 @@
+<!--pages/component/pay/pay.wxml-->
+<template name="template-pay">
+  <view class="template-pay-mask"></view>
+  <view class="template-pay-box clearfix">
+    <view class="titleOfTips">
+      <view bindtap="payClose" class="del">
+        <image src="/pages/images/Menu-close.png" mode="widthFix"></image>
+      </view>
+    </view>
+    <view class="showBook">
+      <image src="{{payInfo.pic}}"></image>
+    </view>
+    <view class="showMoney clearfix">
+      <text>¥</text>
+      <view class="showNumOfMoney">{{payInfo.price}}</view>
+      <text>元</text>
+    </view>
+    <view class="bookName">{{payInfo.name}}</view>
+    <view class="booInfo">包含全书<text>{{payInfo.count}}</text>条完整评测报告</view>
+    <view class="openAllBook" bindtap="fastBuySeed">
+      <text>确认支付</text>
+    </view>
+    <view class="WX-onSecurity">
+      <image src="/pages/images/modeOfFooter.png" mode="widthFix"></image>
+    </view>
+  </view>
+</template>

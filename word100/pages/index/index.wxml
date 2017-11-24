@@ -1,0 +1,136 @@
+<!--index.wxml-->
+<view class='bg'>
+  <form report-submit='true' catchsubmit='getFormID'>
+    <!-- <scroll-view class='page-scroll-view' scroll-y="true" bindscrolltolower="loadItemInfo"> 滑动加载 -->
+    <scroll-view class='page-scroll-view' scroll-y="true">
+      <swiper class='swiper' indicator-dots="true" indicator-active-color="#fff" indicator-color="#777" autoplay="true" interval="3000">
+        <view wx:for="{{banner}}">
+          <swiper-item class='item-index'>
+            <image mode="aspectFill" class='img' src='{{item.sentence_pic}}'></image>
+            <button class='from-bottom btn' form-type='submit' data-type='theme' data-id='{{item.id}}' data-title='{{item.sentence}}'> </button>
+            <view class='content'></view>
+            <view class='english'>
+              <!-- <view class='text'>
+                {{item.sentence}}
+              </view>
+              <view class='translate'>
+                {{item.translation}}
+              </view>
+              <view class='evalution'>
+                来源： {{item.theme_name}}
+              </view> -->
+            </view>
+          </swiper-item>
+        </view>
+      </swiper>
+      <!-- <view class='now_time'>
+        <view class='date'>
+          <view class='year'>{{cur_year}}</view>
+          <view class='month'>{{cur_month}}月</view>
+        </view>
+        <view class='day'>{{cur_day}}</view>
+      </view> -->
+      <view class='line_top'></view>
+      <view class='select'>
+        <view class='title'>小学英语</view>
+        <view class='info'>同步教材配套单词，开启轻松学习模式</view>
+        <view class='grade'>
+          <view class='text' bindtap='gotoBookshelf' data-grade="一年级">一年级</view>
+          <view class='text' bindtap='gotoBookshelf' data-grade="二年级">二年级</view>
+          <view class='text' bindtap='gotoBookshelf' data-grade="三年级">三年级</view>
+          <view class='text' bindtap='gotoBookshelf' data-grade="四年级">四年级</view>
+          <view class='text' bindtap='gotoBookshelf' data-grade="五年级">五年级</view>
+          <view class='text' bindtap='gotoBookshelf' data-grade="六年级">六年级</view>
+          <view class='clear'></view>
+        </view>
+      </view>
+      <view class='select'>
+        <view class='title'>每日推荐</view>
+        <view class='info' style='padding-bottom:10rpx;'>精选教材推荐，重难点反复练习
+</view>
+      </view>
+      <!-- <view class='item-box' wx:for="{{info}}">
+        <view class='item'>
+          <button class='from-bottom btn_t' form-type='submit' bindtap='gotoDetail' data-type='book' data-id='{{item.id}}' data-title='{{item.sentence}}'> </button>
+          <view class="item-box-in">
+            <view class='content'>
+              <view class='text'>
+                {{item.sentence}}
+              </view>
+              <view class='evalution'>
+                评测： {{item.evaluation_count}} | 来源：{{item.book_grade+item.book_term+' '+item.lesson_name}}
+              </view>
+            </view>
+            <image class='img' src='{{item.sentence_pic}}'></image>
+          </view>
+          <view class='clear'></view>
+        </view>
+      </view> -->
+      <view>
+        <view class='book' wx:for="{{info}}">
+          <button class='from-bottom book_btn' form-type='submit' bindtap='gotoItem' data-id='{{item.id}}' data-title='{{item.book_name}}'> </button>
+          <view class='book_in'>
+            <image class='book_img' src='{{item.book_pic}}'></image>
+            <view class='book_txt'>
+              <view class='book_name'>{{item.book_name}}</view>
+              <view class='book_num'>已有{{item.book_follow_count}}人加入学习</view>
+              <view class='book_from'>来源：{{item.book_publish_brief}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- <view class='book'>
+        <view class='book_in'>
+          <image class='book_img' src='../images/book_ying.png'></image>
+          <view class='book_txt'>
+            <view class='book_name'>标准实验教科书 英语 （PEP）学生用书 三年级下册 （彩色）</view>
+            <view class='book_num'>已有100人正在学习</view>
+            <view class='book_from'>来源：人教版</view>
+          </view>
+        </view>
+      </view> -->
+
+
+      <view class='pk'>
+        <view class='pk-txt'>
+          
+          <text>PK排行榜</text>
+        </view>
+        <view class='pk_list' wx:for="{{ranking}}" wx:key="index">
+          <view class='pk_ranking rinking_{{index}}'></view>
+          <view class='pk_img'>
+            <image src="{{item.headimgurl}}"></image>
+          </view>
+          <view class='pk_name'>{{item.nickname}}</view>
+
+          <view class='number'>{{item.organiser_total_score}}</view>
+        </view>
+        <view class='person'>
+          <view class='per_name'>PK狂人：</view>
+          <view class='per_list'>
+          <view class="per_item"  wx:for="{{rankingMan}}">
+            <view class='per_img'>
+              <image src="{{item.headimgurl}}"></image>
+            </view>
+            <view class='per_name'>{{item.nickname}}</view>
+          </view>
+        </view>
+        </view>
+        
+      </view>
+
+
+      <view wx:if="{{!loadMore&&info.length>5}}" class='line'>我是有底线的</view>
+      <view wx:if='{{loadMore&&info.length>pageSize}}'>
+        <div class="loader-index">
+          <div class="ball-pulse">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </view>
+
+    </scroll-view>
+  </form>
+</view>

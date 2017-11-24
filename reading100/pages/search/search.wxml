@@ -1,0 +1,8 @@
+<!--search.wxml-->
+<view class="header">
+  <view class="search_box">
+    <input focus="true" bindinput="displayCancleBtn" bindconfirm="searchBookByKeyword" class="key_match" name="key_match" value="{{defaultString}}" placeholder="请输入课文名称" placeholder-class="key_match_placeholder"/>
+    <view wx:if="{{cancleBtn}}" bindtap="clearInput" class="cancle_btn"><text>取消</text></view>
+  </view>
+</view>
+<view bindtap="toPlayPage" wx:for="{{contentList}}" wx:key="id" class="candidating_list" data-id="{{item.id}}" data-book-id="{{item.reading_book_id}}"><text>{{item.lesson_name}}</text></view>

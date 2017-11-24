@@ -1,0 +1,239 @@
+<!-- 公共方法模板：支付、弹框。。。。 -->
+<!--题目与解析里的富文本-->
+<template name="richText">
+<view class="header">
+	<block wx:if="{{question_type}}">
+		<text class="xuanz mainColor">[{{question_type}}]</text>
+	</block> 
+	<rich-text wx:for="{{title.nodeList}}" nodes="{{item}}"></rich-text>
+  <!--<view class="info-item" style="display:inline;" wx:for="{{title.infolist}}" data-node="{{item}}">
+	  <block wx:if="{{item.tag=='image'}}">
+	    <view class="image">
+	      <image src="{{item.value}}" data-src="{{item}}" mode="widthFix" bindtap="selectPic"></image>
+	    </view>
+	  </block>
+	  <block wx:if="{{item.tag=='text'}}">
+	    <block wx:if="{{item.isInLine}}">
+	      <view class="text info-text" style="display:inline;{{item.style}}">{{item.value}}</view>
+	      <view class="text info-text" style="display:inline;{{item.style}}"></view>
+	    </block>
+	    <block wx:else>
+	      <view class="text info-text" style="display:inline;{{item.style}}">{{item.value}}</view>
+	    </block>
+	  </block>
+	</view>-->
+</view>
+<!--图片 -->
+<block wx:if="{{title.imglist.length>0}}">
+<view class="poster">
+	<image mode="aspectFill" bindtap="preview" data-src="{{title.imglist[0]}}" src="{{title.imglist[0]}}"></image>
+</view>
+</block>
+<!--音频 题目-->
+<block wx:if="{{title.audiolist.length>0&&question_type}}">
+	<view class="poster">
+		<view class='audioBox flexR'>
+	    <view class='audio' bindtap="audioClick" data-type="title">
+	      <audio id="audio_title" bindplay="audioPlay" bindpause="audioPause"  bindtimeupdate="audioTime"  src="{{title.audiolist[0].url}}"></audio>
+	      <image src='{{audioImg[0]}}'/>
+	    </view>
+	    <text class='mainColor'>{{title.audiolist[0].timelength}}</text>        
+	  </view>
+	</view>
+</block>
+<!--音频 解析-->
+<block wx:if="{{title.audiolist.length>0&&!question_type}}">
+	<view class="poster">
+		<view class='audioBox flexR'>
+	    <view class='audio' bindtap="audioClick" data-type="analysis">
+	      <audio id="audio_analysis" bindplay="audioPlay" bindpause="audioPause"  bindtimeupdate="audioTime"  src="{{title.audiolist[0].url}}"></audio>
+	      <image src='{{audioImg[audioImg.length-1]}}'/>
+	    </view>
+	    <text class='mainColor'>{{title.audiolist[0].timelength}}</text>        
+	  </view>
+	</view>
+</block>
+<!--视频 -->
+<block wx:if="{{title.videolist.length>0}}">
+	<view class="poster">
+		<video style="{{videoShow?'display:block':'display:none'}}" src="{{title.videolist}}"></video>
+		<view wx:if="{{!videoShow}}" class="videoSeat"></view>
+	</view>
+</block>
+</template>
+<!--item页面 课程详情的富文本 -->
+<template name="richText_info">
+<view class="header flexR">
+	<rich-text wx:for="{{app_info.nodeList}}" nodes="{{item}}"></rich-text>
+  <!--<view class="info-item" style="display:inline;" wx:for="{{app_info.infolist}}" data-node="{{item}}">
+	  <block wx:if="{{item.tag=='image'}}">
+	    <view class="image">
+	      <image src="{{item.value}}" data-src="{{item}}" mode="widthFix" bindtap="selectPic"></image>
+	    </view>
+	  </block>
+	  <block wx:if="{{item.tag=='text'}}">
+	    <block wx:if="{{item.isInLine}}">
+	      <view class="text info-text" style="display:inline;{{item.style}}">{{item.value}}</view>
+	      <view class="text info-text" style="display:inline;{{item.style}}"></view>
+	    </block>
+	    <block wx:else>
+	      <view class="text info-text" style="display:inline;{{item.style}}">{{item.value}}</view>
+	    </block>
+	  </block>
+	</view>-->
+</view>
+</template>
+
+<!-- 交卷弹框 -->
+<template name="submitBox">
+  <view class='maskSubmit flexR'>
+    <view class='submitBox'>
+      <view class='closeBox' bindtap="closeSubmitBox">
+        <view class='close flexR'>
+          <image src='/pages/images/closeIcon.png'></image>
+        </view>
+        <view class='line'></view>
+      </view>
+      <view class='top color1'>确认交卷</view>
+      <view class='text' wx:if="{{submit.count==0}}">
+        <view>题目已经全部做完了</view>
+        <view>您确定要交卷吗?</view>
+      </view>
+      <view class='text' wx:elif="{{submit.count>0}}">
+        <view>您还剩
+          <text class='color1'>{{submit.count}}</text> 题未做</view>
+        <view>确定要交卷吗?</view>
+      </view>
+      <view class='btn flexR'>
+        <view class='thinkAgin color1' bindtap="closeSubmitBox">我再想想</view>
+        <view class="hand mainBg" bindtap="submitExam">确定交卷</view>
+      </view>
+    </view>
+  </view>
+</template>
+<!-- 交卷弹框 -->
+<template name="QuitBox">
+  <view class='maskSubmit flexR'>
+    <view class='submitBox'>
+      <view class='closeBox' bindtap="closeSubmitBox">
+        <view class='close flexR'>
+          <image src='/pages/images/closeIcon.png'></image>
+        </view>
+        <view class='line'></view>
+      </view>
+      <view class='top color1'>保存进度</view>
+      <view class='text'>
+        <view>你退出当前答题</view>
+        <view>请问，是否保存当前进度？</view>
+      </view>
+      <view class='btn flexR'>
+        <view class='thinkAgin color1'>谢谢，不用了</view>
+        <view class="hand mainBg">确定保存</view>
+      </view>
+    </view>
+  </view>
+</template>
+<!--支付弹框 -->
+<template name="payBox">
+  <view class='maskPay flexR'>
+    <view class="payBox">
+      <view class='payHeader'>
+        <view class="titleTop flexR">
+          <view class="isPaying">正在购买</view>
+          <view bindtap="closePayBox" class="close">
+            <image src="/pages/images/closeIcon3.png" mode="widthFix"></image>
+          </view>
+          <view class="showBook flexR">
+            <image src="{{bookDetail.app_pic}}"></image>
+          </view>
+        </view>
+      </view>
+      <view class='payContain'>
+        <view class="bookName">《{{bookDetail.app_name}}》</view>
+        <view class="disShowMoney showMoney flexR" wx:if="{{payInfo.isdiscount==1}}">
+          <view class="dis_money flexR">
+            <text>¥</text>
+            <view class="showNumOfMoney">{{payInfo.money}} </view>
+            <text>元</text>
+          </view>
+          <view class="dis_original flexC">
+            <view class="dis_ori flexR">原价：
+              <view class="disPrice">{{payInfo.original_price}}元</view>
+            </view>
+            <view class="disInfo">{{payInfo.discount_info}}</view>
+          </view>
+        </view>
+        <view class="showMoney flexR" wx:else>
+          <text>¥</text>
+          <view class="showNumOfMoney">{{bookDetail.price}}</view>
+          <text>元</text>
+        </view>
+      </view>
+      <view class="payNow" bindtap="payNow">确认支付</view>
+      <view class="WXSecurit flexR">
+        <image src="/pages/images/WXSecurity.png" mode="widthFix"></image>
+        <view>微信安全支付</view>
+      </view>
+    </view>
+  </view>
+</template>
+<!--试卷列表-->
+<template name="testList">
+  <view class='grade_list'>
+    <view class='out flexR' wx:for="{{test_list}}">
+      <view class="left_out "></view>
+      <view class='bg_out'>
+        <image class='bg' src='{{item.paper.paper_icon}}'></image>
+      </view>
+      <view class='list_in' bindtap='toTest' data-id="{{item.paper.id}}" data-type="{{item.paper.answer_mode}}">
+        <view class='circle'></view>
+        <view class='circle'></view>
+        <view class='circle'></view>
+        <view>
+          <view style='font-size:34rpx;font-weight:bold'>{{item.paper.paper_name}}</view>
+          <view style='font-size:24rpx;margin-top:30rpx'>{{item.user_count}}人参与 评分：{{item.score}}</view>
+        </view>
+        <image src='../images/right_arr.png'></image>
+      </view>
+    </view>
+  </view>
+</template>
+<!--我的试卷列表-->
+<template name="errorTestList">
+  <view class='grade_list'>
+    <view class='out' wx:for="{{paperList}}"  bindtap='toTest' data-id="{{item.answer_id}}" data-type="{{item.answer_mode}}">
+      <view class="left_out "></view>
+      <view class='bg_out'>
+        <image class='bg' src='{{item.paper_icon}}'></image>
+      </view>
+      <view class='list_in'>
+        <view class='circle'></view>
+        <view class='circle'></view>
+        <view class='circle'></view>
+        <view>
+          <view style='font-size:34rpx;font-weight:bold'>{{item.paper_name}}</view>
+          <view style='font-size:24rpx;margin-top:30rpx'>错题量{{item.wrongNum}} 评分：{{item.score}}</view>
+        </view>
+        <image src='../images/right_arr.png'></image>
+      </view>
+    </view>
+  </view>
+</template>
+<!--未授权登录的页面展示 -->
+<template name="unauthorized">
+	<view class="all_bg">
+		<view class="authorization_bg">
+		  <image src='http://image.chubanyun.net/images/common/authorization.png' mode="widthFix"></image>
+		
+		  <view class="word_tip">
+		    <view>温馨提示</view>
+		    <text>登录测验100需允许授权，
+		    </text>
+		    <text>拒绝授权测验100小程序将无法正常使用，</text>
+		    <text>请点击下方按钮并允许授权</text>
+		  </view>
+		
+		  <button open-type="getUserInfo" bindgetuserinfo="userInfoHandler" > 授权登录</button>
+		</view>
+	</view>
+</template>

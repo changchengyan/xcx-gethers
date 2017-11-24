@@ -1,0 +1,125 @@
+@import "../template/template.wxss";
+
+.top {
+  width: 500rpx;
+  margin: 0 auto;
+  margin-top: 90rpx;
+}
+
+.end {
+  width: 612rpx;
+  margin: 0 auto;
+  margin-top: 580rpx;
+}
+
+.me {
+  display: flex;
+  justify-content: space-between;
+}
+
+.me image {
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.end_in {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.end_in image {
+  width: 160rpx;
+  height: 160rpx;
+}
+
+/*根据星星的数量来显示星星*/
+
+.unit-star-3, .unit-star-2, .unit-star-1, .unit-star-0 {
+  display: flex;
+  /* justify-content: space-between; *//* padding: 10rpx 10rpx 0 10rpx;
+  flex-grow: 0; */
+}
+
+.unit-star-3 view:nth-child(1) {
+  width: 135rpx;
+  height: 133rpx;
+  background: url(http://rayscloud.chubanyun.net/Content/images/Dictation/finally/Bubble_b.png);
+  background-size: cover;
+}
+
+.unit-star-3 view:nth-child(2) {
+  width: 161rpx;
+  height: 148rpx;
+  background: url(http://rayscloud.chubanyun.net/Content/images/Dictation/finally/Bubble_b.png);
+  background-size: cover;
+}
+
+.unit-star-3 view:nth-child(3) {
+  width: 135rpx;
+  height: 133rpx;
+  background: url(http://rayscloud.chubanyun.net/Content/images/Dictation/finally/Bubble_b.png);
+  background-size: cover;
+}
+
+.unit-star-2 view:nth-child(1) {
+  width: 135rpx;
+  height: 133rpx;
+  background: url(http://rayscloud.chubanyun.net/Content/images/Dictation/finally/Star-o.png);
+  background-size: cover;
+}
+
+.unit-star-2 view:nth-child(2) {
+  width: 161rpx;
+  height: 148rpx;
+  background: url(http://rayscloud.chubanyun.net/Content/images/Dictation/finally/Star-t.png);
+  background-size: cover;
+}
+
+.unit-star-2 view:nth-child(3) {
+  width: 135rpx;
+  height: 133rpx;
+  background: url(http://rayscloud.chubanyun.net/Content/images/Dictation/finally/Star_base.png);
+  background-size: cover;
+}
+
+.unit-star-1 view:nth-child(1) {
+  width: 135rpx;
+  height: 133rpx;
+  background: url(http://rayscloud.chubanyun.net/Content/images/Dictation/finally/Bubble_b.png);
+  background-size: cover;
+}
+
+.unit-star-1 view:nth-child(2) {
+  width: 161rpx;
+  height: 148rpx;
+  background: url(http://rayscloud.chubanyun.net/Content/images/Dictation/finally/Bubble_b.png);
+  background-size: cover;
+}
+
+.unit-star-1 view:nth-child(3) {
+  width: 135rpx;
+  height: 133rpx;
+  background: url(http://rayscloud.chubanyun.net/Content/images/Dictation/finally/Bubble_b.png);
+  background-size: cover;
+}
+
+.unit-star-0 view:nth-child(1) {
+  width: 135rpx;
+  height: 133rpx;
+  background: url(http://rayscloud.chubanyun.net/Content/images/Dictation/finally/Bubble_b.png);
+  background-size: cover;
+}
+
+.unit-star-0 view:nth-child(2) {
+  width: 161rpx;
+  height: 148rpx;
+  background: url(http://rayscloud.chubanyun.net/Content/images/Dictation/finally/Bubble_b.png);
+  background-size: cover;
+}
+
+.unit-star-0 view:nth-child(3) {
+  width: 135rpx;
+  height: 133rpx;
+  background: url(http://rayscloud.chubanyun.net/Content/images/Dictation/finally/Bubble_b.png);
+  background-size: cover;
+}

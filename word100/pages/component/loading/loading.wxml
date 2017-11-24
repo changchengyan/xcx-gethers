@@ -1,0 +1,17 @@
+<!--pages/component/loading/loading.wxml-->
+<template name="loading">
+  <view class='loading {{isShow?"":"hidden"}} '>
+  <view class='mask'></view>
+    <div class="loader">
+      <div class="line-scale">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <view class='text'>{{text==""?"拼命加载中":text}}</view>
+    </div>
+    
+  </view>
+</template>

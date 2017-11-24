@@ -1,0 +1,89 @@
+
+<!-- pages/desktop/desktop -->
+<view class="{{font}}">
+  <!-- 没有添加图书的展示信息 -->
+  <block wx:if="{{book.total_count==0}}">
+    <!--没有书籍时的页面展示  -->
+      <view class="{{font}} nobook_container">
+        <swiper class="themeBox" bindchange="bindChange" current="{{currentIndex}}" indicator-dots="{{true}}">
+          <block wx:for="{{appBanner}}">
+            <swiper-item>
+              <view data-index="{{index}}" data-urls="{{item.to_url}}" style="background-image:url('{{item.fileurl}}')" catchtap="gotoSearchList" class="poster-item">
+                <!--<image src="{{item.fileurl}}" mode="widthFix" style="width:100%" class="poster-img"></image>-->
+              </view>
+            </swiper-item>
+          </block>
+        </swiper>
+        <view class="grade" catchtap="toSearchlist">
+          <view data-grade="grade1">一年级</view>
+          <view data-grade="grade2">二年级</view>
+          <view data-grade="grade3">三年级</view>
+          <view data-grade="grade4">四年级</view>
+          <view data-grade="grade5">五年级</view>
+          <view data-grade="grade6">六年级</view>
+        </view>
+      </view>
+  </block>
+  <!-- 桌面有图书的展示情况 -->
+  <block wx:if="{{book.total_count>0}}">
+    <view class="page-list">
+      <!-- 列表页 -->
+      <view class="book-list">
+        <view class="item" wx:for="{{book.list}}" wx:key="{{index}}" bindlongtap="longTapBook" bindtap="toBookPage" data-book-id="{{item.id}}" data-book-index="{{index}}" data-book-isPay="{{item.isPay}}">
+          <block wx:if="{{showDeleteBtn}}">
+            <view class="item-delete" catchtap="deleteBook" data-book-id="{{item.id}}" data-book-index="{{index}}">
+              <image src="../images/delete_btn.png" mode="widthFix"></image>
+            </view>
+          </block>
+          <view class="item-content">
+            <view class="icon-view">
+              <!--<view style="background:url({{item.book_pic}}) no-repeat center;" class="book-img">
+            </view>
+            -->
+              <image class="icon" src="{{item.book_pic}}" mode="widthFix" style="padding:{{fixPadding}}px 0"></image>
+            </view>
+          </view>
+          <view class="text-view f2">
+            <text class="text">{{item.book_name}}</text>
+          </view>
+        </view>
+        <!--<view class="item item-more" data-urls="/pages/searchlist/searchlist" catchtap="gotoSearchList">
+          <image class="add-item" src="../images/desktop/addfromClasses.png" mode="widthFix"></image>
+       </view>-->
+     </view>
+      <!-- 正在加载中begin -->
+      <view class="loadTip" wx:if="{{loadTip.showLoadTip}}">
+        <view class="icon">
+          <image src="{{LOADDING_ICON}}"></image>
+        </view>
+        <view class="text f1">
+          <text>{{loadTip.text}}</text>
+        </view>
+      </view>
+      <view class="loadTip" wx:else>
+        <view class="text f1">
+          <text>已加载全部内容</text>
+        </view>
+      </view>
+      <!-- 正在加载中end -->
+    </view>
+  </block>
+  <block wx:if="{{ifTrueDel}}">
+    <view class="maskBox" catchtouchmove="catchTouchMove">
+      <view class="mask"></view>
+      <view class="to-sure-del">
+        <view class="to-sure-word">
+          <text>是否确定删除此书籍</text>
+        </view>
+        <view class="to-choose-sure">
+          <view class="choose-button" catchtap="sureDel">确定</view>
+          <view class="choose-button" catchtap="noDel">再想想</view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <view class="add-custom" wx:if="{{book.count>0}}">
+  	<view class="count"><text>{{book.count}}</text>本</view>
+  	<view class="toSearch" data-urls="/pages/searchlist/searchlist" catchtap="gotoSearchList">新增教材+</view>
+  </view>
+</view>

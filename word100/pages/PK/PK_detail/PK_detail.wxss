@@ -1,0 +1,253 @@
+/* pages/PK/PK_detail/PK_detail.wxss */
+
+page {
+  width: 100%;
+  height: 100%;
+  background: #e36d57 url("http://image.chubanyun.net/images/Word100/PK_record_bg.png") no-repeat top;
+  background-size: 100%;
+  padding-top: 68rpx;
+  box-sizing: border-box;
+}
+
+page view {
+  box-sizing: border-box;
+}
+
+.PK_record_bg {
+  width: 100%;
+  height: 100%;
+  padding: 0 10rpx;
+}
+
+.PK_record_block {
+  width: 100%;
+}
+
+.record_info {
+  justify-content: space-around;
+  align-items: flex-end;
+}
+.record_info .img_show {
+  z-index: 100
+}
+.record_info .win {
+   position: relative
+  
+}
+.record_info .crown {
+  display: none;
+}
+.record_info .win .crown {
+  display: block;
+   position: absolute;
+   top:-30rpx;
+   right:-30rpx;
+   width: 90rpx;
+   height: 40px;
+}
+.record_info .win .user_img {
+border: 2px solid #ffea00;
+  text-shadow:3px 3px 1px rgba(183, 100, 1, 0.8),
+               		0 0 10px #fff000;
+}
+.record_info .user_img {
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 100%;
+  border: 4rpx solid #fff;
+  z-index: 100;
+}
+.vs_block {
+  width: 150rpx;
+  height: 70rpx;
+  background: #fff;
+  border-radius: 100%;
+  z-index: 100;
+  text-align: center;
+  
+}
+.record_info .vs_img {
+  width: 232rpx;
+  height: 162rpx;
+   margin-top: -80rpx;
+   margin-left:-30rpx;
+}
+
+.PK_record_bg .record_list {
+  background-color: #fff;
+  border-radius: 20rpx;
+  height: calc(100vh - 370rpx);
+  overflow: auto;
+  padding-top: 64rpx;
+  margin-top: -70rpx;
+}
+.PK_record_bg  .record_list_share {
+   background-color: #fff;
+  border-radius: 20rpx;
+  height: calc(100vh - 170rpx);
+  overflow: auto;
+  padding-top: 64rpx;
+  margin-top: -70rpx;
+}
+.record_list .record_item {
+  justify-content: space-around;
+  font-size: 34rpx;
+  padding: 30rpx 0;
+}
+.record_item:nth-of-type(2n) {
+  background: #f8f8f8;
+}
+.record_item .title {
+  color: #666;
+  font-size: 30rpx;
+  width: 100rpx;
+  text-align: center;
+  z-index: 0;
+  position: relative;
+
+}
+.record_item .num {
+  width: 300rpx;
+  text-align: center;
+}
+.record_item .num text{
+  font-size:22rpx;
+color:#999;
+
+}
+.record_item view {
+  font-size: 34rpx;
+  text-align: center;
+}
+.record_item .small {
+  font-size: 22rpx;
+  color:#999;
+}
+.button_list {
+  justify-content: space-around;
+}
+
+.record_button {
+  background: url("http://image.chubanyun.net/images/Word100/button_bg.png") no-repeat center;
+  background-size: contain;
+  width: 310rpx;
+  text-align: center;
+  line-height: 117rpx;
+  color: #fff;
+  margin-top: 44rpx;
+}
+.record_item image {
+  width: 35rpx;
+  height: 40rpx;
+}
+.show_to_other {
+  position: relative;
+}
+.show_to_other button {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height:100%;
+  opacity: 0
+}
+
+/*结果页  */
+.PK_finsh_bg {
+  width: 100%;
+  height: 800rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.PK_finsh_share {
+  height: 950rpx;
+}
+.finsh_headlines_win {
+  width: 710rpx;
+  height: 190rpx;
+  background: url(http://image.chubanyun.net/images/Word100/headlines_win.png) no-repeat center;
+  background-size: contain;
+}
+
+.finsh_headlines_lose {
+  width: 710rpx;
+  height: 190rpx;
+  background: url(http://image.chubanyun.net/images/Word100/headlines_lose.png) no-repeat;
+  background-size: contain;
+}
+
+.PK_finsh_bg image {
+  width: 160rpx;
+  height: 160rpx;
+  margin-bottom: 15rpx;
+  border-radius: 50%;
+}
+
+.PK_reay_bg image {
+  width: 160rpx;
+  height: 160rpx;
+  margin-bottom: 15rpx;
+  border-radius: 50%;
+  z-index: 1
+}
+
+.winer {
+  width: 420rpx;
+  height: 420rpx;
+  background: url(http://image.chubanyun.net/images/Word100/win_er.png) no-repeat center;
+  background-size: contain;
+}
+
+.winer image {
+  width: 210rpx;
+  height: 210rpx;
+  border: 2px solid #ffea00;
+}
+
+.opponent {
+  padding: 120rpx 0 0 0;
+}
+
+.PK_finsh_bg .opponent {
+  padding: 0;
+  position: relative;
+}
+
+.PK_finsh_bg .user {
+  padding: 0;
+  position: relative;
+}
+
+.PK_finsh_bg .crown {
+  display: none;
+  position: absolute;
+  right:12rpx;
+top:5rpx;
+transform:rotate(19deg);
+
+}
+
+.winer .crown {
+  display: block;
+  border:0;
+}
+
+.opponent, .user {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  font-size: 40rpx;
+  position: relative;
+
+}
+.to_detail {
+  font-size: 30rpx;
+  color: #fff;
+  text-align: right;
+  padding-top: 20rpx;
+  padding-right: 50rpx;
+}

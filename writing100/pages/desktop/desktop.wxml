@@ -1,0 +1,94 @@
+<!--pages/desktop/desktop.wxml-->
+
+<view class="default {{desk_if_show}}">
+  <!-- 有书籍时，主界面显示书架和扫码 -->
+  <block>
+    <scroll-view class="page-list" scroll-y="true" catchtap="hiddenDeleteBtn" enable-back-to-top="true">
+      <!--扫码添加书籍-->
+      <view class="book-add-area">
+        <view class="book-count f-book-count" catchtap="toMyWord">
+          <image src="/images/desktop/search.png"></image>
+          <text class="f1 colorf">查询</text>
+        </view>
+        <!-- bindtap="showTheWay"  -->
+        <view class="book-scan" catchtap="toSearchlist">
+          <image src="/images/desktop/add.png" mode="widthFix"></image>
+          <text class="f1 colorf">添加</text>
+        </view>
+      </view>
+      <view class="book-add-area-visibility">正在刷新</view>
+
+      <!--没有书籍时提示添加书籍  -->
+      <view class="{{font}} nobook_container" wx:if="{{book.total_count === 0}}">
+        <swiper class="nobook-swiper" indicator-dots autoplay indicator-active-color="#6dc4ff">
+          <swiper-item class="nobook-swiper-item">
+            <image class="swiper-img1" bindtap="toSearchlist" src="../../images/desktop/nobook1.png"></image>
+          </swiper-item>
+          <swiper-item class="nobook-swiper-item" bindtap="toSearchWord">
+            <image class="swiper-img2" src="../../images/desktop/nobook2.png"></image>
+          </swiper-item>
+        </swiper>
+        <view class="grade" catchtap="toSearchlist">
+          <view data-grade="grade1">一年级</view>
+          <view data-grade="grade2">二年级</view>
+          <view data-grade="grade3">三年级</view>
+          <view data-grade="grade4">四年级</view>
+          <view data-grade="grade5">五年级</view>
+          <view data-grade="grade6">六年级</view>
+        </view>
+      </view>
+
+      <!--列表页-->
+      <view class="bookWrap" wx:if="{{book.total_count > 0}}">
+        <form catchsubmit="formSubmit" bindreset="formReset" report-submit="true">
+          <view class="book-list">
+            <view class="item" wx:for="{{book.list}}" wx:key="id"  bindtap="toBookPage" data-book-ispay="{{item.isPay}}" data-book-name="{{item.book_name}}" data-book-pic="{{item.book_pic}}" data-book-id="{{item.id}}" data-book-index="{{index}}">
+              <button class="newsBtn" formType="submit" bindlongtap="longTapBook" plain="true"></button>
+              <block wx:if="{{showDeleteBtn}}">
+                <view class="item-delete" catchtap="deleteBook" data-book-id="{{item.id}}" data-book-index="{{index}}">
+                  <image src="/images/desktop/delete_btn.png" mode="widthFix"></image>
+                </view>
+              </block>
+
+              <view class="item-content">
+                <view class="icon-view" style="height:{{imgHeight}}px">
+                  <!--<view style="background:url({{item.book_pic}}) no-repeat center;" class="book-img"></view>-->
+                  <image class="icon" src="{{item.book_pic}}" mode="widthFix" style="padding:{{fixPadding}}px 0"></image>
+                </view>
+                <image class="buyed" src="/images/desktop/buyed.png" wx:if="{{item.isPay}}" mode="widthFix"></image>
+              </view>
+              <view class="text-view f2">
+                <text class="text">{{item.book_name}}</text>
+              </view>
+            </view>
+
+          </view>
+        </form>
+        <!--版权声明  -->
+        <text wx:if="{{book.total_count>0}}" class="copyright">——语音技术由科大讯飞和百度云语音联合提供——</text>
+      </view>
+
+
+    </scroll-view>
+
+    <!--loading  -->
+    <import src="../template/template.wxml" />
+    <template is="pageLoading" data="{{isLoading}}"></template>
+  </block>
+</view>
+
+<!-- 多个设备的弹框begin-->
+<view class="mask bindMask" wx:if="{{muchDevice}}" id="mask" catchtouchmove="touchMove">
+  <view class="bindTips">
+    <view class="text">
+      <image src="../../images/desktop/unbind_bg.png"></image>
+      <view>当前微信账号已和其他设备绑定，</view>
+      <view>请先解绑，再扫描登录。</view>
+    </view>
+    <view class="btn" bindtap="toUnbind">
+      <view class="unBind" id="unBind">解绑</view>
+      <view class="quxiao" id="quxiao">取消</view>
+    </view>
+  </view>
+</view>
+<!-- 多个设备的弹框end-->

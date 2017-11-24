@@ -1,0 +1,62 @@
+<!--pages/chinese/uncle/search/search.wxml-->
+
+<view class="active_name">
+     <view class="text">输入“雷”字相关的字，继续词语接龙！</view>  
+</view>
+
+
+<view class="search-area">
+  <view class="search">
+      <view class="input">
+        <input type="text"  placeholder="在此输入汉字"  value=""/>
+      </view>
+      <view class="clear"><image src="../../../images/reload.png"></image></view>
+  </view>
+</view>
+
+
+
+<view class="info-title">笔画顺序</view>
+<view class="bishun">    
+    <image src="http://f3.5rs.me/upload/20170902/2017_09_02_144727206.png" mode="widthFix"></image>
+</view>
+<view class="animation">
+    <view class="pinyin">léi , lēi</view>
+    <image src="http://f3.5rs.me/upload/20170902/2017_09_02_144932685.png" mode="widthFix"></image>
+</view>
+
+<view class="info-title">说文解字</view>
+<view class="font-info">
+  陰陽薄動靁雨生物者也從雨畾象回轉形
+</view>
+
+<view class="info-title">字体鉴赏</view>
+<view class="font">    
+    <image src="http://f3.5rs.me/upload/20170902/2017_09_02_145754022.PNG" mode="widthFix"></image>
+    <view class="font-name">甲骨文   篆书   草书   楷书   隶书</view>
+</view>
+
+<view class="info-title">字体发展</view>
+<view class="history-canvas">
+    <image src="http://f3.5rs.me/upload/20170902/2017_09_02_214905182.png" mode="widthFix"></image>
+</view>
+
+<view class="info-title">更多学习</view>
+<view class="app-canvas">
+    <view class="app">
+          <view class="icon" bindtap="toMiniProgram" data-source="dictation"><image src="http://f3.5rs.me/upload/20170902/2017_09_02_134652461.png"></image></view>
+          <view class="text">听写</view>
+    </view>
+    <view class="app">
+          <view class="icon" bindtap="toMiniProgram" data-source="bishun"><image src="http://f3.5rs.me/upload/20170902/2017_09_02_134652461.png"></image></view>
+          <view class="text">笔顺</view>
+    </view>
+    <view class="app">
+          <view class="icon" bindtap="toMiniProgram" data-source="codebook"><image src="http://f3.5rs.me/upload/20170902/2017_09_02_134652461.png"></image></view>
+          <view class="text">阅读</view>
+    </view>
+</view>
+
+<view class="bottom">
+    <view class="text" bindtap="toCreate">生成海报</view>
+</view>

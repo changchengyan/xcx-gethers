@@ -1,0 +1,154 @@
+
+
+/*用户头部信息*/
+.user-info
+{
+
+    background-color: #06c1ae;
+    height: 140px;
+    display: flex;   
+    padding: 0px 0px 20px 0px;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+    position: fixed; top: 0px; left: 0px; width: 100%; 
+    z-index: 1;
+}
+.user-info-visibility{ height: 140px; color: #999; padding: 100px 0px 0px 0px; text-align: center;}
+.user-info .tag-item-left
+{
+  flex-grow:2;
+  display: flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  align-items:flex-end;
+ }
+.user-info .tag-item-left view
+{ 
+  background-color: #a5e7e0; color:#06c1ae;font-size: 12px; border-radius: 20px; padding: 5px 10px 5px 10px; 
+  margin-top: 2px;  margin-bottom: 2px; 
+}
+.user-info .img-item{flex-grow:1; text-align: center; color: #fff; margin-top: 20px;}
+.user-info .img-item view{ font-size: 14px; padding: 5px 0px 5px 0px;}
+.user-info .img-item image{ width: 60px; height: 60px; border-radius: 80px;}
+.user-info .tag-item-right
+{
+  flex-grow:2;
+  display: flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  align-items:flex-start;
+}
+.user-info .tag-item-right view
+{
+  background-color: #a5e7e0; color:#06c1ae;font-size: 12px; border-radius: 20px; padding: 5px 10px 5px 10px; 
+  margin-top: 2px;  margin-bottom: 2px; 
+
+}
+.red-circle image{width:8px;heihgt:8px;margin-right:5px;}
+
+/*用户统计信息*/
+.user-report
+{
+    display: flex;   
+    padding: 10px;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+    border-bottom: 1px solid #eee;
+}
+.user-report .item
+{
+    text-align: center;
+    flex-grow:1;
+}
+.user-report .line
+{
+    border-right: 1px solid #eee;
+}
+.user-report .item .number
+{
+   font-size: 20px;
+   padding: 10px 0px 0px 0px;
+   color: #06c1ae;
+}
+.user-report .item .title
+{
+  font-size: 12px; color: #777;
+  padding: 5px 0px 10px 0px;
+}
+
+.user-report .item text
+{
+    
+}
+
+/*菜单列表*/
+.menul-list
+{
+   padding: 10px 20px 10px 20px;
+   
+
+}
+.menul-list .menu
+{
+   border-bottom: 1px solid #eee;
+   padding: 10px 0px 10px 0px;
+   font-size: 14px;
+   display: flex;  
+   flex-direction:row;
+   justify-content:center;
+    align-items:center;
+}
+.menul-list .menu .title
+{
+   flex-grow:8;
+}
+.menul-list .menu .text
+{
+   color: #777; font-size: 12px;
+}
+.menul-list .menu .arrow
+{
+   padding: 2px 5px 0px 5px; 
+   max-width: 20px;   
+   flex-grow:1;
+   text-align: right;
+}
+.menul-list .menu .arrow image
+{
+    width: 9px; height: 15px;
+}
+
+
+
+
+
+
+
+
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+page {
+  background-color: #fff;
+}
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;padding:0px 0px 20px 0px;
+}
+
+.changeName{color:#ff3300;}

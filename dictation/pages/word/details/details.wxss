@@ -1,0 +1,166 @@
+/* details.wxss */
+
+/* @import "../../template/template.wxss"; */
+@import "../../../components/modal/modal.wxss";
+
+/* .top {
+  display: flex;
+  justify-content: space-between;
+  background-color: #eee;
+  padding: 20rpx 28rpx;
+  margin-bottom: 60rpx;
+  height: 38rpx;
+  line-height: 38rpx
+} */
+
+page {
+  background-color: #f6e5ac;
+}
+
+.title {
+  font-size: 14px;
+  color: #333;
+  padding-top: 5rpx;
+  font-family: Microsoft YaHei;
+}
+
+.find {
+  background: url(http://rayscloud.chubanyun.net/Content/images/Dictation/word/Ribbon.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 426rpx;
+  height: 120rpx;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 75rpx;
+}
+
+.star  image {
+  width: 41rpx;
+  height: 39rpx;
+}
+
+.txt {
+  color: #fff;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 30rpx;
+  font-weight: 700;
+}
+
+.juxing {
+  background: url(http://rayscloud.chubanyun.net/Content/images/Dictation/word/juxing.png);
+  background-repeat: no-repeat;
+  background-position: 45% 100%;
+  background-size: 150% 150%;
+  /* height: 600rpx; */
+}
+
+.txt {
+  color: #fff;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: 600;
+}
+
+
+.middle {
+  width: 692rpx;
+  margin: 0 auto;
+  padding-top: 60rpx;
+  padding-bottom: 20rpx;
+}
+
+.middle .find {
+  color: #333;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: Microsoft YaHei;
+}
+
+.words {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+.wo {
+  background: url(http://rayscloud.chubanyun.net/Content/images/Dictation/word/Bubble_b.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 30rpx 50rpx;
+  margin-top: 30rpx;
+  margin-right: 30rpx;
+  font-size: 15px;
+  color: #fff;
+  font-family: Microsoft YaHei;
+}
+
+.cihui {
+  margin-top: 50rpx;
+  color: #fff;
+  margin-bottom: 20rpx;
+}
+
+.num {
+  font-size: 40px;
+}
+
+.foot {
+  margin-top: 158rpx;
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+  font-family: Microsoft YaHei;
+}
+
+.errtext {
+  font-size: 15px;
+  color: #000;
+  width: 692rpx;
+  font-family: Microsoft YaHei;
+}
+
+.errimg {
+  display: flex;
+}
+
+.err {
+  width: 692rpx;
+  margin: 0 auto;
+  margin-top: 60rpx;
+}
+
+.errwords {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.errwo {
+  background: url(http://rayscloud.chubanyun.net/Content/images/Dictation/word/Bubble_r.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 30rpx 50rpx;
+  margin-top: 30rpx;
+  margin-right: 30rpx;
+  font-size: 15px;
+  color: #fff;
+  font-family: Microsoft YaHei;
+}
+
+
+.end {
+  background: url(http://rayscloud.chubanyun.net/Content/images/Dictation/word/icons.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 50% 50%;
+  width: 100%;
+  height: 168rpx;
+  font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  line-height: 170rpx;
+  border-top-left-radius: 50rpx;
+  border-top-right-radius: 55rpx;
+  box-shadow: 0 -20rpx 60rpx #dbcc99;
+}

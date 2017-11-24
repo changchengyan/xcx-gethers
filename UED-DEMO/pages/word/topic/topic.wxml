@@ -1,0 +1,45 @@
+<!--pages/word/topic/topic.wxml-->
+<view class="topic-canvas">
+  <view class="topic-item">
+      <view class="content">
+        <view class="title">交互设计</view>
+        <view class="desc">4小时前更新</view>
+      </view>
+      <view class="report">271人，231条动态</view>
+      <view class="arrow"><image src="../../images/icon_tools_arrow.png"></image></view>
+  </view>
+  <view class="topic-item">
+      <view class="content">
+        <view class="title">服务设计</view>
+        <view class="desc">18小时前更新</view>
+      </view>
+      <view class="report">1229人，761条动态</view>
+      <view class="arrow"><image src="../../images/icon_tools_arrow.png"></image></view>
+  </view>
+  <view class="topic-item">
+      <view class="content">
+        <view class="title">设计管理</view>
+        <view class="desc">2天前更新</view>
+      </view>
+      <view class="report">129人，231条动态</view>
+      <view class="arrow"><image src="../../images/icon_tools_arrow.png"></image></view>
+  </view>
+   <view class="topic-item">
+      <view class="content">
+        <view class="title">设计思维</view>
+        <view class="desc">1周前更新</view>
+      </view>
+      <view class="report">32人，212条动态</view>
+      <view class="arrow"><image src="../../images/icon_tools_arrow.png"></image></view>
+  </view>
+  <view class="topic-item">
+      <view class="content">
+        <view class="title">用户研究</view>
+      </view>
+      <view class="report">
+            <view class="t1">5人，38条动态</view> 
+            <view class="t2">2月前更新</view>
+      </view>
+      <view class="arrow"><image src="../../images/icon_tools_arrow.png"></image></view>
+  </view>
+</view>

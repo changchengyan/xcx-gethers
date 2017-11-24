@@ -1,0 +1,107 @@
+/* pages/list/list.wxss */
+.days-container{
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 24rpx;
+  margin-bottom: 10rpx;
+}
+.title{
+  height: 86rpx;
+  line-height: 86rpx;
+  font-size: 14px;
+  color: #666;
+}
+.content{
+  display: flex;
+  margin-bottom: 20rpx;
+}
+.content:last-child{
+  margin-bottom: 0;
+}
+.book{
+  width: 200rpx;
+  height: 200rpx;
+  margin-right: 30rpx;
+}
+.check{
+  width: 0;
+  overflow: hidden;
+  transition: width 0.5s;
+}
+.checked{
+  width: 128rpx;
+  overflow: hidden;
+  transition: width 0.5s;
+}
+.check-icon{
+  width: 44rpx;
+  height: 44rpx;
+  margin: 76rpx 54rpx 0 20rpx;
+}
+.info{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+.info-name{
+  margin-bottom: 20rpx;
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+}
+.info-time{
+  position: relative;
+  text-indent: 1.5em;
+  font-size: 12px;
+  color: #999;
+}
+.info-time image{
+  position: absolute;
+  left: 0;
+  top: -4rpx;
+  width: 19rpx;
+  height: 32rpx;
+}
+.days-container:last-child{
+  margin-bottom: 108rpx;
+}
+.bottom{
+  position: fixed;
+  bottom: 0;
+  z-index: 2;
+  width: 100%;
+  height: 98rpx;
+  line-height: 98rpx;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+  border-top: 1px solid #ddd;
+  background-color: #fff;
+}
+.bottom-editing{
+  position: fixed;
+  bottom: 0;
+  z-index: 2;
+  display: flex;
+  width: 100%;
+  height: 98rpx;
+  line-height: 98rpx;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+  border-top: 1px solid #ddd;
+  background-color: #fff;
+}
+.bottom-editing view {
+  width: 33%;
+  text-align: center;
+}
+.nobook{
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  width: 100vw;
+  height: 100vh;
+}

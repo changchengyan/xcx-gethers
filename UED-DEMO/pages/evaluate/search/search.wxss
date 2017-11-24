@@ -1,0 +1,12 @@
+/* pages/evaluate/search/search.wxss */
+.grade-list{display: flex; flex-direction: row;flex-wrap:wrap; font-size: 14px; padding: 10px 10px 20px 10px; border-bottom: 5px solid #eee;}
+.grade-item{ min-width: 33.33%; max-width: 33.33%; text-align: center; padding: 10px;} 
+.grade-item view{ background-color: #666; color: #fff; padding: 5px;}
+.grade-item view.over{ background-color: #06c1ae; color: #fff; padding: 5px;}
+
+.list-title{ text-align: center; padding: 10px 0px 10px 0px; font-size: 16px;}
+.list-canvas{ display: flex; align-items: flex-start; justify-content: center;padding: 10px;}
+.list-canvas .item{ max-width: 33.33%; min-width: 33.33%; padding: 10px;}
+.list-canvas .item .pic{padding: 0px 5px 0px 5px;}
+.list-canvas .item .pic image{ width: 100%;}
+.list-canvas .item .text{font-size: 14px; color: #777; line-height: 18px; text-align: center;}

@@ -1,0 +1,15 @@
+<!--pages/word/share/share.wxml-->
+<view class="share-area">
+<view class="share-canvas">
+<view class="word_name">用户体验交流圈</view>
+<view class="word_desc">请使用微信扫描二维码加入学习圈</view>
+<view class="ticket">
+      <image src="../../images/ticket.png" mode="widthFix"></image>
+</view>
+<view class="copyright">
+   <view class="logo">学习 • 圈子</view>
+    <view class="text">遇见知识大咖</view>
+</view>
+
+</view>
+</view>

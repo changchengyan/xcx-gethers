@@ -1,0 +1,17 @@
+<!--pages/analysis/analysis.wxml-->
+<import src="../template/temp_common/temp_common.wxml" />
+<view class='container'>
+	<block wx:if="{{paperList.list.length>0}}">
+		<template is="errorTestList" data="{{paperList:paperList.list}}" />
+	  <text class="loadding" wx:if="{{!firstLoadding&&isLoadding}}">加载中...</text>
+	</block>
+	<block wx:else>
+		<view class="noData flexR">
+			<text>您还没有试卷，快去挑战吧！</text>
+		</view>
+		
+	</block>
+  
+</view>
+
+<loading hidden="{{!firstLoadding}}">加载中...</loading>

@@ -1,0 +1,463 @@
+<!--pages/discover/discover.wxml-->
+<!--evaluate-->
+<block wx:if="{{mainMenu=='evaluate'}}">
+<view class="body">
+  <scroll-view class='platform-scroll' bindscroll="platformScroll">
+  <view class='banner'>
+    <swiper bindchange='swiperChange' class='banner-swiper'
+     autoplay="true" interval="3000" 
+     indicator-dots="true"  indicator-color="rgba(255, 255, 255, 0.3)" indicator-active-color="#fff" >
+       <swiper-item>
+          <view class='banner-item' style=' background-color:#ff961b; color:#fff;'>
+            <view class='mask'>
+              <view class='title'>出版融合内参 NO.01</view>
+              <view class='desc'>
+                <text>用喝一杯咖啡的时间，
+                教你把创意做成现代纸书</text>
+              </view>
+            </view>
+          </view>
+       </swiper-item>
+       <swiper-item>
+          <view class='banner-item' style=' background-color:#04d3bd;color:#fff;'>
+              <view class='mask'>
+              <view class='title'>玩游戏，做图书，领红包</view>
+              <view class='desc'>
+                <text>用喝一杯咖啡的时间，
+                教你把创意做成现代纸书</text>
+              </view>
+            </view>
+          </view>
+       </swiper-item>
+       <swiper-item>
+          <view class='banner-item' style=' background-color:#0589ce;color:#fff;'>
+              <view class='mask'>
+              <view class='title'>RAYS知识开放平台</view>
+              <view class='desc'>
+                <text>让编辑与作者每一份付出，
+                都能及时得到反馈与收获！</text>
+              </view>
+            </view>
+          </view>
+       </swiper-item>
+       <swiper-item>
+          <view class='banner-item' style=' background-color:#8f11de;color:#fff;'>
+              <view class='mask'>
+              <view class='title'>RAYS知识开放平台</view>
+              <view class='desc'>
+                <text>让编辑与作者每一份付出，
+                都能及时得到反馈与收获！</text>
+              </view>
+            </view>
+          </view>
+       </swiper-item>
+    </swiper>
+
+  </view>
+  <view class='discover-name'>RAYS开放平台</view>
+  <view class='discover-canvas'>
+    <view class='discover-item'>
+      <view class='icon' style='background-image: url(http://f3.5rs.me/upload/20171023/2017_10_23_113214894.png);'></view>
+      <view class='text'>出版指数</view>
+    </view>
+    <view class='discover-item'>
+      <view class='icon' style='background-image: url(http://f3.5rs.me/upload/20171023/2017_10_23_113335107.png);'></view>
+      <view class='text'>热门应用</view>
+    </view>
+    <view class='discover-item'>
+      <view class='icon' style='background-image: url(http://f3.5rs.me/upload/20171023/2017_10_23_113344771.png);'></view>
+      <view class='text'>优选作品</view>
+    </view>
+    <view class='discover-item'>
+      <view class='icon' style='background-image: url(http://f3.5rs.me/upload/20171023/2017_10_23_113352821.png);'></view>
+      <view class='text'>开放资源</view>
+    </view>
+  </view>
+  
+  <view class='app-list'>
+    <view class='app-item'>
+      <view class='pic' style=' background-image: url(http://f3.5rs.me/upload/20170922/2017_09_22_120120070_e.png);'></view>      
+      <view class='info'>
+        <view class='title'>听写100</view>
+        <view class='desc'>标准发音给孩子报听写，小学语文、英语多版本配套练习</view>
+      </view>      
+    </view>
+    <view class='app-item'>    
+      <view class='pic'  style=' background-image: url(http://f3.5rs.me/upload/20171011/2017_10_11_165742833.png);'></view>  
+      <view class='info'>
+        <view class='title'>笔顺100</view>
+        <view class='desc'>掌握正确的笔画顺序，更好的书写汉字！</view>
+      </view>      
+    </view>
+    <view class='app-item'>
+      <view class='pic' style=' background-image: url(http://f3.5rs.me/upload/20171012/2017_10_12_112532498.png);'></view>     
+      <view class='info'>
+        <view class='title'>朗诵100</view>
+        <view class='desc' >小学1-6年级语文教材，配套原声朗诵</view>
+      </view>
+      
+    </view>
+    <view class='app-item'> 
+      <view class='pic'  style=' background-image: url(http://f3.5rs.me/upload/20171011/2017_10_11_165233771.png);'></view>     
+      <view class='info'>
+        <view class='title'>口语评测</view>
+        <view class='desc'>小学1-6年级教材配套，矫正口语发音，教您地道英语</view>
+      </view>      
+    </view>
+    <view class='app-item'>    
+      <view class='pic' style=' background-image: url(http://f3.5rs.me/upload/20171012/2017_10_12_111939598.png);'></view>  
+      <view class='info'>
+        <view class='title'>汉字叔叔</view>
+        <view class='desc'>陪伴孩子快乐学习，帮助孩子茁壮成长！</view>
+      </view>
+    </view>
+  </view>
+
+
+
+  </scroll-view>
+</view>
+
+</block>
+
+<!--book-->
+<block wx:if="{{mainMenu=='book'}}">
+  <view>
+    <view class='top-menu'>
+      <view class='item {{bookDemo}}' data-sales='0' bindtap='bookMenuClick'>书刊模版</view>
+      <view class='item {{bookList}}' data-sales='1' bindtap='bookMenuClick'>我的书刊</view>
+      <view class='reddot'><view></view></view>
+    </view>  
+  </view>
+  <view class='book-body'>
+      <view class='swiper-canvas'>
+        <swiper class='book-swiper' bindchange='bookSwiperChange' current='{{bookCurrent}}' >
+          <swiper-item>
+              <scroll-view class='demo-scroll' scroll-y='true'>
+              <!--view class='demo-info'>
+                请选择模版了解特性，并开始创建具有交互功能的图书！
+              </view-->
+              <view class='demo-list' >
+                  <view class='demo-item' bindtap='toDemoPage'>
+                    <view class='pic' style='background-image: url(http://f3.5rs.me/upload/20171012/2017_10_12_114525785.jpg);'></view>
+                    <view class='text'>K12教辅（试卷类）</view>
+                  </view>
+                  <view class='demo-item' bindtap='toDemoPage'>
+                    <view class='pic' style='background-image: url(http://f3.5rs.me/upload/20171012/2017_10_12_114611300.png);'></view>
+                    <view class='text'>专题教材教辅</view>
+                  </view>
+                  <view class='demo-item' bindtap='toDemoPage'>
+                    <view class='pic' style='background-image: url(http://f3.5rs.me/upload/20171012/2017_10_12_114633629.jpg);'></view>
+                    <view class='text'>职业、专业技术</view>
+                  </view>
+
+                  <view class='demo-item' bindtap='toDemoPage'>
+                    <view class='pic' style='background-image: url(https://file.5rs.me/group1/M01/02/E9/Ch7Htlj4Y9-AQZ6wAABMvRziu6w372.jpg);'></view>
+                    <view class='text'>学术期刊</view>
+                  </view>
+                  <view class='demo-item' bindtap='toDemoPage'>
+                    <view class='pic' style='background-image: url(http://f3.5rs.me/upload/20171012/2017_10_12_114735812.png);'></view>
+                    <view class='text'>生活科普</view>
+                  </view>
+                  <view class='demo-item' bindtap='toDemoPage'>
+                    <view class='pic' style='background-image: url(http://f3.5rs.me/upload/20171012/2017_10_12_114754780.jpg);'></view>
+                    <view class='text'>少儿兴趣</view>
+                  </view>
+
+                  <view class='demo-item' bindtap='toDemoPage'>
+                    <view class='pic' style='background-image: url(http://f3.5rs.me/upload/20171012/2017_10_12_114815005.jpg);'></view>
+                    <view class='text'>少儿读物</view>
+                  </view>
+                  <view class='demo-item' bindtap='toDemoPage'>
+                    <view class='pic' style='background-image: url(http://f3.5rs.me/upload/20171012/2017_10_12_114832776.jpg);'></view>
+                    <view class='text'>名人传记</view>
+                  </view>
+                  <view class='demo-item' bindtap='toDemoPage'>
+                    <view class='pic' style='background-image: url(http://f3.5rs.me/upload/20171012/2017_10_12_114846102.png);'></view>
+                    <view class='text'>老年大学教材</view>
+                  </view>
+
+                  <view class='demo-item' bindtap='toDemoPage'>
+                    <view class='pic' style='background-image: url(http://f3.5rs.me/upload/20171012/2017_10_12_114857890.png);'></view>
+                    <view class='text'>课外读本</view>
+                  </view>
+                  <view class='demo-item' bindtap='toDemoPage'>
+                    <view class='pic' style='background-image: url(http://f3.5rs.me/upload/20171012/2017_10_12_114910630.jpg);'></view>
+                    <view class='text'>军事历史</view>
+                  </view>
+                  <view class='demo-item' bindtap='toDemoPage'>
+                    <view class='pic' style='background-image: url(http://f3.5rs.me/upload/20171012/2017_10_12_114922697.jpg);'></view>
+                    <view class='text'>教材教辅</view>
+                  </view>
+
+                  <view class='demo-item' bindtap='toDemoPage'>
+                    <view class='pic' style='background-image: url(http://f3.5rs.me/upload/20171012/2017_10_12_114942913.jpg);'></view>
+                    <view class='text'>假期作业</view>
+                  </view>
+                  <view class='demo-item' bindtap='toDemoPage'>
+                    <view class='pic' style='background-image: url(http://f3.5rs.me/upload/20171012/2017_10_12_114956918.jpg);'></view>
+                    <view class='text'>国学</view>
+                  </view>
+                  <view class='demo-item' bindtap='toDemoPage'>
+                    <view class='pic' style='background-image: url(http://f3.5rs.me/upload/20171012/2017_10_12_115006591.jpg);'></view>
+                    <view class='text'>大众类小说</view>
+                  </view>
+
+                  <view class='demo-item' bindtap='toDemoPage'>
+                    <view class='pic' style='background-image: url(http://f3.5rs.me/upload/20171012/2017_10_12_115025336.jpg);'></view>
+                    <view class='text'>大众类散文随笔</view>
+                  </view>
+                  <view class='demo-item' bindtap='toDemoPage'>
+                    <view class='pic' style='background-image: url(http://f3.5rs.me/upload/20171012/2017_10_12_115035534.jpg);'></view>
+                    <view class='text'>大众期刊</view>
+                  </view>
+
+
+
+
+              </view>
+              </scroll-view>
+          </swiper-item>
+          <swiper-item>
+            <scroll-view class='book-scroll' scroll-y='true'>
+              <view class='book-console'>
+                <view class='left'>筛选</view>
+                <view class='left'>排序</view>
+                <view class='null'></view>
+                <view class='right'>新增书刊</view>
+              </view>
+              <view class='book-list'>
+                  <view class='book-item' bindtap='toBookPage'>
+                    <view class='pic'>
+                      <view class='cover'  style='background-image: url(http://img3x1.ddimg.cn/81/25/23734341-1_w_3.jpg);'></view>
+                    </view>
+                    <view class='info'>
+                        <view class='title'><view class='reddot'></view>这么慢，那么美</view>
+                        <view class='more'>
+                            <view>标识号：9787507600000</view>
+                            <view class='report'>
+                              <view class='item line'>
+                                <view class='number'>3</view>
+                                <view class='text'>二维码</view>
+                              </view>
+                              <view class='item line'>
+                                <view class='number'>￥1201.90</view>
+                                <view class='text'>累积收益</view>
+                              </view>
+                              <view class='item'>
+                                <view class='number'>91913</view>
+                                <view class='text'>累积读者</view>
+                              </view>
+
+                            </view>
+                        </view>
+                    </view>
+                  </view>
+                  <view class='book-item' bindtap='toBookPage'>
+                    <view class='pic'>
+                      <view class='cover'  style='background-image: url(http://img3x0.ddimg.cn/67/4/24003310-1_w_5.jpg);'></view>
+                    </view>
+                    <view class='info'>
+                        <view class='title'>Python编程 从入门到实践</view>
+                        <view class='more'>
+                            <view>标识号：9787115428028</view>
+                            <view class='report'>
+                              <view class='item line'>
+                                <view class='number'>3</view>
+                                <view class='text'>二维码</view>
+                              </view>
+                              <view class='item line'>
+                                <view class='number'>￥1201.90</view>
+                                <view class='text'>累积收益</view>
+                              </view>
+                              <view class='item'>
+                                <view class='number'>91913</view>
+                                <view class='text'>累积读者</view>
+                              </view>
+
+                            </view>
+                        </view>
+                    </view>
+                  </view>
+                  <view class='book-item' bindtap='toBookPage'>
+                    <view class='pic'>
+                      <view class='cover'  style='background-image: url(http://img3x2.ddimg.cn/57/32/23912022-1_w_5.jpg);'></view>
+                    </view>
+                    <view class='info'>
+                        <view class='title'>看图记单词-日常英语1800个实用单词+90篇情境图解+90段日常会话【图书】</view>
+                        <view class='more'>
+                            <view>标识号：9787513568128</view>
+                            <view class='report'>
+                              <view class='item line'>
+                                <view class='number'>3</view>
+                                <view class='text'>二维码</view>
+                              </view>
+                              <view class='item line'>
+                                <view class='number'>￥1201.90</view>
+                                <view class='text'>累积收益</view>
+                              </view>
+                              <view class='item'>
+                                <view class='number'>91913</view>
+                                <view class='text'>累积读者</view>
+                              </view>
+
+                            </view>
+                        </view>
+                    </view>
+                  </view>
+                  <view class='book-item' bindtap='toBookPage'>
+                    <view class='pic'>
+                      <view class='cover'  style='background-image: url(https://file.5rs.me/group1/M01/03/92/ChvrLliiw1uAY1gnAAODg5wsRzw363.png);'></view>
+                    </view>
+                    <view class='info'>
+                        <view class='title'>品德与社会 五下（泰山版）</view>
+                        <view class='more'>
+                            <view>条形码：9787535380227</view>
+                            <view class='report'>
+                              <view class='item line'>
+                                <view class='number'>3</view>
+                                <view class='text'>二维码</view>
+                              </view>
+                              <view class='item line'>
+                                <view class='number'>￥1201.90</view>
+                                <view class='text'>累积收益</view>
+                              </view>
+                              <view class='item'>
+                                <view class='number'>91913</view>
+                                <view class='text'>累积读者</view>
+                              </view>
+
+                            </view>
+                        </view>
+                    </view>
+                  </view>
+
+
+              </view>
+            </scroll-view>
+          </swiper-item>
+        </swiper>
+      </view>
+
+
+  </view>
+
+</block>
+
+
+<!--user-->
+<block wx:if="{{mainMenu=='user'}}">
+  <view class='user-head'>
+      <view class='head-img'>
+        <image   src='{{userInfo.avatarUrl}}'></image>
+      </view>  
+      <view class='head-nickname'>{{userInfo.nickName}}</view>
+      <!--view class='head-login'>
+          <view class='button' >登录RAYS</view>
+      </view-->
+  </view>
+
+
+  <!--view class="menul-list">
+    <view class="menu line" bindtap="moreToSales" data-page="nickname">
+        <view class="title f2">订单服务</view>
+        <view class="more f2">个新订单（6）</view>
+        <view class="arrow"><image src="../images/icon_tools_arrow.png"></image></view>
+    </view>
+    <view class="menu line" bindtap="moreToSales" data-page="nickname">
+        <view class="title f2">商品应用</view>
+        <view class="more f2"></view>
+        <view class="arrow"><image src="../images/icon_tools_arrow.png"></image></view>
+    </view>
+    <view class="menu line" bindtap="moreToSales" data-page="message">
+        <view class="title f2">资源素材</view>
+        <view class="more f2"></view>
+        <view class="arrow"><image src="../images/icon_tools_arrow.png"></image></view>
+    </view>
+    <view class="menu" bindtap="moreToSales" data-page="favorites">
+        <view class="title f2">直播管理</view>
+        <view class="more f2">即将开播（1）</view>
+        <view class="arrow"><image src="../images/icon_tools_arrow.png"></image></view>
+    </view>    
+  </view-->
+
+  <view class='money-area'>
+     <view class='item line'>
+        <view class='number'>￥12.98</view>
+        <view class='text'>账户余额</view>
+     </view>
+     <view class='item line'>
+        <view class='number'>￥6.20</view>
+        <view class='text'>今日收益</view>
+     </view>
+     <view class='item'>
+        <view class='number'>￥19,171.21</view>
+        <view class='text'>累积收益</view>
+     </view>
+  
+  </view> 
+
+
+  <view class="menul-list">
+     <view class="menu line" bindtap="toManagePage" data-sales="ticket">
+        <view class="title f2">二维码管理</view>
+        <view class="more f2">12</view>
+        <view class="arrow"><image src="../images/icon_tools_arrow.png"></image></view>
+    </view>
+    <view class="menu line" bindtap="toManagePage" data-sales="source">
+        <view class="title f2">资源管理</view>
+        <view class="more f2">127</view>
+        <view class="arrow"><image src="../images/icon_tools_arrow.png"></image></view>
+    </view>
+    <view class="menu line" bindtap="toManagePage" data-sales="application">
+        <view class="title f2">应用管理</view>
+        <view class="more f2">35</view>
+        <view class="arrow"><image src="../images/icon_tools_arrow.png"></image></view>
+    </view>
+    <view class="menu line" bindtap="toManagePage" data-sales="message">
+        <view class="title f2">智能推送</view>
+        <view class="more f2"></view>
+        <view class="arrow"><image src="../images/icon_tools_arrow.png"></image></view>
+    </view>
+    <view class="menu line" bindtap="toManagePage" data-sales="report">
+        <view class="title f2">分析引擎</view>
+        <view class="more f2"></view>
+        <view class="arrow"><image src="../images/icon_tools_arrow.png"></image></view>
+    </view>
+    <view class="menu line" bindtap="toManagePage" data-sales="accounts">
+        <view class="title f2">帐号设置</view>
+        <view class="more f2">张编辑</view>
+        <view class="arrow"><image src="../images/icon_tools_arrow.png"></image></view>
+    </view>
+
+    <view class="menu line" bindtap="toManagePage" data-sales="about">
+        <view class="title f2">关于我们</view>
+        <view class="more f2"></view>
+        <view class="arrow"><image src="../images/icon_tools_arrow.png"></image></view>
+    </view>    
+
+        
+  </view>
+
+
+</block>
+
+<view class='bottom-view'></view>
+<view class='bottom'>
+    <view bindtap='menuSales' data-menu='evaluate' class='evaluate{{mainMenu}}'>
+      <view class='icon'>
+      </view>
+      <view class='text'>开放平台</view>
+    </view>
+    <view bindtap='menuSales' data-menu='book' class='book{{mainMenu}}'>
+      <view class='salesMenuDot'><view></view></view>
+      <view class='icon'>
+      </view>
+      <view class='text'>我的书刊</view>
+    </view>
+    <view bindtap='menuSales' data-menu='user' class='user{{mainMenu}}'>
+      <view class='icon'>
+      </view>
+      <view class='text'>我的管理</view>
+    </view>
+</view>

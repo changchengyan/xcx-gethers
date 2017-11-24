@@ -1,0 +1,124 @@
+/* write.wxss */
+@import "../template/template.wxss";
+.not_show{
+  display: none;
+}
+.main-container{
+  height: 100vh;
+}
+.words-container{
+  box-sizing: border-box;
+  height: 124rpx;
+  padding: 27rpx 25rpx 0 25rpx;
+  background-color: #00548d;
+  white-space: nowrap;
+}
+.words{
+  box-sizing: border-box;
+  display: inline-block;
+  width: 90rpx;
+  height: 90rpx;
+  margin-right: 10rpx;
+  line-height: 90rpx;
+  text-align: center;
+  font-size: 60rpx;
+  color: #fff;
+  /* border: 2rpx solid #fff; */
+}
+.cur{
+  background: url(http://image.chubanyun.net/images/writing/book/cur.png);
+  background-size: contain;
+}
+.img-container{
+  position: relative;
+  box-sizing: border-box;
+  height: 130rpx;
+  padding: 20rpx 53rpx; 
+  white-space: nowrap;
+}
+.bg{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 93rpx;
+  background: url(http://image.chubanyun.net/images/writing/book/mibg.png);
+  background-size: contain;
+   z-index: 1; 
+}
+.word-img{
+  position: relative;
+  height: 93rpx;
+  z-index: 2;
+}
+.canvas-container{
+  position: relative;
+  box-sizing: border-box;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+.canvas-bg{
+  position: absolute;
+  top: 0;
+  width: 300px;
+  height: 300px;
+}
+.canvas{
+  position: absolute;
+  top: 0;
+  width: 300px;
+  height: 300px;
+}
+.last{
+  position: fixed;
+  bottom: 42rpx;
+  left: 75rpx;
+  width: 90rpx;
+  height: 90rpx;
+  background: url(http://image.chubanyun.net/images/Writing/write/last.png);
+  background-size: contain;
+}
+.replay{
+  position: fixed;
+  bottom: 42rpx;
+  left: 50%;
+  width: 90rpx;
+  height: 90rpx;
+  transform: translate(-50%,0);
+  background: url(http://image.chubanyun.net/images/Writing/write/replay.png);
+  background-size: contain;
+}
+.next{
+  position: fixed;
+  bottom: 42rpx;
+  right: 75rpx;
+  width: 90rpx;
+  height: 90rpx;
+  background: url(http://image.chubanyun.net/images/Writing/write/next.png);
+  background-size: contain;
+}
+.play{
+  width: 50rpx;
+  height: 50rpx;
+  
+}
+.play-box{
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  top: 0rpx;
+  right: 0rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.count{
+  position: absolute;
+  left: 0;
+  bottom: -80rpx;
+  font-size: 48rpx;
+  color: #666;
+  font-weight: bold;
+}

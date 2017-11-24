@@ -1,0 +1,105 @@
+/* pages/review/reviewword/detailreview/detailreview.wxss */
+
+page {
+  background-image: url(http://image.chubanyun.net/images/Word100/review_bg.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.bg {
+  padding: 20rpx 40rpx;
+  box-sizing: border-box;
+}
+
+.english {
+  color: #fff;
+  font-size: 80rpx;
+  font-weight: bold;
+  text-align: center;
+}
+
+.yin {
+  margin-top: 30rpx;
+  text-align: center;
+  color: #fff;
+}
+
+.translate {
+  margin-top: 100rpx;
+  font-size: 36rpx;
+  color: #fff;
+  text-align: center;
+}
+
+.speak {
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  left: 50%;
+  margin-left: -30rpx;
+  bottom: 200rpx;
+}
+
+.all {
+  position: fixed;
+  width: 100%;
+  height: 95rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  left: 0;
+  bottom: 5rpx;
+  color: #666;
+  font-size: 30rpx;
+}
+
+.all .prev {
+  width: 200rpx;
+  height: 95rpx;
+  text-align: left;
+  line-height: 95rpx;
+}
+
+.all .next {
+  width: 200rpx;
+  height: 95rpx;
+  text-align: right;
+  line-height: 95rpx;
+}
+
+.prev .image {
+  float: left;
+  padding-top: 4rpx;
+}
+
+.prev .image image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.next .image {
+  float: right;
+  padding-top: 4rpx;
+}
+
+.next .image image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.progress {
+  width: 100%;
+  height: 5rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+}
+
+.pro_in {
+  background-color: #2d9fd8;
+  width: 50%;
+  height: 100%;
+}

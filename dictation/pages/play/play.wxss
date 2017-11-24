@@ -1,0 +1,260 @@
+view, text {
+  color: #000;
+  font-size: 30rpx;
+}
+view {
+  box-sizing: border-box;
+}
+
+image {
+  display: block;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+page {
+  height: 100%;
+}
+
+.play-container {
+  min-height: 100%;
+  align-items: stretch;
+}
+
+.progress {
+  width:100%;
+  border-bottom:1rpx solid rgb(237, 237, 237);
+  padding:33rpx 0 46rpx;
+  box-shadow:0 1rpx 70rpx rgb(237, 237, 237);
+  position:fixed;
+  background:url(http://rayscloud.chubanyun.net/Content/images/Dictation/play/progress_bg.png) no-repeat center;
+
+}
+
+.progress .line {
+  width: 490rpx;
+  height: 42rpx;
+  /* background-color: rgb(238, 238, 238); */
+  border-radius: 5rpx;
+  margin-top: 24rpx;
+  position: relative;
+  background:url(http://rayscloud.chubanyun.net/Content/images/Dictation/play/progress_line.png) no-repeat center;
+  background-size: 100% 42rpx;
+}
+
+.progress .line .done {
+  background-color: rgb(60, 61, 61);
+  position: absolute;
+  left: 12rpx;
+  height: 100%;
+  transition: width 1.5s;
+   background:url(http://rayscloud.chubanyun.net/Content/images/Dictation/play/progress_pass.png) no-repeat left center;
+  background-size: 100% 30rpx;
+  max-width: 470rpx;
+}
+
+.progress .line .dot {
+  border: 7rpx solid rgb(60, 61, 61);
+  height: 24rpx;
+  width: 24rpx;
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  margin-top: -12rpx;
+  margin-left: -12rpx;
+  left: 0;
+  /* background-color: #fff; */
+  
+  transition: all 1.5s;
+}
+
+.info {
+  flex-grow:1;
+  align-items:stretch;
+  height:100%;
+  padding:200rpx 0 400rpx;
+  overflow:auto;
+  background:url(http://rayscloud.chubanyun.net/Content/images/Dictation/play/bg.png) no-repeat 35% 50%;
+
+
+}
+
+.info .container {
+  flex-grow:1;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  width:100%;
+  padding:0 20rpx;
+
+
+}
+.info .container .current-word {
+  font-size: 60rpx;
+  font-weight: bold;
+  width:100%;
+  height:100%;
+  color: #fff;
+}
+.info .container .current-time {
+  display: inline-block;
+  position: relative;
+  
+}
+.info .container .current-time .time-label {
+  font-size: 24rpx;
+  color: rgb(102, 102, 102);
+}
+.info .container .current-time text:first-child {
+  font-size: 24rpx;
+  margin-bottom: 10rpx;
+  position: absolute;
+  transform: translate(-100%, -100%);
+  color: #fff;
+}
+.info .container .current-time text:last-child {
+  font-size: 60rpx;
+  color: #fff;
+}
+ .setting-bar {
+  display:flex;
+  justify-content:space-around;
+  align-items:flex-end;
+  width:100%;
+  position:fixed;
+  bottom:225rpx;
+  background:transparent;
+  padding: 10rpx 0;
+
+}
+
+ .setting-bar view {
+  flex-grow: 1;
+  text-align: center;
+}
+
+ .setting-bar view .icon {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: block;
+  margin: 0 auto 15rpx;
+}
+ .setting-bar view.gap .icon {
+  font-weight: bold;
+  color: rgb(15, 15, 15);
+  font-size: 47rpx;
+}
+ .setting-bar view text {
+  color: rgb(65, 65, 65);
+}
+.controller {
+ 
+  height:198rpx;
+  /* background:linear-gradient(to right, rgb(65, 64, 65), rgb(13, 10, 10)); */
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:fixed;
+  left:0;
+  bottom:0;
+  width:100%;
+  background:url(http://rayscloud.chubanyun.net/Content/images/Dictation/play/button_bg.png) no-repeat center -110rpx;
+
+
+
+}
+
+.controller .side {
+  width: 180rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.controller .play {
+  width: 87rpx;
+  height: 88rpx;
+  margin: 0 90rpx;
+}
+
+.controller .prev, .controller .next {
+  height: 53rpx;
+  width: 44rpx;
+}
+
+/*toast*/
+
+.toast {
+  position: absolute;
+  top: 313rpx;
+  width: 450rpx;
+  min-height: 190rpx;
+  border-radius: 20rpx;
+  background-color: rgb(25, 25, 25);
+  text-align: center;
+  padding: 62rpx 55rpx 0;
+  left: 50%;
+  margin-left: -225rpx;
+  color: #fff;
+}
+.toast text {
+  color: #fff;
+}
+.history-start {
+  position: fixed;
+  top: 144rpx;
+  width: 100%;
+  height: 120rpx;
+  
+}
+/*根据星星的数量来显示星星*/
+.unit-star-3,.unit-star-2,.unit-star-1,.unit-star-0{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10rpx 10rpx 0 10rpx;
+  flex-grow: 0;
+}
+.unit-star-3 view{
+  width: 38rpx;
+  height: 38rpx;
+  background: url(http://rayscloud.chubanyun.net/Content/images/Dictation/book/star_light.png);
+  background-size: cover;
+}
+.unit-star-2 view:nth-child(1),.unit-star-2 view:nth-child(2){
+  width: 38rpx;
+  height: 38rpx;
+  background: url(http://rayscloud.chubanyun.net/Content/images/Dictation/book/star_light.png);
+  background-size: cover;
+}
+.unit-star-2 view:nth-child(3){
+  width: 38rpx;
+  height: 38rpx;
+  background: url(http://rayscloud.chubanyun.net/Content/images/Dictation/book/star.png);
+  background-size: cover;
+}
+.unit-star-1 view:nth-child(1){
+  width: 38rpx;
+  height: 38rpx;
+  background: url(http://rayscloud.chubanyun.net/Content/images/Dictation/book/star_light.png);
+  background-size: cover;
+}
+.unit-star-1 view:nth-child(2),.unit-star-1 view:nth-child(3){
+  width: 38rpx;
+  height: 38rpx;
+  background: url(http://rayscloud.chubanyun.net/Content/images/Dictation/book/star.png);
+  background-size: cover;
+}
+.unit-star-0 view{
+  width: 38rpx;
+  height: 38rpx;
+  background: url(http://rayscloud.chubanyun.net/Content/images/Dictation/book/star.png);
+  background-size: cover;
+}

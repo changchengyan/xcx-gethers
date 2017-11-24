@@ -1,0 +1,66 @@
+<!--top-->
+<view class="top">
+  <view class="bg-wrap">
+    <image src='../images/mi-bg-w.png' class='bg-mi'></image>
+    <text class="bg-txt">{{zi}}</text>
+  </view>
+  <view class="desc-wrap">
+    <view class="sound">
+      <text>[ {{pinyin}} ]</text>
+      <!-- <image src="../images/speaker.png" class="speaker" bindtap="gotoPlay"></image> -->
+    </view>
+    <view class="desc">部首：{{bushou}}</view>
+    <view class="desc">笔画：{{bihua}}</view>
+    <view class="desc">五笔：{{wubi}}</view>
+    <view class="desc"></view>
+  </view>
+</view>
+<!--mid-->
+<view class='mid'>
+  <view class="list-title" bindtap="listToggle">
+    <view>
+      <text>基本释义</text>
+    </view>
+    <view>
+      <image src="../images/toggle-icon.png" class="toggle-icon"></image>
+    </view>
+  </view>
+  <scroll-view scroll-y style="height:{{scrollHeight[0]}}px;background-color: #fff">
+    <view class="mid-pinyin">{{pinyin}}</view>
+    <block wx:for="{{meanings}}" wx:key="{{index}}">
+      <view class="explain">
+        <text class="explain-hd" wx:if="{{item === zi}}">{{item}}</text>
+        <text class="explain-detail" wx:else>{{item}}</text>
+      </view>
+    </block>
+  </scroll-view>
+  <view class="words-title" bindtap="wordsToggle">
+    <view>
+      <text>组词</text>
+    </view>
+    <view>
+      <image src="../images/toggle-icon.png" class="toggle-icon"></image>
+    </view>
+  </view>
+  <scroll-view scroll-y style="height:{{scrollHeight[1]}}px;background-color: #fff">
+    <!-- <view class="mid-pinyin">{{pinyin}}</view> -->
+    <block wx:for="{{phrase}}" wx:key="{{index}}">
+      <view class="explain">
+        <text class="explain-hd" wx:if="{{item[0] === zi && item.length < 5}}">{{item}}</text>
+        <text class="explain-detail" wx:else>{{item}}</text>
+      </view>
+    </block>
+  </scroll-view>
+</view>
+<!--bt-->
+<view class='bt'>
+  <view class="culture" bindtap="toMiniProgram" data-source="cultrue">
+    <image src='../images/cultrue.png'></image>
+    <text>汉字文化</text>
+  </view>
+  <view class="span"></view>
+  <view class="bishun" bindtap="toMiniProgram" data-source="bishun">
+    <image src='../images/write.png'></image>
+    <text>书写演示</text>
+  </view>
+</view>

@@ -1,0 +1,267 @@
+<!--pages/word/default/default.wxml-->
+<block wx:if="{{mask}}">
+  <view class='mask' catchtap='setMarsk' data-value='false'>
+    <view class='win'>
+      <view class='head'></view>
+      <view class='info'>
+        <view class='desc'>加入学习圈成为会员，向老师提问，查看详细解答，获得更多配套学习应用知识！</view>
+        <view class='money'>￥3
+          <text>.00</text>
+        </view>
+        <view class='button' bindtap='toWord'>确定加入</view>
+        <view class='more'>微信安全支付</view>
+      </view>
+    </view>
+  </view>
+</block>
+
+<view class='word-view-one'>
+  <view class='word-name'>
+    快乐5+2 小学英语 课课优优
+  </view>
+  <view class='word-desc'>
+    <text>寓教于乐 动感题练 形成英语素养 十年如一日研究教学研发教辅
+    </text>
+  </view>
+
+</view>
+<view class='word-view-two'>
+  <view class='two-area'>
+    <view class='head-img'>
+      <view class='teach-list'>
+        <view class='teach-item' wx:for="{{tearcherList}}" bindtap='chooseTeacher' data-index="{{index}}">
+          <image src='{{item.img}}'></image>
+          <view class='teacher-name'>{{item.name}}</view>
+          <view class="teacher-desc-triangle" wx:if="{{nowCurrent==index}}"></view>
+        </view>
+
+      </view>
+      <swiper class="teacher-desc-swiper" bindchange="changeCurrent" current='{{teacherCurrent}}' bindtap='toSource' autoplay="false">
+        <!--1  -->
+        <swiper-item>
+          <view class="teacher-desc-box">
+            <view class='teacher-desc'>
+              "中学数学特级教师，国家级骨干教师。一直担任高三数学教学任务，所教的学生有数人进入北大和清华。曾经押中广东和湖北高考数学试题，2016年所拍摄的课程成功押中16年全国高考数学乙卷压轴题（极值点偏移问题）
+            </view>
+          </view>
+
+        </swiper-item>
+        <!--2  -->
+        <swiper-item>
+          <view class="teacher-desc-box">
+            <view class='teacher-desc'>
+
+              <text>“</text>中学数学特级教师，国家级骨干教师。一直担任高三数学教学任务，所教的学生有数人进入北大和清华。曾经押中广东和湖北高考数学试题，2016年所拍摄的课程成功押中16年全国高考数学乙卷压轴题（极值点偏移问题）
+              <text>”</text>
+
+            </view>
+            <view class="teacher-desc-img">
+              <image src="http://f3.5rs.me/upload/20170918/2017_09_18_145122986.png" mode="widthFix"></image>
+              <image src="http://f3.5rs.me/upload/20170918/2017_09_18_145122986.png" mode="widthFix"></image>
+            </view>
+          </view>
+
+        </swiper-item>
+        <!--3  -->
+        <swiper-item>
+          <view class="teacher-desc-box">
+            <view class="sound-title">
+              语音动态
+            </view>
+            <view class="teacher-sound-img">
+              <image src='/pages/images/word-song.png' class="sound-bg" mode="widthFix"></image>
+              <text class="sound-time">42S'</text>
+            </view>
+            <view class='teacher-desc'>
+              中学数学特级教师，国家级骨干教师。一直担任高三数学教学任务，所教的学生有数人进入北大和清华。曾经押中广东和湖北高考数学试题，2016年所拍摄的课程成功押中16年全国高考数学乙卷压轴题（极值点偏移问题）
+            </view>
+
+          </view>
+
+        </swiper-item>
+        <!--4  -->
+        <swiper-item>
+          <view class="teacher-desc-box">
+            <view class='teacher-box-img'>
+              <image src='http://f3.5rs.me/upload/20170918/2017_09_18_145217781.png' mode="widthFix"></image>
+            </view>
+
+          </view>
+
+        </swiper-item>
+      </swiper>
+      <view class="teacher-desc-tip">
+        <image src="/pages/images/word-exclamation.png " mode='widthFix'></image>加入学习圈,了解老师更多动态</view>
+
+
+    </view>
+    <view class='head-img-view'></view>
+
+
+
+    <view class='report-info'>
+      <view class='item'>
+        <view class='icon'>
+          <image src='../../images/word-icon-03.png'></image>
+        </view>
+        <view class='number'>437
+          <text>条</text>
+        </view>
+        <view class='name'>老师回复</view>
+      </view>
+      <view class='item'>
+        <view class='icon'>
+          <image src='../../images/word-icon-02.png'></image>
+        </view>
+        <view class='number'>5.6
+          <text>万</text>
+        </view>
+        <view class='name'>学员评价</view>
+      </view>
+      <view class='item'>
+        <view class='icon'>
+          <image src='../../images/word-icon-01.png'></image>
+        </view>
+        <view class='number'>57
+          <text>套</text>
+        </view>
+        <view class='name'>知识应用</view>
+      </view>
+
+    </view>
+
+    <view class='publish-name'>（O）延边教育出版社</view>
+
+    <view class='hot-info'>
+      <view class='title'>
+        <image src='/pages/images/word-hot-icon.png' mode='widthFix'></image> 学习热门发表
+        <image src='/pages/images/word-hot-icon.png' mode='widthFix'></image>
+      </view>
+      <view class='list'>
+        <!--左边  -->
+        <!-- <view class="between-item left-item" wx:if="{{userBlogList[hotCurrent-1]}}">
+          <view class='item'>
+         
+            <view class='user'>
+              <view class='pic'>
+                <image src='http://wx.qlogo.cn/mmopen/Q3auHgzwzM4k1o6eRgzzAfQWkzQa7UCrVrucCtAsyLe4Unj8aiaYiagP75SeMdfickJPkC9sn2SAibrsqxbW8YWsQQ/132'></image>
+              </view>
+              <view class='nickname'>回归自然</view>
+            </view>
+            <view class="text">
+              <view class="time">山西.晋中 2017-09-12 18:03:02</view>
+              {{userBlogList[hotCurrent-1].text}}
+            </view>
+          </view>
+        </view> -->
+        <!--左边结束  -->
+        <!--中间  -->
+        <swiper class='user-blog-swiper' indicator-dots="{{indicatorDots}}" interval="5000" duration="800" bindchange="hotCurrent" autoplay="{{false}}" >
+          <block >
+            <swiper-item wx:for="{{userBlogList}}" style="{{swiperItemStyle[index]}}" class="">
+              <view class='item'>
+               <view class="item-answer-icon"><image src="http://f3.5rs.me/upload/20170918/2017_09_18_145250591.png" mode='widthFix'></image></view>
+                <view class='user'>
+                  <view class='pic'>
+                    <image src='{{item.userimg}}'></image>
+                  </view>
+                  <view class='nickname'>{{item.username}}</view>
+                </view>
+                <view class="text">
+                  <view class="time">山西.晋中 2017-09-12 18:03:02</view>
+                  <view class="word">{{item.text}}</view>
+                </view>
+                <view class="icon-list" wx:if="{{item.curtype==1}}">
+                  <view class="icon-item">
+                    <image src="/pages/images/word-see.png" mode='widthFix'></image>
+                    <text>1249</text>
+                  </view>
+                  <view class="icon-item">
+                    <image src="/pages/images/word-talk.png" mode='widthFix'></image>
+                    <text>437</text>
+                  </view>
+                  <view class="icon-item">
+                    <image src="/pages/images/word-good.png" mode='widthFix'></image>
+                    <text>853</text>
+                  </view>
+                </view>
+                 <view class="icon-list" wx:if="{{item.curtype==2}}">
+                 
+                </view>
+                <view class="curtype3" wx:if="{{item.curtype==3}}">
+                 #学习小助手# 点击获取
+                </view>
+              </view>
+            </swiper-item>
+          </block>
+        </swiper>
+        <!--中间结束  -->
+        
+      </view>
+      <view class="user-blog-dots">
+        <view class="user-blog-dot {{hotCurrent==index?'user-blog-dot-over':''}}" wx:for="{{userBlogList}}"></view>
+      </view>
+    </view>
+
+
+    <view class='new-user'>
+      <view class='title'><image src='/pages/images/word-happy-icon.png' mode='widthFix'></image>欢迎新会员<image src='/pages/images/word-happy-icon.png' mode='widthFix'></image></view>
+      <view class='list'>
+        <view class='item'>
+          <view class='pic'>
+            <image src='http://wx.qlogo.cn/mmopen/0g8XrBTmkzwaFA5uIOn1Kiby0uww38BQuuialicGStfKrib9hhtryHMT3VvickvyTzWre8ialnS5xVia1dbbqIWTL8G0fB1GZNiceTria/132'></image>
+          </view>
+          <view class='text'>张晓兰</view>
+          <view class='time'>1分钟前</view>
+        </view>
+
+        <view class='item'>
+          <view class='pic'>
+            <image src='http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLXhhK1wJeI1HUSHXOZRzu9pMQZYr0OlGvxnQxTjyDjYCUqYhFzN7a9vLfoIP7jVcE0mQGxQ9BDYQ/132'></image>
+          </view>
+          <view class='text'>海豚🐬</view>
+          <view class='time'>15分钟前</view>
+        </view>
+
+        <view class='item'>
+          <view class='pic'>
+            <image src='http://wx.qlogo.cn/mmopen/riaV4wQmXVVPOcqdHib8s7R9b7VAjLxw9kkHLCcFzc5HsszGrDNZZMkN5ZQvrDnUxWeI1ssZ3iaL3Pz2W4Sr8yKbjSrahfDcwP2/132'></image>
+          </view>
+          <view class='text'>粉色的天空</view>
+          <view class='time'>19分钟前</view>
+        </view>
+
+        <view class='item'>
+          <view class='pic'>
+            <image src='http://wx.qlogo.cn/mmopen/PiajxSqBRaEIp0H4cB5pW0Db5xEZu1CEXXnE5p9Tbk355sOonxLwnxjKiaH2y2Cej4QFAHF5OMJIUyzoV8SvZ4Gg/132'></image>
+          </view>
+          <view class='text'>DarlingYing</view>
+          <view class='time'>1小时前</view>
+        </view>
+
+        <view class='item'>
+          <view class='pic'>
+            <image src='http://wx.qlogo.cn/mmopen/bj9JGugn6UdnFaA731N4nxNg6FQJMKD9lGziaOialLQFzTWg6Gn80bZS48cEe8YU5Hy80VWuvleA8IBEX7NzK8zCHd1wlH6Zib6/132'></image>
+          </view>
+          <view class='text'>鲁cici</view>
+          <view class='time'>2小时前</view>
+        </view>
+
+      </view>
+    </view>
+
+
+    <view class='invite'>使用邀请码加入学习圈</view>
+
+  </view>
+  <view class='goto-view'></view>
+</view>
+
+
+
+<view class='goto'>
+  <view class='text' bindtap='setMarsk' data-value='true'>
+    加入学习圈
+  </view>
+  <view class='more'>立即与名师交流辅导孩子功课</view>
+</view>

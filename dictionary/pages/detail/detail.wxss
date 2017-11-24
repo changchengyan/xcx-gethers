@@ -1,0 +1,137 @@
+/* pages/detail/detail.wxss */
+page{
+  position: relative;
+  height: 100%;
+  background-color: #eee;
+  box-sizing: border-box;
+}
+
+.top{
+  position: relative;
+  background: #2b9cfb;
+  padding: 40rpx 30rpx 40rpx;
+  height: 280rpx;
+  color: #fff;
+  box-sizing: border-box;
+}
+.bg-wrap{
+    position: relative;
+    width: 200rpx;
+    height: 200rpx;
+}
+.bg-mi{
+    position: absolute;
+    width: 200rpx;
+    height: 200rpx;
+}
+
+.bg-txt{
+    position: absolute;
+    width: 200rpx;
+    height: 200rpx;
+    line-height: 200rpx;
+    text-align: center;
+   
+    font-size: 130rpx;
+}
+
+.desc-wrap{
+  position: absolute;
+  top:0;
+  margin: 30rpx 0 30rpx 200rpx;
+  font-size: 12px;
+  padding: 10rpx 30rpx;
+}
+.sound{
+  margin: 20rpx 0;
+}
+.sound text{
+  font-size: 13px;
+}
+.speaker{
+  width: 26rpx;
+  height: 24rpx;
+  padding: 0 10rpx;
+}
+.desc{
+  display: inline-block;
+  padding: 10rpx 0;
+  margin-right: 50rpx;
+  width: 180rpx;
+}
+
+.mid{
+    margin: 20rpx 0;
+}
+
+.list-title,.words-title{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin-top: 20rpx;
+  font-size: 13px;
+  color: #666;
+  padding: 32rpx 40rpx;
+  border-bottom: 2rpx solid #eee;
+  background-color: #fff;
+}
+.toggle-icon{
+  width: 24rpx;
+  height: 14rpx;
+}
+.mid-pinyin{
+  font-size: 18px;
+  color: red;
+  padding: 20rpx 40rpx;
+}
+.explain{
+  font-size: 14px;
+  padding: 0 40rpx;
+  font-weight: bold;
+}
+.explain-detail{
+  display: block;
+  font-size: 13px;
+  font-weight: normal;
+  color: #666;
+  line-height: 16px;
+  margin: 25rpx 0 20rpx;
+}
+
+.bt{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 16rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.culture,.bishun,.span{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #666;
+}
+
+.span{
+  position: absolute;
+  left: 50%;
+
+  width: 2rpx;
+  height: 60rpx;
+  background-color: #f0f0f0;
+
+}
+
+.culture image,.bishun image{
+  width: 100rpx; 
+  height: 100rpx;
+  margin-right: 20rpx;
+}

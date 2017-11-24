@@ -1,0 +1,90 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/codebook/codebook",
+    "pages/codebook/voice/search/search",
+    "pages/word/word",
+    "pages/book/book",
+    "pages/word/default/default",
+    "pages/word/write/write",
+    "pages/word/write/topic/topic",
+    "pages/word/write/map/map",
+    "pages/word/source/source",
+    "pages/word/more/more",
+    "pages/word/topic/topic",
+    "pages/word/book/book",
+    "pages/word/notice/notice",
+    "pages/word/notice/display/display",
+    "pages/word/share/share",
+    "pages/word/nickname/nickname",
+    "pages/word/member/member",
+    "pages/word/paymodel/paymodel",
+    "pages/word/message/message",
+    "pages/word/favorites/favorites",
+    "pages/special/special",
+    "pages/special-2/special-2",
+    "pages/answer/answer",
+    "pages/follow/sound/sound",
+    "pages/chinese/uncle/uncle",    
+    "pages/chinese/uncle/search/search",
+    "pages/chinese/uncle/create/create",
+    "pages/evaluate/evaluate",
+    "pages/evaluate/display/display",
+    "pages/evaluate/book/book",
+    "pages/evaluate/search/search",
+
+
+    "pages/live/live",
+    "pages/live/play/play",
+
+    "pages/discover/discover",
+    "pages/discover/book/book",
+    "pages/discover/book/ticket/ticket",
+    "pages/discover/demo/demo",
+    "pages/discover/manage/ticket/ticket",
+    "pages/discover/manage/source/source",
+    "pages/discover/manage/application/application",
+    "pages/discover/manage/application/search/search",
+    "pages/discover/manage/application/info/info",
+    "pages/discover/manage/application/selecttype/selecttype",
+    "pages/discover/manage/message/message",
+    "pages/discover/manage/report/report",
+    "pages/discover/manage/accounts/accounts",
+    "pages/discover/about/about",
+
+    "pages/english/words",
+
+
+
+
+    "pages/component/component", 
+    "pages/component/word/word",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#333",
+    "navigationBarTitleText": "UED-设计模版",
+    "navigationBarTextStyle":"light"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "color": "#777",
+    "selectedColor": "#06c1ae",
+    "backgroundColor": "#f5f5f5",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "产品"
+      },
+      {
+        "pagePath": "pages/component/component",
+        "text": "组件"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "管理"
+      }
+    ]
+  }
+}

@@ -1,0 +1,375 @@
+/* detail.wxss */
+
+.bg {
+  background-color: #fff;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  padding: 0px 0px 0px 0px;
+}
+
+.image-mask {  
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 480rpx;
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)); /* Firefox 3.6 - 15 */
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)); /* 标准的语法 */
+}
+
+.image {
+  height: 480rpx;
+  width: 100%;
+}
+.flex{
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  height: 480rpx;
+  width: 100%;
+  flex-direction:column;
+}
+.flex-null{
+  flex-grow:1;
+  width: 100%;  
+  display: flex;
+}
+.option {
+  flex-grow:0;
+  display: flex;
+}
+
+.en-text {
+  margin: 0 20rpx 0 30rpx;
+  line-height: 60rpx;
+  color: #fff;
+}
+
+.record {
+  width: 100%;
+  position: fixed;
+  bottom: 40rpx;
+}
+
+.record-box {
+  width: 120rpx;
+  height: 120rpx;
+  margin: 0 auto;
+  border-radius: 60rpx;
+  background-color: #fff;
+  text-align: center;
+  box-shadow:0 0 5rpx 3rpx #eee;
+}
+
+.record-icon {
+  width: 80rpx;
+  height: 80rpx;
+  margin-top: 20rpx;
+}
+
+.content {
+  margin-top: 20rpx;
+}
+
+.cn-text {
+  font-size: 32rpx;
+  color: #070707;
+  line-height: 64rpx;
+  margin: 0 25rpx 0 40rpx;
+}
+
+.source-text {
+  font-size: 28rpx;
+  color: #777;
+  line-height: 56rpx;
+  margin:0 40rpx;
+}
+
+.record-complete {
+  width: 100%;
+  height: 100rpx;
+  position: absolute;
+  bottom: 0;
+}
+
+.record-complete-show {  
+  -webkit-animation: record-complete-show 1s ease-out 1;
+  -moz-animation: record-complete-show 1s ease-out 1;
+  animation: record-complete-show 1s ease-out 1;
+  box-shadow: 0 -10rpx 15rpx #f8f8f8;
+}
+@-webkit-keyframes record-complete-show {
+  0% {
+    bottom: -100rpx;
+  }
+
+  100% {
+    bottom: 0;
+  }
+}
+@keyframes record-complete-show {
+  0% {
+    bottom: -100rpx;
+  }
+
+  100% {
+    bottom: 0;
+  }
+}
+
+.record-complete-text {
+  width: 50%;
+  height: 100%;
+  float: left;
+  background-color: #fff;
+  text-align: center;
+  line-height: 100rpx;
+  color: #777;
+  font-size: 28rpx;
+}
+
+.record-complete .color {
+  color: #4ec98b;
+}
+
+.record-complete .line {
+  position: relative;
+}
+
+.record-complete .line .score {
+  width: 120rpx;  
+  height: 120rpx;
+  position: absolute;
+  border: 1px solid #ddd;
+  border-radius: 100%;
+  top:-60rpx;
+  left: 50%;
+  margin-left: -60rpx;
+  background-color: #fff;
+  color: #4ec98b;
+  line-height: 90rpx;
+  text-align: center;
+  font-size: 52rpx;  
+}
+.record-complete .line .score text{
+  position: absolute;
+  top: 50rpx;
+  left: 50%;  
+  margin-left: -9rpx;  
+  color: #777;
+  font-size: 24rpx;  
+}
+
+.record-play {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60rpx;
+  background-color: #fff;
+  text-align: center;
+  position: absolute;
+  top: -60rpx;
+  left: 50%;
+  margin-left: -60rpx;
+  box-shadow:0 0 5rpx 3rpx #eee;
+}
+
+.record-play .image {
+  width: 80rpx;
+  height: 80rpx;
+  margin-top: 20rpx;
+}
+
+.record-time {
+  position: absolute;
+  top: -60rpx;
+  width: 120rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  background-color: #f8f8f8;
+  border-radius: 20rpx;
+  color: #777;
+  font-size: 24rpx;
+}
+.record-tip{
+  position: absolute;
+  top: -60rpx;
+  height: 40rpx;
+  width: 250rpx;
+  padding: 0 50rpx 0 20rpx;
+  border-radius: 20rpx;
+  margin-left: -90rpx;
+  line-height: 40rpx;
+  text-align: left;
+  background-color: #4ec98b;
+  color: #fff;
+  font-size: 24rpx;
+}
+.record-tip image{
+  position: absolute;
+  top:5rpx;
+  right: 10rpx;
+  width: 30rpx;
+  height: 30rpx;
+  
+  border-radius: 100%;
+}
+.record-tip .rect{
+  width: 0;
+  height: 0;
+  border-right: 8rpx solid transparent;
+  border-left: 8rpx solid transparent;
+  border-top: 16rpx solid #4ec98b;
+  position: absolute;
+  top:38rpx;
+  left: 50%;
+  margin-left: -16rpx;
+}
+.breath-dot {
+  animation: breath 500ms ease-out infinite alternate;
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 8rpx;
+  background-color: red;
+  margin-top: 16rpx;
+  margin-left: 10rpx;
+  position: absolute;
+}
+
+@keyframes breath {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+.home-icon{
+  position: absolute;
+  top:20rpx;
+  left: 30rpx;
+  color: #dddddd;
+  font-size: 24rpx;
+}
+.home-icon image{
+  width:24rpx;
+  height: 24rpx;
+}
+.poster-button{
+  position: absolute;
+  top:30rpx;
+  right: 30rpx;
+  font-size: 24rpx;
+  line-height: 40rpx;
+  padding: 0 20rpx;
+  border-radius: 20rpx;
+  background-color: #4ec98b;
+  color: #fff;  
+}
+.showPoster{
+  position: absolute;
+  top: 0;
+  left: 0;  
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+}
+.showPoster .mask{
+  position: absolute;
+  top: 0;
+  left: 0;  
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.showPoster .close{
+  position: absolute;
+  top: 80rpx;
+ left: 50%;
+ margin-left: -32rpx;
+  padding: 0;
+  width: 64rpx;
+  height: 64rpx;
+  z-index: 10;  
+}
+.showPoster .poster{
+  position: absolute;
+  top: 180rpx;
+  left: 50%;    
+  width: 514rpx;
+  height: 735rpx;
+  margin-left: -257rpx;  
+  z-index: 10;  
+}
+.showPoster .pk-button{
+  position: absolute;
+  top: 1000rpx;
+  left: 125rpx;
+  z-index: 10;
+  width: 500rpx;
+  height: 80rpx;
+  background: linear-gradient(to right, #96E550, #26C294);
+  font-size: 32rpx;  
+  color: #fff;
+  text-align: center;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+}
+.audio{
+  width: 100%;
+  height: 120rpx;
+  background-color: #f8f8f8;  
+}
+.audio image{
+  width: 64rpx;
+  height: 64rpx;
+}
+.audio .pre{
+  width: 225rpx;
+  height: 120rpx;  
+  padding-top: 35rpx;
+  float: left;
+  text-align: right;
+}
+.audio .pre image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.audio .play{
+  width: 300rpx;
+  height: 120rpx;  
+  padding-top: 20rpx;
+  float: left;
+  text-align: center;
+}
+.audio .play image{
+  width: 80rpx;
+  height: 80rpx;
+}
+.audio .next{
+  width: 225rpx;
+  height: 120rpx;
+  padding-top: 35rpx;
+  float: left;
+  text-align: left;
+}
+.audio .next image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.audio .unclick{
+  opacity: 0.5;
+}

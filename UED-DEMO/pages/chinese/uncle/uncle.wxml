@@ -1,0 +1,64 @@
+<!--pages/chinese/uncle/uncle.wxml-->
+<view class="input-text"  bindtap="toSearch" >
+    <view class='title'>汉 字 查 询</view>
+    <view class='input'>输入您要查询的汉字</view>
+    <view class='more'>
+      <view>拼音</view>
+      <view>部首</view>
+      <view>笔画</view>
+    </view> 
+</view>
+<view class='app-title'>学习助手</view>
+<view class='app-desc'>小学生同步学习，陪伴孩子一起成长！</view>
+<view class="app-canvas">    
+    <view class="app">
+          <view class="icon" bindtap="toMiniProgram" data-source="dictation"><image src="http://f3.5rs.me/upload/20170902/2017_09_02_134652461.png"></image></view>
+          <view class="text">听写</view>
+    </view>
+    <view class="app">
+          <view class="icon" bindtap="toMiniProgram" data-source="bishun"><image src="http://f3.5rs.me/upload/20170902/2017_09_02_134652461.png"></image></view>
+          <view class="text">笔顺</view>
+    </view>
+    <view class="app">
+          <view class="icon" bindtap="toMiniProgram" data-source="codebook"><image src="http://f3.5rs.me/upload/20170902/2017_09_02_134652461.png"></image></view>
+          <view class="text">阅读</view>
+    </view>
+    <view class="app">
+          <view class="icon" bindtap="toMiniProgram" data-source="langsong"><image src="http://f3.5rs.me/upload/20170902/2017_09_02_134652461.png"></image></view>
+          <view class="text">朗诵</view>
+    </view>
+
+</view>
+
+<view class='evaluates-title'>口语评测</view>
+<view class='evaluates-desc'>原声跟读，智能打分，科学评测！</view>
+<view class="evaluates-canvas">
+    <view class="content"  bindtap="toMiniProgram" data-source="kouyu">
+        <text class="cn">纤云弄巧，飞星传恨，银汉迢迢暗度。
+        金风玉露一相逢，便胜却人间无数。 
+      </text> 
+        <view class="en">To talk through one's hat</view>
+    </view>
+</view>
+
+
+
+
+<view class='bottom-view'></view>
+<view class='bottom'>
+    <view bindtap='menuSales' data-menu='evaluate' class='evaluate{{mainMenu}}'>
+      <view class='icon'>
+      </view>
+      <view class='text'>学习</view>
+    </view>
+    <view bindtap='menuSales' data-menu='book' class='book{{mainMenu}}'>
+      <view class='icon'>
+      </view>
+      <view class='text'>活动</view>
+    </view>
+    <view bindtap='menuSales' data-menu='user' class='user{{mainMenu}}'>
+      <view class='icon'>
+      </view>
+      <view class='text'>我的</view>
+    </view>
+</view>

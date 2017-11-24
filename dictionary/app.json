@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/detail/detail",
+    "pages/pinyin/pinyin",
+    "pages/pinyin/tune/tune",
+    "pages/bushou/bushou",
+    "pages/bushou/bihua/bihua",
+    "pages/yuyin/yuyin",
+    "pages/advertisement/advertisement"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#2b9cfb",
+    "navigationBarTitleText": "汉语小字典",
+    "navigationBarTextStyle": "white"
+  }
+}

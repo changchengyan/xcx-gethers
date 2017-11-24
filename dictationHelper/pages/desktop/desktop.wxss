@@ -1,0 +1,565 @@
+/* pages/desktop/desktop.wxss */
+@import "../template/template.wxss";
+
+/*index页样式  */
+
+/* .index_container {
+  display: flex;
+  flex-flow: column nowrap;
+  z-index: 50;
+}
+
+.not_show {
+  display: none;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 175rpx;
+}
+
+.userinfo-avatar {
+  width: 158rpx;
+  height: 158rpx;
+  margin-top: 40rpx;
+  border-radius: 50%;
+  box-shadow: 0 0 24rpx 6rpx rgba(0, 0, 0, 0.2);
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.intro {
+  margin-top: 87rpx;
+}
+
+.margintop_284 {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin-top: 284rpx;
+}
+
+.now_personNum {
+  margin-top: 52rpx;
+  align-self: center;
+} */
+
+/*书桌样式  */
+
+page {
+  /* background: url(http://image.chubanyun.net/images/Dictation/word/bg.png); *//*background: url(http://imglf0.nosdn.127.net/img/TkRpUWhnbGQwcUpUa2JzYWZITVhXbXEyeU9DbXdQeDJna1dUVlJ5dlY5ZUN4eVdBYTFIRVZBPT0.png?imageView&thumbnail=1680x0&quality=96&stripmeta=0&type=jpg) no-repeat;*//* background-color: #217a7e; */
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1), rgba(250, 250, 250, 1));
+  background-attachment: fixed;
+}
+
+.container {
+  display: block;
+}
+
+view {
+  box-sizing: border-box;
+}
+
+.page-list {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.flex-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-body .book-scan {
+  position: relative;
+  font-size: 12pt;
+  padding: 140px 0px 20px 0px;
+  color: #777;
+  text-align: center;
+}
+
+.flex-body .book-scan .text-view {
+  padding: 15px 0px 10px 0px;
+  color: #999;
+  font-size: 12px;
+}
+
+.flex-body .scan-icon {
+  width: 80px;
+  height: 70px;
+}
+
+.flex-body .info-view {
+  text-align: center;
+}
+
+.flex-body .scan-info {
+  width: 197px;
+  height: 210px;
+}
+
+.user-count-info {
+  padding: 40rpx 0 40rpx 0;
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+}
+
+.flex-body .book-desk {
+  background-color: #d9bef7;
+  font-size: 12pt;
+  padding: 30% 0px 30% 0px;
+  color: #777;
+  text-align: center;
+}
+
+.book-add-area {
+  /*background: -webkit-linear-gradient(top, rgba(6, 193, 174, 1),rgba(6, 193, 174, 1));*/
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30rpx;
+  width: 100%;
+  height: 162rpx;
+  background-color: #06c1ae;
+  z-index: 2;
+}
+
+.book-add-area .book-count {
+  color: #fff;
+}
+
+.f-book-count, .book-add-area .book-scan {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 162rpx;
+  padding: 30rpx 0 30rpx 0;
+}
+
+.f-book-count image {
+  width: 43rpx;
+  height: 53rpx;
+}
+
+.book-scan image {
+  width: 58rpx;
+  height: 58rpx;
+}
+
+/*.book-count .text{
+  font-size: 14px;
+  line-height: 18px;
+}*/
+
+.book-add-area .book-scan .text {
+  padding: 3px 0px 0px 0px;
+  font-size: 12px;
+  color: #777;
+  line-height: 12px;
+}
+
+.book-add-area-visibility {
+  height: 162rpx;
+  text-align: center;
+  padding: 20pt 0pt 0pt 0pt;
+  color: #999;
+}
+
+/* 添加书籍的方式 */
+
+/* .add_book_way {
+  position: absolute;
+  right: 0;
+  color: #eee;
+  background-color: #74b7d7;
+}
+
+.add_book_way view {
+  width: 300rpx;
+  height: 80rpx;
+  font-size: 16px;
+  line-height: 80rpx;
+  border-bottom: 1px solid #ccc;
+}
+
+.add_book_way view:last-of-type {
+  border: none;
+}*/
+
+.app_desc {
+  text-align: center;
+  line-height: 28px;
+  font-weight: 600;
+  color: #06c1ae;
+}
+
+/*书架为空的样式  */
+
+.nobook_container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 340rpx;
+}
+
+.add_book {
+  margin-top: 140rpx;
+  width: 227rpx;
+  height: 91rpx;
+  font-size: 18px;
+  color: #fff;
+  line-height: 91rpx;
+  text-align: center;
+  background: url(http://image.chubanyun.net/images/Dictation/desktop/add_green.png) 0 0 no-repeat;
+  background-size: contain;
+}
+
+/**书籍列表**/
+
+.book-list {
+  padding: 12px 10px 10px 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  width: 100%;
+  /* min-height: calc(100% - 40rpx); */
+}
+
+.bookWrap {
+  min-height: calc(100% - 162rpx);
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.book-list .item .item-delete {
+  position: absolute;
+  z-index: 1;
+  width: 35px;
+  height: 35px;
+  margin-left: -10px;
+  margin-top: -10px;
+}
+
+.book-list .item .item-delete image {
+  width: 30px;
+  height: 30px;
+}
+
+.book-list .item {
+  width: 33.33%;
+  text-align: center;
+  padding: 10px;
+}
+
+.book-list .item-content {
+  box-shadow: 0 0 5px 2px #eee;
+  background-color: #fff;
+  position: relative;
+}
+
+.book-list .item .item-content .icon-view {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.book-list .item .item-content .icon {
+  width: 100%;
+  height: 120px;
+}
+
+.book-list .item .text-view {
+  font-size: 12px;
+  line-height: 15px;
+  padding: 10px 0px 0px 0px;
+  color: #777;
+}
+
+.book-img {
+  background-size: 100% auto;
+}
+
+.wave {
+  width: 262rpx;
+  height: 228rpx;
+  position: absolute;
+  /*	background:url(http://image.chubanyun.net/images/Dictation/desktop/wave.png) no-repeat;*/
+  z-index: -1;
+}
+
+.wave1 {
+  left: 350rpx;
+  bottom: 260rpx;
+  background-size: contain;
+}
+
+.wave2 {
+  width: 131rpx;
+  height: 114rpx;
+  left: 0;
+  bottom: 0;
+  background-size: 200%;
+  background-position: right top;
+}
+
+.wave3 {
+  width: 131rpx;
+  height: 228rpx;
+  right: 0;
+  bottom: 25rpx;
+  background-size: 200%;
+}
+
+/* .bottom_block{
+  width: 100%;
+  height: 88rpx;
+} */
+
+/**是否确认删除**/
+
+.to-sure-del-btn {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+}
+
+.to-sure-del {
+  width: 240px;
+  margin-top: -150rpx;
+  background: #fff;
+}
+
+.to-sure-word {
+  height: 70px;
+  border: 1px solid #ddd;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom: 0;
+  font-size: 16px;
+  color: #333;
+  line-height: 70px;
+}
+
+.to-choose-sure {
+  width: 100%;
+  display: flex-box;
+  flex-direction: row;
+  border: 1px solid #ddd;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.to-choose-sure .choose-button {
+  display: inline-flex;
+  width: 50%;
+  padding: 10px 0;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.to-choose-sure .choose-button:nth-of-type(1) {
+  border-right: 1px solid #ddd;
+}
+
+.first_login {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 15;
+}
+
+.img_director {
+  align-self: flex-end;
+  margin: 14rpx 37rpx 24rpx 0;
+  width: 350rpx;
+  height: 376rpx;
+}
+
+.first_login text {
+  align-self: center;
+}
+
+.iknow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  width: 340rpx;
+  height: 100rpx;
+  margin-top: 228rpx;
+  background-color: #3896ea;
+  border-radius: 20rpx;
+}
+
+/* 底部留白 */
+
+.copyright {
+  display: block;
+  padding: 10rpx 0;
+  width: 100%;
+  height: 40rpx;
+  font-size: 12px;
+  line-height: 40rpx;
+  color: #bbb;
+  text-align: center;
+}
+
+.ispay {
+  position: absolute;
+  width: 100%;
+  height: 45rpx;
+  top: 0;
+  left: 0
+}
+
+.pay_txt{
+  position: absolute;
+  top: 10rpx ;
+  left:  26rpx;
+  color: #fff;
+  font-size: 21rpx;
+
+}
+
+/*自定义书籍样式  */
+
+/* .selfbook_up{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  position: fixed;
+  bottom: -1365rpx;
+  transform: translate3d(0,0,0);
+  transition: transform 0.5s;
+  left: -562.5rpx;
+  width: 1875rpx;
+  \/*height: 68vw;实际高度*\/
+  height: 1875rpx;
+  background-color: #fff;
+  border-radius: 2250rpx 2250rpx 0 0;
+  box-shadow: 0 0 54rpx 9rpx rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+.selfbook_down{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  position: fixed;
+  bottom: -1365rpx;
+  transform: translate3d(0,401.25rpx,0);
+  transition: transform 0.5s;
+  left: -562.5rpx;
+  width: 1875rpx;
+  height: 1875rpx;
+  background-color: #fff;
+  border-radius: 2250rpx 2250rpx 0 0;
+  box-shadow: 0 0 54rpx 9rpx rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+.selfbook_down .selfbook_btn{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 210rpx;
+  height: 210rpx;
+  margin-top: 80rpx;
+  transition: margin-top 0.5s;
+  border-radius: 50%;
+  background: linear-gradient(to right, #3a3a3a, #090909);
+}
+.slideDownUp_btn{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  width: 210rpx;
+  height: 68rpx;
+}
+
+.slideDownUp_btn image{
+  width: 22rpx;
+  height: 13rpx;
+  margin-top: 30rpx;
+}
+
+.selfbook_btn{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 210rpx;
+  height: 210rpx;
+  margin-top: 15rpx;
+  transition: margin-top 0.5s;
+  border-radius: 50%;
+  background: linear-gradient(to right, #3a3a3a, #090909);
+}
+
+.selfbook_btn image{
+  width: 58rpx;
+  height: 58rpx;
+  margin-top: 54rpx;
+}
+
+.selfbook_btn text{
+  margin-top: 25rpx;
+  color: #fff;
+}
+
+.now_personNum{
+  margin-top: 24rpx;
+}
+
+.mybook{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100vw;
+  height: 20rpx;
+  padding: 90rpx 0 0 40rpx;
+}
+
+.mybook image{
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 10rpx;
+} */

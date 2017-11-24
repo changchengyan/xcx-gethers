@@ -1,0 +1,88 @@
+/* pages/mine/mine.wxss */
+page{
+  min-height: 100vh;
+  background-color: #eee;
+}
+.top{
+  display: flex;
+  width: 100%;
+  height: 300rpx;
+  background: url(http://image.chubanyun.net/images/CartoonBook/mine/bg.png);
+  background-size: cover;
+  justify-content: center;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 130rpx;
+  height: 130rpx;
+  margin-top: 60rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #fff;
+  margin-top: 20rpx;
+}
+.item{
+  position: relative;
+  box-sizing: border-box;
+  min-height: 151rpx;
+  padding: 55rpx 24rpx;
+  font-weight: bold;
+  border-bottom: 1rpx solid #eee;
+  background-color: #fff;
+}
+.item::after {
+  content: "";
+  position: absolute;
+  top: 75rpx;
+  right: 24rpx;
+  width: 22rpx;
+  height: 3rpx;
+  background-color: #999;
+  border-top-left-radius: 3rpx;
+  border-bottom-left-radius: 3rpx;
+  transform: translate(0,-9rpx) rotate(45deg);
+}
+
+.item::before {
+  content: "";
+  position: absolute;
+  top: 75rpx;
+  right: 24rpx;
+  width: 22rpx;
+  height: 3rpx;
+  background-color: #999;
+  border-top-left-radius: 3rpx;
+  border-bottom-left-radius: 3rpx;
+  transform: translate(0,7rpx) rotate(-45deg);
+}
+.scroll-view{
+  display: flex;
+  flex-flow: row nowrap;
+}
+.video-container{
+  width: 200rpx;
+  margin-top: 40rpx;
+  margin-right: 30rpx;
+}
+.video-container image{
+  width: 200rpx;
+  height: 200rpx;
+}
+.video-name{
+  box-sizing: border-box;
+  width: 200rpx;
+  padding-left: 10rpx;
+  font-size: 14px;
+  color: #333;
+}
+.flex-box{
+  display: flex;
+  flex-flow: row nowrap;
+}

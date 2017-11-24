@@ -1,0 +1,691 @@
+/* pages/review/myreview/myreview.wxss */
+
+page {
+  background: url(http://image.chubanyun.net/images/Word100/review_bg.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+.top {
+  font-size: 24rpx;
+  color: #fff;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 24rpx;
+  padding: 20rpx 24rpx;
+  box-sizing: border-box;
+}
+
+.top .top_in {
+  text-align: center;
+}
+
+.solution .question {
+  width: 100%;
+  text-align: center;
+  margin-top: 70rpx;
+}
+
+.solution .question .ques_txt {
+  color: #fff;
+  font-size: 60rpx;
+  font-weight: bold;
+  text-shadow: 0 1px 0 #3698c2;
+}
+
+.audio {
+  display: flex;
+  width: 182rpx;
+  border-radius: 50rpx;
+  height: 63rpx;
+  align-items: center;
+  background-color: #31a6d7;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 58rpx;
+  margin-bottom: 55rpx;
+}
+
+.audio .audio_txt {
+  font-size: 28rpx;
+  color: #fff;
+}
+
+.speak {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 10rpx;
+}
+
+.ans_0_0 {
+  background-color: #f46057 !important;
+  color: #fff !important;
+  box-shadow: 0 2px 0 #3698c2;
+}
+
+.ans_0_1 {
+  background-color: #36be65 !important;
+  color: #fff !important;
+  box-shadow: 0 2px 0 #3698c2;
+}
+
+.ans_1_0 {
+  background-color: #f46057 !important;
+  color: #fff !important;
+  box-shadow: 0 2px 0 #3698c2;
+}
+
+.ans_1_1 {
+  background-color: #36be65 !important;
+  color: #fff !important;
+  box-shadow: 0 2px 0 #3698c2;
+}
+
+.ans_2_0 {
+  background-color: #f46057 !important;
+  color: #fff !important;
+  box-shadow: 0 2px 0 #3698c2;
+}
+
+.ans_2_1 {
+  background-color: #36be65 !important;
+  color: #fff !important;
+  box-shadow: 0 2px 0 #3698c2;
+}
+
+.ans_3_0 {
+  background-color: #f46057 !important;
+  color: #fff !important;
+  box-shadow: 0 2px 0 #3698c2;
+}
+
+.ans_3_1 {
+  background-color: #36be65 !important;
+  color: #fff !important;
+  box-shadow: 0 2px 0 #3698c2;
+}
+
+.yes {
+  background-color: #36be65 !important;
+  color: #fff !important;
+  box-shadow: 0 2px 0 #3698c2;
+}
+
+.answer .answer_in {
+  width: 662rpx;
+  /* height: 112rpx; */
+  background-color: #fff;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  border-radius: 20rpx;
+  color: #333;
+  /* line-height: 112rpx; */
+  text-align: center;
+  font-size: 36rpx;
+  border: 4rpx solid #fff;
+  padding: 30rpx 0;
+}
+
+.enf_bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url(http://image.chubanyun.net/images/Word100/review_bg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 30;
+}
+
+.fuxi_de {
+  width: 680rpx;
+  height: 580rpx;
+  position: fixed;
+  margin-left: -342rpx;
+  background: url(http://image.chubanyun.net/images/Word100/fuxi_de.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 60;
+  left: 50%;
+  top: 0;
+  text-align: center;
+}
+
+.end_in {
+  position: fixed;
+  width: 564rpx;
+  height: 600rpx;
+  border-radius: 50rpx;
+  top: 20%;
+  left: 50%;
+  margin-left: -282rpx;
+  background-color: #fff;
+  z-index: 50;
+}
+
+.guangxian {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 40;
+}
+
+.menu {
+  width: 404rpx;
+  height: 100rpx;
+  background: linear-gradient(to right, #26bffe, #319fd9);
+  border-radius: 50px;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 38rpx;
+  color: #fff;
+  margin: 0 auto;
+  margin-top: 400rpx;
+  box-shadow: 0 4px 5rpx #b1f2ff;
+}
+
+.goPK {
+  width: 560rpx;
+  height: 220rpx;
+  position: fixed;
+  z-index: 60;
+  left: 50%;
+  margin-left: -280rpx;
+  bottom: 50rpx
+}
+
+.all_words {
+  font-size: 80rpx;
+  color: #2ca9e4;
+  line-height: 310rpx;
+}
+
+.end_txt {
+  width: 680rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #333;
+  height: 550rpx;
+  line-height: 1080rpx;
+  position: fixed;
+  top: 0;
+}
+
+.audio_t {
+  width: 125rpx;
+  height: 125rpx;
+  border-radius: 50%;
+  text-align: center;
+  margin: 0 auto;
+  background-color: #fff;
+  line-height: 125rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 0 #218fbf;
+  margin-bottom: 128rpx;
+}
+
+.question_speak {
+  width: 77rpx;
+  height: 63rpx;
+}
+
+.key {
+  display: flex;
+  flex-wrap: wrap;
+  /* padding: 0 40rpx; */
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+.key .key_in {
+  width: 102rpx;
+  height: 102rpx;
+  background-color: #fff;
+  border: 6rpx solid #fff;
+  border-radius: 15rpx;
+  line-height: 102rpx;
+  text-align: center;
+  margin-top: 20rpx;
+  font-size: 36rpx;
+  margin-left: 35rpx;
+}
+
+.key .key_in:nth-child(1) {
+  margin-left: 0;
+}
+
+.key .key_in:nth-child(6) {
+  margin-left: 0;
+}
+
+.key .key_in:nth-child(11) {
+  margin-left: 0;
+}
+
+.key_active {
+  background-color: #309cd7 !important;
+  color: #fff !important;
+}
+
+.opa {
+  opacity: 0.4 !important;
+}
+
+/* .key_in:active {
+  background-color: #309cd7;
+  color: #fff;
+} */
+
+.printf {
+  width: 100%;
+  height: 40rpx;
+  text-align: center;
+  margin-top: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.printf_in {
+  font-size: 54rpx;
+  color: #fff;
+}
+
+.red_font {
+  color: #a7170d !important;
+}
+
+.trueword {
+  height: 63rpx;
+  width: 100%;
+  text-align: center;
+  line-height: 63rpx;
+  margin-top: 58rpx;
+  margin-bottom: 55rpx;
+  font-size: 50rpx;
+  color: #fff;
+}
+
+.del {
+  font-size: 30rpx;
+  color: #2cb3ee;
+  background-color: #fff;
+  width: 37rpx;
+  height: 37rpx;
+  line-height: 37rpx;
+  border: 2rpx solid #fff;
+  border-radius: 5rpx;
+}
+
+.shan {
+  display: flex;
+  align-items: center;
+  margin-left: 40rpx;
+}
+
+.shan .sanjiao {
+  width: 0;
+  height: 0;
+  border-top: 19rpx solid transparent;
+  border-right: 20rpx solid #fff;
+  border-bottom: 19rpx solid transparent;
+}
+
+.del_t {
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 40rpx;
+}
+
+.dad {
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.line {
+  width: 30rpx;
+  height: 40rpx;
+  border-bottom: 5rpx solid #fff;
+  margin-left: 5rpx;
+}
+
+.submit {
+  width: 662rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: 56rpx;
+}
+
+.submit .jiexi, .submit .next {
+  width: 292rpx;
+  height: 88rpx;
+  text-align: center;
+  line-height: 88rpx;
+  font-size: 36rpx;
+  background-color: #3c5667;
+  border: 5rpx solid #fff;
+  color: #fff;
+  border-radius: 15rpx;
+}
+
+.submit .jiexi {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit .next {
+  background-color: #fff;
+  border-radius: 15rpx;
+  color: #646464;
+}
+
+.submit .jie_bg {
+  width: 38rpx;
+  height: 38rpx;
+  margin-right: 15rpx;
+}
+
+.detail_box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.detail_in {
+  position: fixed;
+  width: 100%;
+  height: 90%;
+  bottom: 0;
+  left: 0;
+  padding: 40rpx;
+  box-sizing: border-box;
+  background-image: url(http://image.chubanyun.net/images/Word100/review_bg.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.detailquestion {
+  font-size: 50rpx;
+  color: #fff;
+}
+
+.detail_audio {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 30rpx;
+  margin-top: 36rpx;
+}
+
+.ipa {
+  margin-right: 35rpx;
+}
+
+.trans {
+  color: #fff;
+  font-size: 28rpx;
+  margin-top: 70rpx;
+}
+
+.x {
+  float: right;
+}
+
+.de_bottom {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  width: 100%;
+  height: 100rpx;
+  font-size: 30rpx;
+  color: #32a0da;
+  z-index: 5;
+  display: flex;
+  justify-content: space-around;
+}
+
+.de_bottom .de_logo image {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.de_bottom .de_logo, .de_bottom .de_txt {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.end_star {
+  position: absolute;
+  top: -100rpx;
+  left: 50%;
+  margin-left: -225rpx;
+  display: flex;
+  width: 450rpx;
+  justify-content: space-around;
+}
+
+.starnum_0 view:nth-child(1) {
+  width: 150rpx;
+  height: 150rpx;
+  background: url(http://image.chubanyun.net/images/Word100/no_star.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scale(0.6) rotate(-16deg);
+}
+
+.starnum_0  view:nth-child(2) {
+  width: 150rpx;
+  height: 150rpx;
+  background: url(http://image.chubanyun.net/images/Word100/no_star.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.starnum_0  view:nth-child(3) {
+  width: 150rpx;
+  height: 150rpx;
+  background: url(http://image.chubanyun.net/images/Word100/no_star.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scale(0.6) rotate(16deg);
+}
+
+.starnum_1  view:nth-child(1) {
+  width: 250rpx;
+  height: 250rpx;
+  background: url(http://image.chubanyun.net/images/Word100/star_liang.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: -35rpx;
+  top: -50rpx;
+}
+
+.starnum_1  view:nth-child(2) {
+  width: 250rpx;
+  height: 250rpx;
+  background: url(http://image.chubanyun.net/images/Word100/star_mie.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: 50%;
+  margin-left: -125rpx;
+  top: -43rpx;
+}
+
+.starnum_1  view:nth-child(3) {
+  width: 250rpx;
+  height: 250rpx;
+  background: url(http://image.chubanyun.net/images/Word100/star_mie.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: rotate(32deg);
+  position: absolute;
+  left: 230rpx;
+  top: -50rpx;
+}
+
+.starnum_2  view:nth-child(1) {
+  width: 250rpx;
+  height: 250rpx;
+  background: url(http://image.chubanyun.net/images/Word100/star_liang.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: -35rpx;
+  top: -50rpx;
+}
+
+.starnum_2  view:nth-child(2) {
+  width: 250rpx;
+  height: 250rpx;
+  background: url(http://image.chubanyun.net/images/Word100/star_liang.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scale(1.4) rotate(16deg);
+  position: absolute;
+  left: 50%;
+  margin-left: -125rpx;
+  top: -43rpx;
+}
+
+.starnum_2  view:nth-child(3) {
+  width: 250rpx;
+  height: 250rpx;
+  background: url(http://image.chubanyun.net/images/Word100/star_mie.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scale(0.8) rotate(16deg);
+  position: absolute;
+  left: 230rpx;
+  top: -50rpx;
+}
+
+.starnum_3  view:nth-child(1) {
+  width: 250rpx;
+  height: 250rpx;
+  background: url(http://image.chubanyun.net/images/Word100/star_liang.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: -35rpx;
+  top: -50rpx;
+}
+
+.starnum_3  view:nth-child(2) {
+  width: 250rpx;
+  height: 250rpx;
+  background: url(http://image.chubanyun.net/images/Word100/star_liang.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scale(1.4) rotate(16deg);
+  position: absolute;
+  left: 50%;
+  margin-left: -125rpx;
+  top: -43rpx;
+}
+
+.starnum_3  view:nth-child(3) {
+  width: 250rpx;
+  height: 250rpx;
+  background: url(http://image.chubanyun.net/images/Word100/star_liang.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: rotate(32deg);
+  position: absolute;
+  left: 230rpx;
+  top: -50rpx;
+}
+
+.bottom {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  width: 704rpx;
+  height: 80rpx;
+  margin: 0 auto;
+  margin-left: -352rpx;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.renshi {
+  width: 42rpx;
+  height: 42rpx;
+  margin-right: 20rpx;
+}
+
+.hei {
+  position: fixed;
+  left: 50%;
+  bottom: 130rpx;
+  width: 314rpx;
+  height: 70rpx;
+  margin-left: -157rpx;
+  text-align: center;
+  line-height: 70rpx;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 24rpx;
+  border-radius: 10rpx;
+}
+
+.bot {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  font-size: 28rpx;
+  color: #fff;
+}
+
+.bot_o {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 222rpx;
+  height: 80rpx;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+}
+
+.bot_t {
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 462rpx;
+  height: 80rpx;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  line-height: 80rpx;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+}

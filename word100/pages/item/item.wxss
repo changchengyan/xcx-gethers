@@ -1,0 +1,417 @@
+/* pages/item/item.wxss */
+
+page {
+  height: 100%;
+  overflow: hidden;
+}
+
+.bg {
+  /* background-image: url(http://image.chubanyun.net/images/Word100/item-bg.jpg);
+  background-size: 100% auto;
+  background-repeat: repeat-y; */
+  width: 100%;
+  height: 100%;
+  /* padding-bottom: 100rpx; */
+  box-sizing: border-box;
+  /* overflow: hidden; */
+}
+
+.scroll {
+  width: 100%;
+  height: calc(100% - 100rpx)
+}
+
+.lesson {
+  width: 100%;
+  box-sizing: border-box;
+  background-image: url(http://image.chubanyun.net/images/Word100/item-bg.jpg);
+  background-size: 100% auto;
+  background-repeat: repeat-y;
+  padding-top: 40rpx;
+  padding-bottom: 50rpx;
+  min-height: 1115rpx
+}
+
+.lesson .circle:nth-child(1) {
+  margin-left: 200rpx !important;
+  margin-top: 0;
+}
+
+.lesson .circle:nth-child(2) {
+  margin-left: 100rpx !important;
+}
+
+.lesson .circle:nth-child(3) {
+  margin-left: 120rpx !important;
+}
+
+.lesson .circle:nth-child(4) {
+  margin-left: 380rpx !important;
+}
+
+.lesson .circle:nth-child(5) {
+  margin-left: 500rpx !important;
+}
+
+.lesson .circle:nth-child(6) {
+  margin-left: 450rpx !important;
+}
+
+.lesson .circle:nth-child(7) {
+  margin-left: 200rpx !important;
+}
+
+.lesson .circle:nth-child(8) {
+  margin-left: 100rpx !important;
+}
+
+.circle {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 20px;
+  border: 8rpx solid #fff;
+  margin-left: 100rpx;
+  margin-top: 100rpx;
+  text-align: center;
+  background: linear-gradient(to top right, #2fa0d5, #41b4f4);
+  color: #fff;
+  box-shadow: 0 4px 0 #7da205;
+  position: relative;
+  font-size: 40rpx;
+  line-height: 90rpx;
+}
+
+.circle .circle_lesson {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 18px;
+  margin: 0 auto;
+  background: linear-gradient(to top right, #2fa0d5, #41b4f4);
+  margin-top: 6rpx;
+  line-height: 90rpx;
+}
+
+.lock {
+  position: absolute;
+  width: 40rpx;
+  height: 40rpx;
+  left: 50%;
+  top: 80rpx;
+  margin-left: -18rpx;
+}
+
+.lesson_star {
+  width: 84rpx;
+  height: 32rpx;
+  border-radius: 50px;
+  position: absolute;
+  background-color: #fff;
+  left: 50%;
+  margin-left: -42rpx;
+  top: 79rpx;
+  box-shadow: 0 3px 0 #7da205;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+}
+
+.circle:nth-child(odd) {
+  margin-left: 200rpx;
+}
+
+.bottom {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 100rpx;
+  background-color: #f8f8f8;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 36rpx;
+  color: #9a9a9a;
+  line-height: 100rpx;
+  z-index: 999
+}
+
+.kong
+{
+  width: 100%;
+  height: 100rpx
+}
+
+.lesson_num, .star {
+  display: flex;
+  align-items: center;
+  margin-left:30rpx;
+
+}
+
+.lessom_img {
+  width: 100rpx;
+  height: 100rpx;
+  position: fixed;
+  bottom: 30rpx;
+  left: 40rpx;
+}
+
+.star_img {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 22rpx;
+}
+
+.middle {
+  font-size: 27rpx;
+  position: fixed;
+  top: 40rpx;
+  right: 44rpx;
+  text-align: center;
+}
+
+.middle_txt {
+  font-size: 21rpx;
+  color: #fff;
+  font-weight: bold;
+  width: 66rpx;
+  height: 38rpx;
+  background-color: #517100;
+  border-radius: 10px;
+  margin: 0 auto;
+  margin-top: -11rpx;
+  line-height: 42rpx
+}
+
+.middle .pk {
+  margin-bottom: 42rpx;
+}
+
+.pk, .review {
+  text-align: center;
+}
+
+.middle_circle {
+  width: 102rpx;
+  height: 102rpx;
+  background-color: #517100;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.middle_circle .middle_circle_in {
+  width: 85rpx;
+  height: 82rpx;
+  border-radius: 50%;
+  margin: 0 auto;
+  background-color: #fedd17;
+  display: flex;
+  align-items: center;
+}
+
+.middle_circle .middle_circle_in .middle_circle_in_in {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  background-color: #f5f773;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.middle_img {
+  width: 55rpx;
+  height: 50rpx;
+  margin: 0 auto;
+}
+
+.middle_img:active {
+  margin-top: -20rpx;
+}
+
+.box_bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  left: 0;
+  top: 0;
+}
+
+.out {
+  width: 560rpx;
+  height: 637rpx;
+  background-color: #fff;
+  position: fixed;
+  top: 178rpx;
+  left: 50%;
+  margin-left: -280rpx;
+  border-radius: 35px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.out .box_img {
+  width: 100%;
+  height: 210rpx;
+}
+
+.out .box_lock {
+  width: 122rpx;
+  height: 122rpx;
+  margin-top: -83rpx;
+}
+
+.out .title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  margin-top: 32rpx;
+  margin-bottom: 30rpx;
+}
+
+.out .txt {
+  font-size: 28rpx;
+}
+
+.out .btn {
+  font-size: 32rpx;
+  width: 400rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: linear-gradient(to right, #27befe, #27befe, #319dd9);
+  margin: 0 auto;
+  border-radius: 50px;
+  margin-top: 48rpx;
+  color: #fff;
+  box-shadow: 0 5px 10rpx #abf0ff;
+}
+
+.user {
+  width: 75rpx;
+  height: 75rpx;
+  background-color: #fff;
+  border-radius: 100%;
+  position: absolute;
+  left: 140rpx;
+  top: 10rpx;
+  display: flex;
+  align-items: center;
+}
+
+.san {
+  width: 0;
+  height: 0;
+  border-top: 10rpx solid transparent;
+  border-right: 20rpx solid #fff;
+  border-bottom: 10rpx solid transparent;
+  position: absolute;
+  top: 40%;
+  left: -15rpx;
+}
+
+.touxiang {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.lesson_star view {
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.star_null view:nth-child(1) {
+  background-image: url(http://image.chubanyun.net/images/Word100/star_noa.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.star_null view:nth-child(2) {
+  background-image: url(http://image.chubanyun.net/images/Word100/star_noa.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.star_null view:nth-child(3) {
+  background-image: url(http://image.chubanyun.net/images/Word100/star_noa.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.star_0 view:nth-child(1) {
+  background-image: url(http://image.chubanyun.net/images/Word100/star_noa.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.star_0 view:nth-child(2) {
+  background-image: url(http://image.chubanyun.net/images/Word100/star_noa.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.star_0 view:nth-child(3) {
+  background-image: url(http://image.chubanyun.net/images/Word100/star_noa.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.star_1 view:nth-child(1) {
+  background-image: url(http://image.chubanyun.net/images/Word100/star_act.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.star_1 view:nth-child(2) {
+  background-image: url(http://image.chubanyun.net/images/Word100/star_noa.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.star_1 view:nth-child(3) {
+  background-image: url(http://image.chubanyun.net/images/Word100/star_noa.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.star_2 view:nth-child(1) {
+  background-image: url(http://image.chubanyun.net/images/Word100/star_act.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.star_2 view:nth-child(2) {
+  background-image: url(http://image.chubanyun.net/images/Word100/star_act.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.star_2 view:nth-child(3) {
+  background-image: url(http://image.chubanyun.net/images/Word100/star_noa.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.star_3 view:nth-child(1) {
+  background-image: url(http://image.chubanyun.net/images/Word100/star_act.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.star_3 view:nth-child(2) {
+  background-image: url(http://image.chubanyun.net/images/Word100/star_act.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.star_3 view:nth-child(3) {
+  background-image: url(http://image.chubanyun.net/images/Word100/star_act.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}

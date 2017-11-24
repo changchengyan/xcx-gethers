@@ -1,0 +1,16 @@
+<!--pages/word/word.wxml-->
+<view class='bg'>
+  <view class='word_num'>新词<text style='color:#319bd7'>{{word_list.length}}</text>个 </view>
+  <view class='shadow'>
+    <view class='word' wx:for="{{word_list}}" data-index='{{index}}' bindtap='toWorddetail'>
+      <view class='word_in'>
+        <view class='english'>
+          {{item.word_name}}
+          <text class='yin'> [{{item.ipa==null?"":item.ipa}}]</text>
+        </view>
+        <view class='translate'>{{item.translation}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='begin' bindtap='toCheckpoint'>开始闯关</view>
+</view>

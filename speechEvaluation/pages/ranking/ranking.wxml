@@ -1,0 +1,40 @@
+<!--pages/ranking/ranking.wxml-->
+<view class='bg'>
+  <scroll-view class='page-scroll-view' scroll-y="true" bindscrolltolower="loadItemInfo">
+    <view wx:for="{{info}}">
+      <view class='item' bindtap='gotoPKDetail' data-id='{{item.id}}'data-challenger-uid='{{item.challenger_uid}}'data-organiser-uid='{{item.organiser_uid}}'>
+        <view class="item-box">
+          <view class='content'>
+            <view class='text'>
+              {{item.sentence}}
+            </view>
+            <view class='evalution'>              
+              <image src='/pages/images/right.png'></image>
+              <text>{{item.score}}分</text>
+              <text wx:if='{{item.challenger_uid==item.organiser_uid}}' style='color:#4EC98B'>我的PK</text>
+            </view>            
+          </view>
+          <image class='img' src='{{item.sentence_pic}}'></image>
+        </view>
+        <view class='clear'></view>
+      </view>
+
+    </view>
+
+    <view wx:if="{{!loadMore&&info.length>5}}" class='line'>我是有底线的</view>
+    <view wx:if="{{loadMore&&info.length>pageSize}}">
+      <div class="loader">
+        <div class="ball-pulse">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </view>
+    <view class='null' wx:if="{{info.length==0}}">
+      <image class='img' src='/pages/images/null.png'></image>
+      <view class='text'>还没有参与PK哦！</view>
+    </view>
+
+  </scroll-view>
+</view>

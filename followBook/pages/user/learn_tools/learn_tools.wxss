@@ -1,0 +1,207 @@
+/* pages/user/studyTool/studyTool.wxss */
+page {
+  padding:0 40rpx 40rpx;
+  width: 100%;
+  box-sizing: border-box;
+
+}
+.banner {
+  padding: 0 0 20rpx;
+  height:260rpx;
+  width: calc(100% + 80rpx);
+  margin-left: -40rpx;
+}
+
+.banner image {
+  width: 100%;
+}
+
+.data_item {
+  padding: 40rpx 0;
+ 
+  border-bottom: 1px solid #eee;
+}
+
+.icon_list_less {
+  width: 100%;
+  padding: 40rpx 0;
+  white-space: nowrap;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  overflow: auto;
+  margin: 0;
+
+}
+.icon_list_more {
+  width: 100%;
+  padding: 40rpx 0;
+  white-space: nowrap;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  overflow: auto;
+  margin: 0;
+
+}
+.icon_item{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 20rpx;
+}
+
+.icon_item:nth-of-type(1) {
+  padding: 0;
+}
+
+ .icon_item:nth-last-of-type(1) {
+  padding: 0;
+}
+
+.icon_item image {
+  width: 120rpx;
+  height: 50px;
+}
+
+.icon_item .icon_name {
+  font-size: 30rpx;
+  padding-top: 15rpx;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.article .title {
+  font-size: 40rpx;
+  color: #333;
+}
+
+.article .text {
+  font-size: 26rpx;
+  line-height: 46rpx;
+  color: #999;
+  padding-top: 20rpx;
+}
+
+.pic image {
+  width: 100%;
+  border-radius: 10rpx;
+}
+
+.pic .text {
+  font-size: 26rpx;
+  line-height: 46rpx;
+  color: #999;
+}
+
+.word_img {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20rpx 0;
+}
+
+.word_img .img image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 20rpx;
+  display: block;
+
+}
+
+.word_img .word {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: calc(100% - 300rpx);
+  padding-left: 20rpx;
+}
+
+.word_img .word .title {
+  font-size: 30rpx;
+}
+
+.word_img .word  .desc {
+  font-size: 26rpx;
+  color: #999;
+  width: 100%;
+  padding-top: 10rpx;
+}
+
+.word_img .tip-show {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.word_img .tip {
+  display: inline-block;
+  width: 150rpx;
+  height: 54rpx;
+  border: 1px solid #06c1ae;
+  border-radius: 28rpx;
+  text-align: center;
+  line-height: 52rpx;
+  color: #06c1ae;
+  font-size: 26rpx;
+}
+
+.word_img .tip_img {
+  text-align: center
+}
+
+.tip_img image {
+  width: 85rpx;
+  height: 36px;
+}
+
+.loadTip {
+  text-align: center;
+  padding-top: 5px;
+  color: #999;
+}
+
+.loadTip .icon wx-image {
+  width: 50px;
+  height: 10px;
+  filter: grayscale(100%);
+}
+
+.no_more {
+  text-align: center;
+  font-size: 26rpx;
+  color: #06c1ae;
+  padding: 40rpx 0 20rpx;
+}
+
+.share_button {
+  height: 88rpx;
+  border-radius: 10rpx;
+  background: #06c1ae;
+  text-align: center;
+  color: #fff;
+  line-height: 88rpx;
+  margin: 40rpx auto 0;
+  position: relative;
+  width: 200rpx;
+  font-size: 30rpx;
+ 
+}
+
+.share_button button {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.share_button image {
+  width: 32rpx;
+  height: 25rpx;
+}
+.height40 {
+  height: 40rpx;
+}

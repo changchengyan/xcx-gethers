@@ -1,0 +1,33 @@
+<!--pages/word/notice/notice.wxml-->
+<view class='notice-list-canvas'>
+  <view class='notice-item' bindtap='toSales'>
+      <view class='title'>西院图书馆装修通知</view>    
+      <view class='datetime'>2017年9月11日 09:23:01</view>  
+      <view class='pic'><image src='http://f3.5rs.me/upload/20170911/2017_09_11_092216790_b.jpg' mode='widthFix'></image> </view>
+      <view class='desc'>最近3、4楼材料学员的开始装修了，从今天起工期35天，这几天正在拆除旧的装修</view>       
+      <view class='read'>阅读全文<view class="arrow">未读 <image src="../../images/icon_tools_arrow.png"></image></view></view>     
+  </view> 
+
+  <view class='notice-item' bindtap='toSales'>
+      <view class='title'>从“小姐姐”到“种花家”，大数据折射出的95后兴趣标签</view> 
+      <view class='datetime'>2017年9月11日 09:23:01</view>     
+      <view class='desc'>95后的足迹遍布了从微信朋友圈、AB站到QQ浏览器这样的内容消费平台，从二次元、偶像女团到《王者荣耀》粉——他们无时无刻不在用兴趣投票</view>      
+      <view class='read'>阅读全文<view class="arrow">未读 <image src="../../images/icon_tools_arrow.png"></image></view></view>
+  </view>
+
+  <view class='notice-item' bindtap='toSales'>
+      <view class='title'>NBA专用黑科技冷感毛巾，甩一甩即可帮你降温3度 | 生活方式</view> 
+      <view class='datetime'>2017年9月11日 09:23:01</view>       
+      <view class='pic'><image src='http://f3.5rs.me/upload/20170911/2017_09_11_103852853.jpg' mode='widthFix'></image> </view>
+      <view class='desc'>想在秋季运动中瞬间感到凉爽，有这条高科技毛巾就够了。</view> 
+      <view class='read'>阅读全文<view class="arrow"><image src="../../images/icon_tools_arrow.png"></image></view></view> 
+  </view> 
+
+  <view class='notice-item' bindtap='toSales'>
+      <view class='title'>何小鹏告别UC时代，互联网大佬们的镀金时代也结束了</view>
+      <view class='datetime'>2017年9月11日 09:23:01</view>     
+      <view class='pic'><image src='http://f3.5rs.me/upload/20170911/2017_09_11_103804275.jpg' mode='widthFix'></image> </view>
+      <view class='desc'>从流量市场上看，大佬们都已经镀金完毕，留给后来者的空间变得越来越狭窄。移动互联网的红利期就这样结束了。</view> 
+      <view class='read'>阅读全文<view class="arrow"><image src="../../images/icon_tools_arrow.png"></image></view></view> 
+  </view> 
+</view>

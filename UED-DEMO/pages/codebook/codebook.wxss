@@ -1,0 +1,14 @@
+/* pages/codebook/codebook.wxss */
+.top{ display: flex; flex-direction: row; align-items: center;  position: fixed; z-index: 1; width: 100%; top: 0px; left: 0px;
+font-size: 14px; padding: 10px 15px 10px 15px; border-bottom: 1px solid #e8e8e8; background-color: #eeeeee;}
+.top .count{ flex-grow: 8;}
+.top .count text{font-size: 28px;}
+.top .voice{ flex-grow: 1; text-align: center; padding: 10px; margin-left: 5px; font-size: 12px;}
+.top .scan{ flex-grow: 1; text-align: center;padding: 10px; margin-left: 5px;font-size: 12px;}
+.top-visibility{ height: 60px;}
+
+.book-list-area{ padding: 20px 10px 20px 10px; display: flex;flex-wrap:wrap;}
+.book-item{ width: 33.33%;  padding: 10px 10px 20px 10px;}
+.book-item .pic{ padding: 0px 10px 0px 10px;}
+.book-item .pic image{ width: 100%;}
+.book-item .text{ font-size: 12px; text-align: center;}

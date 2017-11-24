@@ -1,0 +1,38 @@
+{
+    "pages": [
+        "pages/desktop/desktop",
+        "pages/sound/sound",
+        "pages/searchlist/searchlist",
+        "pages/user/user",
+        "pages/user/learn_tools/learn_tools",     
+        "pages/user/aboutUs/aboutUs" ,
+        "pages/konwledge/konwledge",
+        "pages/user/share_page/share_page"    
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "随书听",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+      "borderStyle": "white",
+      "color": "#777",
+      "selectedColor": "#06c1ae",
+      "backgroundColor": "#f5f5f5",
+      "list": [
+        {
+          "pagePath": "pages/desktop/desktop",
+          "text": "书架",
+          "iconPath": "pages/images/desktop/icon-2.png",
+          "selectedIconPath": "pages/images/desktop/icon-2-over.png"
+        },
+        {
+          "pagePath": "pages/user/user",
+          "text": "我的",
+          "iconPath": "pages/images/desktop/icon-3.png",
+          "selectedIconPath": "pages/images/desktop/icon-3-over.png"
+        }
+      ]
+    }
+}

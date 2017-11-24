@@ -1,0 +1,85 @@
+<!--pages/word/more/more.wxml-->
+<view class="group-canvas">
+    <view class="group" bindtap="toWord" >
+        <view class="pic"><image src="http://f3.5rs.me/upload/20170712/2017_07_12_095526166.jpg"></image></view>
+        
+        <view class="title">用户体验交流圈</view>
+        <view class="desc">用户体验是一种纯主观的在用户使用一个产品（服务）的过程中建立起来的心理感受。</view>
+    </view>
+    <view class="ticket"  bindtap="moreToSales" data-page="share">
+          <image src="../../images/more-icon-ticket.png"></image>
+          <view class="text">圈子二维码</view>
+        </view>
+</view>
+<view class="source-type-canvas">
+  <view class="source-type">
+    <view class="icon" >
+      <view class="number">3</view>
+      投票
+    </view>
+    <view class="icon">
+      <view class="number">392</view>
+      图片
+    </view>
+    <view class="icon">
+      <view class="number">928</view>
+      音频
+    </view>
+    <view class="icon">
+      <view class="number">182</view>
+      视频
+    </view>
+  </view>
+  <view class="source-type">
+    <view class="icon">
+      <view class="number">6</view>
+      试卷
+    </view>
+    <view class="icon">
+      <view class="number">12</view>
+      题库
+    </view>
+    <view class="icon">
+      <view class="number">56</view>
+      PDF
+    </view>
+    <view class="icon">
+      <view class="number">163</view>
+      文章
+    </view>
+  </view>
+</view>
+
+<view class="menul-list">
+    <view class="menu" bindtap="moreToSales" data-page="nickname">
+        <view class="title f2">我的昵称</view>
+        <view class="more f2">雷江波</view>
+        <view class="arrow"><image src="../../images/icon_tools_arrow.png"></image></view>
+    </view>
+    <view class="menu" bindtap="moreToSales" data-page="message">
+        <view class="title f2">我的消息</view>
+        <view class="more f2">1条未读</view>
+        <view class="arrow"><image src="../../images/icon_tools_arrow.png"></image></view>
+    </view>
+    <view class="menu" bindtap="moreToSales" data-page="favorites">
+        <view class="title f2">我的收藏</view>
+        <view class="more f2">25页</view>
+        <view class="arrow"><image src="../../images/icon_tools_arrow.png"></image></view>
+    </view>
+    
+</view>
+
+<view class="menul-list">
+    <view class="menu" bindtap="moreToSales" data-page="member">
+        <view class="title f2">圈子成员</view>
+        <view class="more f2">39人</view>
+        <view class="arrow"><image src="../../images/icon_tools_arrow.png"></image></view>
+    </view>
+    <view class="menu" bindtap="moreToSales" data-page="paymodel">
+        <view class="title f2">加入方式</view>
+        <view class="more f2">付费/后付费/免费</view>
+        <view class="arrow"><image src="../../images/icon_tools_arrow.png"></image></view>
+    </view>
+</view>
+
+<view class="classname" style="height:50px;"></view>

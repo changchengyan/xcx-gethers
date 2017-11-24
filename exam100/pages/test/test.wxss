@@ -1,0 +1,81 @@
+/* pages/test/test.wxss */
+
+.container {
+  padding-top: 48rpx;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.top_img {
+  width: 638rpx;
+  height: 638rpx;
+  border: 14rpx solid #fff;
+  box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 34rpx;
+  color: #333;
+  padding: 0 50rpx;
+  font-weight: bold;
+  margin-top: 40rpx;
+}
+
+.btn {
+  width: 400rpx;
+  height: 88rpx;
+  text-align: center;
+  line-height: 88rpx;
+  margin: 0 auto;
+  background-color: #91519d;
+  color: #fff;
+  border-radius: 10rpx;
+}
+
+.middle {
+  padding: 0 43rpx;
+  margin: 62rpx 0;
+  box-sizing: border-box;
+}
+
+.middle_top, .middle_end {
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: #959595;
+  margin-top: 20rpx;
+}
+
+.middle_end text {
+  color: #f33;
+  font-size: 32rpx;
+}
+
+.number {
+  display: flex;
+  height: 44rpx;
+  line-height: 44rpx;
+}
+.number text{
+  color:#959595;
+  
+}
+
+.user_img {
+  width: 44rpx;
+  height: 44rpx;
+  border-radius: 50%;
+}
+.btnBox view{
+  width: 300rpx;
+  height: 75rpx;
+  background:#91519d;
+  border-radius: 10rpx;
+  line-height: 75rpx;
+  color:#fff;
+  font-size: 30rpx;
+}
+.btnBox view.item1{
+  margin-right: 50rpx;
+}

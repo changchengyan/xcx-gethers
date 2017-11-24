@@ -1,0 +1,18 @@
+<!--pages/hot/hot.wxml-->
+<swiper class="content-swiper" bindchange="change">
+  <swiper-item wx:for="{{classify}}" wx:key="{{index}}">
+    <view class="content-item">
+      <view class="title">{{item.classify.classify_name}}</view>
+      <view class="huiben">
+        <view class="huiben-item" bindtap="toVideoPage" wx:for="{{item.instances}}" wx:key="{{index}}" wx:for-item="itm" data-seriesId="{{itm.instance.series_id}}" data-id="{{itm.second_classify_id}}" data-vid="{{itm.instance.id}}">
+          <image src="{{itm.instance.instance_pic}}"></image>
+          <view class="book-title">{{itm.instance.instance_name}}</view>
+          <view class="book-info">{{itm.instanceinstance_des}}</view>
+        </view>
+        
+      </view>
+    </view>
+  </swiper-item>
+</swiper>
+<image bindtouchmove='stop' class="bg-box" src="{{bg}}" mode="aspectFill"></image>
+<view class="color-box" style="background-color:#{{color}};box-shadow: 0 0 50px 40px #{{color}}"></view>

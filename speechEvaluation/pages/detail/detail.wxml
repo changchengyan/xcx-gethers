@@ -1,0 +1,77 @@
+<!--detail.wxml-->
+<view class="bg">
+  <view style='padding:0;margin:0;height:480rpx;'>
+    <image mode="aspectFill" class="image" src="{{info.sentence_pic}}"></image>
+  </view>
+  <view class="image-mask">
+  </view>
+  <view class='flex'>
+    <view class='flex-null'></view>
+    <view class="option">
+      <view class="en-text">{{info.sentence}}</view>
+      <view class="clear"></view>
+    </view>
+  </view>
+  <view class="home-icon" bindtap="gotoHome">
+    <image src="/pages/images/home.png"></image>
+    返回首页
+  </view>
+  <view class='poster-button' bindtap='createPoster'>生成海报</view>
+  <view class='audio'>
+    <view class='pre' bindtap='gotoDetail' data-id='{{prevId}}'>
+      <image class='{{prevId<=0?"unclick":""}}' src='/pages/images/audio-pre.png'></image>
+    </view>
+    <view bindtap="playAudio" class='play'>
+      <image src='{{audioIcon}}'></image>
+    </view>
+    <view class='next' bindtap='gotoDetail' data-id='{{nextId}}'>
+      <image class='{{nextId<=0?"unclick":""}}' src='/pages/images/audio-next.png'></image>
+    </view>
+  </view>
+  <view class="content">
+    <view wx:if='{{info.translation!=""}}' class="cn-text">
+      <view style='font-weight:bold;'>译文</view>
+      {{info.translation}}
+    </view>
+    <view class="source-text" bindtap="gotoItem" data-book-id='{{info.book_id}}' data-title='{{info.source_name}}'>引用：{{info.source_name}}</view>
+  </view>
+  <view wx:if="{{recordStaus!=1}}" class="record">
+    <view class="record-box">
+      <view wx:if="{{recordStaus==0}}" class='record-time'>
+        <view class='breath-dot'></view>
+        {{recordTime}}
+      </view>
+      <view class='record-tip' wx:if="{{recordStaus!=0&&!isRecordTip}}">
+      <view class='rect'></view>
+        <text>点击开始录音,进行评测</text>
+        <image bindtap='closeRecordTip' src="/pages/images/close1.png"></image>
+      </view>
+      <image class="record-icon" bindtap="recordOption" src="{{recordIcon}}"></image>
+    </view>
+  </view>
+  <view class="record-complete {{recordStaus==1?'record-complete-show':'hidden'}}">
+    <view class="record-complete-text" bindtap="reRecord">重录</view>
+    <view class="record-complete-text color" bindtap='evaluation'>{{(evaluationState==1)?"详细报告 >":"我的评分"+evaluationInfo.totalSocre+" >"}}</view>
+    <view wx:if="{{tempRecordFilePath==''}}" class="line">
+      <view class="score">{{info.score}}
+        <text>分</text>
+      </view>
+    </view>
+    <view class="record-play" wx:if="{{tempRecordFilePath!=''}}">
+      <image class="image" bindtap="recordPlay" src="{{recordplayIcon}}"></image>
+    </view>
+  </view>
+  <audio src="{{info.sentence_mp3_url}}" bindended="audioPlayEnd" id="myAudio"></audio>
+  <!-- 加载动画 -->
+  <import src="/pages/component/loading/loading.wxml" />
+  <template is="loading" data="{{...loading}}" />
+  <!-- 加载动画END -->
+  <view class='showPoster {{isPoster?"":"hidden"}}'>
+    <view class='option'>
+      <image class='close' src='/pages/images/close.png' bindtap='closePoster'></image>
+      <image class='poster' src='{{posterUrl}}'></image>
+      <button class='pk-button' bindtap='savePoster'>保存到相册</button>
+      <view class='mask'></view>
+    </view>
+  </view>
+</view>

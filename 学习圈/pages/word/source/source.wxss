@@ -1,0 +1,41 @@
+/* pages/word/source/source.wxss */
+.source-head{ padding: 20px 15px 20px 15px; background-color: #f8f8f8; display: flex; flex-direction: row; align-items: center;  border-bottom: 1px solid #f0f5f5;}
+.source-head .title{ font-size: 16px; flex-grow: 8;}
+.source-head .button{ font-size: 14px; flex-grow: 2; text-align: right; color: #777;}
+.source-area{ padding: 0px 15px 15px 15px;}
+
+.source-item{
+  padding: 15px 0px 15px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+  align-items:flex-start;
+  border-bottom: 1px solid #f0f5f5;
+}
+.source-item .pic{
+  flex-grow: 2;
+  max-width: 70px;
+  min-width:70px;
+}
+.source-item .pic image{
+  width: 70px;
+}
+.source-item .info{
+  flex-grow: 5;
+  padding: 0px 0px 0px 10px;
+}
+.source-item .info .title{
+  font-size: 16px;line-height: 22px;
+  padding: 0px 0px 5px 0px;
+}
+.source-item .info .desc{
+  font-size: 14px;
+  color: #777;
+  line-height: 18px;
+  overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-weight: 300;
+}

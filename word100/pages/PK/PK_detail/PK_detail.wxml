@@ -1,0 +1,95 @@
+<!--pages/PK/PK_detail/PK_detail.wxml-->
+
+
+<view class="PK_record_bg">
+
+ <!--历史记录  -->
+  <view class="PK_finsh_block" wx:if="{{PK_finsh=='true'}}">
+    <!--答题结束  -->
+    <view class="PK_finsh_bg {{isShare?'PK_finsh_share':''}}">
+      <view class="finsh_headlines_{{PK_result?'win':'lose'}}"></view>
+      <view class="opponent {{PK_result?'winer':''}}">
+        <image src="{{info.organiser_headimgurl}}" mode='widthFix'></image>
+        <text class="">{{info.organiser_nickname}}:{{info.organiser_total_score}}</text>
+        <image src='/pages/images/crown.png' mode='widthFix' class="crown"></image>
+      </view>
+      <view class="user {{PK_result?'':'winer'}}">
+        <image src="{{info.challenger_headimgurl}}" mode='widthFix'></image>
+        <image src='/pages/images/crown.png' mode='widthFix' class="crown"></image>
+        <text class="">{{info.challenger_nickname}}:{{info.challenger_total_score}}</text>
+      </view>
+    </view>
+  </view>
+   <!--答题详情  -->
+  <view class="PK_record_block" wx:if="{{PK_finsh=='false'}}">
+    <view class="record_info flexRow">
+      <view class="img_show {{info.organiser_total_score>info.challenger_total_score?'win':''}}">
+        <image src="{{info.organiser_headimgurl}}" class="user_img"></image>
+        <image src="http://image.chubanyun.net/images/Word100/crown.png" class="crown" mode='widthFix'></image>
+      </view>
+      <view class="vs_block"><image src="/pages/images/record_PK_vs.png" class="vs_img"></image></view>
+      <view class="img_show {{info.organiser_total_score>info.challenger_total_score?'':'win'}}">
+        <image src="{{info.challenger_headimgurl}}" class="user_img"></image>
+        <image src="http://image.chubanyun.net/images/Word100/crown.png" class="crown" mode='widthFix'></image>
+      </view>
+
+    </view>
+
+    <view class="record_list {{isShare?'record_list_share':''}}">
+      <view class="record_item flexRow">
+        <view class="num">{{info.organiser_total_score}}</view>
+        <view class="title">PK分数</view>
+        <view class="num">{{info.challenger_total_score}}</view>
+      </view>
+
+      <view class="record_item flexRow">
+        <view class="num">
+          <view>{{info.organiser_correct_rate}}%</view>
+          <view class="small">{{info.organiser_accuracy_score}}分</view>
+        </view>
+        <view class="title">正确率</view>
+        <view class="num">
+          <view>{{info.challenger_correct_rate}}%</view>
+          <view class="small">{{info.challenger_accuracy_score}}分</view>
+        </view>
+      </view>
+      <view class="record_item flexRow">
+        <view class="num">
+          <view>{{info.organiser_time}}</view>
+          <view class="small">{{info.organiser_time_score}}分</view>
+        </view>
+        <view class="title">时间</view>
+        <view class="num">
+          <view>{{info.challenger_time}}</view>
+          <view class="small">{{info.challenger_time_score}}分</view>
+        </view>
+      </view>
+      <view class="record_item flexRow">
+        <view class="num">{{info.organiser_combo_score}}<text>分</text></view>
+        <view class="title">连击</view>
+        <view class="num">{{info.challenger_combo_score}}<text>分</text></view>
+      </view>
+      <view class="record_item flexRow" wx:for="{{answers}}">
+        <view class="num">
+          <image src="{{item.is_right_orgeniser==1?'/pages/images/right.png':'/pages/images/error.png'}}" mode='widthFix'></image>
+        </view>
+        <view class="title">{{item.word_name}}</view>
+        <view class="num">
+          <image src="{{item.is_right_challenger==1?'/pages/images/right.png':'/pages/images/error.png'}}" mode='widthFix'></image>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <block wx:if="{{!isShare && PK_finsh}}">
+    <view class="button_list flexRow" >
+    <view class="record_button show_to_other" wx:if="{{PK_result}}">
+      <button open-type="share"></button>炫耀一下</view>
+    <view class="record_button change_opponent" bindtap="anginOnce" wx:else>再来一局</view>
+    <view class="record_button change_opponent" bindtap='changeOther'>换个对手</view>
+   
+  </view>
+   <view class="to_detail" bindtap='toDetail' wx:if="{{PK_finsh=='true'}}">查看PK详情 >></view>
+  </block>
+  
+</view>

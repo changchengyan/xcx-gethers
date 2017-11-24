@@ -1,0 +1,353 @@
+/**index.wxss**/
+.header{
+  font-size: 30rpx;
+  line-height: 45rpx;
+  background: #fff;
+  color: #333;
+  margin-bottom: 49rpx;
+  justify-content: flex-start;
+}
+.header .xuanz{
+  float:left;
+}
+.poster{
+  margin-bottom: 66rpx;
+  width: 100%;
+}
+.poster image{
+  width: 320rpx;
+  height: 180rpx;
+  display: block;
+  margin: 0 auto;
+}
+.poster video{
+  width: 450rpx;
+  height: 252rpx;
+  display: block;
+  margin:0 auto;
+}
+.poster .videoSeat{
+  width: 450rpx;
+  height: 252rpx;
+  display: block;
+  margin:0 auto;
+  background: rgba(0,0,0,0.4)
+}
+.poster img.wx-video-cover-play-button{
+  width: 32rpx!important;
+  height: 36rpx!important;
+}
+.poster p.wx-video-cover-duration{
+  display: none!important;
+}
+.audioBox .audio{
+  position: relative; 
+  width: 243rpx;
+  margin-right: 24rpx;
+}
+.audioBox .audio audio{
+  width: 243rpx;
+  height: 60rpx;
+  background: #c56dd5;
+  border-radius: 10rpx;
+  
+}
+.audioBox text{
+  font-size: 24rpx;
+}
+.audioBox image{
+  position: absolute;
+  width: 20rpx;
+  height: 26rpx;
+  left:25rpx;
+  top: 18rpx;
+  z-index: 9999;
+}
+audio{
+  display: block;
+  width: 243rpx;
+  height: 60rpx;
+}
+.answerContain .container{
+  padding:0 24rpx;
+}
+.answerContain .container .optContent{
+  color: #666;
+  font-size: 30rpx;
+  line-height: 38rpx;
+  margin-bottom: 46rpx;
+}
+.optContent .marginT{
+  margin-top: 9rpx;
+
+}
+.optContent .optRow{
+  justify-content: flex-start;
+}
+/*有视频begin*/
+.optVideo video{
+  width: 450rpx;
+  height: 252rpx;
+  display: block;
+}
+.optVideo .videoSeat{
+  width: 450rpx;
+  height: 252rpx;
+  display: block;
+  background: rgba(0,0,0,0.4)
+}
+/*有视频end*/
+/*有图片begin*/
+.optImg .text{
+  /*margin-right: 26rpx;*/
+}
+.optImg image{
+  width: 150rpx;
+  height: 150rpx;
+  display: block;
+}
+/*有图片end*/
+.optContent .optRow .blank{
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 38rpx;
+}
+.optContent .optRow .number{
+  width: 60rpx;
+  height: 60rpx;
+  border: 1rpx solid #cecece;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 60rpx;
+  color: #666;
+  margin-right: 38rpx;
+  box-sizing: border-box;
+}
+
+.optContent .optRow .text{
+  padding-right: 20rpx;
+}
+/*选项的几种状态*/
+.number.success{
+  border:1px solid #0dc16a!important;
+  background: url('http://image.chubanyun.net/images/Exam100/successIcon.png') no-repeat center center;
+  background-size: 27rpx 19rpx;
+  background-color: #edfcf5;
+  color:rgba(0, 0, 0, 0)!important;
+}
+.number.error{
+  border:1px solid #fe4749!important;
+  background: url('http://image.chubanyun.net/images/Exam100/errorIcon.png') no-repeat center center;
+  background-size: 19rpx 19rpx;
+  background-color: #fef2f2;
+  color:rgba(0, 0, 0, 0)!important;
+}
+.number.active{
+  background: #c56dd5;
+  color: #fff!important;
+  border: none!important;
+}
+.analysis{
+  position: relative;
+  margin-top: 50rpx;
+  border-top: 1rpx solid #ccc;
+  font-size: 24rpx;
+  line-height: 48rpx;
+  color: #333;
+}
+.analysis .analysis-header{
+  position: absolute;
+  width: 182rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  color: #00bcd5;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: -14rpx;
+  background: #fff;
+  text-align: center;
+  line-height: 40rpx;
+}
+.analysis .analysis-content{
+  margin-top: 40rpx;
+  font-size: 24rpx;
+  line-height: 48rpx;
+  color: #333;
+}
+.status-lists{
+  max-height: 500rpx;
+  padding: 0 0 24rpx;
+  border-top: 1rpx solid #eaeaea;
+  background: #fff;
+  z-index: 100;
+  overflow: auto;
+}
+.status-lists .status-list{
+  float: left;
+  width: 98rpx;
+  height: 98rpx;
+  margin: 24rpx 0 0 20rpx;
+  border-radius: 50rpx;
+  border: 1rpx solid #ccc;
+  font-size: 30rpx;
+  line-height: 98rpx;
+  text-align: center;
+  color: #ccc;
+}
+.status-lists .status-list.active{
+  color:#999;
+  border-color:#999;
+  background: #f6f6f6;
+}
+.status-lists .status-list.error{
+  color:#f46263;
+  border-color:#f46263;
+}
+.status-lists .status-list.success{
+  color:#54d16f;
+  border-color:#54d16f;
+}
+
+.status-lists .status-list.error.active{
+  color:#f46263;
+  border-color:#f46263;
+  background: #fff3f3;
+}
+
+.status-lists .status-list.success.active{
+  color:#54d16f;
+  border-color:#54d16f;
+  background: #f7fff0;
+}
+/*答题卡*/
+.answerCardMask{
+	width:100%;
+	height:100%;
+	position:fixed;
+	left:0;
+	top:0;
+	background:rgba(0,0,0,0.8)
+}
+.cardBox{
+  position: fixed;
+  left:0;
+  bottom: 0;
+  width: 100%;
+  height: 720rpx;
+  box-sizing: border-box;
+  background: #fff;
+  z-index: 99999;
+  transform: translateY(720rpx);
+  
+}
+.cardBox.up{
+  transform: translateY(0);
+  transition: all ease-out 0.5s;
+}
+.cardBox.down{
+  transform: translateY(720rpx);
+  transition: all ease-out 0.5s;
+}
+.cardBox .cardTop{
+  width: 750px;
+  height: 8px;
+  background-image: -moz-linear-gradient( 90deg, rgb(252,235,255) 0%, rgb(145,81,157) 100%);
+  background-image: -webkit-linear-gradient( 90deg, rgb(252,235,255) 0%, rgb(145,81,157) 100%);
+  background-image: -ms-linear-gradient( 90deg, rgb(252,235,255) 0%, rgb(145,81,157) 100%);
+}
+.cardBox .cardTitle{
+  height:80rpx;
+  font-size: 20rpx;
+  color:#666;
+  justify-content: flex-start;
+  padding-left: 40rpx;
+}
+.cardBox .cardTitle .titleText{
+  font-size:32rpx;
+  margin-right: 16rpx;
+}
+.cardBox .cardTitle .cardType{
+  flex-grow: 1;
+  justify-content: flex-start;
+}
+.cardBox .cardTitle .closeCard{
+  padding: 20rpx 40rpx;
+}
+.cardType .item{
+  margin-right: 16rpx;
+}
+.cardType .item .icon{
+  width:16rpx;
+  height:16rpx;  
+  box-sizing: border-box;
+  border-radius: 50%;
+  margin-right: 5rpx;
+}
+.cardType .item1 .icon{/*已做题目样式*/
+  border:1px solid #92519e;
+  background:#fcebff;
+}
+.cardType .item2 .icon{/*未做目样式*/
+  border:1px solid #ddd;
+  background:#fff;
+}
+.cardType .item3 .icon{/*当前题目样式*/
+  background:#eee;
+}
+.cardType .item4 .icon{/*错误题目样式*/
+  background:#fef2f2;
+  border:1px solid #fe4648;
+}
+.cardType .item5 .icon{/*正确题目样式*/
+  background:#edfcf5;
+  border:1px solid #00cc66;
+}
+.cardBox .cardNumber{
+  border-top:1px solid #ddd;
+  padding: 0 6rpx;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 30rpx;
+  box-sizing: border-box;
+  height: 632rpx;
+  overflow-y: scroll;
+}
+.cardBox .cardNumber view{
+  width: 88rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 50%;
+  font-size: 28rpx;
+  margin-left: 30rpx;
+  margin-bottom: 28rpx;
+}
+.cardBox .cardNumber view.done{
+  background: #fcebff;
+  border: 1px solid #91509d;
+  color:#91509d;
+}
+.cardBox .cardNumber view.doing{
+  background: #eee;
+}
+.cardBox .cardNumber view.none{
+  background: #fff;
+  border: 1px solid #ddd;
+}
+.cardBox .cardNumber view.success{
+  background:#edfcf5;
+  border:1px solid #00cc66;
+  color:#00cc66;
+}
+.cardBox .cardNumber view.error{
+  background:#fef2f2;
+  border:1px solid #fe4648;
+  color:#fe4648;
+}
+.cardBox .cardTitle .closeCard image{
+  width: 24rpx;
+  height: 24rpx;
+}

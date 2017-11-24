@@ -1,0 +1,153 @@
+<!--pages/evaluate/evaluate.wxml-->
+<block wx:if="{{mainMenu=='evaluate'}}">
+<view class="body">
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
+  indicator-dots="true"  indicator-color="rgba(255, 255, 255, 0.3)" indicator-active-color="#fff"
+  >
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <view class='item'  bindtap='toDisplay'>
+          <view class='img' style='background-image:url({{item.url}})'>
+            <view class="content">
+              <view class='null'></view>
+              <view class="en">
+                    {{item.en}}
+              </view>
+              <view class="cn">
+                    {{item.cn}}
+              </view>
+              <view class="source">来源：少儿英语日常口语（上）</view>
+            </view>
+          </view>
+          
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
+</view>
+<view>
+  <view class='grade-title'>小学英语</view>
+  <view class='grade-desc'>选择年级进入学期，完整评测模式！</view>
+  <view class='grade-list'>
+    <view class='grade-item'><view bindtap='toSearch'>一年级</view></view>
+    <view class='grade-item'><view bindtap='toSearch'>二年级</view></view>
+    <view class='grade-item'><view bindtap='toSearch'>三年级</view></view>
+    <view class='grade-item'><view bindtap='toSearch'>四年级</view></view>
+    <view class='grade-item'><view bindtap='toSearch'>五年级</view></view>
+    <view class='grade-item'><view bindtap='toSearch'>六年级</view></view>
+  </view>
+</view>
+
+<view>
+  <view class='hot-title'>每日推荐</view>
+  <view class='hot-desc'>快速评测孩子学习情况，能否用标准的口语发音</view>
+  <view>
+    <view class='evaluate-item-canvas'>
+      <view class='evaluate-item' bindtap='toDisplay'>
+        <view class='content'>
+          <view class='text'>This is Amy .She's quiet. She's very hard-working.</view>
+          <view class='report'>
+           <text>评测：2  |  来源：小学一年级英语</text>
+          </view>
+        </view>
+        <view class='pic' style='background-image: url(http://f3.5rs.me/upload/20170918/2017_09_18_140622915.jpg);'>
+          
+        </view>
+      </view>  
+    </view>
+    <view class='evaluate-item-canvas'>
+      <view class='evaluate-item' bindtap='toDisplay'>
+        <view class='content'>
+          <view class='text'>Chen Jie:Ms Wang will be our new Chinese teacher. John:What's she like? Chen Jie:She's very kingd.</view>
+          <view class='report'>
+          2评测  |  来源：小学二年级英语
+          </view>
+        </view>
+        <view class='pic' style='background-image: url(http://f3.5rs.me/upload/20170918/2017_09_18_140825536.jpg);'>
+           
+        </view>
+      </view>  
+    </view>
+    <view class='evaluate-item-canvas'>
+      <view class='evaluate-item' bindtap='toDisplay'>
+        <view class='content'>
+          <view class='text'>John:Is she strict? Chen Jie:Yes,sometimes.</view>
+          <view class='report'>
+          2评测  |  来源：小学三年级英语
+          </view>
+        </view>
+        <view class='pic' style='background-image: url(http://f3.5rs.me/upload/20170918/2017_09_18_141030724.jpg);'>
+          
+        </view>
+      </view>  
+    </view>
+    <view class='evaluate-item-canvas'>
+      <view class='evaluate-item' bindtap='toDisplay'>
+        <view class='content'>
+          <view class='text'>This is Amy .She's quiet. She's very hard-working.</view>
+          <view class='report'>
+           <text>评测：2  |  来源：小学一年级英语</text>
+          </view>
+        </view>
+        <view class='pic' style='background-image: url(http://f3.5rs.me/upload/20170918/2017_09_18_140622915.jpg);'>
+          
+        </view>
+      </view>  
+    </view>
+    <view class='evaluate-item-canvas'>
+      <view class='evaluate-item' bindtap='toDisplay'>
+        <view class='content'>
+          <view class='text'>Chen Jie:Ms Wang will be our new Chinese teacher. John:What's she like? Chen Jie:She's very kingd.</view>
+          <view class='report'>
+          2评测  |  来源：小学二年级英语
+          </view>
+        </view>
+        <view class='pic' style='background-image: url(http://f3.5rs.me/upload/20170918/2017_09_18_140825536.jpg);'>
+          
+        </view>
+      </view>  
+    </view>
+    <view class='evaluate-item-canvas'>
+      <view class='evaluate-item' bindtap='toDisplay'>
+        <view class='content'>
+          <view class='text'>John:Is she strict? Chen Jie:Yes,sometimes.</view>
+          <view class='report'>
+          2评测  |  来源：小学三年级英语
+          </view>
+        </view>
+        <view class='pic' style='background-image: url(http://f3.5rs.me/upload/20170918/2017_09_18_141030724.jpg);'>
+          
+        </view>
+      </view>  
+    </view>
+    
+  </view>
+
+</view>
+
+
+</block>
+
+<block wx:if="{{mainMenu=='book'}}">
+  <view>
+    book
+  
+  </view>
+
+</block>
+
+<block wx:if="{{mainMenu=='user'}}">
+  <view>
+    user
+  
+  </view>
+
+</block>
+
+<view class='bottom-view'></view>
+<view class='bottom'>
+    <view bindtap='menuSales' data-menu='evaluate' class='evaluate{{mainMenu}}'>发现</view>
+    <view bindtap='menuSales' data-menu='book' class='book{{mainMenu}}'>书架</view>
+    <view bindtap='menuSales' data-menu='user' class='user{{mainMenu}}'>我的</view>
+</view>

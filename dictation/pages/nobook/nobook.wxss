@@ -1,0 +1,35 @@
+/* nobook.wxss */
+.container{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.tadpole{
+  margin: 187rpx 0 96rpx 0; 
+  width: 144rpx;
+  height: 87rpx;
+}
+
+.selfbook_btn{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-top: 330rpx;
+  width: 210rpx;
+  height: 210rpx;
+  border-radius: 50%;
+  background: linear-gradient(to right, #3a3a3a, #090909);
+  box-shadow: 0 6rpx 24rpx 6rpx rgba(0, 0, 0, 0.2);
+}
+
+.selfbook_btn image{
+  width: 58rpx;
+  height: 58rpx;
+  margin-top: 54rpx;
+}
+
+.selfbook_btn text{
+  margin-top: 25rpx;
+  color: #fff;
+} 

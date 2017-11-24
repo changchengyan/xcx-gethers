@@ -1,0 +1,23 @@
+<!--pages/history/history.wxml-->
+<view class="bottom" bindtap="edit" wx:if="{{!editing}}">编辑</view>
+<view class="bottom-editing" wx:if="{{editing}}">
+  <view bindtap="edit">取消</view>
+  <view bindtap="selectAll">全选</view>
+  <view bindtap="deleteHistory">删除</view>
+</view>
+<view class="days-container" wx:for="{{userHistory}}" wx:key="{{index}}">
+  <view class="title" wx:if="{{item.overtime && item.overtime != userHistory[index - 1].overtime}}">{{item.overtime}}</view>
+  <view class="content" data-id="{{item.seconde_classify_id}}" data-vid="{{item.id}}" data-seriesId="{{item.series_id}}" catchtap="toVideoPage">
+    <view class="{{edit}}" data-index="{{index}}" catchtap="select">
+      <image class="check-icon" src="../../images/mine/{{check[index]}}.png"></image>
+    </view>
+    <image class="book" src="{{item.instance_pic}}"></image>
+    <view class="info">
+      <view class="info-name">{{item.instance_name}}</view>
+      <view class="info-time">观看至{{item.seen_time}}
+        <image src="../../images/mine/phone.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
+<image wx:if="{{userHistory.length == 0}}" class='nobook' src='../../images/mine/noHistory.png'></image>

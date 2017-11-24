@@ -1,0 +1,67 @@
+/* pages/discover/demo/demo.wxss */
+.body{}
+.title{ font-size: 18px; line-height: 28px; padding: 15px 20px 10px 20px; background-color: #f5f5f5;border-bottom: 1px solid #eee;}
+.theme{ font-size: 16px; color: #fead2a; padding: 20px 20px 10px 20px;}
+.desc{font-size: 14px; font-weight: 300; padding: 0px 20px 20px 20px; line-height: 21px;text-align:justify !important;}
+
+
+.body .message-canvas{ padding: 10px 0px 25px 0px;}
+.body .message{ border: 1px  solid #ccc; background-color: #fff; border-radius: 5px; padding: 15px;}
+
+.body .item-first{ border-bottom: 1px solid #eff2f4; padding: 0px 0px 8px 0px;}
+.body .item-first .image{  display: flex; height: 175px; width: 100%; background-size: cover; flex-direction: column; }
+.body .item-first .null{ flex-grow: 8;}
+.body .item-first .title{ flex-grow: 1; background-color: rgba(0, 0, 0, 0.7); color: #fff; padding: 10px 10px 0px 10px; line-height: 20px; font-size: 16px; }
+
+.body .item{ border-bottom: 1px solid #eff2f4;padding: 8px 0px 8px 0px; display: flex; flex-direction: row; align-items: center;}
+.body .item .text{ flex-grow: 8; font-size: 16px; padding: 0px 10px 0px 0px;}
+.body .item .img{flex-grow: 2; max-width: 50px; min-width: 50px;  height: 50px; }
+.body .item .img image{ width: 48px; height: 48px;border: 1px solid #eee;}
+
+.body .item-last{padding: 8px 0px 8px 0px;display: flex; flex-direction: row; align-items: center;}
+.body .item-last .text{ flex-grow: 8; font-size: 16px; padding: 0px 10px 0px 0px;}
+.body .item-last .img{flex-grow: 2; max-width: 50px; min-width: 50px;height: 50px; }
+.body .item-last .img image{ width: 50px; height: 50px;border: 1px solid #eee;}
+
+
+
+.typical{ padding: 10px 0px 10px 0px; font-size: 14px; border-bottom: 1px solid #eee;}
+.typical .bookname{ color: #333;}
+.typical .bookdesc{ color: #777; font-size: 12px;}
+
+
+
+.goto-view {
+  height: 65px;
+  background: #fff;
+}
+
+.goto {
+  position: fixed;
+  z-index: 9;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  background-color: rgba(50, 50, 50, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 0px 5px 0px;
+  flex-direction: column;
+}
+
+.goto .text {
+  font-size: 18px;
+  background-color: rgba(243, 115, 71, 1);
+  color: #fff;
+  margin: auto;
+  text-align: center;
+  padding: 5px 80px 5px 80px;
+  border-radius: 5px;
+}
+
+.goto .more {
+  font-size: 11px;
+  color: #fff;
+  padding: 3px 0px 0px 0px;
+}

@@ -1,0 +1,50 @@
+<!--pages/discover/manage/source/source.wxml-->
+<view class='menu-scroll-canvas'>
+  <scroll-view scroll-x='true' class='menu-scroll'>
+    <view class='source-menu'>
+      <view class='item {{sourceA}}' data-sales='0' bindtap='sourceMenuClick'>全部</view>
+      <view class='item {{sourceB}}' data-sales='1' bindtap='sourceMenuClick'>音频</view>
+      <view class='item {{sourceC}}' data-sales='2' bindtap='sourceMenuClick'>视频</view>
+      <view class='item {{sourceD}}' data-sales='3' bindtap='sourceMenuClick'>相册</view>
+      <view class='item {{sourceE}}' data-sales='4' bindtap='sourceMenuClick'>文章</view>
+      <view class='item {{sourceF}}' data-sales='5' bindtap='sourceMenuClick'>PDF</view>
+    </view>  
+  </scroll-view>
+</view>
+
+<view class='source-body'>
+      <view class='swiper-canvas'>
+        <swiper class='source-swiper' bindchange='sourceSwiperChange' current='{{sourceCurrent}}' >
+          <swiper-item>
+              <scroll-view class='list-scroll' scroll-y='true'>
+                ...1
+              </scroll-view>
+          </swiper-item>
+          <swiper-item>
+              <scroll-view class='list-scroll' scroll-y='true'>
+                ...2
+              </scroll-view>
+          </swiper-item>
+          <swiper-item>
+              <scroll-view class='list-scroll' scroll-y='true'>
+                ...3
+              </scroll-view>
+          </swiper-item>
+          <swiper-item>
+              <scroll-view class='list-scroll' scroll-y='true'>
+                ...4
+              </scroll-view>
+          </swiper-item>
+          <swiper-item>
+              <scroll-view class='list-scroll' scroll-y='true'>
+                ...5
+              </scroll-view>
+          </swiper-item>
+          <swiper-item>
+              <scroll-view class='list-scroll' scroll-y='true'>
+                ...6
+              </scroll-view>
+          </swiper-item>
+        </swiper>
+      </view>
+</view>

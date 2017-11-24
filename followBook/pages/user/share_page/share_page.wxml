@@ -1,0 +1,10 @@
+ <view class="share-page">
+    <view class="share-head">
+    </view>
+    <view class="share-user">
+      <image src="{{shareInfo.img}}"></image>
+      <text>{{shareInfo.name}}</text>
+      <view>正在使用随书听</view>
+    </view>
+    <view class="user-now" catchtap='closeSharePage'>现在使用</view>
+  </view>

@@ -1,0 +1,32 @@
+<!--pages/review/reviewword/detailreview/detailreview.wxml-->
+<view class='bg'>
+  <view class='word'>
+    <view class='english'>
+      {{word.current.word_name}}
+      <!-- {{word[idx]}} -->
+    </view>
+    <view class='yin'>
+      <text>[{{word.current.ipa==null?"":word.current.ipa}}]</text>
+
+    </view>
+    <view class='translate'>{{word.current.translation}}</view>
+    <view>
+      <audio src="{{word.current.word_mp3_url}}" id="myAudio"></audio>
+      <image class='speak' src='../../../images/speaker.png' bindtap='audio'></image>
+    </view>
+    <view class='all'>
+      <view class='prev' bindtap='bindprev' style='{{word.prev_id == 0?"color:#dddddd":""}}'>
+      <text>上一个</text>
+      <view class='image'><image src='../../../images/pre.png' bindtap='audio'></image></view>
+      </view>
+      <view class='next' bindtap='bindnext' style='{{word.next_id == 0?"color:#dddddd":""}}'>
+      <text>下一个</text>
+      <view class='image'><image src='../../../images/next.png' bindtap='audio'></image></view>
+      </view>
+    </view>
+    <view class='progress'>
+      <view class='pro_in' style='width:{{word_index/all_words*100}}%'></view>
+    </view>
+  </view>
+</view>
+<!--◀▶-->

@@ -1,0 +1,32 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/word/word",
+    "pages/word/write/write",
+    "pages/word/write/topic/topic",
+    "pages/word/write/map/map",
+    "pages/word/source/source",
+    "pages/word/more/more",
+    "pages/word/topic/topic",
+    "pages/word/book/book",
+    "pages/word/notice/notice",
+    "pages/word/share/share",
+    "pages/word/nickname/nickname",
+    "pages/word/member/member",    
+    "pages/word/paymodel/paymodel",
+    
+
+    "pages/founder/founder",
+    "pages/leaguer/leaguer",
+    "pages/user/user",
+    "pages/notes/notes",
+    "pages/notes/noteview/noteview",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  }
+}

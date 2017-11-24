@@ -1,0 +1,495 @@
+<!--pages/word/word.wxml-->
+<view class="word-canvas" style=" background-image: url({{coverImg}});"></view>
+<view class="word-canvas-mask" bindtap="onClickWord"></view>
+<view class="word-body" >
+    <view class="founder-canvas"  bindtap="onClickWord">
+          <view class="headimg"   catchtap="wordToSales" data-page="founder">
+              <image src="http://f3.5rs.me/upload/20170712/2017_07_12_172821743.jpg"></image>
+          </view>
+          <view class="info">
+                <view class="title">韩美梅</view>
+                <view class="desc">我就是我，是颜色不一样的烟火...</view>
+          </view>
+    </view>
+
+    <!--view class="book-canvas">
+        <image src="http://f3.5rs.me/upload/20170804/2017_08_04_151733630_b.jpg" mode="widthFix" class="pic"></image>
+    
+    </view-->
+
+    
+    <view class="icon-canvas">
+      <view class="item">
+        <view class="icon"  bindtap="wordToSales" data-page="write">
+              <view class="img img-1"><image src="../images/word/word-write-01.png" style="filter:drop-shadow(30px -5px {{colorBlack}});"></image></view>
+              <view class="img img-2"><image src="../images/word/word-write-02.png" style="filter:drop-shadow(35px 5px {{colorGray}});"></image></view>
+              <view class="text" style="color:{{colorGray}}">发表</view>
+        </view>
+      </view>
+      <view class="item">
+          <view class="icon"  bindtap="wordToSales" data-page="notice">
+          <view class="img img-1 "><image src="../images/word/word-ask-01.png" style="filter:drop-shadow(30px -2px {{colorBlack}});"></image></view>
+              <view class="img img-2"><image src="../images/word/word-ask-02.png" style="filter:drop-shadow(20px 5px {{colorGray}})"></image></view>
+          <view class="text" style="color:{{colorGray}}">公告</view></view>
+      </view>
+      <view class="item">
+          <view class="icon"  bindtap="wordToSales" data-page="source">
+          <view class="img img-1"><image src="../images/word/word-source-01.png" style="filter:drop-shadow(30px -5px {{colorBlack}});"></image></view>
+              <view class="img img-2"><image src="../images/word/word-source-02.png" style="filter:drop-shadow(28px 0px {{colorGray}});"></image></view>
+          <view class="text" style="color:{{colorGray}}">知识</view></view>
+      </view>
+      <view class="item">
+          <view class="icon"  bindtap="wordToSales" data-page="more">
+          <view class="img img-1"><image src="../images/word/word-more-01.png" style="filter:drop-shadow(28px -2px {{colorBlack}});"></image></view>
+              <view class="img img-2"><image src="../images/word/word-more-02.png" style="filter:drop-shadow(30px 3px {{colorGray}});"></image></view>
+          <view class="text" style="color:{{colorGray}}">更多</view></view>
+      </view>
+    </view>
+
+<block wx:if="{{messageShow}}">
+        <view class="message-canvas">
+            <view class="message-content"   bindtap="wordToMessage">
+                 <view class="icon"><image src="http://f3.5rs.me/upload/20170712/2017_07_12_172821743.jpg"></image></view>  
+                 <view class="text">2条新消息</view>
+            </view>
+         </view> 
+</block>
+
+    <view class="blog-title">
+      <view class="text" bindtap="onSelectData">三 全部动态</view> 
+      <view class="more"  bindtap="wordToSales" data-page="topic">#话题#讨论</view>
+    </view>
+ 
+    <view class="blog-list">
+
+     
+
+      <view class="notice-canvas" bindtap="wordToSales" data-page="notice-display"><text  style="background-color:{{colorGray}}">公告</text> 何小鹏告别UC时代，互联网大佬们的镀金时代也结束了
+      <view>从流量市场上看，大佬们都已经镀金完毕，留给后来者的空间变得越来越狭窄。移动互联网的红利期就这样结束了。</view>
+      </view>
+
+      
+
+      <view class="blog-item">
+             <view class="first-info">
+                    <view class="head-img"><image src="http://wx.qlogo.cn/mmopen/RroZQjTZqEFS2VkmUg86rnCxpBLEjol4b3GRyVhHxNGlNMG47S9bFeib7jSqklUsqtj6SfQnjg77FHoE32UZX3ZPG1VhdCaSk/132"></image></view>
+                    <view class="head-content">
+                          <view class="nickname"> <text style="color:{{colorGray}}">发表 • </text> 韩美梅</view>
+                          <view class="datetime">昨天23:18</view>
+                    </view>
+                    <view class="head-more" bindtap="showBlogMoreOperation">
+                      <image src="../images/operation-more.png"></image>
+                    </view>
+                    <view class="head-favorites">
+                      <image src="../images/app-favorites.png"></image>
+                    </view>
+             </view>
+             <view class="body-info">
+                  <view class="topic-canvas">小学1-6年级听写</view>
+                  <view class="text-canvas">听写100，标准普通话听写，老奶奶也能搞明白的操作，无压力的孩子学习模式，实打实落地的学习内容，最为关键的是，价格仅仅是一个完整蛋饼的价格。</view>
+                  <view class="app-area">
+                  <view class="app-arrow"><image src="../images/app-border-arrow.png"></image></view>
+                  <view class="app-canvas">
+                      <view class="app-first">
+                          <view class="app-type"> • 听写100 • </view>
+                          <view class="app-favorites">
+                             <image src="../images/app-favorites.png"></image>
+                          </view>
+                      </view>
+                      <view class="app-title" style="color:{{colorGray}}">语文四年级（上）</view>
+                      <view class="app-cover"  bindtap="blogToMiniProgram" data-source="dictation"><image src="http://f3.5rs.me/upload/20170830/2017_08_30_175250689_b.png" mode="aspectFill"></image></view>
+                      <view class="app-desc">
+                          “多种听写模式更契合孩子的学习习惯，自动播放模式让孩子更专注于听写”
+                      </view>
+                      <view class="app-operation">
+                          <view class="button" bindtap="blogToMiniProgram" data-source="dictation">开始练习</view>
+                          <view class="text">2577人，使用2782次</view>
+                      </view>
+                  </view>
+                  </view>
+             </view>
+             <view class="last-info">
+                   <view class="operation">
+                        <view class="icon">浏览 125</view>
+                        <view class="icon">点赞 25 </view>
+                        <view class="icon">评论 7</view>
+                        <view class="icon">打赏 2</view>
+                   </view>
+                   <view class="browser">
+                      <image src="../images/last-info-praise-over.png"></image>
+                      张三，小王
+                   </view>
+             </view>
+        </view>
+
+
+        <view class="blog-item">
+             <view class="first-info">
+                    <view class="head-img"><image src="http://wx.qlogo.cn/mmopen/RroZQjTZqEFS2VkmUg86rnCxpBLEjol4b3GRyVhHxNGlNMG47S9bFeib7jSqklUsqtj6SfQnjg77FHoE32UZX3ZPG1VhdCaSk/132"></image></view>
+                    <view class="head-content">
+                          <view class="nickname"> <text style="color:{{colorGray}}">发表 • </text> 韩美梅</view>
+                          <view class="datetime">昨天23:18</view>
+                    </view>
+                    <view class="head-more" bindtap="showBlogMoreOperation">
+                      <image src="../images/operation-more.png"></image>
+                    </view>
+                    <view class="head-favorites">
+                      <image src="../images/app-favorites.png"></image>
+                    </view>
+             </view>
+             <view class="body-info">
+                  <view class="topic-canvas">什么是用户体验设计？</view>
+                  <view class="text-canvas">用户体验设计并不是从无到有的过程，而是一直存在，自然而然的事情。使用产品应该是让人愉悦的过程，这就是好的用户体验。</view>
+                  <view class="app-area">
+                  <view class="app-arrow"><image src="../images/app-border-arrow.png"></image></view>
+                  <view class="app-canvas">
+                      <view class="app-first">
+                          <view class="app-type"> • 音频 • </view>
+                          <view class="app-favorites">
+                             <image src="../images/app-favorites.png"></image>
+                          </view>
+                      </view>
+                      <view class="app-title" style="color:{{colorGray}}">张国荣经典歌曲欣赏</view>
+                      <view class="app-cover"  bindtap="blogToMiniProgram" data-source="sound"><image src="http://f3.5rs.me/upload/20170228/2017_02_28_163441460_b.jpg" mode="aspectFill"></image></view>
+                      <view class="app-desc">
+                          “为你提供海量正版高品质音乐，最权威的音乐榜单，最快的新歌速递，最契合你的主题电台，最人性化的歌曲搜索，让你更快地找到”
+                      </view>
+                      <view class="app-operation">
+                          <view class="button" bindtap="blogToMiniProgram" data-source="sound">进入播放</view>
+                          <view class="text">2577人，播放2782次</view>
+                      </view>
+                  </view>
+                  </view>
+             </view>
+             <view class="last-info">
+                   <view class="operation">
+                        <view class="icon">浏览 125</view>
+                        <view class="icon">点赞 25 </view>
+                        <view class="icon">评论 7</view>
+                        <view class="icon">打赏 2</view>
+                   </view>
+                   <view class="browser">
+                      <image src="../images/last-info-praise-over.png"></image>
+                      张三，小王
+                   </view>
+             </view>
+        </view>
+
+      
+
+
+        <view class="blog-item">
+             <view class="first-info">
+                    <view class="head-img"><image src="http://wx.qlogo.cn/mmopen/RroZQjTZqEFS2VkmUg86rnCxpBLEjol4b3GRyVhHxNGlNMG47S9bFeib7jSqklUsqtj6SfQnjg77FHoE32UZX3ZPG1VhdCaSk/132"></image></view>
+                    <view class="head-content">
+                          <view class="nickname"> <text style="color:{{colorGray}}">问答 • </text> 周扬</view>
+                          <view class="datetime">昨天23:18</view>
+                    </view>
+                    <view class="head-more" bindtap="showBlogMoreOperation">
+                      <image src="../images/operation-more.png"></image>
+                    </view>
+                    <view class="head-favorites">
+                      <image src="../images/app-favorites.png"></image>
+                    </view>
+             </view>
+             <view class="body-info">
+                  <view class="topic-canvas">什么是用户体验设计？</view>
+                  <view class="text-canvas">通过自身实践，挖掘交互与体验设计的商业及社会价值。努力推动中国交互及体验设计行业发展，为设计师及团队创造更多学习与交流的机会，帮助学生成长。</view>
+                 <view class="voice-area">
+                  <view class="voice-canvas">
+                      <view class="icon">x</view>
+                      <view class="text">57"</view>
+                  </view>
+                  </view>
+             </view>
+             <view class="last-info">
+                   <view class="operation">
+                        <view class="icon">浏览 125</view>
+                        <view class="icon">点赞 25 </view>
+                        <view class="icon">评论 7</view>
+                   </view>
+                   <view class="browser">
+                      <image src="../images/last-info-praise-over.png"></image>
+                      张三，小王
+                   </view>
+             </view>
+        </view>
+
+        <view class="blog-item">
+             <view class="first-info">
+                    <view class="head-img"><image src="http://wx.qlogo.cn/mmopen/RroZQjTZqEFS2VkmUg86rnCxpBLEjol4b3GRyVhHxNGlNMG47S9bFeib7jSqklUsqtj6SfQnjg77FHoE32UZX3ZPG1VhdCaSk/132"></image></view>
+                    <view class="head-content">
+                          <view class="nickname"> <text style="color:{{colorGray}}">发表 • </text> 周扬</view>
+                          <view class="datetime">昨天23:18</view>
+                    </view>
+                    <view class="head-more" bindtap="showBlogMoreOperation">
+                      <image src="../images/operation-more.png"></image>
+                    </view>
+                    <view class="head-favorites">
+                      <image src="../images/app-favorites-over.png"></image>
+                    </view>
+             </view>
+             <view class="body-info">
+                  <view class="topic-canvas">什么是用户体验设计？</view>
+                  <view class="text-canvas">定义体验内容和创新体验形式是交互设计专业的两条腿，前者提升开发效率，乃生存之基；后者决定竞争力，乃发展之道。只会前者就只能是个匠人，只重后者则是空想家。</view>
+                  <view class="img-list-canvas">
+                       <view class="img-item"> <image src="http://f3.5rs.me/upload/20170719/2017_07_19_094132227_b.png"  mode="widthFix"></image></view>
+                  </view>
+                  <view class="app-area">
+                  <view class="app-arrow"><image src="../images/app-border-arrow.png"></image></view>
+                  <view class="app-canvas">
+                      <view class="app-first">
+                          <view class="app-type"> • PDF • </view>
+                          <view class="app-favorites">
+                             <image src="../images/app-favorites-over.png"></image>
+                          </view>
+                      </view>
+                      <view class="app-title" style="color:{{colorGray}}">互联网思维和互联网产品</view>
+                      <view class="app-cover"  bindtap="blogToMiniProgram" data-source="pdf"><image src="http://f3.5rs.me/upload/20170515/2017_05_15_092510209_b.jpg" mode="aspectFill"></image></view>
+                      <view class="app-desc">
+                          “互联网思维，就是在（移动）互联网+、大数据、云计算等科技不断发展的背景下，对市场、用户、产品、企业价值链乃至对整个商业生态进行重新审视的思考方式。”
+                      </view>
+                      <view class="app-operation">
+                          <view class="button" bindtap="blogToMiniProgram" data-source="pdf">浏览文档</view>
+                          <view class="text">769人，浏览981次</view>
+                      </view>
+                  </view>
+                  </view>
+             </view>
+             <view class="last-info">
+                   <view class="operation">
+                        <view class="icon">浏览 125</view>
+                        <view class="icon">点赞 25 </view>
+                        <view class="icon">评论 7</view>
+                        <view class="icon">打赏 2</view>
+                   </view>
+                   <view class="browser">
+                      <image src="../images/last-info-praise-over.png"></image>
+                      张三，小王
+                   </view>
+             </view>
+        </view>
+                
+        <view class="blog-item">
+             <view class="first-info">
+                    <view class="head-img"><image src="http://wx.qlogo.cn/mmopen/RroZQjTZqEFS2VkmUg86rnCxpBLEjol4b3GRyVhHxNGlNMG47S9bFeib7jSqklUsqtj6SfQnjg77FHoE32UZX3ZPG1VhdCaSk/132"></image></view>
+                    <view class="head-content">
+                          <view class="nickname"> <text style="color:{{colorGray}}">发表 • </text> 周扬</view>
+                          <view class="datetime">昨天23:18</view>
+                    </view>
+                    <view class="head-more" bindtap="showBlogMoreOperation">
+                      <image src="../images/operation-more.png"></image>
+                    </view>
+                    <view class="head-favorites">
+                      <image src="../images/app-favorites.png"></image>
+                    </view>
+             </view>
+             <view class="body-info">
+                  <view class="topic-canvas">什么是用户体验设计？</view>
+                  <view class="text-canvas">扩思路、重易用、少流程、精细节。用轻盈的设计思维去建立产品和用户之间的信赖关系。</view>
+                  <view class="app-area">
+                  <view class="app-arrow"><image src="../images/app-border-arrow.png"></image></view>
+                  <view class="app-canvas">
+                      <view class="app-first">
+                          <view class="app-type"> • 问答 • </view>
+                          <view class="app-favorites">
+                             <image src="../images/app-favorites.png"></image>
+                          </view>
+                      </view>
+                      <view class="app-title" style="color:{{colorGray}}">王老师数学在线问答</view>
+                      <view class="app-cover" bindtap="blogToMiniProgram" data-source="seed_question"><image src="http://f3.5rs.me/upload/20161111/2016_11_11_102646347_b.jpg" mode="aspectFill"></image></view>
+                      <view class="app-desc">
+                          “十年小学数学从业经验，三次全国优秀教师荣誉称号，北大附小数学教师组组长”
+                      </view>
+                      <view class="app-operation">
+                          <view class="button" bindtap="blogToMiniProgram" data-source="seed_question">进入提问</view>
+                          <view class="text">769人，浏览981次</view>
+                      </view>
+                  </view>
+                  </view>
+             </view>
+             <view class="last-info">
+                   <view class="operation">
+                        <view class="icon">浏览 125</view>
+                        <view class="icon">点赞 25 </view>
+                        <view class="icon">评论 7</view>
+                   </view>
+                   <view class="browser">
+                      <image src="../images/last-info-praise-over.png"></image>
+                      张三，小王
+                   </view>
+             </view>
+        </view>
+        
+        <view class="blog-item">
+             <view class="first-info">
+                    <view class="head-img"><image src="http://wx.qlogo.cn/mmopen/RroZQjTZqEFS2VkmUg86rnCxpBLEjol4b3GRyVhHxNGlNMG47S9bFeib7jSqklUsqtj6SfQnjg77FHoE32UZX3ZPG1VhdCaSk/132"></image></view>
+                    <view class="head-content">
+                          <view class="nickname"> <text style="color:{{colorGray}}">发表 • </text> 周扬</view>
+                          <view class="datetime">昨天23:18</view>
+                    </view>
+                    <view class="head-more" bindtap="showBlogMoreOperation">
+                      <image src="../images/operation-more.png"></image>
+                    </view>
+                    <view class="head-favorites">
+                      <image src="../images/app-favorites.png"></image>
+                    </view>
+             </view>
+             <view class="body-info">
+                  <view class="topic-canvas">什么是用户体验设计？</view>
+                  <view class="text-canvas">定义体验内容和创新体验形式是交互设计专业的两条腿，前者提升开发效率，乃生存之基；后者决定竞争力，乃发展之道。只会前者就只能是个匠人，只重后者则是空想家。</view>
+                  <view class="img-list-canvas">
+                      <view class="img-item"><image src="http://f3.5rs.me/upload/20170310/2017_03_10_091505462_b.jpg"  mode="aspectFill"></image></view>
+                      <view class="img-item"><image src="http://f3.5rs.me/upload/20170310/2017_03_10_091505571_b.jpg"  mode="aspectFill"></image></view>
+                      <view class="img-item"><image src="http://f3.5rs.me/upload/20170310/2017_03_10_091505720_b.jpg"  mode="aspectFill"></image></view>
+                      <view class="img-item"><image src="http://f3.5rs.me/upload/20170310/2017_03_10_091505851_b.jpg"  mode="aspectFill"></image></view>
+                      <view class="img-item"><image src="http://f3.5rs.me/upload/20170310/2017_03_10_091506032_b.jpg"  mode="aspectFill"></image></view>
+                      <view class="img-item"><image src="http://f3.5rs.me/upload/20170310/2017_03_10_091506172_b.jpg"  mode="aspectFill"></image></view>
+                      <view class="img-item"><image src="http://f3.5rs.me/upload/20170310/2017_03_10_091506290_b.jpg"  mode="aspectFill"></image></view>
+                      <view class="img-item"><image src="http://f3.5rs.me/upload/20170310/2017_03_10_091506440_b.jpg"  mode="aspectFill"></image></view>
+                      <view class="img-item">
+                          <image src="http://f3.5rs.me/upload/20170310/2017_03_10_091506655_b.jpg"  mode="aspectFill"></image>
+                          <view class="mask-info">
+                              <view class="classname">共999张</view> 
+                          </view>
+                      </view>
+                  </view>
+             </view>
+             <view class="last-info">
+                   <view class="operation">
+                        <view class="icon">浏览 125</view>
+                        <view class="icon">点赞 25 </view>
+                        <view class="icon">评论 7</view>
+                        <view class="icon">打赏 2</view>
+                   </view>
+                   <view class="browser">
+                      <image src="../images/last-info-praise-over.png"></image>
+                      张三，小王
+                   </view>
+             </view>
+        </view>    
+
+        <view class="blog-item">
+             <view class="first-info">
+                    <view class="head-img"><image src="http://wx.qlogo.cn/mmopen/RroZQjTZqEFS2VkmUg86rnCxpBLEjol4b3GRyVhHxNGlNMG47S9bFeib7jSqklUsqtj6SfQnjg77FHoE32UZX3ZPG1VhdCaSk/132"></image></view>
+                    <view class="head-content">
+                          <view class="nickname"> <text style="color:{{colorGray}}">发表 • </text> 周扬</view>
+                          <view class="datetime">昨天23:18</view>
+                    </view>
+                    <view class="head-more" bindtap="showBlogMoreOperation">
+                      <image src="../images/operation-more.png"></image>
+                    </view>
+                    <view class="head-favorites">
+                      <image src="../images/app-favorites.png"></image>
+                    </view>
+             </view>
+             <view class="body-info">
+                  <view class="topic-canvas">什么是用户体验设计？</view>
+                  <view class="text-canvas">改变不是一个人的事情，是一群人的事情。如果一群人推动改变，改变是否有效很重要。 </view>
+                  <view class="video-canvas">
+                      <video id="myVideo" src="http://f3.5rs.me/upload/20170303/2017_03_03_093133810.mp4"  controls="true"></video>
+                  </view>
+             </view>
+             <view class="last-info">
+                   <view class="operation">
+                        <view class="icon">浏览 125</view>
+                        <view class="icon">点赞 25 </view>
+                        <view class="icon">评论 7</view>
+                   </view>
+                   <view class="browser">
+                      <image src="../images/last-info-praise-over.png"></image>
+                      张三，小王
+                   </view>
+             </view>
+        </view>    
+
+
+        <view class="blog-item">
+             <view class="first-info">
+                    <view class="head-img"><image src="http://wx.qlogo.cn/mmopen/RroZQjTZqEFS2VkmUg86rnCxpBLEjol4b3GRyVhHxNGlNMG47S9bFeib7jSqklUsqtj6SfQnjg77FHoE32UZX3ZPG1VhdCaSk/132"></image></view>
+                    <view class="head-content">
+                          <view class="nickname"> <text style="color:{{colorGray}}">发表 • </text> 周扬</view>
+                          <view class="datetime">昨天23:18</view>
+                    </view>
+                    <view class="head-more" bindtap="showBlogMoreOperation">
+                      <image src="../images/operation-more.png"></image>
+                    </view>
+                    <view class="head-favorites">
+                      <image src="../images/app-favorites-over.png"></image>
+                    </view>
+             </view>
+             <view class="body-info">
+
+                  <view class="app-area">
+                  <view class="app-arrow"><image src="../images/app-border-arrow.png"></image></view>
+                  <view class="app-canvas">
+                      <view class="app-first">
+                          <view class="app-type"> • 报名 • </view>
+                          <view class="app-favorites">
+                             <image src="../images/app-favorites.png"></image>
+                          </view>
+                      </view>
+                      <view class="app-title" style="color:{{colorGray}}">国学大讲堂限时报名</view>
+                      <view class="app-cover" bindtap="blogToMiniProgram" data-source="seed_match"><image src="http://f3.5rs.me/upload/20161208/2016_12_08_101510788_b.jpg" mode="aspectFill"></image></view>
+                      <view class="app-desc">
+                          “本次亲子文化体验活动以国学讲座为核心，进行中国传统文化溯源，通过各种互动环节，使嘉宾置身丰富生动的人文氛围中。萃辰天心国学教育，聆听完整的国学体系，深入研习国学经典，启迪识人用人智慧。”
+                      </view>
+                      <view class="app-operation">
+                          <view class="button" bindtap="blogToMiniProgram" data-source="seed_match">进入报名</view>
+                          <view class="text">769人报名，浏览981次</view>
+                      </view>
+                  </view>
+                  </view>
+             </view>
+             <view class="last-info">
+                   <view class="operation">
+                        <view class="icon">浏览 125</view>
+                        <view class="icon">点赞 25 </view>
+                        <view class="icon">评论 7</view>
+                        <view class="icon">打赏 2</view>
+                   </view>
+                   <view class="browser">
+                      <image src="../images/last-info-praise-over.png"></image>
+                      张三，小王
+                   </view>
+             </view>
+        </view>
+                
+
+    </view>
+</view>
+
+<block wx:if="{{blogMoreOperation}}">   
+<view class="blog-more-operation" catchtap="hideBlogMoreOperation">
+<view class="operation-canvas">
+          <view class="user-operation">
+                <view class="operation-icon">
+                      <view class="icon"><image src="../images/user-operation-reward.png"></image></view>
+                      <view class="text">赞赏</view>
+                </view>
+                <view class="operation-icon">
+                      <view class="icon"><image src="../images/user-operation-favorites.png"></image></view>
+                      <view class="text">收藏</view>
+                </view>
+                <view class="operation-icon">
+                      <view class="icon"><image src="../images/user-operation-share.png"></image></view>
+                      <view class="text">分享</view>
+                </view>
+          </view>
+          <view class="admin-operation">
+                <view class="operation-icon">
+                      <view class="icon"><image src="../images/user-operation-top.png"></image></view>
+                      <view class="text">置顶</view>
+                </view>
+                <view class="operation-icon">
+                      <view class="icon"><image src="../images/user-operation-disabled.png"></image></view>
+                      <view class="text">禁言</view>
+                </view>
+                <view class="operation-icon">
+                      <view class="icon"><image src="../images/user-operation-delete.png"></image></view>
+                      <view class="text">删除</view>
+                </view>
+          </view>
+      </view>
+</view>
+</block>

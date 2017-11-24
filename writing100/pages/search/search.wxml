@@ -1,0 +1,27 @@
+<!--pages/search/search.wxml-->
+<view class="main-container" catchtouchmove="stop">
+  <form>
+    <view class="search-box">
+      <input class="search" placeholder-style="color:#fff" bindconfirm="toWriting" bindfocus="searchFocus" bindblur="searchBlur" placeholder="请输入汉字" bindinput="splitToArray" value="{{input}}" />
+      <button class="search-button" form-type="reset" catchtap="toWriting">搜索</button>
+    </view>
+  </form>
+  <view class="words-container" style="line-height:100rpx;color:#fff" wx:if="{{words_display.length==0}}">
+    <view class="words {{cur[index]}}" data-index="{{index}}" wx:for="{{words_default}}" wx:key="{{index}}" bindtap="changeWordDefault">{{item}}</view>
+  </view>
+  <view wx:if="{{words_display.length!==0}}" class="words-container" scroll-left="{{scrollLeft}}" bindscroll="scroll"  scroll-x>
+    <view class="words {{cur[index]}}" data-index="{{index}}" wx:for="{{words_display}}" wx:key="{{index}}" catchtap="changeWord" >{{item}}</view>
+  </view>
+  <scroll-view class="img-container" scroll-x  bindscroll="scroll">
+    <image bindload="imageLoad" class="word-img" mode="aspectFill" src="{{cur_img}}" style="width:{{images.width}}rpx;"></image>
+    <view class="bg"></view>
+  </scroll-view>
+  <view class="canvas-container">
+    <canvas class="canvas-bg" canvas-id="bg" />
+    <canvas class="canvas" canvas-id="word" />
+  </view>
+  <view class="bottom">
+  <view class="bottom-count">共{{count}}画</view>
+    <view class="bottom-title" bindtap="reWrite">复</view>
+  </view>
+</view>

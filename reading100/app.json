@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "pages/desktop/desktop",
+    "pages/search/search",
+    "pages/book/book",
+    "pages/read/read",
+    "pages/searchlist/searchlist",
+    "pages/detail/detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#93d5e5",
+    "navigationBarTitleText": "朗诵100",
+    "navigationBarTextStyle": "white"
+  }
+}

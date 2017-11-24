@@ -1,0 +1,295 @@
+<!--pages/discover/book/book.wxml-->
+<view>
+    <view class='top-menu'>
+      <view class='item {{bookBase}}' data-sales='0' bindtap='bookMenuClick'>书刊信息</view>
+      <view class='item {{bookMore}}' data-sales='1' bindtap='bookMenuClick'>读者互动 </view>
+      <view class='number'><view class='text'>99</view></view>
+      <view class='item {{bookReport}}' data-sales='2' bindtap='bookMenuClick'>综合分析</view>
+    </view>  
+</view>
+
+<view class='book-body'>
+  <view class='swiper-canvas'>
+    <swiper class='book-swiper' bindchange='bookSwiperChange' current='{{bookCurrent}}' >
+       <swiper-item>
+          <scroll-view class='pub-scroll' scroll-y='true'>
+            <view class='book-cover'>
+              <view class='cover' style='background-image: url(http://img3x1.ddimg.cn/81/25/23734341-1_w_3.jpg);'></view>
+              <view class='name'>这么慢，那么美</view>
+            </view>
+            <view class='book-report'>
+              <view class='item line'>
+                <view class='number'>3182<text> 人</text></view>
+                <view class='text'>累积用户</view>
+              </view>
+              <view class='item line'>
+                <view class='number'>19712<text> 次</text></view>
+                <view class='text'>累积访问</view>
+              </view>
+              <view class='item'>
+                <view class='number'><text>￥</text>1268.<text>15</text></view>
+                <view class='text'>累积收益</view>
+              </view>
+            </view>
+
+
+            
+
+            <view class='theme'>书刊二维码</view>
+            <view class='ticket-canvas'>
+              <view class='ticket' bindtap='toTicket'>
+                <view class='codeimg'><image src='https://oss.5rs.me/oss/upload/image/png/4e580755e8234644a732798aa1027abb.png?x-oss-process=image/resize,p_100' mode='widthFix'></image></view>
+                <view class='codeinfo'>
+                  <view class='title'>长江作业本四年级语文</view>
+                  <view class='tag'>语文; 学龄前; 升学考试</view>
+                </view>  
+                <view class='report'>
+                  <view class='number'>972</view>
+                  <view class='text'>累积扫码</view>
+                </view>               
+              </view>
+
+              <view class='ticket' bindtap='toTicket'>
+                <view class='codeimg'><image src='https://oss.5rs.me/oss/upload/image/png/4e580755e8234644a732798aa1027abb.png?x-oss-process=image/resize,p_100' mode='widthFix'></image></view>
+                <view class='codeinfo'>
+                <view class='title'>烘焙聚集地——爱吃的吃货</view>
+                  <view class='tag'>语文; 学龄前; 升学考试</view>
+                </view> 
+                <view class='report'>
+                  <view class='number'>1912</view>
+                  <view class='text'>累积扫码</view>
+                </view>               
+              </view>
+              <view class='newticket'>+ 创建二维码</view>
+          </view>
+
+          <view class='theme'>更多关联</view>
+          <view class='other-desc'>
+            您可以设置书刊的关联内容, 在读者扫码浏览信息之余，获取更多的知识与服务，增加用户黏贴度，甚至有更多收益。
+          </view>
+          <view class='other-view'>
+            <view class='other-canvas'>
+              <view class='item line'>
+                  <view class='number'>0</view>
+                  <view class='text'>资源</view>
+              </view>
+              <view class='item line'>
+                  <view class='number'>1</view>
+                  <view class='text'>应用</view>
+              </view> 
+              <view class='item'>
+                  <view class='number'>3</view>
+                  <view class='text'>作品</view>
+              </view>                        
+            </view>
+          </view>
+
+
+
+          <view class='theme'>最近浏览</view>
+            <view class='user-canvas'>
+              <view class='user'>
+                <view class='head-img'><image  mode='widthFix' src='http://wx.qlogo.cn/mmopen/riaV4wQmXVVPOcqdHib8s7R8BCnjnoDyr5pabL3ah2kDXMiaBTAwCHvX2sJBcEcjkC7Ba7TwFdzrrruExicy0iaOE7jQtgtjtOvSZ/132'></image></view>
+                <view class='text'>
+                  <view class='nickname'>钰栋威威</view>                
+                  <view class='city'>武汉</view>
+                  <view class='time'>刚刚</view>
+                </view>
+              </view>
+              <view class='user'>
+                <view class='head-img'><image  mode='widthFix' src='http://wx.qlogo.cn/mmopen/HhCOcOIRth9GMVNaibMDI2RszjKu3ZPDrib7fClPM0UibHiaAF8qQn2TwyLDYEyXHcO6RVicT1iaEtAzl76pkGibfibWaaSu1pjPdXZH/132'></image></view>
+                <view class='text'>
+                  <view class='nickname'>weiwei👩🏼</view>                
+                  <view class='city'>北京</view>
+                  <view class='time'>12分钟前</view>
+                </view>
+              </view>
+              <view class='user'>
+                <view class='head-img'><image  mode='widthFix' src='http://wx.qlogo.cn/mmopen/k947icPboBqDnUbV1tOBoNXZWe4ZuXdVBRVeoXrK1Pico2qXcibdh00XqB8ktoerk4icNLz0kbYHrgcm2icc8fpmiaxIdXNibFIv7aib/132'></image></view>
+                <view class='text'>
+                  <view class='nickname'>꧁༺niky༻꧂</view>                
+                  <view class='city'>张家口</view>
+                  <view class='time'>22分钟前</view>
+                </view>
+              </view>
+              <view class='user'>
+                <view class='head-img'><image  mode='widthFix' src='http://wx.qlogo.cn/mmopen/riaV4wQmXVVPOcqdHib8s7Rx79faicmJ1hIucticJSctH1PC4MhCghrXhuicONiaNXvnibiaKKSWnqsyS7yiaC8jmH0yqAcY6LOD7AqIY/132'></image></view>
+                <view class='text'>
+                  <view class='nickname'>AH无抵押借款莉 </view>                
+                  <view class='city'>呼和浩特</view>
+                  <view class='time'>3小时前</view>
+                </view>
+              </view>
+              <view class='user'>
+                <view class='head-img'><image  mode='widthFix' src='https://wx.qlogo.cn/mmopen/cE2thOO6DmRQGibOJyx2dSrbRV9DQF5xv0lpDGwVrJssoA7NKicflJwOqCJwTj2ibTD9jD9G4Ityb3rCIxrvrEvbs07hUasp7PJ/132'></image></view>
+                <view class='text'>
+                  <view class='nickname'>春秋旅游@刘丽霞15385555139</view>                
+                  <view class='city'>乌拉特前旗</view>
+                  <view class='time'>1天前</view>
+                </view>
+              </view>
+            </view>
+
+          </scroll-view>
+       </swiper-item>
+       <swiper-item>
+          <scroll-view class='pub-scroll' scroll-y='true'>
+            <view class='twomenu'>
+              <view class='first {{userMenuDefault}}' bindtap='userMenuClick' data-sales='default'>读者咨询</view>
+              <view class='item {{userMenuComment}}' bindtap='userMenuClick' data-sales='comment'>使用评价</view>     
+              <view class='last {{userMenuServer}}' bindtap='userMenuClick' data-sales='server'>应用服务</view>
+            </view>
+            <block wx:if="{{userView=='default'}}">
+            <view>
+              default
+            </view>
+            </block>
+            <block wx:if="{{userView=='comment'}}">
+            <view>
+              comment
+            </view>
+            </block>
+            <block wx:if="{{userView=='server'}}">
+            <view>
+              server
+            </view>
+            </block>
+
+          </scroll-view>
+       </swiper-item>          
+       <swiper-item>
+          <scroll-view class='pub-scroll' scroll-y='true'>
+            <view class='twomenu'>
+              <view class='first {{reportMenuDefault}}' bindtap='reportMenuClick' data-sales='default'>数据概览</view>  
+              <view class='item {{reportMenuUser}}' bindtap='reportMenuClick' data-sales='user'>读者画像</view>          
+              <view class='last {{reportMenuMoney}}' bindtap='reportMenuClick' data-sales='money'>收益分析</view>
+            </view>
+            <block wx:if="{{reportView=='default'}}">
+            <view>
+              <view class='theme'>访问趋势</view>
+              <view class='range-operation' >
+                <view class='app-order'>
+                  <view class='select-data'>浏览次数 <image src='../../images/select-more.png' class='icon-select-more'></image> </view>
+                </view>
+                <view class='app-null'></view>
+                <view class='app-time-over'>7天</view>
+                <view class='app-time'>30天</view>
+              </view>
+              <view class='browser-report'>
+                <image src='http://f3.5rs.me/upload/20171012/2017_10_12_173855532.jpg' mode='widthFix'></image>
+              </view>
+              <view class='theme'>应用排行</view>
+              <view class='range-operation' >
+                <view class='app-order'>
+                  <view class='select-data'>浏览次数 <image src='../../images/select-more.png' class='icon-select-more'></image> </view>
+                </view>
+                <view class='app-null'></view>
+                <view class='app-time-over'>7天</view>
+                <view class='app-time'>30天</view>
+              </view>
+              <view class='table-list'>
+                 <view class='row first'>
+                  <view class='cell number'>排名</view>
+                  <view class='cell text'>应用名称</view>
+                  <view class='cell count'>数量</view>
+                </view>
+                <view class='row b0'>
+                  <view class='cell number'>1</view>
+                  <view class='cell text'>快来探讨语文学习的有效方式</view>
+                  <view class='cell count'>9120</view>
+                </view>
+                <view class='row b1'>
+                  <view class='cell number'>2</view>
+                  <view class='cell text'>问答应用--大众时尚风</view>
+                  <view class='cell count'>7783</view>
+                </view>
+                <view class='row b0'>
+                  <view class='cell number'>3</view>
+                  <view class='cell text'>看看你曾是西游记中的谁？</view>
+                  <view class='cell count'>6125</view>
+                </view>
+                <view class='row b1'>
+                  <view class='cell number'>4</view>
+                  <view class='cell text'>RAYS做现代纸书——教育表格</view>
+                  <view class='cell count'>991</view>
+                </view>
+                <view class='row b0'>
+                  <view class='cell number'>5</view>
+                  <view class='cell text'>【亲子互动】暑假八周，留给爸妈的八篇作业（五年级）</view>
+                  <view class='cell count'>812</view>
+                </view>
+                <view class='row b1'>
+                  <view class='cell number'>6</view>
+                  <view class='cell text'>【成绩查询】查看本套试卷标准分（数学·三年级）（流行趣味风）</view>
+                  <view class='cell count'>762</view>
+                </view>
+                <view class='row b0'>
+                  <view class='cell number'>7</view>
+                  <view class='cell text'>混凝土结构设计原理 问卷调查</view>
+                  <view class='cell count'>517</view>
+                </view>
+                <view class='row b1'>
+                  <view class='cell number'>8</view>
+                  <view class='cell text'>2016年12月大学英语四级真题听力</view>
+                  <view class='cell count'>362</view>
+                </view>
+              </view>
+
+              
+            </view>
+            </block>
+            <block wx:if="{{reportView=='user'}}">
+            <view>
+              <view class='theme'>读者性别</view>
+              <view class='range-operation' >
+                <view class='app-order'>
+                  <view class='select-data'>活跃用户 <image src='../../images/select-more.png' class='icon-select-more'></image> </view>
+                </view>
+                <view class='app-null'></view>
+                <view class='app-time-over'>昨日</view>
+                <view class='app-time'>7天</view>
+                <view class='app-time'>30天</view>
+              </view>
+              <view class='user-data-img'><image src='http://f3.5rs.me/upload/20171021/2017_10_21_140401692.png' mode='widthFix'></image> </view>
+              <view class='theme'>地域分布</view>
+              <view class='range-operation' >
+                <view class='app-order'>
+                  <view class='select-data'>活跃用户 <image src='../../images/select-more.png' class='icon-select-more'></image> </view>
+                </view>
+                <view class='app-null'></view>
+                <view class='app-time-over'>昨日</view>
+                <view class='app-time'>7天</view>
+                <view class='app-time'>30天</view>
+              </view>
+              <view class='user-data-img'><image src='http://f3.5rs.me/upload/20171021/2017_10_21_142257160.png' mode='widthFix'></image> </view>
+              <view class='range-operation' >
+                <view class='app-order'>
+                  <view class='select-data'>湖北省 <image src='../../images/select-more.png' class='icon-select-more'></image> </view>
+                </view>
+                <view class='app-null'></view>
+              </view>
+              <view class='user-data-img'><image src='http://f3.5rs.me/upload/20171021/2017_10_21_142547074.png' mode='widthFix'></image> </view>
+
+              <view class='theme'>时段分布</view>
+              <view class='range-operation' >
+                <view class='app-order'>
+                  <view class='select-data'>读者浏览 <image src='../../images/select-more.png' class='icon-select-more'></image> </view>
+                </view>
+                <view class='app-null'></view>
+                <view class='app-time-over'>昨日</view>
+                <view class='app-time'>7天</view>
+                <view class='app-time'>30天</view>
+              </view>
+              <view class='user-data-img'><image src='http://f3.5rs.me/upload/20171021/2017_10_21_143358569.png' mode='widthFix'></image> </view>
+            </view>
+            </block>
+            <block wx:if="{{reportView=='money'}}">
+            <view>
+              money...
+            </view>
+            </block>
+          </scroll-view>
+       </swiper-item>
+    </swiper>
+  </view>
+</view>

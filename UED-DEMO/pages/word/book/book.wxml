@@ -1,0 +1,49 @@
+<!--pages/word/book/book.wxml-->
+<view class="book-item" bindtap="bookToMiniProgram" data-id="1">
+    <view class="pic">
+          <image src="http://f3.5rs.me/upload/20170429/2017_04_29_110012252_c.jpg"  mode="widthFix"></image>
+    </view>
+    <view class="info">
+          <view class="name"> 码书阅读-探索发现我的书 </view>
+          <view class="desc"><text>ISBN：1000000000009\n出版社：武汉理工数字传播工程有限公司\n作者：理工数传UED</text></view>
+    </view>
+</view>
+
+<view class="book-item" bindtap="bookToMiniProgram" data-id="5457">
+    <view class="pic">
+          <image src="http://f3.5rs.me/upload/20170517/2017_05_17_161858355_c.png"  mode="widthFix"></image>
+    </view>
+    <view class="info">
+          <view class="name"> 2018王江涛考研英语满分范文背诵 </view>
+          <view class="desc"><text>ISBN：9787513585552\n出版社：外语教学与研究出版社\n作者：王江涛</text></view>
+    </view>
+</view>
+
+<view class="book-item" bindtap="bookToMiniProgram" data-id="111304">
+    <view class="pic">
+          <image src="http://file.changdelao.net/upload/20170615/2017_06_15_104221374_c.jpg"  mode="widthFix"></image>
+    </view>
+    <view class="info">
+          <view class="name"> Windows用户界面设计与优化策略 </view>
+          <view class="desc"><text>ISBN：9787115131768\n出版社：人民邮电出版社\n作者：徐刚</text></view>
+    </view>
+</view>
+
+<view class="book-item"  bindtap="bookToMiniProgram" data-id="8383">
+    <view class="pic">
+          <image src="http://file.changdelao.net/upload/20170518/2017_05_18_164902926_c.jpg"  mode="widthFix"></image>
+    </view>
+    <view class="info">
+          <view class="name"> 用户体验设计成功之道 </view>
+          <view class="desc"><text>9787115337344\n出版社：人民邮电出版社\n作者：Jodie Moule</text></view>
+    </view>
+</view>
+<view class="book-item"  bindtap="bookToMiniProgram" data-id="8244">
+    <view class="pic">
+          <image src="http://file.changdelao.net/upload/20170518/2017_05_18_164845617_c.jpg"  mode="widthFix"></image>
+    </view>
+    <view class="info">
+          <view class="name"> 用户体验与产品创新设计 </view>
+          <view class="desc"><text>ISBN：9787111300762\n出版社：机械工业出版社\n作者：罗仕鉴</text></view>
+    </view>
+</view>

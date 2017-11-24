@@ -1,0 +1,115 @@
+<!--template.wxml-->
+<!--开始听写按钮-->
+<!-- <template name="bt_start_tingxie">
+  <view class="bt" bindtap="gotoNext">
+    <view class="bt_text f2">
+      开始听写
+      <image src="../../images/index/broadcast.png"></image>
+    </view>
+  </view>
+</template>
+
+<template name="star">
+  <view class="unit-star-{{star}}">
+    <view></view>
+    <view></view>
+    <view></view>
+  </view>
+</template>
+<template name="starInline">
+  <block wx:if="{{star==0}}">
+    <image wx:for="{{starArr_empty}}" class="unit-starLine" src="../../images/play/{{item}}.png" style="height:33rpx;width:32rpx;"></image>
+  </block>
+  <block wx:if="{{star==1}}">
+    <image wx:for="{{starArr_oneStar}}" class="unit-starLine" src="../../images/play/{{item}}.png" style="height:33rpx;width:32rpx;"></image>
+  </block>
+  <block wx:if="{{star==2}}">
+    <image wx:for="{{starArr_twoStar}}" class="unit-starLine" src="../../images/play/{{item}}.png" style="height:33rpx;width:32rpx;"></image>
+  </block>
+  <block wx:if="{{star==3}}">
+    <image wx:for="{{starArr_threeStar}}" class="unit-starLine" src="../../images/play/{{item}}.png" style="height:33rpx;width:32rpx;"></image>
+  </block>
+</template> -->
+
+
+<template name="Buy">
+  <view class="maskBox"></view>
+  <view class="maskOfKey clearfix">
+    <block wx:if="{{key_rest_count==0}}">
+      <view class="titleOfTips">
+        <text>正在解锁</text>
+        <view class="title-bg"></view>
+        <view class="del" bindtap="returnToUnit">
+          <image src="../../images/unit/delete_box.png" mode="widthFix" ></image>
+        </view>
+      </view>
+      <view class="bookName">《{{book_name}}》</view>
+      <view class="showBook">
+        <image src="{{book_pic}}"></image>
+      </view>
+      <view class="showMoney clearfix">
+        <text>￥</text>
+        <view class="showNumOfMoney">{{money}}</view>
+        <text>元</text>
+      </view>
+      <view class="openAllBook" bindtap="openAllBook" bindload="imageOnLoad">
+        <image src="../../images/unit/BuyThisBook.png" mode="widthFix"></image>
+      </view>
+      <view class="WX-onSecurity">
+        <image src="../../images/unit/modeOfFooter.png" mode="widthFix"></image>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="titleOfTips">
+        <image class="title-bg" src="../../images/unit/keyOfTitle.png" style="width:600rpx;height:250rpx;"></image>
+        <view class="del" bindtap="returnToUnit">
+          <image src="../../images/unit/delete_box.png" mode="widthFix" ></image>
+        </view>
+      </view>
+      <view class="tips">
+        <text class="color333">你共有</text>
+        <image src="../../images/unit/key.png" style="width:88rpx;height:133rpx;"></image> ×
+        <text>{{key_rest_count}}</text>
+      </view>
+      <view class="openThisUnitWithKey" bindtap="openThisUnitWithKey">
+        <image class="unlockBtn" src="../../images/unit/needKeyNum.png" mode="widthFix"></image>
+      </view>
+      <view class="WX-share">
+        <button open-type='share'></button>
+        <image src="../../images/unit/shareKey.png" style="width:415rpx;height:50rpx;"></image>
+      </view>
+    </block>
+  </view>
+</template>
+
+<template name="OrderDetail">
+  <view class="maskOfDetail">
+    <view class="modalOfDetail">
+      <view class="titleOfDetail">
+        <image src="../../images/unit/folder.png" mode="widthFix"></image>
+      </view>
+      <view class="bodyOfDetail">
+        <view class="bodyOfHeader clearfix">
+          <text class="left">购买</text>
+          <image class="right" bindtap="closePayBox" src="../../images/unit/delete_box.png" mode="widthFix"></image>
+        </view>
+        <view class="money">
+          ￥:{{money}}
+        </view>
+        <view class="bookName">{{book_name}}</view>
+        <!-- <view class="lessonName">{{Name}}</view> -->
+        <!-- <view class="resourceNum">共{{resourceNum}}个资源</view> -->
+        <view wx:if="{{goTap}}" class="loadings clearfix">
+          <image src="../../images/unit/loading.gif" style="display:block;margin:0 auto;width:50px;height:10px;filter:grayscale(100%);"></image>
+        </view>
+        <view class="immediatePay" bindtap="immediatePay">{{goTap?'正在连接微信支付':'立即支付'}}</view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<!--页面加载中  -->
+<template name="pageLoading">
+  <!--<view class="mask" hidden="{{isLoading}}"></view>-->
+  <loading hidden="{{isLoading}}">加载中...</loading>
+</template>

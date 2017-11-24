@@ -1,0 +1,36 @@
+<!--pages/evaluate/evaluate.wxml-->
+<block wx:if="{{mainMenu=='live'}}">
+<view class="body">
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
+  indicator-dots="true"  indicator-color="rgba(0, 0, 0, .3)" indicator-active-color="#333">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <view class='item'>
+          <view class='video' style='background-image: url({{item.url}})'>
+                <view class='main'>
+                    <view class='state'> <text>{{item.state}}</text> </view>
+                    <view class='title'>王江涛高分写作2018年考研全力备战</view>
+                    <view class='datetime'>2017年9月8日 12:00:00</view>
+                    <view class='desc'>对考研英语、四级英语、专四英语有深入研究，指导数十万考生成功获得考研、四级、专四高分。</view>
+                    <view class='play'> <image src='../images/live-play.png' mode='widthFix'></image> </view>
+                </view>
+          </view>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
+</view>
+</block>
+
+<block wx:if="{{mainMenu=='user'}}">
+  <view class='head-canvas'>
+        <view class='head-img'> <image src='{{userInfo.avatarUrl}}'></image> </view>
+        <view class='head-nickname'>{{userInfo.nickName}}</view>
+  </view>
+</block>
+
+<view class='bottom'>
+    <view bindtap='menuSales' data-menu='live' class='live{{mainMenu}}'>课程</view>
+    <view bindtap='menuSales' data-menu='user' class='user{{mainMenu}}'>我的</view>
+</view>

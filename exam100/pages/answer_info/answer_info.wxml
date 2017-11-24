@@ -1,0 +1,45 @@
+<import src="../template/temp_list/temp_list.wxml"/>
+<import src="../template/temp_common/temp_common.wxml"/>
+
+<!-- 题目展示页面 -->
+  <view class='answerBox'>
+ 		<view class="answerInfo flexR">
+ 			<view class="time flexR" wx:if="{{!showTip&&type==1}}">
+ 				<image src="/pages/images/timeIcon.png"></image>
+ 				<text class="color1">{{mockAnswerTime}}</text>
+ 			</view>
+ 			<view class="count flexR">
+ 				<image src="/pages/images/countIcon.png"></image>
+ 				<view><text class="color1">{{currentIndex+1}}</text>/{{answerCard.length}}</view> 				
+ 			</view>
+ 		</view>
+ 		<view class="answerContain">
+ 			<template is="movie-list" data="{{videoShow,showTip,itemList:allList[currentIndex].question,audioImg:allList[currentIndex].audioImg}}"/>
+ 		</view> 
+    <view class="answerFooter flexR">
+    	<!-- 上一题-->
+    	<view wx:if="{{answerCard}}" class='pre flexR {{currentIndex==0||noPre?"noData":""}}' bindtap="preAnswer">
+        <image src='/pages/images/preIcon.png'></image>
+      </view>
+      <block wx:if="{{!showTip&&answerCard}}">
+        <view class='item color1' bindtap="showCard">题卡</view>
+    	  <view class='item item3 color1' bindtap="showSubmitBox">交卷</view>
+      </block>
+      <block wx:elif="{{showTip&&answerCard}}">
+        <view wx:if="{{showTip=='allTip'&&errorCount>0}}" id="allAnalysis" class='item item1 color1 flexC' bindtap="changeAnalysis"><view>只看</view><view>错题</view></view>
+        <view wx:elif="{{showTip=='errorTip'}}" id="errorAnalysis" class='item item1 color1 flexC' bindtap="changeAnalysis"><view>全题</view><view>解析</view></view>
+        <view class='item item2 color1' bindtap="showCard">题卡</view>
+    	</block>
+    	<!-- 下一题-->
+    	<view wx:if="{{answerCard}}" class='next flexR {{currentIndex==(answerCard.length-1)||noNext?"noData":""}}' bindtap="nextAnswer">
+        <image src='/pages/images/nextIcon.png'></image>
+      </view>
+    </view>
+  </view>
+  <!-- 弹框-->
+  <template is="submitBox" wx:if="{{submitInfo.showSubmitBox}}" data="{{submit:submitInfo}}"/> 
+  <!--答题卡 -->
+  <template  is="answerCard" wx:if="{{!showTip}}" data="{{currentIndex,showCard,answerCard}}"/>
+  <template is="answerCardError" wx:elif="{{showTip=='errorTip'}}" data="{{showCard,answerCard}}"/>
+  <template is="answerCardAll" wx:elif="{{showTip=='allTip'}}" data="{{showCard,answerCard}}"/>
+  <loading hidden="{{!isLoadding}}">加载中...</loading>

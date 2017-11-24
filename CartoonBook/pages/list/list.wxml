@@ -1,0 +1,19 @@
+<!--pages/list/list.wxml-->
+<view class="bottom" bindtap="edit" wx:if="{{!editing}}">编辑</view>
+<view class="bottom-editing" wx:if="{{editing}}">
+  <view catchtap="edit">取消</view>
+  <view catchtap="selectAll">全选</view>
+  <view catchtap="deleteInstance">删除</view>
+</view>
+<view class="days-container" wx:for="{{instanceList}}" wx:key="{{index}}" >
+  <view class="content" data-id="{{item.second_classify_id}}" data-vid="{{item.instance.id}}"  data-seriesId="{{item.instance.series_id}}" catchtap="toVideoPage">
+    <view class="{{edit}}" data-index="{{index}}" catchtap="select">
+      <image class="check-icon" src="../../images/mine/{{check[index]}}.png"></image>
+    </view>
+    <image class="book" src="{{item.instance.instance_pic}}"></image>
+    <view class="info">
+      <view class="info-name">{{item.instance.instance_name}}</view>
+    </view>
+  </view>
+</view>
+<image wx:if="{{instanceList.length == 0}}" class='nobook' src='../../images/mine/noBook.png'></image>

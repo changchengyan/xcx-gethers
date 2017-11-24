@@ -1,0 +1,113 @@
+/* pages/special/special.wxss */
+
+.pub-app-icon .ic{ width: 180px; height: 240px; margin: auto; background-image: url(http://f3.5rs.me/upload/20170804/2017_08_04_094129931.png); background-size:100% auto;}
+.pub-app-icon .im{ position: absolute; z-index: 1; width: 60px; height: 60px; margin-left: 60px; margin-top: 150px;}
+.pub-app-icon .im image{ width: 60px; height: 60px;}
+
+.app-list-title{color: #0fceba; letter-spacing:2px;white-space:nowrap;  padding: 10px 30px 10px 30px; font-size: 16px; 
+ font-weight: 500;}
+.app-list-title .text{background-color: #f8f8f8; border-bottom: 1px solid #f0f0f0; padding: 10px 0px 10px 0px; text-align: center;}
+
+.app-list-area{ padding: 0px 30px 30px 30px;  }
+.app-list-area .app-list-canvas{}
+
+.app-item{ background-color: #f0f0f0;  padding: 5px; font-size: 16px;display: flex; flex-direction: row; margin-bottom: 10px;}
+.app-item .pic{ min-width: 35px; height: 35px;background-color: #777; color: #fff; max-width: 35px; font-size: 12px; padding: 10px 0px 0px 0px; text-align: center;}
+.app-item .pic image{ width: 100%; }
+.app-item .info{ padding: 0px 10px 0px 10px; }
+.app-item .info .title{line-height: 23px;font-weight: 300; padding: 0px 0px 10px 0px;}
+.app-item .info .more{font-size: 12px;font-weight: 200; color: #777;}
+.app-item .operation{ min-width: 40px; max-width: 40px;}
+.app-item .operation .text{ background-color: #0fceba; color: #fff; font-size: 14px; padding: 3px 5px 3px 5px;}
+
+ .seed-list-title{color: #0fceba; letter-spacing:2px;white-space:nowrap;  padding: 10px 30px 10px 30px; font-size: 16px; 
+ font-weight: 500;}
+.seed-list-title .text{background-color: #f8f8f8; border-bottom: 1px solid #f0f0f0; padding: 10px 0px 10px 0px; text-align: center;}
+
+
+/*A*/
+.seed-list-area{ padding: 0px 20px 10px 20px; 
+display: flex;
+flex-direction: row;
+flex-wrap:wrap;
+}
+.seed-list-area .seed-item{ width: 50%; max-width: 50%; min-width: 50%; }
+.seed-list-area .seed-item .item{ padding: 15px 10px 15px 10px; }
+.seed-list-area .seed-item .item .bg{ background-color: #f8f8f8; padding: 0px 0px 15px 0px; }
+.seed-list-area .seed-item .item .seed{font-size: 10px;  color: #fff; text-align: center;padding: 5px 5px 5px 5px;font-weight: 300; position: absolute; z-index: 1; background-color: rgba(0,0, 0,0.5);  line-height: 10px; margin-left: 50px;margin-top: 0px;}
+.seed-list-area .seed-item .item .img{  overflow: hidden;}
+.seed-list-area .seed-item .item .img image{ height: 150px;}
+
+.seed-list-area .seed-item .item .text{ text-align: left; font-size: 14px;  font-weight: 300; line-height:18px; padding: 5px 5px 15px 5px; height:41px;
+overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+ }
+.seed-list-area .seed-item .item .desc{ display: none; text-align: center; font-size: 14px;  font-weight: 300; color: #777; line-height: 21px; padding: 15px 5px 15px 5px;}
+
+.seed-list-area .seed-item .item .operation{ display: none; text-align: center; justify-content: center; align-items: center; padding: 20px;}
+.seed-list-area .seed-item .item .operation .tosales{ background-color: #fdeae8; padding: 7px 18px 7px 18px; border-radius: 5px; border: 1px  solid #fadddb; color: #ed6359; font-size: 14px; font-weight: 300;}
+
+
+/***B**/
+.seed-list-area-b{ padding: 0px 25px 10px 25px; 
+display: flex;
+flex-direction: row;
+flex-wrap:wrap;
+}
+.seed-list-area-b .seed-item{ width: 33.33%; max-width: 33.33%; min-width:33.33%; }
+.seed-list-area-b .seed-item .item{ padding: 15px 5px 15px 5px; }
+.seed-list-area-b .seed-item .item .bg{ background-color: #f8f8f8; padding: 0px 0px 10px 0px; }
+.seed-list-area-b .seed-item .item .seed{font-size: 10px;  color: #fff; text-align: center;padding: 5px 5px 5px 5px;font-weight: 300; position: absolute; z-index: 1; background-color: rgba(0,0, 0,0.5);  line-height: 10px; margin-left: 0px;margin-top: 0px;}
+.seed-list-area-b .seed-item .item .img{  overflow: hidden;}
+.seed-list-area-b .seed-item .item .img image{width: 100%; height: 100px;}
+
+.seed-list-area-b .seed-item .item .text{ text-align: left; font-size: 13px;  font-weight: 300; line-height:18px; padding: 5px 5px 15px 5px; height:41px;
+overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+ }
+.seed-list-area-b .seed-item .item .desc{ display: none; text-align: center; font-size: 12px;  font-weight: 300; color: #777; line-height: 21px; padding: 15px 5px 15px 5px;}
+
+.seed-list-area-b .seed-item .item .operation{ display: none; text-align: center; justify-content: center; align-items: center; padding: 20px;}
+.seed-list-area-b .seed-item .item .operation .tosales{ background-color: #fdeae8; padding: 7px 18px 7px 18px; border-radius: 5px; border: 1px  solid #fadddb; color: #ed6359; font-size: 14px; font-weight: 300;}
+
+
+
+/***C**/
+.seed-list-area-c{ padding: 0px 25px 10px 25px; 
+
+}
+.seed-list-area-c .seed-item{  }
+.seed-list-area-c .seed-item .item{ padding: 15px 5px 15px 5px; border-bottom: 1px solid #eee; }
+.seed-list-area-c .seed-item .item .bg{ padding: 0px 0px 0px 0px; display: flex; flex-direction: row; }
+.seed-list-area-c .seed-item .item .seed{font-size: 10px;  color: #fff; text-align: center;padding: 5px 5px 5px 5px;font-weight: 300; position: absolute; z-index: 1; background-color: rgba(0,0, 0,0.5);  line-height: 10px; margin-left: 0px;margin-top: 0px;}
+.seed-list-area-c .seed-item .item .img{ width: 100px;max-width: 100px; min-width: 100px; padding: 0px 0px 0px 0px;}
+.seed-list-area-c .seed-item .item .img image{width: 100px; height: 100px;}
+
+.seed-list-area-c .seed-item .item .content{ padding: 0px 0px 0px 10px;}
+.seed-list-area-c .seed-item .item .text{ text-align: left; font-size: 16px;  font-weight: 300; line-height:18px; padding: 0px 5px 5px 5px;
+
+
+ }
+.seed-list-area-c .seed-item .item .desc{font-size: 14px;  font-weight: 300; color: #777; line-height: 21px; padding: 5px 5px 15px 5px;
+overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    height: 68px;
+
+}
+
+.seed-list-area-c .seed-item .item .operation{ display: none; text-align: center; justify-content: center; align-items: center; padding: 20px;}
+.seed-list-area-c .seed-item .item .operation .tosales{ background-color: #fdeae8; padding: 7px 18px 7px 18px; border-radius: 5px; border: 1px  solid #fadddb; color: #ed6359; font-size: 14px; font-weight: 300;}
+
+
+

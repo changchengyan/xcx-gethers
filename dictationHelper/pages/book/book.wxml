@@ -1,0 +1,121 @@
+<!--book.wxml-->
+<import src="../template/template.wxml" />
+<view class="background {{font}} {{type_p}}">
+  <view class="top-show">
+    <view class="title">
+      <view class="book-title f2 ">{{book.bookName}}</view>
+      <view class="publicKeyNum ">
+        <image src="/images/book/key.png"></image>
+        <text> x {{key_rest_count}}</text>
+      </view>
+    </view>
+    <view class="top-botton-list">
+      <view class="top-button" catchtap="toContinue">
+        <image src="/images/book/continue.png" mode="widthFix"></image>
+        <view class="">继续上次听写</view>
+      </view>
+      <view class="top-button" wx:if="{{book.isPay}}">
+        <image src="/images/book/buyed.png" mode="widthFix"></image>
+        <view class="">已购买</view>
+      </view>
+      <view class="top-button" wx:else catchtap="topay">
+        <image src="/images/book/buy_car.png" mode="widthFix"></image>
+        <view class="">立即购买</view>
+      </view>
+      <view class="top-button" catchtap="toShare">
+       <button open-type="share"></button>
+       <view class="red-dot" wx:if="{{!isClick}}"></view>
+        <image src="/images/book/share_botton.png" mode="widthFix"></image>
+        <view class="">分享得钥匙</view>
+      </view>
+    </view>
+  </view>
+
+
+  <view wx:for="{{sortName}}" wx:for-index="nameIdx" wx:for-item="name" class="book-content">
+    <view class="sortName" wx:if="{{name}}">{{name}}</view>
+    <view class="unit-list">
+      <view class="unit-item" wx:for="{{sortJson[name]}}" wx:key="id" bindtap="toUnitPage" data-lesson_id="{{item.id}}" data-name="{{item.lesson_name}}">
+        <!-- <image class="icon" src="{{lesson_pic}}"></image>  -->
+        <view class="unit-discover">
+          <view class="unit-index">{{index+1}}</view>
+          <import src="../template/template.wxml" />
+          <template is="star" data="{{...item}}"></template>
+        </view>
+        <view class="unit-name f2 color3 two_line">{{item.lesson_name}}</view>
+      </view>
+    </view>
+
+  </view>
+  <view class="bottomMore">
+    <image class="unit-bottom" src="../../images/book/bg_bottom.png"></image>
+    <!-- <view class="no_more" wx:if="{{!loadMore && !loadding}}" bindtap="bindToCodeBook">更多资源</view> -->
+    <view class="no_more" wx:if="{{!loadMore && !loadding}}" >已加载全部</view>
+  </view>
+
+  <view class="last" wx:if="{{loadding&&moreLoadding}}" style="width:100%;display:flex;justify-content:center;">
+    <image class="gif" style="width:110rpx;height:25rpx" src="../../images/word/loading.gif"></image>
+    <text class="jz" style="font-size:28rpx">{{loadingText}}</text>
+  </view>
+
+</view>
+
+<!--submit  -->
+<view class="proloadBg"></view>
+<view class="submited" wx:if="{{returnload}}">
+  <view class="subBox" catchtouchmove="catchTouchstart" bindtap="returnList"></view>
+  <view class="sub_bg" catchtouchmove="catchTouchstart">
+    <view class="sub_close" catchtap="returnList">
+      <image src="/images/word/Menu-close.png"></image>
+    </view>
+    <view class="tiaofu">
+      <image src="/images/word/tiaofu.png"></image>
+    </view>
+    <view class="sub_star_{{star}}">
+
+      <view style="margin-top:40rpx"></view>
+      <view></view>
+      <view style="margin-top:40rpx"></view>
+      <!--按钮分享  -->
+      <!-- <view class="share-button">
+        <button open-type="share">
+          
+        </button> 分享送钥匙
+        <image src="/images/book/share_icon.png" mode="widthFix"></image>
+      </view> -->
+    </view>
+    <view class="tips_star_{{star}}">
+      <image wx:if="{{star==3}}" src="/images/word/star_three.png" style="  width: 317rpx; height: 155rpx"></image>
+      <image wx:elif="{{star==2}}" src="/images/word/star_two.png" style="  width: 400rpx; height: 155rpx"></image>
+      <image wx:elif="{{star==1}}" src="/images/word/star_one.png" style="  width: 450rpx; height: 60rpx;"></image>
+      <image wx:elif="{{star==0}}" src="/images/word/star_zero.png" style="  width: 400rpx; height: 155rpx"></image>
+    </view>
+    <view class="btn">
+
+      <view class="me">
+        <view class="share-button" catchtap="toShare">
+          <button open-type="share"></button>
+          <image src="/images/word/Menu-btn.png"></image>
+        </view>
+        <image src="/images/word/Reload-btn.png" style="width:145rpx;height:145rpx" catchtap="playAgain"></image>
+        <image src="/images/word/Forward-btn.png" catchtap="nextPlay"></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--支付弹窗  -->
+<block wx:if="{{topay}}">
+    <template is="Buy" data="{{money:money,book_name:book.bookName,key_rest_count:0,book_img:book_img}}"></template>
+  </block>
+<!--支付弹窗 end  -->
+<!--loading  -->
+<import src="../template/template.wxml" />
+<template is="pageLoading" data="{{isLoading}}"></template>
+<!--预加载图片begin-->
+<view style="height:0;overflow:hidden;">
+	<image src="../../images/unit/BuyThisBook.png"></image>
+	<image src="../../images/unit/modeOfFooter.png"></image>
+	<image src="../../images/unit/modeOfTitle.png"></image>
+</view>
+<!--预加载图片begin-->

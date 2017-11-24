@@ -1,0 +1,109 @@
+/**app.wxss**/
+/* .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}  */
+.font{
+  font-family: Arial, Helvetica, sans-serif, STHeiti Light, Microsoft Yahei;
+}
+.default{}
+.default .f0{font-size: 10px !important; line-height: 14px !important;}
+.default .f1{font-size: 12px !important; line-height: 16px !important;}
+.default .f2{font-size: 14px !important; line-height: 18px !important;}
+.default .f3{font-size: 16px !important; line-height: 22px !important;}
+.default .f4{font-size: 18px !important; line-height: 24px !important;}
+.default .f5{font-size: 20px !important; line-height: 26px !important;}
+.default .f6{font-size: 22px !important; line-height: 28px !important;}
+/*常用字色*/
+.colore{
+  color: #eee;
+}
+.colorf{
+  color: #fff;
+}
+.color3 {
+  color: #333;
+}
+.color6 {
+  color: #666;
+}
+.color9 {
+  color: #999;
+}
+.color_red {
+  color: #ec4444;
+}
+.red{
+  color: red;
+}
+.blue{
+  color: blue;
+}
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+
+.clearfix:after {
+  display: block;
+  content: ".";
+  height: 0;
+  visibility: hidden;
+  clear: both;
+  font-size: 0;
+  line-height: 0;
+}
+
+.clearfix {
+  overflow: hidden;
+}
+
+.clearfix {
+  zoom: 1;
+}
+/*一排省略*/
+.a_line {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/*两排省略*/
+.two_line { 
+    text-overflow:-o-ellipsis-lastline;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+}
+/*遮罩  */
+.mask {
+  position: fixed;
+  z-index: 1000;
+  background:rgba(0,0,0,0.5);
+  height: 100%;
+  width: 100%;
+  top:0;
+  left:0;
+}
+/*获取formId 模板消息  */
+.newsBtn{
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	border:none!important;
+	z-index:2;
+	margin:0;
+	padding:0;
+}

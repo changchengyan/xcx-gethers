@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/hot/hot",
+    "pages/video/video",
+    "pages/setting/setting",
+    "pages/list/list",
+    "pages/history/history",
+    "pages/mine/mine",
+    "pages/videolist/videolist",
+    "pages/classify/classify"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "会声绘本",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "color": "#999999",
+    "selectedColor": "#6aadf0",
+    "list": [
+      {
+        "pagePath": "pages/hot/hot",
+        "text": "热门",
+        "iconPath": "/images/hot/hot.png",
+        "selectedIconPath": "/images/hot/hot_select.png"
+      },
+      {
+        "pagePath": "pages/classify/classify",
+        "text": "分类",
+        "iconPath": "/images/hot/classify.png",
+        "selectedIconPath": "/images/hot/classify_select.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "/images/hot/mine.png",
+        "selectedIconPath": "/images/hot/mine_select.png"
+      }
+    ]
+  }
+}

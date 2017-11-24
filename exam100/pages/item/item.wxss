@@ -1,0 +1,79 @@
+/* pages/item/item.wxss */
+@import "/pages/template/temp_common/temp_common.wxss";
+
+.container {
+  padding-top: 60rpx;
+  box-sizing: border-box;
+  padding-bottom: 140rpx;
+}
+
+.container .top {
+  text-align: center;
+}
+
+.top .book_name {
+  padding: 0 148rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  color: #333;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.top image {
+  width: 298rpx;
+  height: 298rpx;
+  margin-top: 30rpx;
+  border-radius: 10rpx;
+}
+
+.top .book_txt {
+  padding: 0 85rpx 0 145rpx;
+  box-sizing: border-box;
+  margin-top: 40rpx;
+  font-size: 24rpx;
+  color: #666;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.ellipsis-left {
+  display: flex;
+  height: 100%;
+  align-items: flex-start;
+  position: absolute;
+  left: 85rpx;
+  top: 0;
+}
+
+.book_content {
+  width: 470rpx;
+}
+
+.list {
+  margin-top: 48rpx;
+}
+.end image{
+	display:block;
+	width:80%;
+	height:auto;
+	margin:0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+<!--book.wxml-->
+<view class="{{font}}">
+  <view class="title clearfix">
+    <view class="book-title f2 color3 left">{{book.bookName}}</view>
+    <view class="publicKeyNum right">钥匙：{{key_rest_count}}</view>
+  </view>
+  <view class="unit-list">
+    <view class="unit-item" wx:for="{{book.lessonList}}" wx:key="id" bindtap="toUnitPage" data-lesson_id="{{item.id}}" data-name="{{item.lesson_name}}">
+      <image class="icon" src="{{lesson_pic}}"></image>
+      <import src="../template/template.wxml" />
+      <template is="star" data="{{...item}}"></template>
+      <view class="unit-name f2 color3 two_line">{{item.lesson_name}}</view>
+    </view>
+  </view>
+  <view class="last" wx:if="{{loadding}}" style="width:327rpx;margin:0 auto">
+    <image class="gif" style="width:110rpx;height:25rpx" src="../../images/word/loading.gif"></image>
+    <text class="jz">{{loadText}}</text>
+  </view>
+</view>

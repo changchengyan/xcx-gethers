@@ -1,0 +1,52 @@
+<!--pages/codebook/codebook.wxml-->
+<view class='top'>
+  <view class='count'><text>12</text>本</view>
+  <view class='voice' bindtap='toSales' data-sales='voice-search'>语音搜索</view>
+  <view class='scan'>扫码加书</view>
+</view>
+<view class='top-visibility'></view>
+
+<view class='book-list-area' bindtap='toSales' data-sales='book'>
+    <view class='book-item'>
+      <view class='pic'><image src='http://f3.5rs.me/upload/20170804/2017_08_04_152058716_c.jpg' mode='widthFix'></image></view>
+      <view class='text'>标准实验教科书 英语 （新起点）学生用书 六年级下册</view>
+    </view> 
+    <view class='book-item'>
+      <view class='pic'><image src='http://f3.5rs.me/upload/20170804/2017_08_04_153905386_c.jpg' mode='widthFix'></image></view>
+      <view class='text'> 标准实验教科书 语文 六年级下册 </view>
+    </view>
+    <view class='book-item'>
+      <view class='pic'><image src='http://f3.5rs.me/upload/20170811/2017_08_11_095815871_c.png' mode='widthFix'></image></view>
+      <view class='text'>Everybody Up Starter Level Student Book</view>
+    </view>
+
+
+    <view class='book-item'>
+      <view class='pic'><image src='http://file.changdelao.net/upload/20170817/2017_08_17_110127776_c.jpg' mode='widthFix'></image></view>
+      <view class='text'>提高学生学习专注力的8个方法</view>
+    </view> 
+    <view class='book-item'>
+      <view class='pic'><image src='http://file.changdelao.net/upload/20170802/2017_08_02_154433366_c.jpg' mode='widthFix'></image></view>
+      <view class='text'> Oracle从入门到精通 </view>
+    </view>
+    <view class='book-item'>
+      <view class='pic'><image src='http://file.changdelao.net/upload/20170801/2017_08_01_172800682_c.jpg' mode='widthFix'></image></view>
+      <view class='text'>小学生语文新课标课外必读丛书：木偶奇遇记</view>
+    </view>
+
+
+    <view class='book-item'>
+      <view class='pic'><image src='http://file.changdelao.net/upload/20170801/2017_08_01_172758144_c.jpg' mode='widthFix'></image></view>
+      <view class='text'>经典必读：神话故事</view>
+    </view> 
+    <view class='book-item'>
+      <view class='pic'><image src='http://file.changdelao.net/upload/20170801/2017_08_01_172752380_c.jpg' mode='widthFix'></image></view>
+      <view class='text'>小学生语文新课标课外必读丛书：格林童话</view>
+    </view>
+    <view class='book-item'>
+      <view class='pic'><image src='http://file.changdelao.net/upload/20170801/2017_08_01_172750894_c.jpg' mode='widthFix'></image></view>
+      <view class='text'>世界经典文学名著宝库Classics·儿童彩图注音版-三十六计</view>
+    </view>
+
+
+</view> 

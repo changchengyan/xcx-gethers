@@ -1,0 +1,35 @@
+<!--write.wxml-->
+<import src="../template/template.wxml" />
+<view class="main-container" catchtouchmove="stop">
+  <scroll-view class="words-container" scroll-left="{{scrollLeft}}" scroll-x bindscroll="scroll">
+    <view class="words {{cur[index]}}" data-index="{{index}}" wx:key="{{index}}" wx:for="{{words_display}}" bindtap="changeWord">{{item}}</view>
+  </scroll-view>
+  <scroll-view class="img-container" scroll-x bindscroll="scroll">
+    <image bindload="imageLoad" class="word-img" mode="aspectFill" src="{{cur_img}}" style="width:{{images.width}}rpx;"></image>
+    <view class="bg"></view>
+  </scroll-view>
+  <view class="{{canvas_container}}" bindtap="reWrite">
+    <view wx:if="{{canPlay}}" class="play-box"  catchtap="controlMp3">
+      <image class="play" src="/images/write/play.png"></image>
+    </view>
+    <view wx:if="{{!canPlay}}" class="play-box"  catchtap="controlMp3">
+      <image class="play" src="/images/write/stop.png"></image>
+    </view><canvas class="canvas-bg" canvas-id="bg" />
+    <canvas class="canvas" canvas-id="word" />
+    <view class="count">共{{count}}画</view>
+  </view>
+  <view class="last" bindtap="last">
+  </view>
+  <view class="replay" bindtap="reWrite">
+  </view>
+  <view class="next" bindtap="next">
+  </view>
+  <block wx:if="{{isPaying}}">
+    <template is="Buy" data="{{money:money,book_name:book_name,key_rest_count:key_rest_count,book_pic:book_pic}}"></template>
+  </block>
+  <!-- <view class="bottom-item">
+      <image mode="aspectFit" src="../../images/write/icon4.png"></image>
+      <text>预览</text>
+    </view>  -->
+  <!-- <view class="bottom-title" bindtap="reWrite">再写一遍</view> -->
+</view>

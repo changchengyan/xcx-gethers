@@ -1,0 +1,40 @@
+/* pages/evaluate/book/book.wxss */
+.report{ display: flex; justify-content: center;align-items: center; padding: 20px;  text-align: center; background-color: #06c1ae; color: #fff;}
+.report .item{ flex-grow: 1;}
+.report .line{  border-right: 1px solid #64dbcf;}
+.report .item .number{ font-size: 20px;}
+.report .item .number text{ font-size: 12px;}
+.report .item .text{ font-size: 12px; color: #fff;}
+
+.to-report{background-color: #06c1ae; color: #fff;font-size: 14px; text-align: center; padding: 0px 0px 10px 0px;}
+
+.hot-title{ text-align: center; font-size: 16px; padding: 10px 0px 0px 0px;}
+.hot-desc{ font-size: 14px; color: #777; text-align: center; padding: 5px 0px 10px 0px; }
+
+.evaluate-item-canvas{padding:0px 20px 0px 20px; }
+.evaluate-item{ padding: 20px 0px 20px 0px; display: flex; flex-direction: row; border-top: 1px solid #eee;}
+.evaluate-item .content{ padding: 0px 10px 0px 0px;}
+.evaluate-item .content .text{ font-size: 16px; line-height: 21px;}
+.evaluate-item .content .text-report{ font-size: 12px; color: #999; padding: 5px 0px 0px 0px;}
+.evaluate-item .pic{ max-width: 30%; min-width: 30%;background-color: #666; color: #fff;flex-direction: column; justify-content: center; vertical-align: middle; align-items: center; display:flex; text-align: center;
+ background-size: cover;
+}
+.evaluate-item .pic .score{line-height: 16px; padding: 5px; font-size: 12px;background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.5));  }
+.evaluate-item .pic .score .number{ font-size: 18px; line-height: 20px;}
+
+
+
+.more-icon{ display: flex; justify-content: center; align-items: center; padding: 20px;background-color: #06c1ae;}
+.more-icon view{ flex-grow: 1; font-size: 12px; color: #fff; text-align: center;}
+.more-icon view image{ width: 20px;}
+.more-icon .score{ font-size:20px; width: 50px; height: 50px; border: 2px solid  rgba(255, 255, 255, 0.8); border-radius: 50px; margin:0px auto 5px auto; padding: 10px 0px 0px 0px;}
+.more-icon .score text{font-size: 12px;}
+
+.unit-scroll{background-color: #f5f5f5;}
+.unit-list{ display: flex; white-space:nowrap; font-size: 16px; font-weight: 500; border-bottom: 1px solid #eee; padding: 10px; }
+.unit-list view{ padding: 8px 12px 8px 12px;}
+.unit-list .over{ border-bottom: 1px solid #06c1ae; color:#06c1ae;}
+
+.unit-info{display: flex;}
+.unit-info view{ flex-grow: 1; font-size: 12px; color: #999; padding: 10px 20px 10px 20px;}
+.unit-info .page{ text-align: right;}

@@ -1,0 +1,54 @@
+<!--index.wxml-->
+<view class="{{font}}">
+<view class="user-info">
+
+    <view class="img-item">
+        <image src="{{userInfo.avatarUrl}}"></image>
+        <view class="f2">{{userInfo.nickName}}</view>
+    </view>
+
+</view>
+<view class="user-info-visibility">
+      正在刷新
+</view>
+
+<view class="user-report">
+    <view class="item line">
+        <view class="number f5">12<text class="f1">本</text></view>
+        <view class="title f2">书籍数量</view>
+    </view>
+    <view class="item line">
+        <view class="number f5">3910<text class="f1">分</text></view>
+        <view class="title f2">阅读时长</view>
+    </view>
+    <view class="item">
+        <view class="number f5">552<text class="f1">本</text></view>
+        <view class="title f2">学习笔记</view>
+    </view>
+</view>
+
+
+
+<view class="menul-list">
+    <view class="menu" data-page="message" bindtap="toPage">
+        <view class="title f2">我的消息</view>
+        <block wx:if="{{codeBookUserInfo.ask_unread_count+codeBookUserInfo.default_unread_count>0}}"> 
+        <view class="red-circle"><image src="../images/red-circle.png" mode="widthFix"></image></view>
+        </block>
+        <view class="arrow"><image src="../images/icon_tools_arrow.png"></image></view>
+        
+    </view>
+    <view class="menu" data-page="welcome" bindtap="toPage">
+        <view class="title f2">邀请好友</view>
+        <view class="arrow"><image src="../images/icon_tools_arrow.png"></image></view>
+    </view>
+    <view class="menu" data-page="help" bindtap="toPage">
+        <view class="title f2">用户指南</view>
+        <view class="arrow"><image src="../images/icon_tools_arrow.png"></image></view>
+    </view>
+    <view class="menu" data-page="setting" bindtap="toPage">
+        <view class="title f2">系统设置</view>
+        <view class="arrow"><image src="../images/icon_tools_arrow.png"></image></view>
+    </view>
+</view>
+</view>

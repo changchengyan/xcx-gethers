@@ -1,0 +1,68 @@
+/* pages/chinese/uncle/uncle.wxss */
+
+.input-text{ background-color: #06c1ae; text-align: center; padding: 20px 20px 30px 20px;}
+.input-text .title{ color: #fff;font-size: 26px; margin-bottom: 15px; }
+.input-text .input{background-color: #fff; color: #777; border-radius:3px;font-size: 16px;  width: 90%; margin: auto; padding: 10px; }
+.input-text .more{ display: flex; padding: 15px 0px 0px 0px;
+  justify-content: center; font-size: 14px;
+}
+.input-text .more view{ padding: 0px 15px 0px 15px; color: #fff;}
+
+.app-title{ font-size: 16px; text-align: center; padding: 15px 0px 5px 0px;}
+.app-desc{ font-size: 12px; color: #999;text-align: center; padding: 0px 0px 15px 0px;}
+.app-canvas{ display: flex; flex-direction: row; align-content: center; justify-content: center;
+  padding: 20px 20px 20px 20px;
+}
+.app-canvas .app{ flex-grow: 1; text-align: center;}
+.app-canvas .app .icon{ width: 60px; height:40px; margin: auto; }
+.app-canvas .app .text{ font-size: 14px; color: #777; padding: 5px 0px 0px 0px;}
+.app-canvas .app .icon image{ width: 40px; height:40px; border-radius: 100%;}
+
+
+.evaluates-title{ font-size: 16px; text-align: center;padding: 15px 0px 5px 0px;border-top: 1px solid #eee;}
+.evaluates-desc{ font-size: 12px; color: #999; text-align: center; padding: 0px 0px 15px 0px;}
+
+.evaluates-canvas{ padding: 20px; }
+.evaluates-canvas .content{ text-align: center; padding: 0px 0px 30px 0px; }
+.evaluates-canvas .content .cn{ font-size: 16px; line-height: 22px;}
+.evaluates-canvas .content .en{ font-size: 16px; color: #777; line-height: 22px;}
+
+
+
+
+bottom-view{ height: 52px;}
+.bottom{
+  bottom: 0px;left: 0px; position: fixed; z-index: 2;  
+  width: 100%;height: 52px; background-color: #f2f2f2; border-top: 1px solid #e5e5e5;
+  display: flex; flex-direction: row;
+  justify-content: center; align-items: center;
+  text-align: center; font-size: 12px;
+}
+.bottom view{ flex-grow: 1;}
+.bottom .icon{ margin: auto; width: 22px; height: 22px;
+ background-repeat: no-repeat; background-size: 22px 22px;}
+.bottom .icon image{ width: 20px; height: 20px;}
+.bottom .text{font-size: 10px; line-height: 10px; padding: 3px 0px 0px 0px;}
+
+
+.evaluateevaluate{ color: #ff6600;}
+.evaluateevaluate .icon{ background-image: url(http://f3.5rs.me/upload/20170920/2017_09_20_180309642.png);}
+.evaluatebook{ color: #555;}
+.evaluatebook .icon{ background-image: url(http://f3.5rs.me/upload/20170920/2017_09_20_180258572.png);}
+.evaluateuser{ color: #555;}
+.evaluateuser .icon{ background-image: url(http://f3.5rs.me/upload/20170920/2017_09_20_180258572.png);}
+
+
+.bookbook{ color: #ff6600;}
+.bookbook .icon{ background-image: url(http://f3.5rs.me/upload/20170920/2017_09_20_180034671.png);}
+.bookevaluate{ color: #555;}
+.bookevaluate .icon{ background-image: url(http://f3.5rs.me/upload/20170920/2017_09_20_180330369.png);}
+.bookuser{ color: #555;}
+.bookuser .icon{ background-image: url(http://f3.5rs.me/upload/20170920/2017_09_20_180330369.png);}
+
+.useruser{color: #ff6600;}
+.useruser .icon{ background-image: url(http://f3.5rs.me/upload/20170920/2017_09_20_180401234.png);}
+.userbook{color: #555;}
+.userbook .icon{ background-image: url(http://f3.5rs.me/upload/20170920/2017_09_20_180350580.png);}
+.userevaluate{color: #555;}
+.userevaluate .icon{ background-image: url(http://f3.5rs.me/upload/20170920/2017_09_20_180350580.png);}

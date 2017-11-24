@@ -1,0 +1,22 @@
+/* pages/analysis/analysis.wxss */
+@import "/pages/template/temp_common/temp_common.wxss";
+
+.container {
+  box-sizing: border-box;
+  position:relative;
+  height: 100%;
+}
+
+.container .title {
+  font-size: 34rpx;
+  padding: 0 136rpx;
+  box-sizing: border-box;
+  text-align: center;
+  color: #333;
+}
+.noData{
+  width: 100%;
+  height: 100%;
+  font-size: 28rpx;
+  color: #999;
+}

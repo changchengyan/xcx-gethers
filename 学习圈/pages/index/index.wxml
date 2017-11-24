@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="search-canvas">
+    <view class="logo">学习 • 圈子</view>
+    <view class="text">遇见知识大咖</view>
+    <view class="search"><input placeholder="搜索 书籍/圈子/内容/大咖 加入圈子" /></view>
+</view>
+<view class="group-canvas">
+    <view class="group" bindtap="toWord" >
+        <view class="pic"><image src="http://f3.5rs.me/upload/20170712/2017_07_12_095526166.jpg" mode="widthFix"></image></view>
+        <view class="title">用户体验交流圈</view>
+        <view class="desc">用户体验是一种纯主观的在用户使用一个产品（服务）的过程中建立起来的心理感受。个体差异也决定了每个用户的真实体验是无法通过其他途径来完全模拟或再现的</view>
+    </view>
+
+    <view class="group" bindtap="toWord" >
+        <view class="pic"><image src="http://f3.5rs.me/upload/20170719/2017_07_19_090355518_b.png" mode="widthFix"></image></view>
+        <view class="title">阿德莱德攻略</view>
+        <view class="desc">阿德莱德是澳大利亚港市，南澳大利亚州首府，位于州东南部洛夫蒂山地与圣文森特湾间的滨海平原上，濒临托伦河。港口距市区西北12公里，有铁路相通.</view>
+    </view>
+</view>

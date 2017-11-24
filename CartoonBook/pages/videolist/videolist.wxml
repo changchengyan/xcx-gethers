@@ -1,0 +1,7 @@
+<!--pages/videolist/videolist.wxml-->
+<view class="video-container">
+  <view class="video-item" bindtap="toVideoPage" wx:for="{{secondClassify[classIndex].instances}}" wx:key="{{index}}" data-vid="{{item.id}}" data-seriesId="{{item.series_id}}" data-id="{{secondClassify[classIndex].series.classify_id}}">
+    <image src="{{item.instance_pic}}"></image>
+    <view class="video-text">{{item.instance_name}}</view>
+  </view>
+</view>

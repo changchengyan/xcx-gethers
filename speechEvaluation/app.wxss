@@ -1,0 +1,42 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.clear{
+  clear: both;
+}
+.hidden{
+  display: none;
+}
+.from-bottom{  
+  opacity: 0;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  z-index: 99;
+}
+.clearfix:after {
+  display: block;
+  content: ".";
+  height: 0;
+  visibility: hidden;
+  clear: both;
+  font-size: 0;
+  line-height: 0;
+}
+.clearfix {
+  overflow: hidden;
+}
+.clearfix {
+  zoom: 1;
+}
+/**loading**/
+@import "/pages/component/loading/loading.wxss";
+/* pay */
+@import "/pages/component/pay/pay.wxss";

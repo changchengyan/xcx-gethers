@@ -1,0 +1,65 @@
+<!--template.wxml-->
+<!--开始听写按钮-->
+<template name="bt_start_tingxie">
+  <view class="bt" bindtap="gotoNext">
+    <view class="bt_text f2">
+      开始听写
+      <image src="../../images/index/broadcast.png"></image>
+    </view>
+  </view>
+</template>
+
+<template name="star">
+  <view class="unit-star-{{star}}">
+    <view></view>
+    <view></view>
+    <view></view>
+  </view>
+</template>
+
+
+<template name="Buy">
+  <view class="maskOfKey">
+  <view class="delKey" bindtap="returnToUnit">
+      <image src="../../images/unit/delete_box.png" mode="widthFix"></image>
+  </view>
+     <view class="key">
+      <image src="../../images/unit/key.png" ></image>
+      <text class="keyNum">×{{key_rest_count}}</text>
+    </view>
+    <view class="openThisUnitWithKey" bindtap="openThisUnitWithKey">
+        钥匙解锁
+    </view>
+    <view class="openAllBook" bindtap="openAllBook">
+      解锁全书
+    </view>
+  </view>
+</template>
+
+<template name="OrderDetail">
+  <view class="maskOfDetail">
+    <view class="modalOfDetail">
+      <view class="titleOfDetail">
+        <image src="../../images/unit/folder.png" mode="widthFix"></image>
+      </view>
+      <view class="bodyOfDetail">
+        <view class="bodyOfHeader clearfix">
+          <text class="left">购买</text>
+          <image class="right" bindtap="closePayBox" src="../../images/unit/delete_box.png" mode="widthFix"></image>
+        </view>
+        <view class="money">
+        ￥:{{money}}
+        </view>
+        <view class="bookName">{{book_name}}</view>
+        <view class="lessonName">{{Name}}</view>
+        <view class="resourceNum">共{{resourceNum}}个资源</view>
+        <view wx:if="{{goTap}}" class="loadings clearfix">
+          <image src="../../images/unit/loading.gif" style="display:block;margin:0 auto;width:50px;height:10px;filter:grayscale(100%);"></image>
+        </view>
+        <view class="immediatePay" bindtap="immediatePay">{{goTap?'正在连接微信支付':'立即支付'}}</view>
+      </view>      
+    </view>
+  </view>
+</template>
+
+

@@ -1,0 +1,112 @@
+/* pages/discover/book/book.wxss */
+.top-menu{ height: 45px; display: flex; justify-content: center; position: fixed; width: 100%; left: 0px; top: 0px; z-index: 1; background-color: #f8f8f8;}
+.top-menu .item{ padding: 15px 20px 10px 20px; font-size: 14px; border-bottom: 1px solid #fff;}
+.top-menu .over{ border-bottom: 1px solid #fe942d; color:#fe942d;}
+.top-menu .number{ max-width: 1px; min-width: 1px; }
+.top-menu .number .text{ background-color: #f30; color: #fff; font-size: 9px; line-height: 9px; border-radius: 100%; position: absolute; z-index: 1;
+ max-width: 16px; min-width: 16px; height: 16px; text-align: center;
+ padding: 4px 0px 0px 0px;
+ margin: 8px 0px 0px -20px;
+}
+
+.book-body{ height: 100%; width: 100%; position: absolute; padding: 45px 0px 0px 0px;}
+.book-body .swiper-canvas{  height: 100%;}
+.book-body .book-swiper{ background-color: #fff; height: 100%;}
+.book-body .pub-scroll{height: 100%;}
+
+/**基本概况*/
+.theme{ font-size: 16px; color: #fe942d; padding: 20px 20px 10px 20px; text-align: center;}
+.book-cover{ padding:20px 20px 20px 20px; border-bottom:1px solid #eee;}
+.book-cover .cover{ width:140px; height: 180px; margin: auto; border: 1px solid #eee;background-size: cover;background-position-x: center;}
+
+.book-cover .name{ font-size: 16px; text-align: center; padding: 10px;}
+
+.book-report{ display: flex; text-align: center; justify-content: center; align-items: center; padding: 20px;border-bottom:1px solid #eee;}
+.book-report .item{ max-width: 33.33%; min-width: 33.33%;}
+.book-report .line{ border-right: 1px solid #eee;}
+.book-report .item .number{ font-size: 18px;color:#fe942d;}
+.book-report .item .number text{ font-size: 12px;}
+.book-report .item .text{ font-size: 14px; color: #555; font-weight: 300; padding: 3px 0px 0px 0px;}
+
+
+
+.ticket-canvas{ padding: 0px 20px 0px 20px; }
+.ticket-canvas .ticket{ padding: 10px 10px 10px 10px; border: 1px solid #eee; border-radius: 5px; display: flex; margin-bottom: 15px;
+  align-items: center;
+}
+.ticket-canvas .ticket .codeimg{ flex-grow: 1; max-width: 70px; min-width: 70px; line-height: 0px;}
+.ticket-canvas .ticket .codeimg  image{ width: 70px;}
+.ticket-canvas .ticket .codeinfo{ flex-grow: 3; font-size: 14px; padding: 3px 0px 0px 5px;}
+.ticket-canvas .ticket .codeinfo .title{ font-size: 15px; padding: 0px 0px 10px 0px;}
+.ticket-canvas .ticket .codeinfo .tag{font-size: 12px; color: #555; font-weight: 300;}
+
+.ticket-canvas .ticket .report{ flex-grow: 1; max-width:80px; min-width: 80px; text-align: center;   }
+.ticket-canvas .ticket .report .number{ font-size: 18px; padding: 0px 0px 5px 0px; line-height: 18px;}
+.ticket-canvas .ticket .report .text{ font-size: 12px; color: #777;}
+
+.ticket-canvas .newticket{ padding: 10px 10px 10px 10px; border: 1px  dashed #ddd; background-color: #f8f8f8; border-radius: 5px; display: flex; margin-bottom: 15px;
+  align-items: center; justify-content: center;
+  font-size: 14px;
+}
+
+
+.user-canvas{ padding: 0px 15px 30px 15px; display: flex; justify-content: center;}
+.user-canvas .user{ max-width: 20%; min-width: 20%;padding: 0px 10px 0px 10px;}
+.user-canvas .user .head-img{ }
+.user-canvas .user .head-img image{ width: 90%; border-radius: 100%;}
+.user-canvas .user .text{  text-align: center;}
+.user-canvas .user .text .nickname{font-size: 14px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap; line-height: 16px;}
+.user-canvas .user .text .time{ font-weight: 300; color: #777; font-size: 12px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap; }
+.user-canvas .user .text .city{ font-weight: 300; color: #06c1ae; font-size: 12px; padding: 3px 0px 2px 0px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap; }
+
+
+.other-desc{ font-size: 12px; color: #777; line-height: 18px; padding: 0px 20px 0px 20px; text-align: center; font-weight: 300;}
+.other-view{padding: 10px 20px 20px 20px;}
+.other-canvas{ display: flex; justify-content: center; text-align: center; padding: 10px 10px 10px 10px; border:1px solid #eee; border-radius: 5px;}
+.other-canvas .item{min-width: 33.33%; max-width: 33.33%;}
+.other-canvas .item .number{font-size: 18px; color:#fe942d;}
+.other-canvas .item .text{font-size: 14px; color: #777; font-weight: 300;}
+.other-canvas .line{ border-right: 1px solid #eee;}
+
+
+
+/**扩展关联*/
+
+
+
+
+/**综合分析*/
+.twomenu{ display: flex; font-size: 14px; justify-content: center; padding: 25px 0px 10px 0px; color: #777;}
+.twomenu .over{ background-color: #888; color: #fff;}
+.twomenu .first{ border: 1px solid #888; border-radius: 8px 0px 0px 8px; border-right: 0;padding: 5px 12px 5px 15px;}
+.twomenu .item{ border: 1px solid #888;border-right: 0;padding: 5px 12px 5px 12px;}
+.twomenu .last{ border: 1px solid #888; border-radius: 0px 8px 8px 0px;padding: 5px 15px 5px 12px;}
+
+.range-operation{ display: flex; font-size: 14px;line-height: 18px; align-items: center; padding: 0px 20px 0px 20px; }
+.range-operation .app-name{ flex-grow: 1;}
+.range-operation .app-null{ flex-grow: 10;}
+.range-operation .app-order{flex-grow: 1; border-bottom: 1px solid #aaa; padding: 5px 0px 7px 7px;}
+.range-operation .app-order .select-data{ font-size: 14px; line-height: 18px;}
+.range-operation .app-order .icon-select-more{ width: 13px; height: 7px; margin-left: 2px;}
+.range-operation .app-time{flex-grow: 1; border: 1px solid #ddd; padding: 5px 10px 5px 10px; border-radius: 10px; text-align: center;
+margin-left: 10px;
+}
+.range-operation .app-time-over{ flex-grow: 1; border: 1px solid #fe942d; padding: 5px 10px 5px 10px; border-radius: 10px; text-align: center;
+margin-left: 10px; color: #fe942d;}
+
+.browser-report{ padding: 10px 10px 10px 10px;}
+.browser-report image{ width: 100%;}
+
+
+.table-list{ font-size: 14px; padding: 0px 20px 20px 20px; margin-top: 10px;}
+.table-list .first{ background-color: #eee; border-top: 1px solid #ddd;}
+.table-list .row{ display: flex; align-items: center; padding: 10px 0px 10px 0px; border: 1px solid #eee; border-top: 0;}
+.table-list .b0{ background-color: #ffffff;}
+.table-list .b1{ background-color: #f8f8f8;}
+.table-list .number{ flex-grow: 1; min-width: 50px; max-width: 50px; text-align: center; color:  #777;}
+.table-list .text{  flex-grow: 8;}
+.table-list .count{flex-grow: 1;min-width: 70px; max-width: 70px; text-align: right; color: #fe942d; padding: 0px 10px 0px 0px;}
+
+
+.user-data-img{ padding: 20px;}
+.user-data-img image{ width: 100%;}

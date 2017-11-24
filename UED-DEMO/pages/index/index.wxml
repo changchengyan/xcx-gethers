@@ -1,0 +1,61 @@
+<!--index.wxml-->
+<view class="app-list-canvas">
+    <view class="app-title">
+         DCG-2017终端用户产品
+    </view>
+    <view class="app-desc">
+         <text>加强团队合作达成产品共识，
+         便于需求、设计、开发工作开展，
+         请即时了解产品更新</text> 
+    </view>
+    <view class='pro-name'>主产品（完整入口）</view>
+    <view class='pro-desc'>以书为主页,连接ABC三类产品实现业务全覆盖</view>
+    <view class="item" bindtap="toSales" data-sales="codebook">码书阅读<view class="more">v2.0</view></view>
+    <view class="item-disabled">码书发现<view class="more">AI概念产品 12月15日v1.0</view></view>
+    <view class="item-disabled">码书优选<view class="more">轻商城产品 10月1日 项目部</view></view>
+
+    <view class='pro-name'>A类产品（独立进入，带TV）</view>
+    <view class='pro-desc'><text>只做书籍既有内容的体验提升，
+    早期录入工作量较大，后期维护简单，
+    视情况可发展为B类产品</text> </view>
+    <view class="item-disabled">听写100<view class="more">v1.0</view></view>
+    <view class="item-disabled">笔顺100/笔画100<view class="more">v1.0</view></view>
+    <view class="item-disabled">朗诵100<view class="more">v1.0</view></view>
+    <view class="item-disabled">绘本100/会声绘本<view class="more">v1.0</view></view>
+    <view class="item" bindtap="toSales" data-sales="english-words">单词100<view class="more">v1.0</view></view>
+
+    <view class='pro-name'>B类产品（独立+外部进入）</view>
+    <view class='pro-desc'><text>书籍光盘或扩展配套内容的体验提升，
+    早期录入工作量较大，后期需要多角色参与</text></view>
+    <view class="item" bindtap="toSales" data-sales="evaluate">口语评测<view class="more">9月24日-v1.0</view></view>    
+    <view class="item" bindtap="toSales" data-sales="evaluate">小宝启蒙<view class="more">3-6岁，音视频类+实体购物</view></view>    
+    <view class="item" bindtap="toSales" data-sales="follow-sound">随书听<view class="more">音频类v1.0</view></view>
+    <view class="item-disabled">随书答案<view class="more">v1.0</view></view>
+    <view class="item-disabled">随书文库<view class="more">WORD/PPT/EXCEL/PDF v1.0</view></view>
+    <view class="item-disabled">随书练习<view class="more">v1.0</view></view>
+    <view class="item-disabled">正在报名<view class="more">v1.0</view></view>
+    <view class="item" bindtap="toSales" data-sales="word">蜜蜂社群<view class="more">v1.0</view></view>
+    <view class="item" bindtap="toSales" data-sales="word-join">蜜蜂社群<view class="more">未加入状态</view></view>
+    <view class="item" bindtap="toSales" data-sales="live">海豚讲课<view class="more">视频类可带TV v1.0</view></view>  
+
+    <view class='pro-name'>C类产品</view>  
+    <view class='pro-desc'>导流应用，一次开发，后期基本无维护工作</view>
+    <view class="item" bindtap="toSales" data-sales="chinese-uncle">汉字叔叔<view class="more">10月1日-v1.1</view></view>
+
+
+    <view class='pro-name'>管理端</view>  
+    <view class='pro-desc'>平台或是产品的管理平台APP终端</view>
+    <view class="item-disabled">RAYS探索<view class="more">直播、素材、应用、商品</view></view>
+
+    <view class='pro-name'>印刷产品+</view>  
+    <view class='pro-desc'>以实体印刷为主，电子阅读同步阅读为辅的产品呈现</view>
+    <view class="item" bindtap="toSales" data-sales="discover">RAYS探索<view class="more">管理手册 + 纸质期刊 + 电子同步</view></view>
+    
+
+    <view class='pro-name'>可视化产品</view>  
+    <view class='pro-desc'><text>以大数据为基础的可视化产品交互呈现，
+    让使用者更加方便地进行数据的个性化管理与使用</text></view>
+    <view class="item-disabled">Rays指数<view class="more">数据分析场景图形可视化 v3.0</view></view>
+
+
+</view>

@@ -1,0 +1,183 @@
+html, body {
+    margin: 0;
+    padding: 0
+}
+
+.container {
+    width: 750px;
+    height: 1000px;
+    background: url(http://image.chubanyun.net/images/WordUncle/poster/img/tao_BG.png);
+    background-repeat: no-repeat;
+    background-size: 100% 750px;
+    -webkit-background-size: 100% 750px;
+    -moz-background-size: 100% 750px;
+    overflow: hidden;
+}
+
+.top {
+    width: 488px;
+    margin: 0 auto;
+    padding-top: 10px;
+    height: 47px;
+    line-height: 47px;
+}
+
+.top .xin {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.top .xin img {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.top .xin .txt {
+    font-size: 24px;
+    color: #000;
+    font-weight: lighter;
+    font-family: "Microsoft YaHei UI";
+}
+
+.top .hanzi {
+    width: 160px;
+    height: 47px;
+    font-size: 0;
+    float: right;
+}
+
+.cen {
+    padding-top: 70px;
+    width: 230px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cen img {
+    width: 190px;
+    height: 190px;
+}
+.end {
+	margin-top:-30px;
+}
+.end p {
+    font-size: 30px;
+    padding: 0 65px 0 65px;
+    font-family: "Microsoft YaHei UI";
+    text-align: center;
+    width: 62%;
+    margin: 0 auto;
+    padding-top: 35px;
+    line-height: 41px;
+    height:238px;
+    overflow: hidden;
+    margin-bottom: 132px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+}
+
+.end h4 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.end .pig {
+    width: 623px;
+    border: 1px solid #8b8b8b;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    margin: 0 auto;
+    height: 205px;
+    padding-top: 10px;
+    border-radius: 40px;
+    position: relative;
+    margin-top: 80px;
+}
+
+.end .pig .user {
+    position: absolute;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    font-family: "Microsoft YaHei UI";
+    margin: -34px auto 0;
+    width: 403px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    left: 115px;
+    top: 1.5%;
+}
+
+.end .pig .title {
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: middle;
+    max-width: 82%;
+}
+
+.end .pig i {
+    position: absolute;
+    left: 103px;
+    top: -2px;
+    width: 421px;
+    height: 3px;
+    background: #fff;
+
+}
+
+.end .pig .word {
+
+    padding: 5px 25px 27px 25px;
+
+}
+
+.end .pig .word p {
+    width: 400px;
+    margin: 0;
+    padding: 0;
+    font-size: 26px;
+    text-align: left;
+    line-height: 44px;
+    padding-top: 16px;
+
+}
+
+.end .pig .word p span {
+    font-weight: bold;
+    color: #a01818;
+    letter-spacing: 9px;
+}
+
+.end .pig .word .logo {
+    float: right;
+    width: 162px;
+    height: 184px;
+}
+
+.left {
+    float: left;
+}
+
+/*div{*/
+/*clear: both;*/
+/*}*/
+.user {
+    position: relative;
+}
+
+.user .touxiang {
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    border-radius: 50%;
+    font-size: 0;
+    vertical-align: middle;
+}

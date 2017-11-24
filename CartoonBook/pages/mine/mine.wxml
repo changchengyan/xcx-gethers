@@ -1,0 +1,30 @@
+<!--pages/mine/mine.wxml-->
+<view class="top">
+  <view class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.weixinUser.headimgurl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.weixinUser.nickname}}</text>
+  </view>
+</view>
+<view class="item" bindtap="toHistory">观看历史
+  <scroll-view scroll-x>
+    <view class="scroll-view">
+      <view class="video-container" wx:key="{{index}}" wx:for="{{userHistory}}" data-id="{{item.seconde_classify_id}}" data-vid="{{item.id}}" data-seriesId="{{item.series_id}}" catchtap="toVideoPage">
+        <image src="{{item.instance_pic}}"></image>
+        <view class="video-name">{{item.instance_name}}</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<view class="item" bindtap="toList">我的看单
+  <scroll-view scroll-x>
+    <view class="scroll-view">
+      <view class="flex-box" wx:for="{{userInstanceList}}" wx:key="{{index}}">
+        <view class="video-container" wx:for="{{item.instances}}" wx:key="{{index}}" data-id="{{item.seconde_classify_id}}" data-vid="{{item.instance.id}}" data-seriesId="{{item.instance.series_id}}" catchtap="toVideoPage">
+          <image src="{{item.instance.instance_pic}}"></image>
+          <view class="video-name">{{item.instance.instance_name}}</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<view class="item" style="margin-top:30rpx;" bindtap="toSetting">设置</view>

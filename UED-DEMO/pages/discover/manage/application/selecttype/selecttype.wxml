@@ -1,0 +1,34 @@
+<!--pages/discover/manage/application/selecttype/selecttype.wxml-->
+<view class='control-view'>
+  <view class='marsk'>
+    <view class='item-max'><view class='text' bindtap='selectOver' data-sales='全部应用'>全部应用</view></view>
+    <view class='item-group-name'>基础通用</view>
+    <view class='item'><view class='text' bindtap='selectOver' data-sales='视频'>视频</view></view>
+    <view class='item'><view class='text' bindtap='selectOver' data-sales='音频'>音频</view></view>
+    <view class='item'><view class='text' bindtap='selectOver' data-sales='PDF'>PDF</view></view>
+    <view class='item'><view class='text' bindtap='selectOver' data-sales='相册'>相册</view></view>
+    <view class='item'><view class='text' bindtap='selectOver' data-sales='图书'>图书</view></view>
+    <view class='item'><view class='text' bindtap='selectOver' data-sales='文章'>文章</view></view>
+    <view class='item-group-name'>互动反馈</view>
+    <view class='item'><view class='text' bindtap='selectOver' data-sales='读者圈'>读者圈</view></view>
+    <view class='item'><view class='text' bindtap='selectOver' data-sales='问答'>问答</view></view>
+    <view class='item'><view class='text' bindtap='selectOver' data-sales='1对1辅导'>1对1辅导</view></view>
+    <view class='item'><view class='text' bindtap='selectOver' data-sales='问卷调查'>问卷调查</view></view>
+    <view class='item'><view class='text' bindtap='selectOver' data-sales='直播'>直播</view></view>
+    <view class='item'><view class='text' bindtap='selectOver' data-sales='分享互动'>分享互动</view></view>
+    <view class='item-group-name'>个性呈现</view>
+    <view class='item'><view class='text' bindtap='selectOver' data-sales='扫扫看'>扫扫看</view></view>
+    <view class='item'><view class='text' bindtap='selectOver' data-sales='教育表格'>教育表格</view></view>
+    <view class='item'><view class='text' bindtap='selectOver' data-sales='专题'>专题</view></view>
+    <view class='item'><view class='text' bindtap='selectOver' data-sales='作者留言'>作者留言</view></view>
+    <view class='item'><view class='text' bindtap='selectOver' data-sales='听力'>听力</view></view>
+    <view class='item'><view class='text' bindtap='selectOver' data-sales='答案'>答案</view></view>
+    <view class='item-group-name'>读者参与</view>
+    <view class='item'><view class='text' bindtap='selectOver' data-sales='读书卡片'>读书卡片</view></view>
+    <view class='item'><view class='text' bindtap='selectOver' data-sales='题库'>题库</view></view>
+    <view class='item'><view class='text' bindtap='selectOver' data-sales='标准分'>标准分</view></view>
+    <view class='item'><view class='text' bindtap='selectOver' data-sales='投票'>投票</view></view>
+    <view class='item'><view class='text' bindtap='selectOver' data-sales='背单词'>背单词</view></view>
+    <view class='item'><view class='text' bindtap='selectOver' data-sales='报名'>报名</view></view>
+  </view>
+</view>

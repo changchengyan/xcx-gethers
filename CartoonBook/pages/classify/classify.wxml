@@ -1,0 +1,18 @@
+<!--pages/classify/classify.wxml-->
+<view class="classify-container">
+  <view class="classify {{cur[index]}}" wx:for="{{classify}}" wx:key="{{index}}" data-index="{{index}}" bindtap="changeClassify">{{item.classify.classify_name}}</view>
+</view>
+<view class="tag-container">
+  <view class="tag" bindtap="changeSecondClassify" data-id="{{item.id}}" wx:key="{{index}}" wx:for="{{classify[curIndex].second_classifys}}">{{item.classify_name}}</view>
+</view>
+<view class="classify-item" bindtap="toListPage" data-index="{{index}}" data-id="{{item.series.classify_id}}" wx:for="{{secondClassify}}" wx:key="{{index}}">
+  <view class="item-title"><text class="title-text">{{item.series.series_name}}</text></view>
+  <view class="item-container">
+    <view class="book-item" catchtap="toVideoPage" data-vid="{{itm.id}}" data-seriesId="{{item.series.id}}" data-id="{{item.series.classify_id}}" wx:for="{{item.instances}}" wx:key="{{index}}" wx:for-item="itm" wx:for-index="idx">
+      <image src="{{itm.instance_pic}}"></image>
+      <view class="book-title">{{itm.instance_name}}</view>
+      <view class="book-info">{{itm.instance_des}}</view>
+    </view>
+
+  </view>
+</view>

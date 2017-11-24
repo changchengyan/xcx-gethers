@@ -1,0 +1,96 @@
+<!--pages/template/template.wxml-->
+<!--支付弹框-->
+<template name="template-pay-box">
+  <block wx:if="{{payShow}}">
+    <view class="template-black-mask">
+    </view>
+    <view class="template-pay-box">
+        <view class="template-semicircle">
+          <image src="/pages/images/folder.png" mode="widthFix"></image>
+        </view>
+        <view class="info-box">
+          <view class="to-close">
+            <view>购买</view>
+            <view class="to-close-box" bindtap="closePayBox">
+            	<image src="/pages/images/delete_box.png" mode="widthFix"></image>
+            </view>
+          </view>
+          
+          <view class="money">￥{{price}}</view>
+          <view class="name">{{sourceName}}</view>
+          <block wx:if="{{sourceNum}}">
+          <view class="num">共（{{sourceNum}}）个资源</view>
+          </block>
+          <view class="loaddings">
+          	<block wx:if="{{clicked}}">
+          		<image src="/pages/images/loading.gif" style="margin:0 auto;margin-top:15px;width:50px;height:10px;filter:grayscale(100%);"></image>
+          	</block>
+          </view>
+         
+            <button formType="submit" class="to-pay-button"  bindtap="payNow">{{clicked?'正在连接微信支付':'立即支付'}}</button>
+         
+        </view>
+    </view>
+  </block>
+</template>
+
+<!--支付地址-->
+<template name="seed-default-info">
+  <block wx:if="{{seedDefalutShow}}">
+    <view class="template-black-mask">
+    </view>
+    <view class="seed-default-box">
+      <view class="seed-default-semicircle">
+          <image src="/pages/images/folder.png" mode="widthFix"></image>
+          </view>
+      <view class="seed-default-head">
+        <view class="to-close">
+            <view class="buy-style">购买</view>
+            <view class="to-close-box" bindtap="closePayBox">
+            	<image src="/pages/images/delete_box.png" mode="widthFix"></image>
+            </view>
+          </view>
+          <view class="seed-info-word">
+            <view class="seed-total-money">￥{{UnitPrice}}</view>
+        <view class="seed-name">{{seedName}}</view>
+          </view>
+          
+        
+      </view>
+      <form bindsubmit="paySeedDefault" class="pay-info-form">
+
+        <view class="pay-info-item">
+        <view class="pay-info-title">联系人:</view>
+          <input name="userName" value="{{userName}}" maxlength="10" placeholder="请填写联系人"/>
+        </view>
+        <view class="pay-info-item">
+          <view class="pay-info-title">联系电话:</view>
+          <input type="idcard" maxlength="11" placeholder="请填写联系电话" name="uersPhone" value="{{uersPhone}}"/>
+        </view>
+        <view class="pay-info-item">
+          <view class="pay-info-title ">联系地址:</view>
+          <input  value="{{uersAddress}}" name="uersAddress" maxlength="30" placeholder="请填写联系地址" />
+        </view>
+        <block wx:if="{{false}}">
+            <view class="pay-num">
+            <view >{{UnitPrice}}</view>
+            <view class="change-num-box">
+              <view class="change-num" bindtap="changeNum" data-direction="reduce">-</view>
+              <text>{{seedNum}}</text>
+              <view class="change-num"  bindtap="changeNum" data-direction="add">+</view>
+            </view>
+          </view>
+        </block>
+        <view class="loaddings">
+          	<block wx:if="{{clicked}}">
+          		<image src="/pages/images/loading.gif" style="display:block;margin:0 auto 6px;width:50px;height:10px;filter:grayscale(100%);"></image>
+          	</block>
+          </view>
+        <button formType="submit" class="to-pay-button">{{clicked?'正在连接微信支付':'确定'}}</button>
+      </form>
+    </view>
+    
+  </block>
+  
+</template>
+<!--支付地址end-->

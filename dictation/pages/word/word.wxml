@@ -1,0 +1,35 @@
+<!--word.wxml-->
+<import src="../template/template.wxml" />
+<import src="../../components/modal/modal.wxml" />
+<scroll-view scroll-y bindscrolltolower="loadMore" class="list-wrapper">
+  <view class="refresh" style="width:327rpx;margin:0 auto" wx:if="{{ref}}">
+    <image class="gif" style="width:110rpx;height:25rpx" src="../../images/word/loading.gif"></image>
+    <text class="re_text">正在刷新</text>
+  </view>
+  <view wx:for="{{list}}" wx:key="uid" class="ll" >
+    <view class="list" bindtap="click" data-lessonId="{{item.id}}" bindtouchstart="setTapStartTime" bindlongtap="onDelete" data-index="index">
+      <view class="left">
+        <view class="time">
+          <view class="time_img">
+            <image class="" src="../../images/word/time_img.png"></image>
+          </view>
+          <view class="text">
+            <text class="text1">{{item.lesson_name}}</text>
+          </view>
+        </view>
+        <view class="small f2">词汇量:
+          <text class="num">{{item.wordCount}}</text>个</view>
+      </view>
+      <view class="right">
+        <template is="star" data="{{...item}}"></template>
+        <image class="login" src="../../images/word/icon_tools_arrow.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="last" wx:if="{{loadding}}" style="width:327rpx;margin:0 auto">
+    <image class="gif" style="width:110rpx;height:25rpx" src="../../images/word/loading.gif"></image>
+    <text class="jz">{{loadText}}</text>
+  </view>
+  <!--modal-->
+  <template is="modal" data="{{..._modal}}"></template>
+</scroll-view>

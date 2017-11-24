@@ -1,0 +1,18 @@
+<view class="wrap">
+  <scroll-view scroll-y class='l-wrap'>
+    <block wx:for="{{list}}">
+      <view id="{{item.id}}" class="character {{item.open?'character-bg':''}}" bindtap='tapToExp'>{{item.id}}</view>
+    </block>
+  </scroll-view>
+  <scroll-view scroll-y class='r-wrap' scroll-top="{{scroll_top}}">
+         <block wx:for-items='{{words}}' wx:for-item="word" wx:key="*item"> 
+          <view class="add-mi" hover-class="example-bg" data-word="{{word.zi}}" bindtap='toWordDetail'>
+            <image src='../../images/mi-bg.png' class='bg-mi'></image>
+            <view class='txt-wrap'>
+              <text class='bg-txt'>{{word.zi}}</text>
+              <text class='pinyin-txt'>{{word.pinyin}}</text>
+            </view>
+          </view>
+          </block>
+  </scroll-view>
+</view>

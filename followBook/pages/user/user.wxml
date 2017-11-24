@@ -1,0 +1,49 @@
+<view class="user-wrap">
+
+  <view class="user-photo">
+    <view class="user-info">
+      <image class="circlePhoto" src="{{updateUserInfo.avatarUrl}}" mode="widthFix"></image>
+      <text class="user-name">{{updateUserInfo.nickName}}</text>
+    </view>
+  </view>
+  <!--<view class="data-list">
+    <view>
+      <text class="num">{{totalBookNum}} 本</text>
+      <text>教材</text>
+    </view>
+    <view>
+      <text class="num"> {{1000}} 词</text>
+      <text>听写</text>
+    </view>
+    <view>
+      <text class="num"> {{123456}} 次</text>
+      <text>自定义</text>
+    </view>
+  </view>-->
+  <view class="NavTo-learnTools" bindtap="toPage" data-page="studyTools">
+    <view class="str">学习工具</view>
+    <view class="symbol">
+      <image src="../images/user/icon_tools_arrow.png" mode="widthFix"></image>
+    </view>
+  </view>
+  <view class="NavTo-learnTools">
+  <button open-type="share" ></button>
+    <view class="str">邀请好友</view>
+    <view class="symbol">
+      <image src="../images/user/icon_tools_arrow.png" mode="widthFix"></image>
+    </view>
+  </view>
+  <view class="NavTo-learnTools" bindtap="toPage">
+    <button open-type="contact" class="contact"></button>
+    <view class="str">意见反馈</view>
+    <view class="symbol">
+      <image src="../images/user/icon_tools_arrow.png" mode="widthFix"></image>
+    </view>
+  </view>
+  <view class="NavTo-learnTools" bindtap="toPage" data-page="aboutUs">
+    <view class="str">关于我们</view>
+    <view class="symbol">
+      <image src="../images/user/icon_tools_arrow.png" mode="widthFix"></image>
+    </view>
+  </view>
+</view>

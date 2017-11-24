@@ -1,0 +1,45 @@
+<!--pages/PK/PK.wxml-->
+<view class="PK_index ">
+  <view class="random_match  flexRow" bindtap='toBook'>
+    <view class="flexRow show">
+      <image src="/pages/images/PK_logo.png"> </image>
+      <text>你永远不知道 下一个对手是谁
+      </text>
+    </view>
+    <view class="to_match">随机对手</view>
+  </view>
+  <block wx:if="{{record.length>0}}">
+    <view class="pK_record_title">PK记录</view>
+    <view class="PK_record_list">
+    <view class="PK_record  flexRow wx:if={{item.organiser_total_score<item.challenger_total_score?'lose_block':'win_block'}}" wx:for="{{record}}" bindtap='toDetail' data-question="{{item.question_id}}">
+      <view class="participant_info flexRow">
+        <image src='{{item.headimgurl || "/pages/images/unRegister.png"}}' mode='widthFix'></image>
+        <view class="word_info flexColumn">
+          <view class="name">{{item.nickname}}</view>
+          <view class="score">
+            {{item.organiser_total_score}} vs {{item.challenger_total_score}}
+          </view>
+          <view class="lesson_name two_line">{{item.book_name}}</view>
+        </view>
+
+      </view>
+      <view class="result win" wx:if="{{item.organiser_total_score>item.challenger_total_score}}">
+        <image src='/pages/images/win_icon.png'></image>
+      </view>
+      <view class="result lose" wx:else>
+        <image src='/pages/images/lose_icon.png'></image>
+      </view>
+    </view>
+  </view>
+   <view class='yes' wx:if="{{!pageMore}}">加载完成</view>
+  <view class='load' wx:if="{{pageLoading&&pageMore}}">
+    <view></view>
+    <view></view>
+    <view></view>
+    <view></view>
+    <view></view>
+  </view>
+  </block>
+  <view class='no_recore_list' wx:if="{{record.length==0}}">还没有PK记录哟，快去PK一下吧</view>
+ 
+</view>

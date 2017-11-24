@@ -1,0 +1,18 @@
+/* pages/user/setting/about/about.wxss */
+.text-body
+{
+    padding: 20px; font-size:14px; line-height: 24px; color: #333; 
+}
+.text-body view {
+  text-indent: 36rpx;
+  line-height: 48rpx;
+}
+.text-body .title{
+  text-indent:0;
+  text-align:center;
+  font-size:32rpx;
+  font-weight:500;
+}
+.text-body view:nth-of-type(1) {
+  padding-bottom: 20rpx;
+}

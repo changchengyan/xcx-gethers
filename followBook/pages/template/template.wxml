@@ -1,0 +1,50 @@
+<!--template.wxml-->
+
+<template name="Buy">
+  <view class="maskBox"></view>
+  <view class="maskOfKey clearfix">
+      <view class="titleOfTips">
+        <image class="title-bg" src="../images/sound/modeOfTitle.png" mode="widthFix"></image>
+        <view bindtap="returnTo_thisBook" class="del">
+          <image src="../images/sound/Menu-close.png" mode="widthFix"></image>
+        </view>
+      </view>
+      <view class="bookName">《{{book_name}}》</view>
+      <view class="showBook">
+        <image src="{{book_img}}"></image>
+      </view>
+      <view class="showMoney clearfix">
+        <text>¥</text>
+        <view class="showNumOfMoney">{{money}}</view>
+        <text>元</text>
+      </view>
+      <!-- <view class="buy-give-tip">可获3个赠送名额，邀请好友免费使用！</view> -->
+      <view class="openAllBook" bindtap="buy_thisBook" bindload="imageOnLoad">
+        <image src="../images/sound/BuyThisBook.png" mode="widthFix"></image>
+      </view>
+      <view class="WX-onSecurity">
+        <image src="../images/sound/modeOfFooter.png" mode="widthFix"></image>
+      </view>
+  </view>
+</template>
+
+
+<!--页面加载中  -->
+<template name="pageLoading">
+  <!--<view class="mask" hidden="{{isLoading}}"></view>-->
+  <loading hidden="{{isLoading}}">加载中...</loading>
+</template>
+
+<!--分享页面展示-->
+<template name="shareOpen">
+  <view class="share-page">
+    <view class="share-head">
+    </view>
+    <view class="share-user">
+      <image src="{{shareInfo.img}}"></image>
+      <text>{{shareInfo.name}}</text>
+      <view>正在使用听写100</view>
+    </view>
+    <view class="user-now" bindtap='closeSharePage'>现在使用</view>
+  </view>
+</template>

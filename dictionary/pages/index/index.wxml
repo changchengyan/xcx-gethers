@@ -1,0 +1,43 @@
+<!-- index.wxml -->
+<view>
+  <view class="banner">
+    <image src='../images/bg.png' mode="scaleToFill" class="banner-bg"></image>
+    <view class="search-container">
+      <form>
+        <view class="search-pannel">
+          <image src='../images/search-icon.png'></image>
+        </view>
+        <view class="search-input">
+          <input value="{{inputValue}}" bindinput="bindkeyinput" bindconfirm="toDetail"></input>
+        </view>
+        <view class="search-button" bindtap="toDetail">{{searchFocus}}</view>
+      </form>
+    </view>
+    <view class="search-list">
+      <view class="search-pinyin" bindtap="searchPinyin">
+        <image src="../images/pinyin-search.png"></image>
+        <text>拼音查询</text>
+      </view>
+      <view class="search-bushou" bindtap="searchBushou">
+        <image src="../images/bushou-search.png"></image>
+        <text>部首查询</text>
+      </view>
+      <view class="search-yuyin" bindtap="searchYuyin">
+        <image src="../images/yuyin-search.png"></image>
+        <text>语音查询</text>
+      </view>
+    </view>
+  </view>
+  <view class="chahua">
+    <image src="../images/chahua.png" class="chahua-img"></image>
+  </view>
+   <view class='news'>
+    <block wx:for-items="{{news}}" wx:key="item">
+      <view class="news-wrap">
+        <view class="news-title">{{item.newsTitle}}</view>
+         <view class="news-body">{{item.newsBody}}</view> 
+         <view class="news-time">{{item.newsTime}}</view> 
+      </view>
+    </block>
+  </view> 
+</view>

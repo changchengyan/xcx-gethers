@@ -1,0 +1,113 @@
+/*yuyin.wxss*/
+
+.wrap {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  margin-top: 30%;
+}
+
+.listen {
+  color: #323232;
+  font-size: 17px;
+  text-align: center;
+}
+
+.wave-wrap {
+  position: relative;
+  width: 100vm;
+  height: 250rpx;
+}
+
+.wave-style {
+  position: absolute;
+  width: 1000rpx;
+  height: 350rpx;
+  left: 0;
+  top: 0;
+  animation: wave 3s linear infinite;
+}
+
+.wave-1 {
+  animation-delay: -0.8s;
+}
+
+.wave-2 {
+  animation-delay: -1.6s;
+}
+
+.wave-3 {
+  animation-delay: -2.4s;
+}
+
+@keyframes wave {
+  from {
+    transform: translate3d(-250rpx, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.but-wrap {
+  position: fixed;
+  top: 60%;
+  left: calc(50% - 140rpx);
+  /* display: flex;
+  flex-flow: column wrap;
+  justify-content: center; */
+}
+
+.remind-style {
+  font-size: 12px;
+  color: #2b9cfb;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+
+.sound-wrap {
+  position: relative;
+  width: 280rpx;
+  height: 280rpx;
+  margin: 0 auto;
+}
+
+.sound-style {
+  position: absolute;
+  width: 280rpx;
+  height: 280rpx;
+}
+
+.show {
+  opacity: 1;
+}
+
+.hide {
+  opacity: 0;
+  overflow: hidden;
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(186, 186, 186, 0.4);
+  z-index: 999;
+}
+.loading_gif{
+  position: absolute;
+  top: 45%;
+  left: calc(50% - 45rpx);
+  width: 90rpx;
+  height: 90rpx;
+}
+.loading > text{
+  position: absolute;
+  top: calc(45% + 120rpx);
+  left: calc(50% - 60rpx);
+  font-size: 14px;
+  color: #2b9cfb;
+}

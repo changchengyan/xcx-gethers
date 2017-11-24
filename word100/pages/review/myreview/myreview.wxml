@@ -1,0 +1,137 @@
+<!--pages/review/myreview/myreview.wxml-->
+<view class='bg'>
+  <view class='top'>
+    <view class='top_in'>
+      <view>{{hp}}</view>
+      <view>待复习</view>
+    </view>
+  </view>
+
+  <!--英译汉-->
+  <block wx:if="{{ _type==1 }}">
+    <view class='solution'>
+      <view class='question'>
+        <view class='ques_txt'>{{question.question.word_name}}</view>
+        <view class='audio' bindtap='audio'>
+          <view class='audio_txt'>朗读</view>
+          <audio src="{{question.question.word_mp3_url}}" id="myAudio"></audio>
+          <image class='speak' src='../../images/speaker.png'></image>
+        </view>
+      </view>
+      <view class='answer'>
+        <view wx:for="{{4}}" class='answer_in  ans_0_{{question.answers[index].checked?aright:""}} {{aright == 0&&question.answers[index].is_right == 1?"yes":""}}' data-right='{{question.answers[index].is_right}}' bindtap='answer' data-index='{{index}}'>{{question.answers[index].answer}}</view>
+      </view>
+    </view>
+  </block>
+
+  <!--汉译英-->
+  <block wx:if="{{_type==2}}">
+    <view class='solution'>
+      <view class='question'>
+        <view class='ques_txt'>{{question.question.translation}}</view>
+      </view>
+      <view class='answer' style='margin-top:175rpx'>
+        <view wx:for="{{4}}" class='answer_in  ans_0_{{question.answers[index].checked?aright:""}} {{aright == 0&&question.answers[index].is_right == 1?"yes":""}}' data-right='{{question.answers[index].is_right}}' bindtap='answer' data-index='{{index}}'>{{question.answers[index].answer}}</view>
+      </view>
+    </view>
+  </block>
+
+  <!--听写-->
+  <block wx:if="{{_type==3}}">
+    <view class='solution'>
+      <view class='question'>
+        <view class='audio_t' bindtap='audio'>
+          <image src='../../images/question_speak.png' class='question_speak'></image>
+          <audio src="{{question.question.word_mp3_url}}" id="myAudio"></audio>
+        </view>
+      </view>
+      <view class='answer'>
+        <view wx:for="{{4}}" class='answer_in  ans_0_{{question.answers[index].checked?aright:""}} {{aright == 0&&question.answers[index].is_right == 1?"yes":""}}' data-right='{{question.answers[index].is_right}}' bindtap='answer' data-index='{{index}}'>{{question.answers[index].answer}}</view>
+      </view>
+    </view>
+  </block>
+
+  <!--拼写-->
+  <block wx:if="{{_type==4}}">
+    <view class='solution'>
+      <view class='question'>
+        <view class='ques_txt'>{{question.question.translation}}</view>
+      </view>
+      <view class='answer_four'>
+        <view class='printf'>
+          <view class='dad'></view>
+          <view class='printf_in {{displayWord[index].cuo?"red_font":""}}' data-index="{{index}}" wx:for="{{displayWord}}">{{item.one_word}}</view>
+          <view class='line' wx:for="{{line_num}}"></view>
+          <view class='shan' wx:if="{{!dis_false}}">
+            <view class='sanjiao'></view>
+            <view class='del' bindtap='del'>X</view>
+          </view>
+          <image class='del_t' src='../../images/icon-cuo.png' wx:if="{{dis_false}}"></image>
+        </view>
+
+        <view class='trueword' wx:if="{{isKeyWord}}">{{question.question.word_name}}</view>
+        <view class='audio' bindtap='audio' wx:if="{{!isKeyWord}}">
+          <view class='audio_txt'>朗读</view>
+          <audio src="{{question.question.word_mp3_url}}" id="myAudio"></audio>
+          <image class='speak' src='../../images/speaker.png'></image>
+        </view>
+        <view class='key'>
+          <view class='key_in  {{all_word[index].checked?"key_active":""}} {{all_word[index].opacity?"opa":""}}' wx:for="{{all_word}}" data-wordidx='{{item.word}}' bindtap='wordClick' data-index='{{index}}'>{{item.word}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <!--闯关完成-->
+  <view class='end' wx:if="{{isSubmit}}">
+    <view class='enf_bg'></view>
+    <image src='../../images/guang.png' class='guangxian'></image>
+    <view class='fuxi_de'>
+      <view class='all_words'>{{word_num}}</view>
+      <view class='end_txt'>学霸！你已经复习完了所有单词哦</view>
+    </view>
+    <view class='end_in'>
+      <view class='menu' bindtap='againReview'> 换个题型再复习</view>
+    </view>
+    <image class='goPK' src='../../images/goPK.png' bindtap='goPK'></image>
+  </view>
+
+  <!--解析页面-->
+  <view class='detail' wx:if="{{displayX}}">
+    <view class='detail_box'></view>
+    <view class='detail_in'>
+      <view class='detailquestion'>{{question.question.word_name}}</view>
+      <view class='detail_audio' bindtap='audio'>
+        <view class='ipa'>[{{question.question.ipa==null?"":question.question.ipa}}]</view>
+        <audio src="{{question.question.word_mp3_url}}" id="myAudio"></audio>
+        <image class='speak' src='../../images/speaker.png'></image>
+      </view>
+      <view class='trans'>{{question.question.translation}}</view>
+    </view>
+    <view class='de_bottom'>
+      <view class='de_logo' wx:if="{{!isBiao}}" bindtap='know'>
+        <image src='../../images/biaoji.png'></image>
+      </view>
+      <view class='hei' wx:if="{{isDisSuccess}}">标记成功，已移出复习区</view>
+      <view class='hei' wx:if="{{isDisFail}}">取消成功，已添加到复习区</view>
+      <view class='de_logo' wx:if="{{isBiao}}" bindtap='findDelWordReview'>
+        <image src='../../images/biao_success.png'></image>
+      </view>
+      <view class='de_txt' bindtap='nextWord'>继续复习</view>
+    </view>
+  </view>
+
+  <!-- 标为认识 -->
+  <view class='bottom' bindtap='delReviewWord' wx:if="{{currentindex==0}}">
+    <image class='renshi' src='../../images/renshi.png'></image>
+    <text class='see'>标为认识</text>
+  </view>
+  <view class='bot' wx:if="{{currentindex>0}}">
+    <view class='bot_o' bindtap='delReviewWord'>
+      <image class='renshi' src='../../images/renshi.png'></image>
+      <text class='see'>标为认识</text>
+    </view>
+    <view class='bot_t'>上一词 | {{prev_word[currentindex - 1]}}</view>
+  </view>
+
+</view>

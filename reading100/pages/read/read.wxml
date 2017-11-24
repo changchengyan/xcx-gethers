@@ -1,0 +1,89 @@
+<!--pages/read/read.wxml-->
+<import src="../template/template.wxml" />
+<view class="play-img {{lrc_blur}}" catchtap="toLrc" catchtouchmove="stop">
+  <view class="img-container">
+    <image catchtouchmove="stop" class="book-img {{playStyle}}" src="{{bookPic}}" style="width:100%;height:100%;"></image>
+    <!-- <image class="circle {{playStyle}}" src="../../images/read/circle.png" style="transform: translate3d(-50%, -50%, 0) rotate3d(0,0,1,{{angle}}deg)"></image>
+    <image class="pointer" src="../../images/read/pointer.png"></image> -->
+  </view>
+</view>
+<view class="lrc" wx:if="{{lrc_display}}">
+  <button class="share-button" open-type="share"></button>
+  <image class="share" src="../../images/read/share.png"></image>
+  <image catchtap="toBookPage" class="back" src="../../images/read/back.png"></image>
+  <view wx:if="{{isDragged}}" class="toLrc-line">
+    <view class="line">
+      <view class="tri-container" catchtap="toLine">
+        <view class="tri"></view>
+      </view>
+    </view>
+  </view>
+  <scroll-view class="lrc-contianer" scroll-y scroll-top="{{lrc_distance}}" bindtap="listCancel" bindscroll="scroll">
+    <view class="lrc-block"></view>
+    <view class="lrc-line {{cur_lrc[index]}}" wx:for="{{lrc}}" wx:key="index">{{item[1]}}</view>
+    <view class="lrc-block"></view>
+  </scroll-view>
+</view>
+
+
+<view class="controls-bg {{controls_lrc}}"></view>
+<view class="sound-controls-canvas">
+  <view class="progress-view">
+    <view class="time-left">{{timeBeginText}}</view>
+    <view class="pro-background" id="pro-background">
+      <slider bindtouchstart="dragStart" bindchange="sliderChange" backgroundColor="#eee" selected-color="#cfebeb" left-icon="cancel" class="silder-show" disabled="{{disabled}}" value="{{progressValue}}" max="{{progressMax}}" />
+    </view>
+    <view class="time-right">{{timeEndText}}</view>
+  </view>
+  <view class="operation-view">
+    <view class="speed" bindtap="changeCircleStyle">
+      <image src="../../images/read/{{circle_style}}.png"></image>
+    </view>
+    <view class="prev">
+      <image src="../../images/read/sound-icon-prev.png" bindtap="audioPrev"></image>
+    </view>
+    <view class="button-bg">
+      <view class="{{playPauseStyle}}">
+        <view class="play" bindtap="toPlay">
+          <image src="../../images/read/sound-icon-play.png"></image>
+        </view>
+        <view class="pause" bindtap="pause">
+          <image src="../../images/read/sound-icon-pause.png"></image>
+        </view>
+      </view>
+    </view>
+
+    <view class="next">
+      <image src="../../images/read/sound-icon-next.png" bindtap="audioNext"></image>
+    </view>
+    <view class="book-list {{controls_lrc}}-list" bindtap="toList">
+      <image src="../../images/read/list.png"></image>
+    </view>
+  </view>
+</view>
+<view class="sound-controls-visibility"></view>
+
+<!--书籍列表 -->
+<view class="list" wx:if="{{listShow}}">
+  <view class="list-title">
+    <text>课文列表</text>
+    <text class="list-title-count">(共{{list.length}}篇)</text>
+    <view class="list-cancel" bindtap="hideList">
+      关闭
+      <!-- <view class="list-cancel-box"></view> -->
+    </view>
+  </view>
+  <scroll-view scroll-y class="list-item-container">
+    <view class="list-item" wx:for="{{list}}" wx:key="index" data-index="{{index}}" bindtap="toLesson">
+      <view wx:if="{{(index) == index_cur}}" class="list-item-index">
+        <image style="width:30rpx;height:30rpx;" src="../../images/read/isPlaying.png"></image>
+      </view>
+      <view wx:else class="list-item-index">{{index + 1}}</view>
+      <view wx:if="{{(index) == index_cur}}" style="color: #50abf0;" class="list-item-name">{{list[index].lesson_name}}</view>
+      <view wx:else class="list-item-name">{{list[index].lesson_name}}</view>
+    </view>
+  </scroll-view>
+</view>
+<block wx:if="{{isPaying}}">
+  <template is="Buy" data="{{money:money,bookName:bookName,key_rest_count:key_rest_count,bookPic:bookPic}}"></template>
+</block>

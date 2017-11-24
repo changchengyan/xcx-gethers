@@ -1,0 +1,4 @@
+/* richText.wxss */
+text{word-wrap:break-word;word-break:break-all;}
+.info-item .image{ padding: 10px 0px 10px 0px;}
+.info-item  image{ max-width: 100%; width: 100%;}

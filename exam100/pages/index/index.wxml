@@ -1,0 +1,43 @@
+<!--pages/index/index.wxml-->
+<import src="/pages/template/temp_common/temp_common.wxml" />
+<block wx:if="{{unAuthorization}}">
+	<template is="unauthorized"></template>
+</block>
+<block wx:else>
+	<view class='container'>
+	  <view class='banner'>
+	  	<view wx:for="{{paper_list}}" bindtap="toTest" data-bookId="{{item.examine_app_content_id}}" data-paperId="{{item.id}}">
+	  		<image src='{{item.paper_icon}}'></image>
+	  	</view>
+	    
+	  </view>
+	  <view class='hotclass'>
+	    <view class='hotclass_title'>
+	      <view class='top'>热门分类</view>
+	      <view class='disall' bindtap='toAllclass'>显示全部></view>
+	    </view>
+	    <view class='all_class'>
+	    	<block wx:for="{{hotClassify}}">
+	    		<view wx:if="{{index<6}}" bindtap='tohotclass' class='mainclass' data-id='{{item.id}}' data-title="{{item.classify_name}}">{{item.classify_name}}</view>
+	    	</block>   
+	    </view>
+	  </view>
+	  <block wx:if="{{latestCourse.count>0}}">
+	  	<view class='middle'></view>
+		  <view class='newDay'>
+		    <view class='list_title'>一周最新</view>
+		    <view class='list_in' bindtap='toDayHot' data-id="{{item.id}}" wx:for="{{latestCourse.list}}" >
+		      <view class='bor' style="{{index==(latestCourse.list.length-1)?'border-bottom:none':''}}">
+		        <image src='{{item.app_pic}}'></image>
+		        <view class='list_txt'>
+		          <view class='main'>{{item.app_name}}</view>
+		          <view class='content'>{{item.app_desc}}</view>
+		        </view>
+		      </view>
+		    </view>
+		    <text class="loadding" wx:if="{{!firstLoadding&&isLoadding}}">加载中...</text>
+		  </view>
+	  </block>
+	</view>
+</block>
+<loading hidden="{{!firstLoadding}}">加载中...</loading>

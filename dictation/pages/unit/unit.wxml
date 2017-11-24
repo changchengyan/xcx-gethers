@@ -1,0 +1,47 @@
+<!--pages/unit/unit.wxml-->
+ <import src="../template/template.wxml" />
+<view class="{{font}} viewBox" catchtap="deleteCancel">
+  <view class="word-block">
+    <view wx:if="{{navigation_type=='custom'}}" class="unit-title f2">{{custom_time}}</view>
+    <view wx:if="{{navigation_type=='book'}}" class="unit-title f2">{{lesson_name}}</view>
+    <view class="word-container">
+      <view class="word-{{item.is_standard}} f5" wx:for="{{words_show}}" data-index="{{index}}" wx:key="id" catchtap="play" catchlongtap="longTapDelete">
+        {{item.dictation_word}}
+        <view wx:if="{{isEdit}}" class="delete" data-index="{{index}}" catchtap="deleteWord">
+          <view class="delete-line"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="words-count">共{{words_number}}个词汇</view>
+  <view class="words-del" wx:if="{{del_words_show.length !== 0}}">
+    <view class="words-del-title color6">已删除单词（点击恢复）</view>
+    <view class="words-del-container">
+      <view class="del-word" wx:for="{{del_words_show}}" data-index="{{index}}" wx:key="id" catchtap="recover">
+        {{item.dictation_word}}
+      </view>
+    </view>
+  </view>
+
+  <view class="input-area-{{input_area_display}}">
+    <image src="../../images/book/cancel.png" class="cancel-icon" bindtap="editHide"></image>
+    <form class="form" bindreset="sendWords">
+      <input name="words" type="text" class="input-text f3" bindinput="inputWord" cursor-spacing="10" focus="{{focus}}" placeholder="听，听写的听" maxlength="100" />
+      <button class="send-button" form-type="reset">发送</button>
+    </form>
+  </view>
+  <view class="more-{{button_display}}" bindtap="editShow">
+    <image src="../../images/book/edit.png" class="edit-icon"></image>
+  </view>
+  <block wx:if="{{(key_rest_count!==0||!unlock)&&showKey&&!goPayDetail}}">
+    <template is="Buy" data="{{key_rest_count:key_rest_count}}"></template>
+  </block> 
+  <block wx:if="{{goPayDetail}}">
+    <template is="OrderDetail" data="{{money:money,bookOrUnitName:bookOrUnitName,book_name:book_name,Name:Name,resourceNum:resourceNum,goTap:goTap}}"></template>
+  </block>
+  <!-- <view class="start-button-{{button_display}}" bindtap="gotoNext">
+  </view> -->
+  <view class="startButton-{{button_display}}" bindtap="toKeyOrLesson">
+       <image src="../../images/word/beginLesson.png" mode="widthFix"></image> 
+  </view>
+  </view>
